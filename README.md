@@ -25,3 +25,9 @@ Para lo que fue la investigación y la búsqueda de inspiraciones nos basamos en
 - GOG - https://www.gog.com
 - Epic Games - https://www.epicgames.com/
 - Steam - https://store.steampowered.com/
+
+También tomamos los siguientes ejemplos como inspiración estética:
+
+- https://store.blastgalaxy.nl/product/entry-ticket-day/
+- https://team3d.io/
+
