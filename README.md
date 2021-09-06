@@ -1,4 +1,4 @@
-# proyectoIntegrador-Grupo1
+# INDIEWAVE, el marketplace para los Gamers Indie
 
 # Descripción del Ecommerce #
 
@@ -9,7 +9,7 @@ Nuestro público objetivo es pensado para todos los géneros, desde los 13 años
 # Integrantes del equipo #
 
 ## Gio, el Manija ##
-23 años, 1.83, gamer, amante del codeo y del lo-fi
+23 años, 1.83, gamer, lo-fi y synthwave, pop y EDM. Workahólico total, amante del codeo.
 
 ## Facu, el Doctor ##
 24 años, narigón, disfruta del té y de la cerveza artesanal. Se comunica a través de referencias a Les Luthiers. Hábil googleador. Nunca jugó al LoL.
