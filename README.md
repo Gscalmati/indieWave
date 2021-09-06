@@ -2,9 +2,9 @@
 
 # Descripción del Ecommerce #
 
-Nuesto proyecto se bautiza "INSERTE NOMBRE", un marketplace pensado y creado para el gamer, en donde encontrar nuevas experiencias indie. Si sos gamer, sos del equipo "INSERTE NOMBRE"
+Nuesto proyecto se bautiza "INDIE WAVE", un marketplace pensado y creado para el gamer, en donde encontrar nuevas experiencias indie. Si sos gamer, sos del equipo INDIE WAVE
 
-Nuestro público objetivo es pensado para todos los géneros, desde los 13 años en adelante, todos pueden difrutar y aprovechar las oportunidades ~~ ysumarse a la INDIEWAVE~~ en "INSERTE NOMBRES".
+Nuestro público objetivo es pensado para todos los géneros, desde los 13 años en adelante, todos pueden difrutar y aprovechar las oportunidades y sumarse a la "OLA INDIE".
 
 # Integrantes del equipo #
 
@@ -14,9 +14,10 @@ Nuestro público objetivo es pensado para todos los géneros, desde los 13 años
 ## Facu, el Doctor ##
 24 años, narigón, disfruta del té y de la cerveza artesanal. Se comunica a través de referencias a Les Luthiers. Hábil googleador. Nunca jugó al LoL.
 
-## Juani, ENTRENADOR POKÉMON##
+## Juani, ENTRENADOR POKÉMON ##
 25 años, diamante en el lol
-## Nacho, INSERTE TITULO##
+
+## Nacho, INSERTE TITULO ##
 
 # Referencias de mercado #
 
