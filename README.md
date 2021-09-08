@@ -14,8 +14,8 @@ Nuestro público objetivo es pensado para todos los géneros, desde los 13 años
 ## Facu, el Doctor ##
 24 años, narigón, disfruta del té y de la cerveza artesanal. Se comunica a través de referencias a Les Luthiers. Hábil googleador. Nunca jugó al LoL.
 
-## Juani, ENTRENADOR POKÉMON ##
-25 años, diamante en el lol
+## Juani, Entrenador Pokémon ##
+25 años, diamante en el lol, amor profundo por las bicicletas. Habilidad nocturna: Atrapar Pokémons.
 
 ## Nacho, INSERTE TITULO ##
 
