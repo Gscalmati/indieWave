@@ -2,7 +2,9 @@
 
 # Descripción del Ecommerce #
 
-Nuesto proyecto se bautiza "INDIE WAVE", un marketplace pensado y creado para el gamer, en donde encontrar nuevas experiencias indie. Si sos gamer, sos del equipo INDIE WAVE
+Nuesto proyecto se bautiza "INDIE WAVE", una tienda pensada y creado para el gamer, en donde encontrar nuevas experiencias indie. Si sos gamer, sos del equipo INDIE WAVE
+
+En la página encontrarás juegos Indie de autores tanto nacionales como internacionales.
 
 Nuestro público objetivo es pensado para todos los géneros, desde los 13 años en adelante, todos pueden difrutar y aprovechar las oportunidades y sumarse a la "OLA INDIE".
 
@@ -18,7 +20,7 @@ Nuestro público objetivo es pensado para todos los géneros, desde los 13 años
 25 años, diamante en el lol, amor profundo por las bicicletas. Habilidad nocturna: Atrapar Pokémons.
 
 ## Nacho, INSERTE TITULO ##
-Inserte descripción
+Inserte Descripción
 
 # Referencias de mercado #
 
@@ -33,3 +35,10 @@ También tomamos los siguientes ejemplos como inspiración estética:
 - https://store.blastgalaxy.nl/product/entry-ticket-day/
 - https://team3d.io/
 
+# Fuentes #
+
+Las fuentes que utilizamos para el diseño de la web se dividen entre:
+- Ubuntu-Font-Family 0.80
+- VideoPhreak
+- Source Code Pro
+Todas retiradas de la plataforma https://www.1001fonts.com/
