@@ -41,4 +41,5 @@ Las fuentes que utilizamos para el diseño de la web se dividen entre:
 - Ubuntu-Font-Family 0.80
 - VideoPhreak
 - Source Code Pro
+
 Todas retiradas de la plataforma https://www.1001fonts.com/
