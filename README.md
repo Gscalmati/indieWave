@@ -1,4 +1,4 @@
-# INDIEWAVE, el marketplace para los Gamers Indie
+# INDIEWAVE, el Ecommerce para los Gamers Indie
 
 # Descripción del Ecommerce #
 
