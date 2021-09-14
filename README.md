@@ -43,3 +43,7 @@ Las fuentes que utilizamos para el diseño de la web se dividen entre:
 - Source Code Pro
 
 Todas retiradas de la plataforma https://www.1001fonts.com/
+
+# Trello #
+
+Link: https://trello.com/b/z6NH0uTS/proyecto-integrador
