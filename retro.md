@@ -23,3 +23,4 @@
 * Memes durante las reuniones.
 
 ## Dejar de hacer
+* Hacer cambios antes de pullear.
