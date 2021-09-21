@@ -1,0 +1,12 @@
+.carrusel{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.carrusel-padre{
+    margin: 10px 30%;
+}
+.carrusel img{
+    width: 80%;
+    height: 50vh;
+}
