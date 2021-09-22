@@ -7,6 +7,7 @@ main{
 
 main #game-area{
     display: flex;
+    box-sizing: border-box;
 }
 
 main #game-area #carrousel{
@@ -26,6 +27,20 @@ main #game-area #carrousel #img-bar{
 
 main #game-area #game-info{
     width: 30%;
+    margin-left: 60px;
+    box-sizing: border-box;
+}
+
+main #game-area #game-info #game-info-button-wrapper{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+main #game-area #game-info button{
+    width: 70%;
+    height: 50px;
+    margin-top: 10px;
 }
 
 main #extras-area #req-dlc-wrapper{
