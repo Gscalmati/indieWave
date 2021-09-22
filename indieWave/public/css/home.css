@@ -1,12 +1,49 @@
+*{
+    text-align: center;
+    margin: auto;
+    width: 70%;
+    font-family: "Ubuntu Mono";
+}
+
+h3, h2{
+    color: #5C2C6D;
+}
+h2{
+    padding: 10px;
+    padding-top: 50px;
+    text-align: left;
+    color: #58DD94;
+}
+p{
+    color: #6DF1D8;
+    
+}
 .carrusel{
+    background-color: #5C2C6D;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
 }
-.carrusel-padre{
-    margin: 10px 30%;
+.fa-chevron-left{
+    color: #58DD94;
+}
+.fa-chevron-right{
+    color: #58DD94;
 }
 .carrusel img{
     width: 80%;
     height: 50vh;
+}
+.producto-main{
+    display: flex;
+    justify-content: space-between;
+}
+.producto{
+    background-color: #b8aec8;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 5px;
+    padding: 5px;
+    border: solid 2px black;
 }
