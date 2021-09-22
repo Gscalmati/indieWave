@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras</title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/shoppingCart.css">
+</head>
+<body>
+    <header>
+
+    </header>
+    
+    <main>
+
+        <h2>Carrito de compras</h2>
+
+        <section class="upper-part">
+            <ul>
+                <li>Producto</li>
+                <li>Cantidad</li>
+                <li>Precio</li>
+                <li>Subtotal</li>
+            </ul>
+
+            <article class="producto">
+                <img class="thumbnail-producto">
+                <div class="titulo-producto">Titulo del producto en cuestion</div>
+                <div class="cantidad-producto">+ 1 -</div>
+                <div>$$$</div>
+                <div>$$$</div>
+            </article>
+
+            <article class="producto">
+                <img class="thumbnail-producto">
+                <div class="titulo-producto">Titulo del producto en cuestion</div>
+                <div class="cantidad-producto">+ 1 -</div>
+                <div>$$$</div>
+                <div>$$$</div>
+            </article>
+
+        </section>
+
+        <section class="bottom-part">
+        <div class="cupones">
+
+            <h3>Descuentos</h3>
+            <form action="/shoppingCart" method="get">
+            <label>Ingrese cupón</label>
+            <input type="text" name="descuento" placeholder="Ingrese código">
+            <button type="submit" for="descuento">APLICAR</button>
+            </form>
+        </div>
+
+        <div class="subtotal">
+        
+            <div class="descuento">
+            <text>Descuento</text>
+            <text>%%%</text>
+            </div>
+
+            <div class="total">
+            <text>Total</text>
+            <text>$$$</text>
+            </div>
+
+        <div>
+        <button action="#">COMPRAR</button>    
+        <button action="/home">Volver a la tienda</button>
+        </div>
+        </section>
+        
+
+        <article class="oferta-especial">
+            <h3>OFERTA ESPECIAL</h3>
+            <img class="thumbnail-producto">
+            <div>
+            <div class="datos-oferta">Descripción</div>
+            <i class="fas fa-cart-plus"></i>
+            </div>
+
+        </article>
+    </main>
+
+
+
+
+
+    <footer>
+
+    </footer>
+
+</body>
+</html>
