@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/productDetail.css">
     <title>IndieWave</title>
@@ -21,15 +22,44 @@
             <h2>Nombre del Juego</h2>
         </section>
         <section id="game-area">
-            <article id="carrousel"></article>
-            <aside id="game-info"></aside>
+            <article id="carrousel">
+                <div id="main-img"></div>
+                <div id="img-bar">
+                    <div class="img-div"></div>
+                    <div class="img-div"></div>
+                    <div class="img-div"></div>
+                    <div class="img-div"></div>
+                </div>
+            </article>
+            <aside id="game-info">
+                <div id="game-logo"></div>
+                <div id="game-desc"></div>
+                <div id="game-to-cart-btn"></div>
+                <div id="game-to-wishlist-btn"></div>
+            </aside>
         </section>
         <section id="extras-area">
             <div id="req-dlc-wrapper">
-                <article id="requisites"></article>
-                <article id="DLC"></article>
+                <article id="requisites">
+                    <h3>Requisitos del Sistema</h3>
+                    <div id="minimum"></div>
+                    <div id="recommended"></div>
+                </article>
+                <article id="DLC">
+                    <h3>DLC</h3>
+                    <div id="dlc-img"></div>
+                    <div id="dlc-desc"></div>
+                    <div id="buy-wrapper">
+                        <div id="price"></div>
+                        <button id="dlc-to-cart-btn"></button>
+                    </div>
+                </article>
             </div>
-            <aside id="sale"></aside>
+            <aside id="sale">
+                <div id="sale-img"></div>
+                <div id="sale-title"></div>
+                <button id="sale-buy-btn"></button>   
+            </aside>
         </section>
     </main>
     <footer>
