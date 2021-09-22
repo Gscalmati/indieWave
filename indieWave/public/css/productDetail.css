@@ -1,6 +1,6 @@
+
 main{
-    width: 75%;
-    height: 70vh;
+    width: 75vw;
     background-color: blueviolet;
     margin: auto;
 }
@@ -11,6 +11,17 @@ main #game-area{
 
 main #game-area #carrousel{
     width: 70%;
+}
+
+main #game-area #carrousel #main-img{
+    width: 100%;
+}
+
+main #game-area #carrousel #img-bar{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 main #game-area #game-info{
@@ -24,3 +35,5 @@ main #extras-area #req-dlc-wrapper{
 main #extras-area #sale{
     width: 30%;
 }
+
+
