@@ -14,7 +14,7 @@
 </head>
 <body>
     <header>
-
+<div></div>
     </header>
     
     <main>
@@ -24,6 +24,7 @@
         <section class="upper-part">
             <ul>
                 <li>Producto</li>
+                <li>Descripción</li>
                 <li>Cantidad</li>
                 <li>Precio</li>
                 <li>Subtotal</li>
@@ -31,7 +32,10 @@
 
             <article class="producto">
                 <img class="thumbnail-producto">
-                <div class="titulo-producto">Titulo del producto en cuestion</div>
+                <div id= "eliminar-producto">
+                    <div class="titulo-producto">Titulo del producto en cuestion</div>
+                    <text>Eliminar</text>
+                </div>
                 <div class="cantidad-producto">+ 1 -</div>
                 <div>$$$</div>
                 <div>$$$</div>
@@ -39,7 +43,10 @@
 
             <article class="producto">
                 <img class="thumbnail-producto">
-                <div class="titulo-producto">Titulo del producto en cuestion</div>
+                <div id= "eliminar-producto">
+                    <div class="titulo-producto">Titulo del producto en cuestion</div>
+                    <text>Eliminar</text>
+                </div>
                 <div class="cantidad-producto">+ 1 -</div>
                 <div>$$$</div>
                 <div>$$$</div>
@@ -49,8 +56,6 @@
 
         <section class="bottom-part">
         <div class="cupones">
-
-            <h3>Descuentos</h3>
             <form action="/shoppingCart" method="get">
             <label>Ingrese cupón</label>
             <input type="text" name="descuento" placeholder="Ingrese código">
@@ -70,30 +75,41 @@
             <text>$$$</text>
             </div>
 
-        <div>
-        <button action="#">COMPRAR</button>    
-        <button action="/home">Volver a la tienda</button>
+        <div id="botones">
+        <form action="/" method="get"> 
+                <button>Volver a la tienda</button>
+        </form> 
+
+        <form action="/shoppingCart" method="get">
+                <button>COMPRAR</button>
+        </form>
+         
+        
         </div>
+
         </section>
         
 
         <article class="oferta-especial">
-            <h3>OFERTA ESPECIAL</h3>
-            <img class="thumbnail-producto">
-            <div>
-            <div class="datos-oferta">Descripción</div>
-            <i class="fas fa-cart-plus"></i>
-            </div>
+            <text>OFERTA ESPECIAL</text>
 
+        <div class="datos-producto-oferta">
+                <img class="thumbnail-producto">
+            
+            <div class="datos-oferta">
+                <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis, dolorem harum laborum consequuntur reiciendis optio incidunt accusamus quibusdam aliquam distinctio cupiditate sapient
+                </div>
+
+             <i class="fas fa-cart-plus"></i>
+            </div>
+        </div>
         </article>
     </main>
 
-
-
-
-
     <footer>
+        <div>
 
+        </div>
     </footer>
 
 </body>
