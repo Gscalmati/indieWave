@@ -15,6 +15,12 @@ body{
     box-sizing: border-box;
 }
 
+header div{
+    width: auto;
+    height: 100PX;
+    background-color: black;
+}
+
 
 /* Carrito de Compras */
 
@@ -28,27 +34,28 @@ main {
 
 main h2{
     font-size: 50px;
-    padding: 3%;
+    padding: 1% 2%;
+    margin: 1% 0;
 }
 
 .upper-part{
     border: purple 4px double;
+    padding-bottom: 3%
 }
 
 main ul{
     list-style-type: none;
-    margin: 0px 50px;
+    margin: 0%;
     padding: 0px;
-    width: 50%;
+    width: 100%;
 
     font-size: 30px;;
 
     background-color: purple;
     display: flex;
-    justify-content: space-around;
+    justify-content:space-evenly;
 
-    /*position: relative;
-    right: -40%;*/
+    
 
 }
 
@@ -72,13 +79,28 @@ main ul{
 }
 
 .titulo-producto{
-    width: 20%;
+    font-size: 30px;
+    
 }
+
+#eliminar-producto{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+}
+
+#eliminar-producto text{
+    font-size: 16px;
+    align-self: center;
+    margin-top: 10%;
+}
+
+
 
 /*Parte inferior*/
 .bottom-part{
     display: flex;
-    margin-top: 3%;
+    margin-top: 1%;
     justify-content: space-between;
 }
 
@@ -88,11 +110,11 @@ main ul{
 .cupones{
    
    width: 50%;
+   height: 50px;
    border: purple 5px solid;
 
    font-size: 24px;
-
-   margin-bottom: 0px;
+   
 }
 
 .subtotal{
@@ -119,23 +141,54 @@ main ul{
     font-size: 30px;
 }
 
-.oferta-especial{
-    width: 30%;
-    margin-left: 5%;
+#botones{
     display: flex;
-    flex-wrap: wrap;
-    margin-top: 1%;
-    justify-content: space-around;
+    justify-content: space-between;
+}
 
+.oferta-especial{
+    margin: 5% 5%;
+    width: auto;
+    margin-top: 1%;
+
+}
+
+.datos-producto-oferta{
+    display: flex;
+    flex-direction: row;
+}
+
+.oferta-especial text{
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 4%;
 }
 
 .oferta-especial img{
     width: 200px;
     height: 200px;
     background-color: black;
+    margin-right: 1%;
 }
 
 .oferta-especial .datos-oferta{
+    border: blue solid 2px;
+    width: 20%;
     display: flex;
     flex-direction: column;
+    
 }
+
+.fa-cart-plus{
+    font-size: 50px;
+    margin-top: 5%;
+    align-self: flex-end;
+}
+
+
+footer div{
+    width: auto;
+    height: 100PX;
+    background-color: black;
+}
+
