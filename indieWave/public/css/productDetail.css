@@ -3,11 +3,13 @@ main{
     width: 75vw;
     background-color: blueviolet;
     margin: auto;
+    box-sizing: border-box;
+    padding-left: 16px;
+    padding-right: 16px;
 }
 
 main #game-area{
     display: flex;
-    box-sizing: border-box;
 }
 
 main #game-area #carrousel{
@@ -33,6 +35,7 @@ main #game-area #game-info{
 }
 
 main #game-area #game-info #game-info-button-wrapper{
+    margin-top: 40px;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -42,6 +45,27 @@ main #game-area #game-info button{
     width: 70%;
     height: 50px;
     margin-top: 10px;
+}
+
+main #game-area #game-info #game-desc{
+    display: flex;
+    flex-direction: column;
+}
+
+main #game-area #game-info #game-desc > div{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+
+main #game-area #game-info{
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+main #game-area #game-info #game-info-button-wrapper #price-tag{
+    align-self: flex-start;
 }
 
 main #extras-area{
