@@ -1,3 +1,13 @@
+:root{
+    --steelpink: #d30cb8;
+    --turquoise: #6df1d8;
+    --medium-aquamarine: #58dd94;
+    --eminence: #5c2c6d;
+    --cadet-blue: #5da4a6;
+    --thistle: #b8aec8;
+    --space-cadet: #3c345c;
+}
+
 .responsive-img {
     max-width: 100%;
     height: auto;
