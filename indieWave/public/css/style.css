@@ -1,3 +1,13 @@
+@font-face {
+    font-family: ubuntu;
+    src: url("../fonts/ubuntu-font-family-0.80/UbuntuMono-R.ttf");
+}
+
+@font-face {
+    font-family: videophreak;
+    src: url("../fonts/VIDEOPHREAK.ttf");
+}
+
 :root{
     --steelpink: #d30cb8;
     --turquoise: #6df1d8;

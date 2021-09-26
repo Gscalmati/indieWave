@@ -1,11 +1,12 @@
 
 main{
     width: 75vw;
-    background-color: blueviolet;
+    background-color: var(--steelpink);
     margin: auto;
     box-sizing: border-box;
     padding-left: 16px;
     padding-right: 16px;
+    font-family: ubuntu;
 }
 
 main #game-area{
