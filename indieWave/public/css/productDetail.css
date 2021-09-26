@@ -1,12 +1,14 @@
 
 main{
     width: 75vw;
-    background-color: var(--steelpink);
+    background-color: rgba(92, 44, 109, 0.8);
     margin: auto;
     box-sizing: border-box;
     padding-left: 16px;
     padding-right: 16px;
     font-family: ubuntu;
+    margin: 20px auto;
+    color: var(--turquoise);
 }
 
 main #game-area{
@@ -43,9 +45,10 @@ main #game-area #game-info #game-info-button-wrapper{
 }
 
 main #game-area #game-info button{
-    width: 70%;
+    width: 100%;
     height: 50px;
     margin-top: 10px;
+    font-family: 'ubuntu';
 }
 
 main #game-area #game-info #game-desc{
@@ -78,8 +81,50 @@ main #extras-area #req-dlc-wrapper{
     width: 70%;
 }
 
-main #extras-area #sale{
-    width: 30%;
+main #extras-area #req-dlc-wrapper #requisites{
+    display: flex;
 }
 
+main #extras-area #req-dlc-wrapper #requisites div{
+    width: 40%;
+}
+
+main #extras-area #req-dlc-wrapper #requisites #minimum{
+    margin-right: 30px;
+}
+
+main #extras-area #req-dlc-wrapper #requisites h4{
+    margin: 0;
+    padding: 10px 5px;
+    display: inline-block;
+    background-color:rgba(184, 174, 200, 0.8);
+    color: var(--space-cadet);
+    border-radius: 7px 7px 0 0;
+}
+
+main #extras-area #req-dlc-wrapper #requisites p{
+    margin: 0;
+    padding: 10px;
+    background-color:rgba(184, 174, 200, 0.8);
+    color: var(--space-cadet);
+    border-radius: 0 7px 7px 7px;
+}
+
+main #extras-area #sale{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main #extras-area #sale #sale-img{
+    display: inline-block;
+}
+
+main #extras-area #sale button{
+    width: 50%;
+    height: 50px;
+    margin-top: 10px;
+    font-family: 'ubuntu';
+}
 
