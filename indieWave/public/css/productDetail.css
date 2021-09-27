@@ -4,8 +4,7 @@ main{
     background-color: rgba(92, 44, 109, 0.8);
     margin: auto;
     box-sizing: border-box;
-    padding-left: 16px;
-    padding-right: 16px;
+    padding: 16px;
     font-family: ubuntu;
     margin: 20px auto;
     color: var(--turquoise);
@@ -13,7 +12,7 @@ main{
 
 main #title-area #breadcrumb{
     color: var(--thistle);
-    padding: 10px 0;
+    padding-bottom: 10px;
     border-bottom: 1px solid var(--steelpink);
 }
 
