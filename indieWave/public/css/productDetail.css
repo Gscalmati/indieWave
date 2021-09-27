@@ -12,6 +12,7 @@ main{
 }
 
 main #title-area #breadcrumb{
+    color: var(--thistle);
     padding: 10px 0;
     border-bottom: 1px solid var(--steelpink);
 }
@@ -102,6 +103,7 @@ main #extras-area #req-dlc-wrapper{
 
 main #extras-area #req-dlc-wrapper #requisites{
     display: flex;
+    margin-bottom: 40px;
 }
 
 main #extras-area #req-dlc-wrapper #requisites div{
@@ -128,9 +130,22 @@ main #extras-area #req-dlc-wrapper #requisites h4{
 main #extras-area #req-dlc-wrapper #requisites p{
     margin: 0;
     padding: 10px;
-    background-color:rgba(184, 174, 200, 0.8);
+    background-color: rgba(184, 174, 200, 0.8);
     color: var(--space-cadet);
     border-radius: 0 7px 7px 7px;
+}
+
+main #extras-area #game-summary{
+    padding-top: 40px;
+    border-top: 1px var(--steelpink) solid;
+}
+
+main #extras-area #game-summary p{
+    margin: 0;
+    padding: 10px;
+    background-color: rgba(184, 174, 200, 0.8);
+    color: var(--space-cadet);
+    border-radius: 7px;
 }
 
 main #extras-area #sale{
