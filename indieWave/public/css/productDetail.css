@@ -11,9 +11,19 @@ main{
     color: var(--turquoise);
 }
 
+main #title-area #breadcrumb{
+    padding: 10px 0;
+    border-bottom: 1px solid var(--steelpink);
+}
+
+main #title-area h2{
+    font-size: 40px;
+}
+
 main #game-area{
     display: flex;
 }
+
 
 main #game-area #carrousel{
     width: 70%;
@@ -49,11 +59,15 @@ main #game-area #game-info button{
     height: 50px;
     margin-top: 10px;
     font-family: 'ubuntu';
+    background-color: var(--thistle);
+    font-size: 24px;
+    color: var(--space-cadet);
 }
 
 main #game-area #game-info #game-desc{
     display: flex;
     flex-direction: column;
+    color: var(--thistle);
 }
 
 main #game-area #game-info #game-desc > div{
@@ -70,6 +84,7 @@ main #game-area #game-info{
 
 main #game-area #game-info #game-info-button-wrapper #price-tag{
     align-self: flex-start;
+    color: var(--medium-aquamarine);
 }
 
 main #extras-area{
@@ -79,6 +94,10 @@ main #extras-area{
 
 main #extras-area #req-dlc-wrapper{
     width: 70%;
+    box-sizing: border-box;
+    margin-top: 40px;
+    padding-left: 30px;
+    border-top: solid 1px var(--steelpink);
 }
 
 main #extras-area #req-dlc-wrapper #requisites{
@@ -91,6 +110,10 @@ main #extras-area #req-dlc-wrapper #requisites div{
 
 main #extras-area #req-dlc-wrapper #requisites #minimum{
     margin-right: 30px;
+}
+
+main #extras-area #req-dlc-wrapper h3{
+    margin-top: 30px;
 }
 
 main #extras-area #req-dlc-wrapper #requisites h4{
@@ -117,14 +140,36 @@ main #extras-area #sale{
     align-items: center;
 }
 
+main #extras-area #sale #sale-content-wrapper{
+    border: 5px var(--steelpink) solid;
+    width: 60%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main #extras-area #sale #sale-title{
+    text-align: center;
+    width: 100%;
+}
+
+main #extras-area #sale #sale-title p{
+    font-size: 40px;
+    margin: 15px;
+}
+
 main #extras-area #sale #sale-img{
     display: inline-block;
 }
 
 main #extras-area #sale button{
-    width: 50%;
+    font-size: 24px;
+    width: 80%;
     height: 50px;
     margin-top: 10px;
     font-family: 'ubuntu';
+    background-color: var(--thistle);
+    color: var(--space-cadet);
 }
 
