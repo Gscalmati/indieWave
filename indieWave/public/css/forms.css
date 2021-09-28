@@ -1,0 +1,21 @@
+main{
+    width: 75vw;
+    background-color: rgba(92, 44, 109, 0.8);
+    margin: auto;
+    box-sizing: border-box;
+    padding: 16px;
+    font-family: ubuntu;
+    margin: 20px auto;
+    color: var(--turquoise);
+}
+
+#register-form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: auto;
+}
+
+#register-form #checkbox-wrapper{
+    display: flex;
+}
