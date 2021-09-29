@@ -19,6 +19,7 @@ body{
 /* Header */
 
 header .barra-principal{
+    max-height: 120px;
     background-color: black;
     color: var(--steelpink);
     width: 100%;
@@ -73,7 +74,8 @@ main {
     width: 75%;
     
     margin: auto;
-    margin-top: 90px;
+    margin-top: 125px;
+    margin-bottom: 15px;
 
     padding: 1% 1%;
     background-color: rgba(92, 44, 109, 0.8);
