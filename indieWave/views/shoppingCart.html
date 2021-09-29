@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,97 +13,102 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/shoppingCart.css">
 </head>
+
 <body>
     <header>
-<div></div>
+        <div></div>
     </header>
-    
+
     <main>
 
         <h2>Carrito de compras</h2>
 
         <section class="upper-part">
             <ul class="cart-bar">
-                <li>Producto</li>
-                <li>Descripción</li>
-                <li>Cantidad</li>
+                <li id="barra-producto">Producto</li>
+                <li id="barra-descripcion">Descripción</li>
                 <li>Precio</li>
                 <li>Subtotal</li>
             </ul>
 
             <article class="producto">
-                <img class="thumbnail-producto">
-                <div id= "eliminar-producto">
-                    <div class="titulo-producto">Titulo del producto en cuestion</div>
-                    <text>Eliminar</text>
+                <div class="categoria-producto">
+                    <img class="thumbnail-producto responsive-img" src="https://via.placeholder.com/100x100">
                 </div>
-                <div class="cantidad-producto">+ 1 -</div>
-                <div>$$$</div>
-                <div>$$$</div>
+                <div class="categoria-producto descripcion-producto">
+                    <div class="titulo-producto ">Undertale</div>
+                    <div id="eliminar">Eliminar</div>
+                </div>
+                <div class="precio categoria-producto">$19.99</div>
+                <div class="precio categoria-producto">$19.99</div>
             </article>
 
             <article class="producto">
-                <img class="thumbnail-producto">
-                <div id= "eliminar-producto">
-                    <div class="titulo-producto">Titulo del producto en cuestion</div>
-                    <text>Eliminar</text>
+                <div class="categoria-producto">
+                    <img class="thumbnail-producto responsive-img" src="https://via.placeholder.com/100x100">
                 </div>
-                <div class="cantidad-producto">+ 1 -</div>
-                <div>$$$</div>
-                <div>$$$</div>
+                <div class="categoria-producto descripcion-producto">
+                    <div class="titulo-producto ">Slay the Spire</div>
+                    <div id="eliminar">Eliminar</div>
+                </div>
+                <div class="precio categoria-producto">$19.99</div>
+                <div class="precio categoria-producto">$19.99</div>
             </article>
 
         </section>
 
         <section class="bottom-part">
-        <div class="cupones">
-            <form action="/shoppingCart" method="get">
-            <label>Ingrese cupón</label>
-            <input type="text" name="descuento" placeholder="Ingrese código">
-            <button type="submit" for="descuento">APLICAR</button>
-            </form>
-        </div>
-
-        <div class="subtotal">
-        
-            <div class="descuento">
-            <text>Descuento</text>
-            <text>%%%</text>
+            <div class="cupones">
+                <form action="/shoppingCart" method="get">
+                    <label>Ingrese cupón</label>
+                    <input type="text" name="descuento" placeholder="Ingrese código">
+                    <button type="submit" for="descuento">APLICAR</button>
+                </form>
             </div>
 
-            <div class="total">
-            <text>Total</text>
-            <text>$$$</text>
-            </div>
+            <div class="subtotal">
 
-        <div id="botones">
-        <form action="/" method="get"> 
-                <button>Volver a la tienda</button>
-        </form> 
-
-        <form action="/shoppingCart" method="get">
-                <button>COMPRAR</button>
-        </form>
-         
-        
-        </div>
-
-        </section>
-        
-
-        <article class="oferta-especial">
-            <text>OFERTA ESPECIAL</text>
-
-        <div class="datos-producto-oferta">
-                <img class="thumbnail-producto">
-            
-            <div class="datos-oferta">
-                <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis, dolorem harum laborum consequuntur reiciendis optio incidunt accusamus quibusdam aliquam distinctio cupiditate sapient
+                <div class="descuento">
+                    <text class="texto-destacado">Descuento</text>
+                    <text class="texto-destacado">%%%</text>
                 </div>
 
-             <i class="fas fa-cart-plus"></i>
+                <div class="total">
+                    <text class="texto-destacado">Total</text>
+                    <text class="texto-destacado">$$$</text>
+                </div>
+
+                <div id="botones">
+                    <form action="/" method="get">
+                        <button>Volver a la tienda</button>
+                    </form>
+
+                    <form action="/shoppingCart" method="get">
+                        <button>COMPRAR</button>
+                    </form>
+
+
+                </div>
+
+        </section>
+
+
+        <article class="oferta-especial">
+            <text class="titulo-oferta">OFERTA ESPECIAL</text>
+
+            <div class="datos-oferta">
+                <div class="imagen oferta">
+                <img src="https://via.placeholder.com/150x100">
+
+                <i class="fas fa-cart-plus"></i>
+                </div>
+                <div class="descripcion-oferta">
+                    <div> This War Of Mine</div>
+                    <div>80% OFF</div>
+                    
+                    
+                </div>
             </div>
-        </div>
         </article>
     </main>
 
@@ -113,4 +119,5 @@
     </footer>
 
 </body>
+
 </html>
