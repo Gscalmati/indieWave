@@ -1,21 +1,52 @@
 main{
     width: 75vw;
+    height: 100%;
     background-color: rgba(92, 44, 109, 0.8);
-    margin: auto;
     box-sizing: border-box;
     padding: 16px;
     font-family: ubuntu;
     margin: 20px auto;
     color: var(--turquoise);
+    display: flex;
 }
 
 #register-form{
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 50%;
     margin: auto;
+}
+
+#register-form #form-selection-wrapper{
+    display: flex;
+    justify-content: space-between;
 }
 
 #register-form #checkbox-wrapper{
     display: flex;
+    align-items: center;
+    align-self: center;
+    font-size: 18px;
+}
+
+#register-form #checkbox-wrapper input{
+    margin-top: 0;
+    margin-right: 10px;
+    width: 20px;
+}
+
+#register-form input{
+    font-family: ubuntu;
+    height: 50px;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+#register-form button{
+    font-family: ubuntu;
+    height: 50px;
+    background-color: var(--thistle);
+    font-size: 24px;
+    color: var(--space-cadet);
+    min-width: 160px;
 }
