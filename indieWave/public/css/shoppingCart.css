@@ -424,3 +424,48 @@ footer .iconos{
 }
 
 
+@media (max-width:768px){
+    /* Footer */
+    footer .iconos{
+        height: 90px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+
+    }
+}
+
+@media (max-width:360px){
+    /* Header */
+    header nav ul li{
+        text-align: center;
+        font-size: 0.7em;
+    }
+
+    header .iconos{
+        font-size: 1em;
+    }
+
+
+
+    /* Footer */
+    footer .iconos{
+        height: 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+
+        font-size: 1em;
+    }
+
+    footer nav ul li{
+        text-align: center;
+        font-size: 0.7em;
+    }
+}
+
+
+
+
