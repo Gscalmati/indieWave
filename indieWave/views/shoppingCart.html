@@ -60,31 +60,31 @@
         <section class="bottom-part">
             <div class="cupones">
                 <form action="/shoppingCart" method="get">
-                    <label>Ingrese cupón</label>
-                    <input type="text" name="descuento" placeholder="Ingrese código">
+                    <label>INGRESE CUPÓN</label>
+                    <input type="text" name="descuento" placeholder="#12345">
                     <button type="submit" for="descuento">APLICAR</button>
                 </form>
             </div>
 
             <div class="subtotal">
 
-                <div class="descuento">
-                    <text class="texto-destacado">Descuento</text>
-                    <text class="texto-destacado">%%%</text>
+                <div class="descuento-wrapper">
+                    <text class="texto-descuento">Descuento</text>
+                    <text class="precio-descuento">%%%</text>
                 </div>
 
-                <div class="total">
-                    <text class="texto-destacado">Total</text>
-                    <text class="texto-destacado">$$$</text>
+                <div class="total-wrapper">
+                    <text class="valor-total">Total</text>
+                    <text class="precio-total">$$$</text>
                 </div>
 
                 <div id="botones">
                     <form action="/" method="get">
-                        <button>Volver a la tienda</button>
+                        <button id="seguir-comprando">Seguir Comprando</button>
                     </form>
 
                     <form action="/shoppingCart" method="get">
-                        <button>COMPRAR</button>
+                        <button id="comprar">COMPRAR</button>
                     </form>
 
 
@@ -96,17 +96,14 @@
         <article class="oferta-especial">
             <text class="titulo-oferta">OFERTA ESPECIAL</text>
 
-            <div class="datos-oferta">
-                <div class="imagen oferta">
+            <div class="wrapper-oferta">
+                <div class="imagen-oferta">
                 <img src="https://via.placeholder.com/150x100">
-
-                <i class="fas fa-cart-plus"></i>
                 </div>
+                <div class="titulo-juego">This War Of Mine</div>
                 <div class="descripcion-oferta">
-                    <div> This War Of Mine</div>
-                    <div>80% OFF</div>
-                    
-                    
+                    <div class="descuento-juego">80% OFF</div>
+                    <i class="fas fa-cart-plus"></i>
                 </div>
             </div>
         </article>

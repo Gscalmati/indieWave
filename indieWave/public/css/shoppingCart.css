@@ -40,13 +40,15 @@ main {
 main h2{
     font-family: ubuntu;
     color: var(--turquoise);
-    font-size: 50px;
+    font-size: 3em;
     padding: 0 2%;
     margin: 1% 0;
     border-bottom: var(--steelpink) solid 1px;
 }
 
 .upper-part{
+    width: 90%;
+    margin: auto;
 
 }
 
@@ -102,7 +104,7 @@ main ul li{
 }
 
 .titulo-producto{
-    font-size: 22px;
+    font-size: 1.2em;
     color: var(--space-cadet);
 
     font-weight: 700;
@@ -118,7 +120,7 @@ main ul li{
 }
 
 .descripcion-producto #eliminar{
-    font-size: 16px;
+    font-size: 1em;
 
     align-self: flex-end;
     margin-top: 10%;
@@ -129,7 +131,9 @@ main ul li{
 }
 
 .upper-part .producto .precio{
-    color: var(--turquoise)
+    color: var(--turquoise);
+    font-size: 1.5em;
+    
 }
 
 
@@ -143,10 +147,6 @@ main ul li{
 
 
 /* Descuentos */
-
-.texto-destacado{
-    color:var(--turquoise)
-}
 
 .cupones{
    background-color: rgba(184, 174, 200, 0.8);
@@ -165,14 +165,26 @@ main ul li{
 
 .cupones form{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     padding: 2%;
 }
 
 .cupones form button{
-    font-size: 1.2rem;
+    font-size: 1rem;
+   
+    padding: 2% 3%;
+
+    background-color: var(--thistle);
+    font-weight: 600;
+    color: var(--space-cadet);
 }
+
+.cupones form input{
+    width: 20%;
+}
+
+/* Total */
 
 .subtotal{
     width: 40%;
@@ -186,105 +198,138 @@ main ul li{
     padding: 2%;
 }
 
-.descuento {
+.descuento-wrapper{
     margin-right: 10%;
     margin-bottom: 10%;
     display: flex;
     justify-content: space-between;
 
-    font-size: 24px;
+    font-size: 1.3em;
     font-family: ubuntu;
+    font-weight: 100;
+    color: var(--medium-aquamarine)
 }
 
-.total {
+.total-wrapper {
     margin-right: 10%;
     margin-bottom: 10%;
     display: flex;
     justify-content: space-between;
 
-    font-size: 30px;
+    font-size: 2em;
     font-family: ubuntu;
-    
 }
+
+.total-wrapper .valor-total{
+    color: var(--space-cadet);
+    font-weight: 600;
+
+}
+
+.total-wrapper .precio-total{
+    color: var(--space-cadet);
+    font-weight: 600;
+
+}
+
+/* Botones */
 
 #botones{
     display: flex;
     justify-content: space-between;
-    margin: 0px 15px;
+    margin: 0px;
+
+    
 }
 
-input{
+#botones #seguir-comprando{
     font-family: ubuntu;
+
+    font-size: 1.1em;
+    background-color: var(--thistle);
+    color: var(--space-cadet);
+
+    padding: 5px 8px;
+    
 }
 
-button{
+#botones #comprar{
     font-family: ubuntu;
+
+    font-size: 1.5em;
+    background-color: var(--thistle);
+    font-weight: 600;
+    color: var(--space-cadet);
+
+    width: auto;
+
+    padding: 5%;
 }
 
 
 /* Oferta especial */
 
 .oferta-especial{
-    margin: 0 5% 0;
-    width: 40%;
+    margin: 1% 5%;
+    width: 50%;
     font-family: ubuntu;
     
 }
 
-.datos-oferta{
-    display: flex;
-    flex-direction: row;
-    
-}
-
 .oferta-especial .titulo-oferta{
-    font-size: 22px;
+    font-size: 1.6em;
     font-weight: 600;
+    color: var(--space-cadet);
    
     background-color: rgba(184, 174, 200, 0.8);
 
-    border-radius: 7px 7px 0px 0px;
+    padding: 1% 4% 1px 4%;
 
-    padding: 1% 2% 1px 2%;
-    margin: 0;
+    border: 3px var(--steelpink) solid;
+    border-bottom: none;    
+}
 
-    border: 5px var(--medium-aquamarine) solid;
-    border-bottom: none;
+.oferta-especial .wrapper-oferta{
 
+    background-color: rgba(184, 174, 200, 0.8);
 
     
+    color: var(--space-cadet);
+    border: 3px var(--steelpink) solid;
 }
 
 .oferta-especial .imagen-oferta{
     width: 100%;
-    
-    border-left: 5px var(--medium-aquamarine) solid;;
-    border-bottom: 5px var(--medium-aquamarine) solid; ;
-    border-radius: 0px 0px 0px 0px;
-}
-
-.oferta-especial .datos-oferta{
-    font-size: 22px;
-
     display: flex;
-    flex-direction: column;
-
     justify-content: center;
-    
+}
+
+
+.oferta-especial .titulo-juego{
+    width: auto;
+    font-size: 1.8em;
+    text-align: center;
+    margin: 5% 0;
     color: var(--space-cadet);
-    border: 5px var(--medium-aquamarine) solid;
-    border-radius: 0px 7px 7px 0px;
 }
 
-.oferta-especial .datos-oferta{
-    background-color: rgba(184, 174, 200, 0.8);
+.oferta-especial .descripcion-oferta{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 
-.fa-cart-plus{
-    font-size: 50px;
-    margin: 5% 0px;
-    align-self: flex-end;
-    
+.oferta-especial .descuento-juego{
+    font-size: 2em;
+    margin: 0 5% 5%;
+
+    color: var(--medium-aquamarine);
+}
+
+.oferta-especial .fas{
+    font-size: 2em;
+    margin: 0 5% 5%;
+
 }
 
 
