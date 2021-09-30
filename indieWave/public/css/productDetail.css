@@ -41,6 +41,10 @@ main #game-area #carrousel #img-bar{
     margin-top: 15px;
 }
 
+main #game-area #carrousel #img-bar .img-div{
+    width: 20%;
+}
+
 main #game-area #game-info{
     width: 30%;
     margin-left: 60px;
