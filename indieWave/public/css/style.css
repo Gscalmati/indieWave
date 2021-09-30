@@ -186,7 +186,10 @@ footer .iconos{
         display: flex;
         justify-content: space-around;
     }
-
+    /* Main*/
+    main{
+        margin-top: 245px;
+    }
 
 
     /* Footer */

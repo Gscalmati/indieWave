@@ -1,7 +1,7 @@
 *{
     text-align: center;
-    margin: auto;
-    font-family: "Ubuntu Mono";
+    
+    
     box-sizing: border-box;
 }
 body{
@@ -43,8 +43,9 @@ h2{
 main{
     width: 75%;
     height: auto;
-    margin-top: 50px;
+    margin: auto;
     margin-bottom: 30px;
+    font-family: "Ubuntu Mono";
 }
 .carrusel{
     background-color: #5C2C6D;
@@ -87,6 +88,7 @@ main{
 .titulo h2{
     display: inline-block;
     background-color: rgba(92, 44, 109, 0.8);
+    margin: 0px;
 }
 .producto{
     background-color: #b8aec8;
@@ -100,6 +102,7 @@ main{
 }
 .producto img{
     width: 75%;
+    margin: auto;
 }
 .producto-bottom img{
     width: 75%;
@@ -111,6 +114,7 @@ main{
     border: solid 3px var(--space-cadet);
     background-color: #b8aec8;
     width: 80%;
+    margin: auto;
 }
 .detalle-producto{
     background-color: rgba(92, 44, 109, 0.8);
@@ -138,9 +142,13 @@ main .producto-main-bottom .fa-chevron-left{
 main .producto-main-bottom .fa-chevron-right{
     display: none;
 }
+.producto-main{
+    align-items: center;
+}
 @media (min-width:361px ) {
     .producto-main{
         display: flex;
+        
     }
     .producto{
         width: 20%;
