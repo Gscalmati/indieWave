@@ -30,15 +30,18 @@ header .barra-principal{
     justify-content: space-around;
     align-items: center;
 
-    font-family: ubuntu;
+    font-family: videophreak;
 
     position: fixed;
     top: 0;
     left: 0;
+
+    border: solid 2px var(--steelpink)
 }
 
 header .imagen-logo{
     width: 10%;
+
 }
 
 header img{
