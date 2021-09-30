@@ -47,7 +47,7 @@ main{
 }
 .carrusel div{
     width: 80%;
-    height: 20vh;
+    
 }
 
 .responsive-img{
@@ -127,6 +127,8 @@ main{
 .producto-main-bottom{
     display: flex;
     background-color: rgba(92, 44, 109, 0.8);
+    flex-direction: column;
+    align-items: center;
 }
 main .producto-main-bottom .fa-chevron-left{
     display: none;
@@ -136,6 +138,10 @@ main .producto-main-bottom .fa-chevron-right{
 }
 .producto-main{
     align-items: center;
+}
+.producto-main .img-div img{
+    width: 100%;
+    
 }
 @media (min-width:361px ) {
     .producto-main{
