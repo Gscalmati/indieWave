@@ -6,7 +6,7 @@ main{
     box-sizing: border-box;
     padding: 16px;
     font-family: ubuntu;
-    margin: 0px auto;
+    margin: 90px auto 20px;
     color: var(--turquoise);
 }
 
