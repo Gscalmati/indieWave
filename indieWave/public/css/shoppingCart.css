@@ -443,7 +443,7 @@ footer .iconos{
         max-height: 100%;
     }
 
-    header .barra-principal, header ul, header .iconos{
+    header .barra-principal, header ul{
         flex-direction: column;
     }
     
@@ -463,18 +463,22 @@ footer .iconos{
     /* Header */
     header nav ul li{
         text-align: center;
-        font-size: 0.5em;
+        font-size: 1em;
     }
 
     header .iconos{
+        margin: 10px;
         font-size: 1em;
+        
+        display: flex;
+        justify-content: space-around;
     }
 
 
 
     /* Footer */
     footer .iconos{
-        height: 80px;
+        height: 60px;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
@@ -485,7 +489,7 @@ footer .iconos{
 
     footer nav ul li{
         text-align: center;
-        font-size: 0.6em;
+        font-size: 0.4em;
     }
 
     footer .imagen-logo{
