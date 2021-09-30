@@ -43,6 +43,8 @@ h2{
 main{
     width: 75%;
     height: auto;
+    margin-top: 50px;
+    margin-bottom: 30px;
 }
 .carrusel{
     background-color: #5C2C6D;
@@ -143,6 +145,9 @@ main{
     .producto-main-bottom{
         display: flex;
         flex-direction: column;
+    }
+    main{
+        margin-top: 30%;
     }
 }
 
