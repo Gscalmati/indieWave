@@ -118,7 +118,7 @@ main ul li{
 }
 
 .descripcion-producto #eliminar{
-    font-size: 1em;
+    font-size: 0.7em;
 
     align-self: flex-end;
     margin-top: 10%;
