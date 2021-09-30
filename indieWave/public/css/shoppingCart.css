@@ -19,7 +19,7 @@ body{
 /* Header */
 
 header .barra-principal{
-    max-height: 120px;
+    max-height: 65px;
     background-color: black;
     color: var(--steelpink);
     width: 100%;
@@ -41,6 +41,7 @@ header .barra-principal{
 
 header .imagen-logo{
     width: 10%;
+    margin: 15px 5px;
 
 }
 
@@ -77,7 +78,7 @@ main {
     width: 75%;
     
     margin: auto;
-    margin-top: 125px;
+    margin-top: 70px;
     margin-bottom: 15px;
 
     padding: 1% 1%;
@@ -180,7 +181,7 @@ main ul li{
 }
 
 .upper-part .producto .precio{
-    color: var(--turquoise);
+    color: var(--medium-aquamarine);
     font-size: 1.5em;
     
 }
@@ -190,8 +191,10 @@ main ul li{
 /*Parte inferior*/
 .bottom-part{
     display: flex;
-    margin-top: 1%;
+    margin: 2% auto;
     justify-content: space-between;
+
+    width: 90%;
 }
 
 
@@ -236,7 +239,7 @@ main ul li{
 /* Total */
 
 .subtotal{
-    width: 40%;
+    width: 45%;
     display: flex;
     flex-direction: column;
     background-color: rgba(184, 174, 200, 0.8);
@@ -285,7 +288,8 @@ main ul li{
 
 #botones{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: center;
     margin: 0px;
 
     
@@ -323,6 +327,7 @@ main ul li{
     width: 50%;
     font-family: ubuntu;
     
+    
 }
 
 .oferta-especial .titulo-oferta{
@@ -335,6 +340,7 @@ main ul li{
     padding: 1% 4% 1px 4%;
 
     border: 3px var(--steelpink) solid;
+    border-radius: 7px 7px 0px 0px;
     border-bottom: none;    
 }
 
@@ -345,12 +351,14 @@ main ul li{
     
     color: var(--space-cadet);
     border: 3px var(--steelpink) solid;
+    border-radius: 0px 7px 7px 7px;
 }
 
 .oferta-especial .imagen-oferta{
     width: 100%;
     display: flex;
     justify-content: center;
+    margin-top: 10px;
 }
 
 
@@ -398,7 +406,8 @@ footer .barra-principal{
 }
 
 footer .imagen-logo{
-    width: 15%;
+    width: 10%;
+    margin: 50px 0px 50px 50px;
 }
 
 footer img{
@@ -428,6 +437,17 @@ footer .iconos{
 
 
 @media (max-width:768px){
+    /* Header */
+
+    header .barra-principal{
+        max-height: 100%;
+    }
+
+    header .barra-principal, header ul, header .iconos{
+        flex-direction: column;
+    }
+    
+    
     /* Footer */
     footer .iconos{
         height: 90px;
@@ -443,7 +463,7 @@ footer .iconos{
     /* Header */
     header nav ul li{
         text-align: center;
-        font-size: 0.7em;
+        font-size: 0.5em;
     }
 
     header .iconos{
@@ -460,12 +480,16 @@ footer .iconos{
         justify-content: space-around;
         align-items: center;
 
-        font-size: 1em;
+        font-size: 0.8em;
     }
 
     footer nav ul li{
         text-align: center;
-        font-size: 0.7em;
+        font-size: 0.6em;
+    }
+
+    footer .imagen-logo{
+        margin:0px;
     }
 }
 

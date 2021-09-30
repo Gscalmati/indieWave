@@ -37,3 +37,7 @@ body{
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
+
+main{
+    margin-top: 70px;
+}
