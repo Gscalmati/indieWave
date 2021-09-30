@@ -96,6 +96,11 @@ header .iconos{
     font-size: 1.5em;
 }
 
+header a{
+    text-decoration: none;
+    color: inherit;
+}
+
 
 @media (max-width:767px){
     /* Header */
