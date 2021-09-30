@@ -132,6 +132,12 @@ main{
     display: flex;
     background-color: rgba(92, 44, 109, 0.8);
 }
+main .producto-main-bottom .fa-chevron-left{
+    display: none;
+}
+main .producto-main-bottom .fa-chevron-right{
+    display: none;
+}
 @media (min-width:361px ) {
     .producto-main{
         display: flex;
@@ -148,6 +154,12 @@ main{
     }
     main{
         margin-top: 30%;
+    }
+    main .producto-main-bottom .fa-chevron-left{
+        display: block;
+    }
+    main .producto-main-bottom .fa-chevron-right{
+        display: block;
     }
 }
 
