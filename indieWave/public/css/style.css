@@ -187,7 +187,7 @@ footer .iconos{
     }
 
     header .iconos{
-        margin: 10px;
+        margin: 5px;
         font-size: 1em;
         width: 100%;
         
@@ -242,13 +242,13 @@ footer .iconos{
 
     header nav ul li{
         text-align: center;
-        font-size: 1em;
+        font-size: 0.5em;
         margin: 5px 0px;
     }
 
     header .iconos{
-        margin: 10px;
-        font-size: 1em;
+        margin: 5px;
+        font-size: 0.6em;
         width: 100%;
         
         display: flex;
@@ -256,7 +256,7 @@ footer .iconos{
     }
     /* Main*/
     main{
-        margin-top: 245px;
+        margin-top: 185px;
     }
 
 
@@ -279,4 +279,6 @@ footer .iconos{
     footer .imagen-logo{
         margin:0px;
     }
+
+
 }

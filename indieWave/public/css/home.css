@@ -50,22 +50,11 @@ main{
 .producto-main-top{
     
     justify-content: space-evenly;
-    width: 100%;
+    width: 70%;
     padding-top: 10px;
+    margin: auto;
     padding-bottom: 30px;
 }
-/*.producto-main{
-    display: flex;
-    justify-content: space-evenly;
-    width: 100%;
-    background-color: rgba(92, 44, 109, 0.8);
-    padding-top: 10px;
-    padding-bottom: 10px;
-       
-    
-}*/
-
-
 
 .titulo{
     text-align: left;
@@ -90,17 +79,18 @@ main{
     width: 75%;
     margin: auto;
 }
+
 .producto-bottom img{
     width: 75%;
-    height: 40vh;
-    padding: 20px 0px 5px;
+    margin-top: 5px;
 
 }
 .detalle{
     border: solid 3px var(--space-cadet);
     background-color: #b8aec8;
-    width: 80%;
+    width: 100%;
     margin: auto;
+    padding: 5px;
 }
 .detalle-producto{
     background-color: rgba(92, 44, 109, 0.8);
@@ -125,6 +115,10 @@ main{
     align-items: center;
 }
 
+.producto-main-bottom .producto-bottom{
+    width: 100%;
+}
+
 main .producto-main-bottom .fa-chevron-left{
     display: none;
 }
@@ -134,20 +128,22 @@ main .producto-main-bottom .fa-chevron-right{
 .producto-main{
     align-items: center;
 }
-.producto-main .img-div img{
-    width: 100%;
-    
+
+.producto-bottom h3{
+    font-size: 15px;
 }
-@media (min-width:768px){
+
+
+@media (min-width:600px){
     .producto-main{
         display: flex;
-        
     }
     .producto{
         width: 20%;
     }
     .producto-main-top{
         display: flex;
+        width: 100%;
     }
     
     main{
@@ -161,8 +157,6 @@ main .producto-main-bottom .fa-chevron-right{
     }
 
     h2{
-        padding: 10px;
-        padding-top: 50px;
         text-align: left;
         color: #58DD94;
     }
@@ -170,6 +164,8 @@ main .producto-main-bottom .fa-chevron-right{
     .producto-main{
         flex-direction: row;
         justify-content: space-between;
+        margin: 0px 15px;
+        width: 100%;
     
     }
     .producto-main-top{
@@ -177,5 +173,28 @@ main .producto-main-bottom .fa-chevron-right{
         justify-content: space-between;
     
     }
+
+    .producto-main-bottom {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .producto-main-bottom .producto-bottom{
+        width: 15%;
+    }
+
+    .producto-main-bottom .detalle{
+        width: 100%;
+    }
+
+
+    .producto-main-bottom .img-div{
+        width: 100%;
+    }
+
+    .producto-main-bottom img  {
+        height: 25vh;
+    }
+
     
 }
