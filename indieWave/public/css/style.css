@@ -38,9 +38,7 @@ body{
     background-attachment: fixed;
 }
 
-main{
-    margin: 90px auto 20px;
-}
+
 
 button{
     cursor:pointer;
@@ -106,32 +104,15 @@ header a{
     color: inherit;
 }
 
+/* Main */
+
 main a {
     text-decoration: none;
     color: inherit;
 }
 
-@media (max-width:767px){
-    /* Header */
-
-    header .barra-principal{
-        max-height: 100%;
-    }
-
-    header .barra-principal, header ul{
-        flex-direction: column;
-    }
-    
-    
-    /* Footer */
-    footer .iconos{
-        height: 90px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-
-    }
+main{
+    margin: 90px auto 20px;
 }
 
 /* Footer */
@@ -180,12 +161,85 @@ footer .iconos{
     font-size: 1.5em;
 }
 
-@media (max-width:360px){
+/* Medias */
+
+@media (min-width: 600px) and (max-width:1024px){
+
     /* Header */
+
+    header .barra-principal{
+        max-height: 100%;
+    }
+
+    header .imagen-logo{
+        width: 15%;
+        margin: 5px;
+    }
+
+    header .barra-principal, header ul{
+        flex-direction: column;
+    }
+
+    header nav ul li{
+        text-align: center;
+        font-size: 1em;
+        margin: 5px 0px;
+    }
+
+    header .iconos{
+        margin: 10px;
+        font-size: 1em;
+        width: 100%;
+        
+        display: flex;
+        justify-content: space-around;
+    }
+
+    header .barra-principal{
+        max-height: 100%;
+    }
+
+    header .barra-principal, header ul{
+        flex-direction: column;
+    }
+
+    /* Main */
+
+    main{
+        margin: 250px auto 20px;
+    }
+    
+    
+    /* Footer */
+    footer .iconos{
+        height: 90px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+
+    }
+}
+
+
+
+
+@media (min-width:360px) and (max-width:600px){
+    /* Header */
+
+    header .barra-principal{
+        max-height: 100%;
+    }
+
     header .imagen-logo{
         width: 30%;
         margin: 5px;
     }
+
+    header .barra-principal, header ul{
+        flex-direction: column;
+    }
+
     header nav ul li{
         text-align: center;
         font-size: 1em;
