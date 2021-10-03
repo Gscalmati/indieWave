@@ -59,7 +59,8 @@ main{
 }
 
 #register-form #submit-btn, #login-form #submit-btn{
-    width: 100%;
+    width: 80%;
+    height: 40px;
 }
 
 #register-form a, #login-form a{
@@ -73,7 +74,7 @@ main{
 
 
 /*TABLET - DESKTOP*/
-@media (min-width: 600px){
+@media (min-width: 1025px){
 
     main{
         width: 55vw;
@@ -111,6 +112,10 @@ main{
         min-width: 160px;
     }
     
+    #register-form #submit-btn, #login-form #submit-btn{
+        width: 100%;
+    }
+
     #register-form a, #login-form a{
         font-size: 16px;
     }
