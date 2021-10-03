@@ -4,13 +4,14 @@
     font-family: "Ubuntu Mono";
   }
   /*carrusel*/
-  .container{
+  .container {
     margin: auto;
-    /*background-color: white;*/
-    width: 250px;
+    background-color: var(--eminence);
+    width: 55%;
     padding: 30px;
-    
-  }
+    text-align: center;
+    border: solid 5px var(--space-cadet);
+}
   
   ul, li {
       padding: 0;
@@ -96,7 +97,7 @@
 #form label{
   background-color: var(--eminence);
   color: var( --turquoise);
-  margin-left: 15px;
+  margin-left: 4%;
   padding: 4px;
 }
 #form select{
@@ -116,3 +117,42 @@
   height: -webkit-fill-available;
 }
 /*footer*/
+
+
+/*medias*/
+@media (min-width:768px) {
+  .container {
+    margin: auto;
+    background-color: var(--eminence);
+    width: 70%;
+    padding: 30px;
+    border: solid 5px var(--space-cadet);
+  }
+  #featured{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  #form label {
+    margin-left: 4.5%;
+  }
+}
+
+@media (min-width:1280px){
+  .container {
+    text-align: center;
+    width: 70%;
+    background-color: var(--eminence);
+    padding: 30px;
+    border: solid 5px var(--thistle);
+  }
+  #form label {
+    margin-left: 12%;
+  }
+  #form{
+    padding-bottom: 15px;
+  }
+  .sheetSlider {
+    width: 75%;
+  }
+}
