@@ -1,10 +1,15 @@
  
+  /*main*/
+  main{
+    font-family: "Ubuntu Mono";
+  }
   /*carrusel*/
   .container{
     margin: auto;
     /*background-color: white;*/
-    width: 800px;
+    width: 250px;
     padding: 30px;
+    
   }
   
   ul, li {
@@ -15,7 +20,7 @@
   
   ul.slider{
     position: relative;
-    width: 800px;
+    width: 100%;
     height: 300px;
   }
   
@@ -56,20 +61,58 @@
   
   .menu li a{
     display: inline-block;
-    color: white;
+    color: var(--turquoise);
     text-decoration: none;
-    background-color: grey;
+    background-color: var(--steelpink);
     padding: 10px;
     width: 20px;
     height: 20px;
     font-size: 20px;
     border-radius: 100%;
   }
+  .container #slide3 h1, .container #slide3 p, .container #slide3 a{
+    color: var(--turquoise);
+  }
 /*featured*/
-
+#featured{
+  text-align: center;
+}
+#featured .product-articule{
+  background-color: var(--space-cadet);
+  margin: 53px;
+  border: solid 1px var(--turquoise);
+}
+#featured .product-articule .detail-prod h3{
+  color: var(--turquoise);
+  border: solid 2px var(--steelpink);
+  padding-top: 5px;
+  margin: 5px;
+  padding-bottom: 5px;
+}
+#featured .product-articule .detail-prod p{
+  color: var(--turquoise);
+}
+/*form*/
+#form label{
+  background-color: var(--eminence);
+  color: var( --turquoise);
+  margin-left: 15px;
+  padding: 4px;
+}
+#form select{
+  background-color: var(--eminence);
+  color: var( --turquoise);
+  padding: 3px;
+}
 /*category*/
 
-/*footer*/
-footer .barra-principal{
-    width: 238%;
+/*slide 2*/
+.sheetSlider{
+  border: solid var(--space-cadet);
+  width: 90%;
+  margin: auto;
 }
+.sh__item img{
+  height: -webkit-fill-available;
+}
+/*footer*/
