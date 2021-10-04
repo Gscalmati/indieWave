@@ -24,3 +24,28 @@
 
 ## Dejar de hacer
 * Hacer cambios antes de pullear.
+
+
+# Retro Meeting - Sprint 2
+
+
+## Comenzar a hacer
+* Usar clases y id's descriptivos y mantener las stylesheets ordenadas.
+* Usar comentarios si creemos que algo no está claro o que puede ayudar a orientarse.
+* Usar unidades a conciencia.
+* Usar weekly.md para tomar nota de soluciones o decisiones que hayamos tomado.
+* Unificar breakpoints de media queries.
+
+## Hacer más
+* Encarar las vistas desde "mobile first"
+* Jugar Rocket League para relajar después de las reuniones.
+
+## Continuar haciendo
+* Daily bi-semanal.
+* Organizar encuentros para cuestiones específicas cuando sea necesario.
+
+## Hacer menos
+* **Jugar al LoL.**
+
+## Dejar de hacer
+* Usar vh.
