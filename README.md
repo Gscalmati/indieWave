@@ -19,7 +19,7 @@ Nuestro público objetivo es pensado para todos los géneros, desde los 13 años
 ## Juani, Entrenador Pokémon ##
 25 años, diamante en el lol, amor profundo por las bicicletas. Habilidad nocturna: Atrapar Pokémons.
 
-## Nacho, el Viejo del Team ##
+## ~~Nacho, el Viejo del Team~~ (MIA) ##
 31 años, hincha fanatico de Talleres de cba, amante de la pelota, buscando aprender y crecer constantemente. 
 
 # Referencias de mercado #
