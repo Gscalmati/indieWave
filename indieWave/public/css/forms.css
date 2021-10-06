@@ -1,4 +1,4 @@
-/*MOBILE*/
+/*MOBILE - TABLET*/
 
 main{
     width: 95vw;
@@ -15,7 +15,7 @@ main{
     display: flex;
     flex-direction: column;
     width: 100%;
-    /*margin: auto; ???*/
+    margin: auto;
     align-items: center;
 }
 
@@ -73,7 +73,7 @@ main{
 }
 
 
-/*TABLET - DESKTOP*/
+/*DESKTOP*/
 @media (min-width: 1025px){
 
     main{
