@@ -4,32 +4,28 @@ const app = express();
 
 const path = require("path");
 
+
+const routerMain = require("./src/routes/main");
+const routerUsers = require("./src/routes/users");
+const routerProducts = require("./src/routes/products");
+
+
 app.use(express.static(path.resolve(__dirname,"public")));
 
 app.listen(3000, () => {
     console.log("Running on 3000")
 })
 
-app.get("/", (req,res) =>{
-    res.sendFile(path.resolve(__dirname, "src/views/home.html"));
-})
 
-app.get("/home", (req,res) =>{
-    res.sendFile(path.resolve(__dirname, "src/views/home-dos.html"));
-})
 
-app.get("/productDetail", (req, res) =>{
-    res.sendFile(path.resolve(__dirname, "src/views/productDetail.html"));
-})
+app.use("/", routerMain);
 
-app.get("/shoppingCart", (req, res) =>{
-    res.sendFile(path.resolve(__dirname, "src/views/shoppingCart.html"));
-})
+app.use("/products", routerProducts);
 
-app.get("/register", (req, res) =>{
-    res.sendFile(path.resolve(__dirname, "src/views/register.html"));
-})
+app.use("/users", routerUsers);
 
-app.get("/login", (req, res) =>{
-    res.sendFile(path.resolve(__dirname, "src/views/login.html"));
-})
+
+
+
+
+
