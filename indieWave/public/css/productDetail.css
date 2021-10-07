@@ -133,7 +133,16 @@
 
 /*TABLET*/
 @media (min-width: 768px){
-    
+    main #game-area #game-info button {
+        width: 50%;
+    }
+    main #game-area #game-info #game-desc {
+        margin: auto;
+        width: 50%;
+    }
+    main #title-area h2 {
+        font-size: 30px;
+    }
 }
 
 /*DESKTOP*/
