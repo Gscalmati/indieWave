@@ -2,15 +2,15 @@ const path = require('path');
 
 let mainController = {
     home : function (req, res){
-        res.sendFile(path.resolve(__dirname, "../views/home.html"));
+        res.render("main/home");
     },
 
     home2: (req,res) => {
-        res.sendFile(path.resolve(__dirname, "../views/home-dos.html"));
+        res.render("main/home-dos");
     },
 
     homeAlt: (req,res) =>{
-        res.sendFile(path.resolve(__dirname, "../views/home.html"));
+        res.render("main/home");
     }
 
 
