@@ -336,17 +336,53 @@ main ul li{
 
 
 
-@media (max-width:767px){
+@media (min-width:601px) and (max-width:1024px){
     /* Header */
 
     header .barra-principal{
         max-height: 100%;
     }
 
+    /* Main */
+
+    /* Cupones */
+
+    .bottom-part .cupones{
+
+        font-size: 0.6em;
+    }
+
+    .bottom-part .cupones input{
+        font-size: 1em;
+      }
+
+    .bottom-part .cupones button{
+      font-size: 1em;
+    }
+
+    /* Subtotal */
+
+    .bottom-part .subtotal .descuento-wrapper{
+        font-size: 1em;
+        margin: 0px 0px 10px;
+        justify-content: space-around;
+    }
+
+    .bottom-part .subtotal .total-wrapper{
+        font-size: 1em;
+        margin: 0px 0px 10px;
+        justify-content: space-around;
+    }
+
+    .bottom-part .subtotal #botones{
+        font-size: 0.6em;
+        margin: 0px 0px 10px;
+        justify-content: space-around;
+    }
+
     header .barra-principal, header ul{
         flex-direction: column;
     }
-    
     
     /* Footer */
     footer .iconos{
@@ -359,13 +395,96 @@ main ul li{
     }
 }
 
-@media (max-width:360px){
+@media (min-width:320px) and (max-width:600px){
     
 
     /* Main */
     main {
-        margin-top: 245px;
+        margin-top: 180px;
+
+        height: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
     }
+
+    main h2 {
+        font-size: 1.5em;
+    }
+
+    /* Upper-Part */
+
+    .upper-part .cart-bar{
+        font-size: 8px;
+    }
+
+    .upper-part .producto .descripcion-producto .titulo-producto{
+        font-size: 0.6em;
+    }
+
+    .upper-part .producto .descripcion-producto #eliminar{
+        font-size: 0.3em;
+    }
+
+    .upper-part .producto .precio{
+        font-size: 0.8em;
+    }
+
+    /* Bottom-part */
+
+    .bottom-part{
+        flex-wrap: wrap;
+    }
+
+    /* Cupones */
+
+    .bottom-part .cupones{
+        width: 100%;
+        margin-bottom: 3% ;
+
+        font-size: 0.6em;
+    }
+
+    .bottom-part .cupones input{
+        font-size: 1em;
+      }
+
+    .bottom-part .cupones button{
+      font-size: 1em;
+    }
+
+    /* Subtotal */
+
+    .bottom-part .subtotal{
+        width: 100%;
+    }
+
+    .bottom-part .subtotal .descuento-wrapper{
+        font-size: 1em;
+        margin: 0px 0px 10px;
+        justify-content: space-around;
+    }
+
+    .bottom-part .subtotal .total-wrapper{
+        font-size: 1em;
+        margin: 0px 0px 10px;
+        justify-content: space-around;
+    }
+
+    .bottom-part .subtotal #botones{
+        font-size: 0.6em;
+        margin: 0px 0px 10px;
+        justify-content: space-around;
+    }
+
+    /* Oferta Especial */
+
+    .oferta-especial{
+        display: none;
+
+    }
+
+
 
 
     
