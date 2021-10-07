@@ -13,3 +13,4 @@
 - Hay que unificar el .css
 - Nos quedamos con home 2
 - Hay que definir vistas de categoría/productos.
+- **Preguntar cómo iniciar nodemon sin argumentos ahora que 'app.js' está en '/src'**
