@@ -26,154 +26,6 @@
         <!-- main -->
         <main>
             <!-- slider -->
-            <div class="container">
-
-                <ul class="slider">
-                    <li id="slide1">
-                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3947459/car.jpg" />
-                    </li>
-                    <li id="slide2">
-                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3947459/sunset.jpg" />
-                    </li>
-                    <li id="slide3">
-                        <h1>Ejemplo con otros elementos</h1>
-                        <p>Esto es un párrafo de ejemplo para comprobar que podemos meter cualquier tipo de elementos en
-                            el
-                            slider</p>
-                        <a href="https://codepen.io/kikopalomares/pen/zYGvzvw">Código del slider</a>
-                    </li>
-                </ul>
-
-                <ul class="menu">
-                    <li>
-                        <a href="#slide1">1</a>
-                    </li>
-                    <li>
-                        <a href="#slide2">2</a>
-                    </li>
-                    <li>
-                        <a href="#slide3">3</a>
-                    </li>
-                </ul>
-
-            </div>
-            <!-- prodoductos destacados -->
-            <section id="featured">
-
-                <article class="product-articule">
-
-                    <div class="img-div">
-                        <img src="https://via.placeholder.com/250x250" alt="Foto producto Indie Game">
-                    </div>
-                    <div class="detail-prod">
-                        <h3>Dead cells</h3>
-                        <p>$9.99</p>
-                    </div>
-
-                </article>
-                <article class="product-articule">
-                    <div class="img-div">
-                        <img src="https://via.placeholder.com/250x250" alt="Foto producto Indie Game">
-                    </div>
-                    <div class="detail-prod">
-                        <h3>Hollow Knight</h3>
-                        <p>$5</p>
-                    </div>
-                </article>
-                <article class="product-articule">
-                    <div class="img-div">
-                        <img src="https://via.placeholder.com/250x250" alt="Foto producto Indie Game">
-                    </div>
-                    <div class="detail-prod">
-                        <h3>Furi</h3>
-                        <p>$12.50</p>
-                    </div>
-                </article>
-                <article class="product-articule">
-                    <div class="img-div">
-                        <img src="https://via.placeholder.com/250x250" alt="Foto producto Indie Game">
-                    </div>
-                    <div class="detail-prod">
-                        <h3>Stardew Valley</h3>
-                        <p>$3.99</p>
-                    </div>
-                </article>
-
-            </section>
-            <!-- Formulario de categorias -->
-            <div id="form">
-                <form action="/home" method="GET">
-                    <div>
-                        <label for="categoria">Categoría:</label>
-                        <select name="categoria">
-                            <option value="arcade">Arcade</option>
-                            <option value="accion">Acción</option>
-                            <option value="deportivo">Deportivo</option>
-                            <option value="estrategia">Estrategia</option>
-                            <option value="simulacion">Simulación</option>
-                            <option value="aventura">Aventura</option>
-                            <option value="mesa">Juegos de mesa</option>
-                            <option value="musicales">Juegos musicales</option>
-                        </select>
-                    </div>
-                </form>
-            </div>
-            <!-- Productos destacados de cada categoria elegida -->
-            <!-- <section id="category"> 
-            <div class="category-div">
-                <i class="fas fa-chevron-left"></i>
-                <article class="category-articule">
-                    <div class="img-div">
-                        <img src="https://via.placeholder.com/250x500" alt="Foto producto Indie Game">
-                    </div>
-                    <div class="detalle">
-                        <h3>Nombre del producto</h3>
-                        <p>$1.000</p>
-                    </div>
-                </article>
-                <article class="category-articule">
-                    <div class="img-div">
-                        <img src="https://via.placeholder.com/250x500" alt="Foto producto Indie Game">
-                    </div>
-                    <div class="detalle">
-                        <h3>Nombre del producto</h3>
-                        <p>$1.000</p>
-                    </div>
-
-                </article>
-                <article class="category-articule">
-                    <div class="img-div">
-                        <img src="https://via.placeholder.com/250x500" alt="Foto producto Indie Game">
-                    </div>
-                    <div class="detalle">
-                        <h3>Nombre del producto</h3>
-                        <p>$1.000</p>
-                    </div>
-
-                </article>
-                <article class="category-articule">
-                    <div class="img-div">
-                        <img src="https://via.placeholder.com/250x500" alt="Foto producto Indie Game">
-                    </div>
-                    <div class="detalle">
-                        <h3>Nombre del producto</h3>
-                        <p>$1.000</p>
-                    </div>
-
-                </article>
-                <article class="category-articule">
-                    <div class="img-div">
-                        <img src="https://via.placeholder.com/250x500" alt="Foto producto Indie Game">
-                    </div>
-                    <div class="detalle">
-                        <h3>Nombre del producto</h3>
-                        <p>$1.000</p>
-                    </div>
-
-                </article>
-                <i class="fas fa-chevron-right"></i>
-            </div>
-        </section>-->
             <!-- slide -->
             <div class="sheetSlider sh-fade sh-auto">
                 <input id="s1" type="radio" name="slide1" checked="">
@@ -253,12 +105,142 @@
                     <label for="s5"></label>
                 </div><!-- .sh__arrows -->
             </div>
+            <!-- prodoductos destacados -->
+            <section id="featured">
+                <!-- <div class="featured-div"> -->
+                <article class="product-article">
+
+                    <div>
+                        <img class="responsive-img" src="https://via.placeholder.com/1000x1000"
+                            alt="Foto producto Indie Game">
+                    </div>
+                    <div class="detail-prod">
+                        <h3>Dead cells</h3>
+                        <p>$9.99</p>
+                    </div>
+
+                </article>
+                <article class="product-article">
+                    <div>
+                        <img class="responsive-img" src="https://via.placeholder.com/1000x1000"
+                            alt="Foto producto Indie Game">
+                    </div>
+                    <div class="detail-prod">
+                        <h3>Hollow Knight</h3>
+                        <p>$5</p>
+                    </div>
+                </article>
+                <article class="product-article">
+                    <div>
+                        <img class="responsive-img" src="https://via.placeholder.com/1000x1000"
+                            alt="Foto producto Indie Game">
+                    </div>
+                    <div class="detail-prod">
+                        <h3>Furi</h3>
+                        <p>$12.50</p>
+                    </div>
+                </article>
+                <article class="product-article">
+                    <div>
+                        <img class="responsive-img" src="https://via.placeholder.com/1000x1000"
+                            alt="Foto producto Indie Game">
+                    </div>
+                    <div class="detail-prod">
+                        <h3>Stardew Valley</h3>
+                        <p>$3.99</p>
+                    </div>
+                </article>
+                <!-- </div> -->
+            </section>
+            <!-- Formulario de categorias -->
+            <!-- <div id="form">
+                <form action="/home" method="GET">
+                    <div>
+                        <label for="categoria">Categoría:</label>
+                        <select name="categoria">
+                            <option value="arcade">Arcade</option>
+                            <option value="accion">Acción</option>
+                            <option value="deportivo">Deportivo</option>
+                            <option value="estrategia">Estrategia</option>
+                            <option value="simulacion">Simulación</option>
+                            <option value="aventura">Aventura</option>
+                            <option value="mesa">Juegos de mesa</option>
+                            <option value="musicales">Juegos musicales</option>
+                        </select>
+                    </div>
+                </form>
+            </div> -->
+            <div id="subtitle">
+                <h2>Juegos recientes</h2>
+            </div>
+            <!-- Productos destacados de cada categoria elegida -->
+            <section id="category">
+
+                <!-- <i class="fas fa-chevron-left"></i> -->
+                <article class="category-article">
+                    <div>
+                        <img class="responsive-img" src="https://via.placeholder.com/1000x1000"
+                            alt="Foto producto Indie Game">
+                    </div>
+                    <div class="detalle">
+                        <h3>Nombre del producto</h3>
+                        <p>$1.000</p>
+                    </div>
+                </article>
+                <article class="category-article">
+                    <div>
+                        <img class="responsive-img" src="https://via.placeholder.com/1000x1000"
+                            alt="Foto producto Indie Game">
+                    </div>
+                    <div class="detalle">
+                        <h3>Nombre del producto</h3>
+                        <p>$1.000</p>
+                    </div>
+
+                </article>
+                <article class="category-article">
+                    <div>
+                        <img class="responsive-img" src="https://via.placeholder.com/1000x1000"
+                            alt="Foto producto Indie Game">
+                    </div>
+                    <div class="detalle">
+                        <h3>Nombre del producto</h3>
+                        <p>$1.000</p>
+                    </div>
+
+                </article>
+                <article class="category-article">
+                    <div>
+                        <img class="responsive-img" src="https://via.placeholder.com/1000x1000"
+                            alt="Foto producto Indie Game">
+                    </div>
+                    <div class="detalle">
+                        <h3>Nombre del producto</h3>
+                        <p>$1.000</p>
+                    </div>
+
+                </article>
+                <article class="category-article">
+                    <div>
+                        <img class="responsive-img" src="https://via.placeholder.com/1000x1000"
+                            alt="Foto producto Indie Game">
+                    </div>
+                    <div class="detalle">
+                        <h3>Nombre del producto</h3>
+                        <p>$1.000</p>
+                    </div>
+
+                </article>
+                <!-- <i class="fas fa-chevron-right"></i> -->
+
+            </section>
+
         </main>
 
         <!-- footer  -->
         <%- include("../partials/footer.ejs") %>
 
-            
+
 
 </body>
 

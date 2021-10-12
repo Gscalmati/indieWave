@@ -61,7 +61,7 @@ header .barra-principal{
     font-family: videophreak;
 
     position: fixed;
-    z-index: 10;
+    z-index: 11;
     top: 0;
     left: 0;
 
@@ -113,6 +113,7 @@ main a {
 }
 
 main{
+    width: 75vw;
     margin: 90px auto 20px;
 }
 
