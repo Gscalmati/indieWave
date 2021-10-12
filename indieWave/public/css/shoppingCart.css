@@ -2,23 +2,6 @@
     box-sizing: border-box;
 }
 
-html, body {
-    width:100%;
-    height:100%;
-    margin: 0;
-}
-
-body{
-    background-image: url("/img/fondo.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
-
-
-
-
 /* Carrito de Compras */
 
 main {
@@ -336,7 +319,7 @@ main ul li{
 
 
 
-@media (min-width:601px) and (max-width:1024px){
+@media (min-width:769px) and (max-width:1024px){
     /* Header */
 
     header .barra-principal{
@@ -395,7 +378,7 @@ main ul li{
     }
 }
 
-@media (min-width:320px) and (max-width:600px){
+@media (min-width:260px) and (max-width:768px){
     
 
     /* Main */
