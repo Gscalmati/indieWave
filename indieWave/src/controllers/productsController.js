@@ -16,6 +16,9 @@ productsController = {
     },
     createdArt: function(req, res){
         res.send("Artículo creado")
+    },
+    editArt: function(req, res){
+        res.send("Artículo editado")
     }
 }
 

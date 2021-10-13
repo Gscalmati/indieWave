@@ -18,21 +18,44 @@
     <%- include("../partials/header.ejs") %>
 
         <main>
+            <h2>Editar Producto</h2>
             <form id="create-form" action="" method="post">
 
-                <input type="text" name="product-name" id="product-name" aria-label="nombre del producto" placeholder="Nombre del producto">
-                <textarea rows="15" name="descripcion" id="descripcion" aria-label="descripcion" placeholder="Descripción"></textarea>
-                <label id="image" >Seleccionar Imagen</label>
-                <input type="file" name="image" accept=".png, .jpeg, .jpg" id="image" aria-label="imagen" alt="Imagen">
-                <input type="text" name="product-name" id="product-name" aria-label="nombre del producto" placeholder="Categoría del producto">
-                <input type="number" name="precie" id="precie" aria-label="precio" placeholder="Precio">
+                <input type="text" name="product-name" id="product-name" aria-label="nombre del juego" placeholder="Nombre del juego">
+
+                <input type="text" name="gender" id="gender" aria-label="genero" placeholder="Género">
+
+                <input type="text" name="dev" id="dev" aria-label="nombre del producto" placeholder="Desarrollador">
+
                 <input type="email" name="email" id="email" aria-label="email" placeholder="Email de contacto">
 
+                <input type="date" name="date" id="date" aria-label="fecha de lanzamiento" placeholder="Fecha de lanzamiento">
+
+                <div id="checkbox-wrapper">
+                    <label for="windows">Windows</label>
+                    <input type="checkbox" name="windows" id="windows">
+                    <label for="ios">IOS</label>
+                    <input type="checkbox" name="ios" id="ios">
+                    <label for="linux">Linux</label>
+                    <input type="checkbox" name="linux" id="linux">
+                </div>
+
+                <input type="number" name="precie" id="precie" aria-label="precio" placeholder="Precio">
+
+                <label id="image" >Seleccionar Imagen</label>
+                <input type="file" name="image" accept=".png, .jpeg, .jpg" id="image" aria-label="imagen" alt="Imagen">
+
+                <input type="text" name="product-name" id="product-name" aria-label="nombre del producto" placeholder="Requisitos mínimos">
+
+                <input type="text" name="product-name" id="product-name" aria-label="nombre del producto" placeholder="Requisitos recomendados">
+                
+                <textarea rows="10" name="descripcion" id="descripcion" aria-label="descripcion" placeholder="Descripción"></textarea>
+                
                 <button type="reset" id="delete-btn">Borrar</button>
 
                 <div id="form-selection-wrapper">
-                    <button id="create-btn" type="submit" aria-label="create">Crear</button>
-                    <button id="edit-btn"  aria-label="edit"><a href="/products/edit">Editar</a></button>
+                    <button id="create-btn" type="submit" aria-label="create"><a href="/products/create">Crear</a></button>
+                    <button id="edit-btn"  aria-label="edit">Editar</a></button>
                 </div>
                 
             </form>
