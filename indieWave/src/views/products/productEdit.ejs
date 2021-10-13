@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/edit-create-forms.css">
+    <title>IndieWave</title>
+
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon" />
+</head>
+
+<body>
+
+    <%- include("../partials/header.ejs") %>
+
+        <main>
+            <form id="edit-form" action="" method="get">
+
+                <input type="text" name="product-name" id="product-name" aria-label="nombre del producto" placeholder="Nombre del producto">
+                <input type="text" name="precie" id="precie" aria-label="precio" placeholder="Precio">
+                <input type="text" name="product-key" id="product-key" aria-label="clave del producto" placeholder="Clave del producto">
+                <input type="email" name="email" id="email" aria-label="email" placeholder="Email">
+
+                <button type="reset" id="delete-btn">Borrar</button>
+
+                <div id="form-selection-wrapper">
+                    <button id="create-btn" type="submit" href="#" aria-label="create">Crear</button>
+                    <button id="edit-btn" href="#" aria-label="edit">Editar</button>
+                </div>
+                
+            </form>
+        </main>
+
+        <%- include("../partials/footer.ejs") %>
+
+</body>

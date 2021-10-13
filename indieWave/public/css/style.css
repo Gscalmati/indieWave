@@ -8,6 +8,23 @@
     src: url("../fonts/VIDEOPHREAK.ttf");
 }
 
+@keyframes bordes-header {
+    0%{
+        border: solid var(--turquoise) 2px;
+        padding: 2px;
+
+    }
+    50%{
+        padding: 4px;
+        border: solid var(--turquoise) 2px;
+    }
+    100%{
+        padding: 8px;
+        border: solid var(--turquoise) 2px;
+    }
+    
+}
+
 :root{
     --steelpink: #d30cb8;
     --turquoise: #6df1d8;
@@ -61,7 +78,7 @@ header .barra-principal{
     font-family: videophreak;
 
     position: fixed;
-    z-index: 10;
+    z-index: 11;
     top: 0;
     left: 0;
 
@@ -113,6 +130,7 @@ main a {
 }
 
 main{
+    width: 75vw;
     margin: 90px auto 20px;
 }
 
@@ -163,6 +181,36 @@ footer .iconos{
 }
 
 /* Medias */
+
+@media (min-width: 1025px) {
+    /* Animations */
+    header nav ul li {
+        box-sizing: border-box;
+        width: 10%;
+        height: 50px;
+    
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    
+    header nav ul li a:hover{
+        animation: bordes-header 200ms forwards;
+    }
+
+    /* Transitions */
+    header .barra-principal .iconos i:hover{
+        color:  var(--turquoise);
+    }
+
+    header .barra-principal .iconos i{
+        transition: color 400ms;
+    }
+
+
+    
+}
 
 @media (min-width: 600px) and (max-width:1024px){
 

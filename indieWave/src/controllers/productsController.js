@@ -6,9 +6,14 @@ productsController = {
     },
 
     cart: function(req, res){
-        res.render("products/shoppingCart")
+        res.render("products/shoppingCart");
+    },
+    edit: function(req, res){
+        res.render("products/productEdit");
+    },
+    create: function(req, res){
+        res.render("products/productCreate")
     }
-
 }
 
 module.exports = productsController;

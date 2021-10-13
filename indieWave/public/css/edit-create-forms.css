@@ -1,0 +1,100 @@
+/*MOBILE - TABLET*/
+
+main{
+    width: 95vw;
+    height: 100%;
+    background-color: rgba(92, 44, 109, 0.8);
+    box-sizing: border-box;
+    padding: 16px;
+    font-family: ubuntu;
+    color: var(--turquoise);
+    display: flex;
+}
+
+#edit-form, #create-form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: auto;
+    align-items: center;
+}
+
+#form-selection-wrapper{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+#edit-form input, #create-form input{
+    font-family: ubuntu;
+    height: 30px;
+    font-size: 12px;
+    margin-top: 20px;
+    width: 80%;
+}
+
+#edit-form button, #create-form button{
+    font-family: ubuntu;
+    height: 30px;
+    background-color: var(--thistle);
+    font-size: 18px;
+    color: var(--space-cadet);
+    min-width: 120px;
+    margin-top: 5%;
+}
+
+#edit-form #delete-btn, #create-form #delete-btn{
+    width: 80%;
+    height: 40px;
+    margin-top: 5%;
+}
+
+#edit-form a, #create-form a{
+    color: var(--turquoise);
+    font-size: 12px;
+}
+
+
+
+
+/*DESKTOP*/
+@media (min-width: 1025px){
+
+    main{
+        width: 55vw;
+    }
+    
+    #edit-form, #create-form{
+        width: 35%;
+        margin: auto;
+    }
+    
+    #form-selection-wrapper{
+        justify-content: space-between;
+    }
+    
+    
+    #edit-form input, #create-form input{
+        height: 50px;
+        font-size: 16px;
+        width: 100%;
+    }
+    
+    #edit-form button, #create-form button{
+        height: 50px;
+        font-size: 24px;
+        min-width: auto;
+    }
+    
+    #edit-form #delete-btn, #create-form #delete-btn{
+        width: 100%;
+    }
+
+    #edit-form a, #create-form a{
+        font-size: 16px;
+    }
+    
+    
+
+}
+
