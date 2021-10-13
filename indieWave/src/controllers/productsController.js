@@ -13,6 +13,9 @@ productsController = {
     },
     create: function(req, res){
         res.render("products/productCreate")
+    },
+    createdArt: function(req, res){
+        res.send("Artículo creado")
     }
 }
 

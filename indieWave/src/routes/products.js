@@ -11,4 +11,6 @@ router.get("/edit", productsController.edit);
 
 router.get("/create", productsController.create);
 
+router.post("/create", productsController.createdArt);
+
 module.exports = router;

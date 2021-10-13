@@ -18,18 +18,21 @@
     <%- include("../partials/header.ejs") %>
 
         <main>
-            <form id="edit-form" action="" method="get">
+            <form id="create-form" action="" method="post">
 
                 <input type="text" name="product-name" id="product-name" aria-label="nombre del producto" placeholder="Nombre del producto">
-                <input type="text" name="precie" id="precie" aria-label="precio" placeholder="Precio">
-                <input type="text" name="product-key" id="product-key" aria-label="clave del producto" placeholder="Clave del producto">
-                <input type="email" name="email" id="email" aria-label="email" placeholder="Email">
+                <textarea rows="15" name="descripcion" id="descripcion" aria-label="descripcion" placeholder="Descripción"></textarea>
+                <label id="image" >Seleccionar Imagen</label>
+                <input type="file" name="image" accept=".png, .jpeg, .jpg" id="image" aria-label="imagen" alt="Imagen">
+                <input type="text" name="product-name" id="product-name" aria-label="nombre del producto" placeholder="Categoría del producto">
+                <input type="number" name="precie" id="precie" aria-label="precio" placeholder="Precio">
+                <input type="email" name="email" id="email" aria-label="email" placeholder="Email de contacto">
 
                 <button type="reset" id="delete-btn">Borrar</button>
 
                 <div id="form-selection-wrapper">
-                    <button id="create-btn" type="submit" href="#" aria-label="create">Crear</button>
-                    <button id="edit-btn" href="#" aria-label="edit">Editar</button>
+                    <button id="create-btn" type="submit" aria-label="create">Crear</button>
+                    <button id="edit-btn"  aria-label="edit"><a href="/products/edit">Editar</a></button>
                 </div>
                 
             </form>
