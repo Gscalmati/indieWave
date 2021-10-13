@@ -171,6 +171,9 @@
         margin-left: 60px;
         font-size: 1.2rem;
     }
+    main #game-area #game-info #game-desc {
+        width: 100%;
+    }
     main #game-area #game-info #game-info-button-wrapper {
         margin-top: 40px;
     }
@@ -180,6 +183,7 @@
     main #game-area #game-info button {
         height: 50px;
         font-size: 24px;
+        width: 100%;
     }
     main #extras-area {
         display: flex;
