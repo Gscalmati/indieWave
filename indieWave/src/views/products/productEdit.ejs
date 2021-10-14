@@ -25,12 +25,15 @@
 
                 <input type="text" name="gender" id="gender" aria-label="genero" placeholder="Género">
 
-                <input type="text" name="dev" id="dev" aria-label="nombre del producto" placeholder="Desarrollador">
+                <input type="text" name="dev" id="dev" aria-label="desarrollador" placeholder="Desarrollador">
 
                 <input type="email" name="email" id="email" aria-label="email" placeholder="Email de contacto">
 
-                <input type="date" name="date" id="date" aria-label="fecha de lanzamiento" placeholder="Fecha de lanzamiento">
 
+                <label for="date">Fecha de lanzamiento</label>
+                <input type="date" name="date" id="date" aria-label="fecha de lanzamiento" placeholder="Fecha de lanzamiento">
+                
+                <span id="subtitle">Plataforma</span>
                 <div id="checkbox-wrapper">
                     <label for="windows">Windows</label>
                     <input type="checkbox" name="windows" id="windows">
@@ -42,20 +45,25 @@
 
                 <input type="number" name="precie" id="precie" aria-label="precio" placeholder="Precio">
 
-                <label id="image" >Seleccionar Imagen</label>
+                <label id="image" >Cargar Imágenes</label>
                 <input type="file" name="image" accept=".png, .jpeg, .jpg" id="image" aria-label="imagen" alt="Imagen">
 
-                <input type="text" name="product-name" id="product-name" aria-label="nombre del producto" placeholder="Requisitos mínimos">
+                <!-- <input type="text" name="product-name" id="product-name" aria-label="nombre del producto" placeholder="Requisitos mínimos">
 
-                <input type="text" name="product-name" id="product-name" aria-label="nombre del producto" placeholder="Requisitos recomendados">
-                
-                <textarea rows="10" name="descripcion" id="descripcion" aria-label="descripcion" placeholder="Descripción"></textarea>
+                <input type="text" name="product-name" id="product-name" aria-label="nombre del producto" placeholder="Requisitos recomendados"> -->
+                <textarea rows="10" name="requeriment-min" id="requeriment-min" aria-label="requisitos minimos" placeholder="Requisitos mínimos"></textarea>
+
+                <textarea rows="10" name="requeriment" id="requeriment" aria-label="requeriment" placeholder="Requisitos recomendados"></textarea>
+
+                <textarea rows="12" name="descripcion" id="descripcion" maxlength="500" aria-label="descripcion" placeholder="Descripción . . ."></textarea>
                 
                 <button type="reset" id="delete-btn">Borrar</button>
 
+                <button type="submit" id="send-btn">Enviar</button>
+
                 <div id="form-selection-wrapper">
-                    <button id="create-btn" type="submit" aria-label="create"><a href="/products/create">Crear</a></button>
-                    <button id="edit-btn"  aria-label="edit">Editar</a></button>
+                    <button id="create-btn"  aria-label="create"><a href="/products/create">Crear</a></button>
+                    <button id="edit-btn"  aria-label="edit"><a href="/products/edit">Editar</a></button>
                 </div>
                 
             </form>

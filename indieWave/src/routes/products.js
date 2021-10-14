@@ -9,10 +9,10 @@ router.get("/shoppingCart", productsController.cart);
 
 router.get("/edit", productsController.edit);
 
-// router.post("/edit", productsController.editArt);
+router.post("/edit", productsController.edit);
 
 router.get("/create", productsController.create);
 
-// router.post("/create", productsController.createdArt);
+router.post("/create", productsController.create);
 
 module.exports = router;
