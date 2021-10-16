@@ -9,23 +9,21 @@
 }
 
 @keyframes bordes-header {
-    0%{
+    0% {
         border: solid var(--turquoise) 2px;
         padding: 2px;
-
     }
-    50%{
+    50% {
         padding: 4px;
         border: solid var(--turquoise) 2px;
     }
-    100%{
+    100% {
         padding: 8px;
         border: solid var(--turquoise) 2px;
     }
-    
 }
 
-:root{
+:root {
     --steelpink: #d30cb8;
     --turquoise: #6df1d8;
     --medium-aquamarine: #58dd94;
@@ -42,12 +40,12 @@
 }
 
 html, body {
-    width:100%;
+    width: 100%;
     height: 100%;
     margin: 0;
 }
 
-body{
+body {
     background-image: url("/img/fondo.jpg");
     background-size: cover;
     background-position: center;
@@ -55,282 +53,253 @@ body{
     background-attachment: fixed;
 }
 
-
-
-button{
-    cursor:pointer;
+button {
+    cursor: pointer;
 }
+
+/**** MOBILE ****/
 
 /* Header */
 
-header .barra-principal{
-    max-height: 65px;
+header .barra-principal {
     background-color: black;
     color: var(--steelpink);
     width: 100%;
     margin: auto;
-
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-around;
     align-items: center;
-
     font-family: videophreak;
-
     position: fixed;
     z-index: 11;
     top: 0;
     left: 0;
-
     border-top: solid 2px var(--steelpink);
     border-bottom: solid 2px var(--steelpink);
+    max-height: 100%;
 }
 
-header .imagen-logo{
-    width: 10%;
-    margin: 15px 5px;
-
-}
-
-header img{
+header img {
     width: 100%;
 }
 
-header nav{
+header .imagen-logo {
+    width: 30%;
+    margin: 5px;
+}
+
+header .barra-principal, header ul {
+    flex-direction: column;
+}
+
+header nav {
     width: 70%;
 }
 
-header nav ul{
+header nav ul {
     margin: 0%;
     padding: 0%;
     list-style-type: none;
-
     display: flex;
     justify-content: space-evenly;
 }
 
-header .iconos{
-    width: 10%;
-    display: flex;
-    justify-content: space-around;
-
-    font-size: 1.5em;
+header nav ul li {
+    text-align: center;
+    font-size: 0.5em;
+    margin: 5px 0px;
 }
 
-header a{
+header .iconos {
+    margin: 5px;
+    font-size: 0.6em;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+header a {
     text-decoration: none;
     color: inherit;
 }
 
-/* Main */
+/* Main*/
 
 main a {
     text-decoration: none;
     color: inherit;
 }
 
-main{
-    width: 75vw;
-    margin: 90px auto 20px;
+main {
+    width: 95vw;
+    margin: 185px auto 20px;
 }
 
 /* Footer */
 
-footer .barra-principal{
+footer .barra-principal {
     background-color: black;
     color: var(--steelpink);
     width: 100%;
     margin: auto;
-
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-around;
     align-items: center;
-
     font-family: ubuntu;
 }
 
-footer .imagen-logo{
-    width: 10%;
-    margin: 50px 0px 50px 50px;
+footer .iconos {
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 0.8em;
 }
 
-footer img{
-width: 100%;
+footer img {
+    width: 100%;
 }
 
-footer nav{
+footer nav {
     width: 70%;
 }
 
-footer nav ul{
+footer nav ul {
     margin: 0%;
     padding: 0%;
     list-style-type: none;
-
     display: flex;
     justify-content: space-evenly;
 }
+
+footer nav ul li {
+    text-align: center;
+    font-size: 0.5em;
+}
+
 footer a {
     text-decoration: none;
     color: var(--steelpink);
 }
-footer .iconos{
+
+footer .imagen-logo {
     width: 10%;
-    display: flex;
-    justify-content: space-around;
-
-    font-size: 1.5em;
+    margin: 0px;
 }
 
-/* Medias */
+/**** TABLET ****/
 
-@media (min-width: 1025px) {
-    /* Animations */
-    header nav ul li {
-        box-sizing: border-box;
-        width: 10%;
-        height: 50px;
-    
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    
-    header nav ul li a:hover{
-        animation: bordes-header 200ms forwards;
-    }
-
-    /* Transitions */
-    header .barra-principal .iconos i:hover{
-        color:  var(--turquoise);
-    }
-
-    header .barra-principal .iconos i{
-        transition: color 400ms;
-    }
-
-
-    
-}
-
-@media (min-width: 600px) and (max-width:1024px){
-
+@media (min-width: 600px) and (max-width:1024px) {
     /* Header */
-
-    header .barra-principal{
+    header .barra-principal {
         max-height: 100%;
     }
-
-    header .imagen-logo{
+    header .imagen-logo {
         width: 15%;
         margin: 5px;
     }
-
-    header .barra-principal, header ul{
+    header .barra-principal, header ul {
         flex-direction: column;
     }
-
-    header nav ul li{
+    header nav ul li {
         text-align: center;
         font-size: 1em;
         margin: 5px 0px;
     }
-
-    header .iconos{
+    header .iconos {
         margin: 5px;
         font-size: 1em;
         width: 100%;
-        
         display: flex;
         justify-content: space-around;
     }
-
-    header .barra-principal{
+    header .barra-principal {
         max-height: 100%;
     }
-
-    header .barra-principal, header ul{
+    header .barra-principal, header ul {
         flex-direction: column;
     }
-
     /* Main */
-
-    main{
+    main {
         margin: 250px auto 20px;
     }
-    
-    
     /* Footer */
-    footer .iconos{
+    footer nav ul li {
+        font-size: 1em;
+    }
+    footer .iconos {
         height: 90px;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
-
     }
 }
 
+/**** DESKTOP ****/
 
-
-
-@media (min-width:360px) and (max-width:600px){
+@media (min-width: 1025px) {
     /* Header */
-
-    header .barra-principal{
-        max-height: 100%;
+    header .barra-principal {
+        max-height: 65px;
     }
-
-    header .imagen-logo{
-        width: 30%;
-        margin: 5px;
+    header .barra-principal, header ul {
+        flex-direction: row;
     }
-
-    header .barra-principal, header ul{
-        flex-direction: column;
+    header .barra-principal li {
+        font-size: 1em;
     }
-
-    header nav ul li{
-        text-align: center;
-        font-size: 0.5em;
-        margin: 5px 0px;
+    header .imagen-logo {
+        width: 10%;
+        margin: 15px 5px;
     }
-
-    header .iconos{
-        margin: 5px;
-        font-size: 0.6em;
-        width: 100%;
-        
+    header .iconos {
+        width: 10%;
         display: flex;
         justify-content: space-around;
+        font-size: 1.5em;
     }
-    /* Main*/
-    main{
-        margin-top: 185px;
+    /* Main */
+    
+    main {
+        width: 75vw;
+        margin: 90px auto 20px;
     }
-
-
     /* Footer */
-    footer .iconos{
-        height: 60px;
-        display: flex;
-        flex-direction: column;
+    footer .imagen-logo {
+        margin: 50px 0px 50px 50px;
+    }
+    
+    footer nav ul li {
+        font-size: 1em;
+    }
+
+    footer .iconos {
+        width: 10%;
+        flex-direction: row;
         justify-content: space-around;
+        font-size: 1.5em;
+    }
+    /* Animations */
+    header nav ul li {
+        box-sizing: border-box;
+        width: 10%;
+        height: 50px;
+        display: flex;
+        justify-content: center;
         align-items: center;
-
-        font-size: 0.8em;
     }
-
-    footer nav ul li{
-        text-align: center;
-        font-size: 0.4em;
+    header nav ul li a:hover {
+        animation: bordes-header 200ms forwards;
     }
-
-    footer .imagen-logo{
-        margin:0px;
+    /* Transitions */
+    header .barra-principal .iconos i:hover {
+        color: var(--turquoise);
     }
-
-
+    header .barra-principal .iconos i {
+        transition: color 400ms;
+    }
 }
