@@ -247,7 +247,7 @@ footer .imagen-logo {
         max-height: 65px;
     }
     header .barra-principal, header ul {
-        flex-direction: row;
+        flex-direction:row;
     }
     header .barra-principal li {
         font-size: 1em;
