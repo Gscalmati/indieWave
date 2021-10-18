@@ -448,7 +448,7 @@ main #extras-area #game-summary {
 
 main #extras-area #game-summary p {
     margin: 0;
-    padding: 10px;
+    padding: 10px; 
     background-color: rgba(184, 174, 200, 0.8);
     color: var(--space-cadet);
     border-radius: 7px;
