@@ -50,3 +50,24 @@
 
 ## Dejar de hacer
 * Usar vh.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# Retro Meeting - Sprint 3
+
+
+## Comenzar a hacer
+* Organizar bien las tareas ahora que el sprint se viene _picante_
+* Usar las weaklies para trabajar juntos o hacer consultas.
+
+## Hacer más
+* No olvidarnos de weekly.md
+
+## Continuar haciendo
+* **Jugar poco al LoL.**
+* Jugar Rocket League para relajar después de las reuniones.
+* Encarar las vistas desde "mobile first".
+
+## Hacer menos
+
+## Dejar de hacer
