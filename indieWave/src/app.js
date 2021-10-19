@@ -11,8 +11,7 @@ app.use(express.static(path.resolve(__dirname,"../public")));
 
 /* Configuracion template engine */
 app.set("view engine", "ejs");
-app.set("views", "./views")
-
+app.set("views", path.resolve(__dirname,"/views"))
 
 
 /* Configuracion rutas */
