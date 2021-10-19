@@ -7,25 +7,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/edit-create-forms.css">
+    <link rel="stylesheet" href="/css/forms.css">
     <title>IndieWave</title>
 
     <link rel="icon" href="/img/favicon.ico" type="image/x-icon" />
 </head>
 
-<body>
+<body id="#body-edit-create">
 
     <%- include("../partials/header.ejs") %>
 
-        <main>
-            <h2>Editar Producto</h2>
+        <main id="#main-edit-create">
+            <h2 id="#title">Editar Producto</h2>
             <form id="create-form" action="" method="post">
 
                 <input type="text" name="product-name" id="product-name" aria-label="nombre del juego" placeholder="Nombre del juego">
 
-                <input type="text" name="gender" id="gender" aria-label="genero" placeholder="Género">
-
                 <input type="text" name="dev" id="dev" aria-label="desarrollador" placeholder="Desarrollador">
+
+                <div id="gender">
+                    <label for="categoria">Género:</label>
+                    <select name="categoria">
+                        <option value="arcade">Arcade</option>
+                        <option value="accion">Acción</option>
+                        <option value="deportivo">Deportivo</option>
+                        <option value="estrategia">Estrategia</option>
+                        <option value="simulacion">Simulación</option>
+                        <option value="aventura">Aventura</option>
+                        <option value="mesa">Juegos de mesa</option>
+                        <option value="musicales">Juegos musicales</option>
+                    </select>
+                </div>
 
                 <input type="email" name="email" id="email" aria-label="email" placeholder="Email de contacto">
 
@@ -48,9 +60,6 @@
                 <label id="image" >Cargar Imágenes</label>
                 <input type="file" name="image" accept=".png, .jpeg, .jpg" id="image" aria-label="imagen" alt="Imagen">
 
-                <!-- <input type="text" name="product-name" id="product-name" aria-label="nombre del producto" placeholder="Requisitos mínimos">
-
-                <input type="text" name="product-name" id="product-name" aria-label="nombre del producto" placeholder="Requisitos recomendados"> -->
                 <textarea rows="10" name="requeriment-min" id="requeriment-min" aria-label="requisitos minimos" placeholder="Requisitos mínimos"></textarea>
 
                 <textarea rows="10" name="requeriment" id="requeriment" aria-label="requeriment" placeholder="Requisitos recomendados"></textarea>

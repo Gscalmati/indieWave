@@ -6,6 +6,7 @@ const path = require("path");
 
 
 
+
 /* Configuracion Express */
 app.use(express.static(path.resolve(__dirname,"../public")));
 
@@ -26,6 +27,7 @@ app.use("/", routerMain);
 app.use("/products", routerProducts);
 
 app.use("/users", routerUsers);
+
 
 
 app.listen(3000, () => {
