@@ -116,6 +116,9 @@ textarea{
 label{
     margin-top: 40px;
 }
+#label-login, #label-register{
+    margin-top: 0px;
+}
 #gender{
     width: 80%;
     margin-top: 40px;
