@@ -5,7 +5,7 @@ const productsController = require("../controllers/productsController");
 
 router.get("/", productsController.categories);
 
-router.get("/:category", productsController.categorygames);
+router.get("/categories/:category", productsController.categorygames);
 
 router.get("/productDetail", productsController.detail);
 
@@ -18,5 +18,6 @@ router.post("/edit", productsController.edit);
 router.get("/create", productsController.create);
 
 router.post("/create", productsController.create);
+
 
 module.exports = router;

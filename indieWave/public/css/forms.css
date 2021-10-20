@@ -2,16 +2,7 @@
 #body-edit-create{
     height: auto;
 } 
-main, #main-edit-create{
-    width: 95vw;
-    height: 100%;
-    background-color: rgba(92, 44, 109, 0.8);
-    box-sizing: border-box;
-    padding: 16px;
-    font-family: ubuntu;
-    color: var(--turquoise);
-    display: flex;
-}
+
 #main-edit-create{
     flex-direction: column;
 }
@@ -134,10 +125,6 @@ label{
 
 /*DESKTOP*/
 @media (min-width: 1025px){
-
-    main{
-        width: 55vw;
-    }
     
     #register-form, #login-form, #edit-form, #create-form{
         width: 35%;
