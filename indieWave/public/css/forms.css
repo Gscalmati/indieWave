@@ -126,6 +126,7 @@ label{
     font-size: 18px;
 }
 #gender select{
+    font-family: "ubuntu";
     font-size: 18px;
     width: 50%;
 }
