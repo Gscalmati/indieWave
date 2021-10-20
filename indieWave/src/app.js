@@ -12,11 +12,11 @@ app.use(express.static(path.resolve(__dirname,"../public")));
 
 /* Configuracion template engine */
 app.set("view engine", "ejs");
-app.set("views", path.resolve(__dirname,"views"))
+app.set("views", path.resolve(__dirname,"/views"))
 
 
 /* Configuracion rutas */
-const routerMain = require(path.resolve(__dirname,"./routes/main"));
+const routerMain = require(path.resolve(__dirname,"routes/main"));
 const routerUsers = require("./routes/users");
 const routerProducts = require("./routes/products");
 
