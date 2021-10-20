@@ -16,7 +16,7 @@ app.set("views", path.resolve(__dirname,"/views"))
 
 
 /* Configuracion rutas */
-const routerMain = require("./routes/main");
+const routerMain = require(path.resolve(__dirname,"./routes/main"));
 const routerUsers = require("./routes/users");
 const routerProducts = require("./routes/products");
 

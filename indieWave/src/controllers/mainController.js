@@ -2,7 +2,7 @@ const path = require('path');
 
 let mainController = {
     home: (req,res) => {
-        res.render("main/home");
+        res.render(path.resolve(__dirname, "main/home"));
     },
 }
 
