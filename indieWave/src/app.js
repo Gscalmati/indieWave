@@ -20,7 +20,6 @@ const routerMain = require(path.resolve(__dirname,"routes/main"));
 const routerUsers = require("./routes/users");
 const routerProducts = require("./routes/products");
 
-
 app.use("/", routerMain);
 
 app.use("/products", routerProducts);
