@@ -1,8 +1,8 @@
 const path = require("path");
 
 productsController = {
-    list: function (req, res){
-        res.send("hola"); 
+    categories: function (req, res){
+        res.render("products/categories"); 
     },
     detail: function (req, res){
         res.render("products/productDetail");
