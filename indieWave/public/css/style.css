@@ -272,6 +272,7 @@ footer .imagen-logo {
     /* Main */
     main {
         width: 75vw;
+        height: 100%;
         margin: 90px auto 20px;
     }
     /* Footer */
