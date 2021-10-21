@@ -22,3 +22,4 @@
 - **Hay que preguntarle a Uri cómo hacemos con Heroku**
 - ¿Unimos las rutas de categorias y de id de producto? (/products/:category/:id?) ¿Responderían al mismo método del controlador?
 - Revisar labels de formularios create y edit.
+- ¿Las rutas en router se leen de arriba a abajo? (caso "products/:category" después de "products/otracosa")
