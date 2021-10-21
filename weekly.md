@@ -14,3 +14,11 @@
 - Nos quedamos con home 2
 - Hay que definir vistas de categoría/productos.
 - **Preguntar cómo iniciar nodemon sin argumentos ahora que 'app.js' está en '/src'**
+
+
+## Miércoles 20/10/2021
+
+- Gio no se acuerda de la contraseña de Heroku
+- **Hay que preguntarle a Uri cómo hacemos con Heroku**
+- ¿Unimos las rutas de categorias y de id de producto? (/products/:category/:id?) ¿Responderían al mismo método del controlador?
+- Revisar labels de formularios create y edit.
