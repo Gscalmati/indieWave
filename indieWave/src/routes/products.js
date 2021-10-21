@@ -17,7 +17,7 @@ router.post("/edit", productsController.edit);
 router.get("/create", productsController.create);
 
 
-router.get("/:category/:id", productsController.detail);
+router.get("/:id", productsController.detail);
 
 router.get("/:category", productsController.categorygames);
 

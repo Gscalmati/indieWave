@@ -42,7 +42,6 @@ productsController = {
         let detallado = products.filter(product =>{
             return (product.id == req.params.id);
         }) 
-        console.log(detallado[0])
         
         res.render("products/productDetail", {detallado: detallado[0]});
         /* No imprime en el EJS */
