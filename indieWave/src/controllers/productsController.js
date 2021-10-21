@@ -47,6 +47,10 @@ productsController = {
         /* No imprime en el EJS */
     },
 
+    dashboard: function(req, res){
+        res.render("products/dashboard")
+    },
+
     cart: function(req, res){
         res.render("products/shoppingCart");
     },
