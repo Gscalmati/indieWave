@@ -37,8 +37,15 @@ productsController = {
 
         res.render("products/categoryGames", /*el array con los juegos de esa categoria*/); 
     },
+
     detail: function (req, res){
-        res.render("products/productDetail");
+        let detallado = products.filter(product =>{
+            return (product.id == req.params.id);
+        }) 
+        console.log(detallado[0])
+        
+        res.render("products/productDetail", {detallado: detallado[0]});
+        /* No imprime en el EJS */
     },
 
     cart: function(req, res){
@@ -51,7 +58,7 @@ productsController = {
         res.render("products/productCreate")
     },
 
-    createdArt: function(req, res){
+    store: function(req, res){
         let newProduct = {
             id: newId(),
             game_name: req.body.productName,

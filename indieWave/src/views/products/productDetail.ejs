@@ -19,9 +19,10 @@
     <main>
         <section id="title-area">
             <div id="breadcrumb">
-                <p>Todos los juegos > Categoría > Nombre del Juego</p>
+                <p>Todos los juegos > <%= detallado.genre %> > <%= detallado.game_name %></p>
             </div>
-            <h2>Nombre del Juego</h2>
+            <h2> <%= detallado.game_name %> </h2>
+            
         </section>
         <section id="game-area">
             <article id="carrousel">
@@ -52,19 +53,19 @@
                 <div id="game-desc">
                     <div>
                         <span>Desarrollador</span>
-                        <span>Ejemplo</span>
+                        <span><%= detallado.developer %></span>
                     </div>
                     <div>
                         <span>Fecha de lanzamiento</span>
-                        <span>Ejemplo</span>
+                        <span><%= detallado.release_date %></span>
                     </div>
                     <div>
                         <span>Plataforma</span>
-                        <span>Ejemplo</span>
+                        <span><%= detallado.platform %></span>
                     </div>
                 </div>
                 <div id="game-info-button-wrapper">
-                    <span id="price-tag">$99.99</span>
+                    <span id="price-tag">$<%= detallado.price %></span>
                     <button id="game-to-cart-btn">Añadir al Carro</button>
                     <button id="game-to-wishlist-btn">Añadir a Lista de Deseados</button>
                 </div>
@@ -78,45 +79,18 @@
                         <div>
                             <h4>Mínimos</h4>
                         </div>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum dolores est obcaecati
-                            reiciendis rerum hic nostrum ducimus. Doloribus fuga quae, alias minima blanditiis error
-                            officiis ratione non repellendus amet asperiores.</p>
+                        <p><%= detallado.min_requirements %></p>
                     </div>
                     <div id="recommended">
                         <div>
                             <h4>Recomendados</h4>
                         </div>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum dolores est obcaecati
-                            reiciendis rerum hic nostrum ducimus. Doloribus fuga quae, alias minima blanditiis error
-                            officiis ratione non repellendus amet asperiores.</p>
+                        <p><%= detallado.rec_requirements %></p>
                     </div>
                 </article>
 
                 <article id="game-summary">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium aspernatur nam cumque
-                        officia ea, odit voluptatem, rerum neque voluptas ratione, maiores rem animi totam! Provident
-                        eius ex consectetur. Minima, blanditiis.
-                        Deleniti autem, optio voluptatem nostrum ut odit maxime! Optio excepturi ab repudiandae tempora,
-                        eum iste ullam voluptates sed rerum suscipit assumenda id, doloremque unde eos nemo officiis.
-                        Sunt, nihil qui.
-                        Assumenda architecto consectetur quia distinctio minima eius provident itaque mollitia
-                        asperiores nobis laudantium repellendus dignissimos omnis, nam reiciendis? Incidunt eius fugiat
-                        voluptas in veritatis nemo quidem quia modi. Dolore, magni.
-                        Neque ab culpa necessitatibus vero eveniet sapiente, error tempore nemo repellat quam mollitia
-                        repellendus molestias soluta. Et quis modi perferendis cum, dolorem obcaecati numquam maxime
-                        non, doloremque voluptatibus eius nam.
-                        Error impedit sit officiis aut iure praesentium molestias aspernatur consequuntur reprehenderit
-                        delectus. Quod, nam! Laudantium, doloribus possimus libero ad suscipit quas hic corporis eius
-                        ducimus recusandae beatae iste, iure minima!
-                        Tempora suscipit, porro, veritatis alias iure nemo repellendus cupiditate voluptatem tempore
-                        facere quidem atque earum distinctio nisi, voluptate reiciendis fuga? Iusto laboriosam dolore
-                        corrupti accusamus? Tempore dolorem et nemo iure!
-                        Earum eveniet impedit ratione rem eos illum exercitationem mollitia, quaerat qui blanditiis
-                        corrupti fugit magnam laboriosam assumenda aliquid incidunt odio! In corrupti maiores similique
-                        debitis accusamus et pariatur minus repudiandae!
-                        Iure soluta alias vitae culpa enim officiis aut distinctio commodi, deleniti doloribus numquam
-                        velit animi, recusandae at quas provident eaque voluptatum expedita dolorem! Optio enim mollitia
-                        modi, nobis error labore.
+                    <p><%= detallado.description %>
                     </p>
                 </article>
 
