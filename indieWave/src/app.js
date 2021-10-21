@@ -28,7 +28,7 @@ app.use("/users", routerUsers);
 
 
 
-app.listen(3000, () => {
+app.listen(process.env.PORT || 3000, () => {
     console.log("Running on 3000")
 })
 
