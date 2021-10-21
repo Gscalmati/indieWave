@@ -4,6 +4,7 @@ const router = express.Router();
 const productsController = require("../controllers/productsController");
 
 router.get("/", productsController.categories);
+router.post("/", productsController.createdArt);
 
 router.get("/productDetail", productsController.detail);
 
@@ -15,7 +16,7 @@ router.post("/edit", productsController.edit);
 
 router.get("/create", productsController.create);
 
-router.post("/create", productsController.create);
+
 
 router.get("/:category", productsController.categorygames);
 

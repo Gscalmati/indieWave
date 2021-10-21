@@ -1,11 +1,26 @@
 const path = require("path");
+const fs = require("fs");
 
-/*
+/*const { privateDecrypt } = require("crypto");
+const { json } = require("stream/consumers");
+*/
 
-let jsonProducts = fs.readFileSync(path.resolve(__dirname, '../db/products.json'), 'utf-8');
+let jsonProducts = fs.readFileSync(path.resolve(__dirname, '../data/products.json'), 'utf-8');
 let products = JSON.parse(jsonProducts); //Convertimos el json a array
 
-*/
+/* Función para conseguir el nuevo ID */
+const newId = function(){
+    let idNum = 0;
+    products.forEach(product => {
+        if (product.id > idNum) {
+            idNum=product.id
+        }
+    })
+    return idNum+1;
+}
+
+console.log(newId());
+
 
 productsController = {
     categories: function (req, res){
@@ -35,9 +50,41 @@ productsController = {
     create: function(req, res){
         res.render("products/productCreate")
     },
+
     createdArt: function(req, res){
-        res.send("Artículo creado")
+        let newProduct = {
+            id: newId(),
+            game_name: req.body.productName,
+            developer: req.body.dev,
+            genre: req.body.categoria,
+            email: req.body.email,
+            release_date: req.body.date,
+            platform: [],
+            price: req.body.price,
+            images: req.body.image,
+            min_requirements: req.body.requerimentMin,
+            rec_requirements: req.body.requeriment,
+            description: req.body.description
+        }
+        /* Array de Plataformas */
+        if (req.body.windows) {
+            newProduct.platform.push("windows")
+        };
+        if (req.body.macos) {
+            newProduct.platform.push("macos")
+        };
+        if (req.body.linux) {
+            newProduct.platform.push("linux")
+        };
+
+        products.push(newProduct);
+        let jsonNuevo = JSON.stringify(products);
+
+        fs.writeFileSync(path.resolve(__dirname, '../data/products.json'), jsonNuevo)
+
+        res.redirect("/products");
     },
+
     editArt: function(req, res){
         res.send("Artículo editado")
     }

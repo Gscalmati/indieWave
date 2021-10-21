@@ -19,9 +19,9 @@
 
         <main id="main-edit-create">
             <h2 id="title">Crear Producto</h2>
-            <form id="create-form" action="" method="post">
+            <form id="create-form" action="/products" method="post">
 
-                <input type="text" name="product-name" id="product-name" aria-label="nombre del juego" placeholder="Nombre del juego">
+                <input type="text" name="productName" id="productName" aria-label="nombre del juego" placeholder="Nombre del juego">
 
                 
                 <input type="text" name="dev" id="dev" aria-label="desarrollador" placeholder="Desarrollador">
@@ -60,12 +60,11 @@
                 <label for="image" id="image" >Cargar Imágenes</label>
                 <input type="file" name="image" accept=".png, .jpeg, .jpg" id="image" aria-label="imagen" alt="Imagen" multiple>
 
-                <input type="text" name="product-name" id="product-name" aria-label="nombre del producto" placeholder="Requisitos recomendados"> 
-                <textarea rows="7" name="requeriment-min" id="requeriment-min" aria-label="requisitos minimos" placeholder="Requisitos mínimos"></textarea>
+                <textarea rows="7" name="requerimentMin" id="requerimentMin" aria-label="requisitos minimos" placeholder="Requisitos mínimos"></textarea>
 
                 <textarea rows="7" name="requeriment" id="requeriment" aria-label="requeriment" placeholder="Requisitos recomendados"></textarea>
 
-                <textarea rows="9" name="descripcion" id="descripcion" maxlength="500" aria-label="descripcion" placeholder="Descripción . . ."></textarea>
+                <textarea rows="9" name="description" id="description" maxlength="500" aria-label="descripcion" placeholder="Descripción . . ."></textarea>
                 
                 <button type="reset" id="delete-btn">Borrar</button>
                 

@@ -4,11 +4,18 @@ const app = express();
 
 const path = require("path");
 
-
+const methodOverride = require("method-override");
 
 
 /* Configuracion Express */
 app.use(express.static(path.resolve(__dirname,"../public")));
+
+/* Configuracion JSON */
+app.use(express.urlencoded({extended:false}));
+app.use(express.json());
+
+/* Configuracion Method Override */
+app.use(methodOverride("_method"));
 
 /* Configuracion template engine */
 app.set("view engine", "ejs");
