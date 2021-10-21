@@ -7,8 +7,8 @@
         "email": "sedgars0@de.vu",
         "release_date": "12/26/2020",
         "platform": [
-            "PC",
-            "Linux"
+            "windows",
+            "linux"
         ],
         "price": 20,
         "images": "http://dummyimage.com/236x100.png/ff4444/ffffff",
@@ -24,8 +24,8 @@
         "email": "gepperson1@ox.ac.uk",
         "release_date": "7/26/2021",
         "platform": [
-            "PC",
-            "Linux"
+            "windows",
+            "linux"
         ],
         "price": 40,
         "images": "http://dummyimage.com/177x100.png/cc0000/ffffff",
@@ -41,8 +41,8 @@
         "email": "cdukesbury2@furl.net",
         "release_date": "8/30/2021",
         "platform": [
-            "PC",
-            "Linux"
+            "windows",
+            "linux"
         ],
         "price": 10,
         "images": "http://dummyimage.com/245x100.png/cc0000/ffffff",
@@ -58,8 +58,8 @@
         "email": "tthickens3@ning.com",
         "release_date": "12/10/2020",
         "platform": [
-            "PC",
-            "Linux"
+            "windows",
+            "linux"
         ],
         "price": 10,
         "images": "http://dummyimage.com/238x100.png/ff4444/ffffff",
@@ -75,8 +75,8 @@
         "email": "sdownham4@blogspot.com",
         "release_date": "2/5/2021",
         "platform": [
-            "PC",
-            "Linux"
+            "windows",
+            "linux"
         ],
         "price": 30,
         "images": "http://dummyimage.com/160x100.png/cc0000/ffffff",
@@ -92,9 +92,9 @@
         "email": "fsangster5@wikimedia.org",
         "release_date": "7/21/2021",
         "platform": [
-            "PC",
-            "Linux",
-            "macOS"
+            "windows",
+            "linux",
+            "macos"
         ],
         "price": 40,
         "images": "http://dummyimage.com/230x100.png/5fa2dd/ffffff",
@@ -110,9 +110,9 @@
         "email": "fhogsden6@latimes.com",
         "release_date": "11/20/2020",
         "platform": [
-            "PC",
-            "Linux",
-            "macOS"
+            "windows",
+            "linux",
+            "macos"
         ],
         "price": 30,
         "images": "http://dummyimage.com/133x100.png/5fa2dd/ffffff",
@@ -128,8 +128,8 @@
         "email": "ctutin7@ebay.com",
         "release_date": "11/30/2020",
         "platform": [
-            "PC",
-            "Linux"
+            "windows",
+            "linux"
         ],
         "price": 40,
         "images": "http://dummyimage.com/181x100.png/ff4444/ffffff",
@@ -145,7 +145,7 @@
         "email": "amacardle8@earthlink.net",
         "release_date": "10/5/2021",
         "platform": [
-            "PC"
+            "windows"
         ],
         "price": 20,
         "images": "http://dummyimage.com/162x100.png/5fa2dd/ffffff",
@@ -161,7 +161,7 @@
         "email": "jfrance9@purevolume.com",
         "release_date": "4/3/2021",
         "platform": [
-            "PC"
+            "windows"
         ],
         "price": 10,
         "images": "http://dummyimage.com/175x100.png/5fa2dd/ffffff",
@@ -177,8 +177,8 @@
         "email": "cgiraulda@accuweather.com",
         "release_date": "7/11/2021",
         "platform": [
-            "PC",
-            "macOS"
+            "windows",
+            "macos"
         ],
         "price": 40,
         "images": "http://dummyimage.com/101x100.png/ff4444/ffffff",
@@ -194,8 +194,8 @@
         "email": "awernhamb@flickr.com",
         "release_date": "5/14/2021",
         "platform": [
-            "PC",
-            "macOS"
+            "windows",
+            "macos"
         ],
         "price": 40,
         "images": "http://dummyimage.com/102x100.png/5fa2dd/ffffff",
@@ -211,8 +211,8 @@
         "email": "bstarsmearec@ca.gov",
         "release_date": "8/10/2021",
         "platform": [
-            "PC",
-            "Linux"
+            "windows",
+            "linux"
         ],
         "price": 40,
         "images": "http://dummyimage.com/137x100.png/dddddd/000000",
@@ -228,8 +228,8 @@
         "email": "uearengeyd@dropbox.com",
         "release_date": "3/19/2021",
         "platform": [
-            "PC",
-            "Linux"
+            "windows",
+            "linux"
         ],
         "price": 10,
         "images": "http://dummyimage.com/104x100.png/dddddd/000000",
@@ -245,8 +245,8 @@
         "email": "bofallownee@npr.org",
         "release_date": "7/10/2021",
         "platform": [
-            "PC",
-            "Linux"
+            "windows",
+            "linux"
         ],
         "price": 10,
         "images": "http://dummyimage.com/206x100.png/ff4444/ffffff",
@@ -262,8 +262,8 @@
         "email": "ebiglyf@china.com.cn",
         "release_date": "12/21/2020",
         "platform": [
-            "PC",
-            "Linux"
+            "windows",
+            "linux"
         ],
         "price": 10,
         "images": "http://dummyimage.com/185x100.png/ff4444/ffffff",
@@ -279,8 +279,8 @@
         "email": "egurgeg@sina.com.cn",
         "release_date": "6/28/2021",
         "platform": [
-            "PC",
-            "Linux"
+            "windows",
+            "linux"
         ],
         "price": 30,
         "images": "http://dummyimage.com/116x100.png/dddddd/000000",
@@ -296,8 +296,8 @@
         "email": "hganfortheh@nasa.gov",
         "release_date": "4/14/2021",
         "platform": [
-            "PC",
-            "Linux"
+            "windows",
+            "linux"
         ],
         "price": 30,
         "images": "http://dummyimage.com/230x100.png/5fa2dd/ffffff",
@@ -313,8 +313,8 @@
         "email": "lfauldsi@sun.com",
         "release_date": "11/21/2020",
         "platform": [
-            "PC",
-            "Linux"
+            "windows",
+            "linux"
         ],
         "price": 20,
         "images": "http://dummyimage.com/105x100.png/ff4444/ffffff",
@@ -330,9 +330,9 @@
         "email": "rrosseyj@example.com",
         "release_date": "5/12/2021",
         "platform": [
-            "PC",
-            "Linux",
-            "macOS"
+            "windows",
+            "linux",
+            "macos"
         ],
         "price": 40,
         "images": "http://dummyimage.com/208x100.png/ff4444/ffffff",
@@ -348,8 +348,8 @@
         "email": "gfollingk@wp.com",
         "release_date": "3/21/2021",
         "platform": [
-            "PC",
-            "Linux"
+            "windows",
+            "linux"
         ],
         "price": 30,
         "images": "http://dummyimage.com/183x100.png/dddddd/000000",
@@ -365,8 +365,8 @@
         "email": "cjoburnl@slideshare.net",
         "release_date": "8/2/2021",
         "platform": [
-            "PC",
-            "Linux"
+            "windows",
+            "linux"
         ],
         "price": 10,
         "images": "http://dummyimage.com/111x100.png/dddddd/000000",
@@ -382,8 +382,8 @@
         "email": "jliddym@auda.org.au",
         "release_date": "6/21/2021",
         "platform": [
-            "PC",
-            "Linux"
+            "windows",
+            "linux"
         ],
         "price": 30,
         "images": "http://dummyimage.com/135x100.png/dddddd/000000",
@@ -399,8 +399,8 @@
         "email": "froskelleyn@eventbrite.com",
         "release_date": "2/4/2021",
         "platform": [
-            "PC",
-            "Linux"
+            "windows",
+            "linux"
         ],
         "price": 40,
         "images": "http://dummyimage.com/171x100.png/5fa2dd/ffffff",
@@ -416,8 +416,8 @@
         "email": "mdahlborgo@so-net.ne.jp",
         "release_date": "7/26/2021",
         "platform": [
-            "PC",
-            "Linux"
+            "windows",
+            "linux"
         ],
         "price": 10,
         "images": "http://dummyimage.com/210x100.png/5fa2dd/ffffff",
