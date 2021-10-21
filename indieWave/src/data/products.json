@@ -6,7 +6,10 @@
         "genre": "arcade",
         "email": "sedgars0@de.vu",
         "release_date": "12/26/2020",
-        "platform": "PC",
+        "platform": [
+            "PC",
+            "Linux"
+        ],
         "price": 20,
         "images": "http://dummyimage.com/236x100.png/ff4444/ffffff",
         "min_requirements": "eros vestibulum ac est lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet sapien urna pretium nisl ut",
@@ -20,7 +23,10 @@
         "genre": "action",
         "email": "gepperson1@ox.ac.uk",
         "release_date": "7/26/2021",
-        "platform": "PC",
+        "platform": [
+            "PC",
+            "Linux"
+        ],
         "price": 40,
         "images": "http://dummyimage.com/177x100.png/cc0000/ffffff",
         "min_requirements": "sapien varius ut blandit non interdum in ante vestibulum ante ipsum primis in faucibus orci luctus",
@@ -34,7 +40,10 @@
         "genre": "sports",
         "email": "cdukesbury2@furl.net",
         "release_date": "8/30/2021",
-        "platform": "PC",
+        "platform": [
+            "PC",
+            "Linux"
+        ],
         "price": 10,
         "images": "http://dummyimage.com/245x100.png/cc0000/ffffff",
         "min_requirements": "eget eros elementum pellentesque quisque porta volutpat erat quisque erat eros viverra eget",
@@ -48,7 +57,10 @@
         "genre": "strategy",
         "email": "tthickens3@ning.com",
         "release_date": "12/10/2020",
-        "platform": "PC",
+        "platform": [
+            "PC",
+            "Linux"
+        ],
         "price": 10,
         "images": "http://dummyimage.com/238x100.png/ff4444/ffffff",
         "min_requirements": "pede justo lacinia eget tincidunt eget tempus vel pede morbi porttitor lorem id",
@@ -62,7 +74,10 @@
         "genre": "adventure",
         "email": "sdownham4@blogspot.com",
         "release_date": "2/5/2021",
-        "platform": "PC",
+        "platform": [
+            "PC",
+            "Linux"
+        ],
         "price": 30,
         "images": "http://dummyimage.com/160x100.png/cc0000/ffffff",
         "min_requirements": "molestie lorem quisque ut erat curabitur gravida nisi at nibh in hac habitasse platea dictumst aliquam",
@@ -76,7 +91,11 @@
         "genre": "sports",
         "email": "fsangster5@wikimedia.org",
         "release_date": "7/21/2021",
-        "platform": "Linux",
+        "platform": [
+            "PC",
+            "Linux",
+            "macOS"
+        ],
         "price": 40,
         "images": "http://dummyimage.com/230x100.png/5fa2dd/ffffff",
         "min_requirements": "suspendisse potenti cras in purus eu magna vulputate luctus cum sociis",
@@ -90,7 +109,11 @@
         "genre": "arcade",
         "email": "fhogsden6@latimes.com",
         "release_date": "11/20/2020",
-        "platform": "Linux",
+        "platform": [
+            "PC",
+            "Linux",
+            "macOS"
+        ],
         "price": 30,
         "images": "http://dummyimage.com/133x100.png/5fa2dd/ffffff",
         "min_requirements": "lacinia sapien quis libero nullam sit amet turpis elementum ligula",
@@ -104,7 +127,10 @@
         "genre": "sports",
         "email": "ctutin7@ebay.com",
         "release_date": "11/30/2020",
-        "platform": "PC",
+        "platform": [
+            "PC",
+            "Linux"
+        ],
         "price": 40,
         "images": "http://dummyimage.com/181x100.png/ff4444/ffffff",
         "min_requirements": "sagittis nam congue risus semper porta volutpat quam pede lobortis ligula sit amet eleifend pede",
@@ -118,7 +144,9 @@
         "genre": "arcade",
         "email": "amacardle8@earthlink.net",
         "release_date": "10/5/2021",
-        "platform": "PC",
+        "platform": [
+            "PC"
+        ],
         "price": 20,
         "images": "http://dummyimage.com/162x100.png/5fa2dd/ffffff",
         "min_requirements": "in blandit ultrices enim lorem ipsum dolor sit amet consectetuer adipiscing elit proin interdum mauris non ligula pellentesque",
@@ -132,7 +160,9 @@
         "genre": "sports",
         "email": "jfrance9@purevolume.com",
         "release_date": "4/3/2021",
-        "platform": "Linux",
+        "platform": [
+            "PC"
+        ],
         "price": 10,
         "images": "http://dummyimage.com/175x100.png/5fa2dd/ffffff",
         "min_requirements": "etiam vel augue vestibulum rutrum rutrum neque aenean auctor gravida sem praesent id massa id",
@@ -146,7 +176,10 @@
         "genre": "arcade",
         "email": "cgiraulda@accuweather.com",
         "release_date": "7/11/2021",
-        "platform": "Linux",
+        "platform": [
+            "PC",
+            "macOS"
+        ],
         "price": 40,
         "images": "http://dummyimage.com/101x100.png/ff4444/ffffff",
         "min_requirements": "nunc viverra dapibus nulla suscipit ligula in lacus curabitur at ipsum ac tellus semper interdum mauris ullamcorper purus sit",
@@ -160,7 +193,10 @@
         "genre": "sports",
         "email": "awernhamb@flickr.com",
         "release_date": "5/14/2021",
-        "platform": "Linux",
+        "platform": [
+            "PC",
+            "macOS"
+        ],
         "price": 40,
         "images": "http://dummyimage.com/102x100.png/5fa2dd/ffffff",
         "min_requirements": "in lacus curabitur at ipsum ac tellus semper interdum mauris ullamcorper purus sit amet",
@@ -174,7 +210,10 @@
         "genre": "arcade",
         "email": "bstarsmearec@ca.gov",
         "release_date": "8/10/2021",
-        "platform": "PC",
+        "platform": [
+            "PC",
+            "Linux"
+        ],
         "price": 40,
         "images": "http://dummyimage.com/137x100.png/dddddd/000000",
         "min_requirements": "volutpat in congue etiam justo etiam pretium iaculis justo in hac habitasse platea dictumst",
@@ -188,7 +227,10 @@
         "genre": "strategy",
         "email": "uearengeyd@dropbox.com",
         "release_date": "3/19/2021",
-        "platform": "PC",
+        "platform": [
+            "PC",
+            "Linux"
+        ],
         "price": 10,
         "images": "http://dummyimage.com/104x100.png/dddddd/000000",
         "min_requirements": "id massa id nisl venenatis lacinia aenean sit amet justo morbi",
@@ -202,7 +244,10 @@
         "genre": "adventure",
         "email": "bofallownee@npr.org",
         "release_date": "7/10/2021",
-        "platform": "macOS",
+        "platform": [
+            "PC",
+            "Linux"
+        ],
         "price": 10,
         "images": "http://dummyimage.com/206x100.png/ff4444/ffffff",
         "min_requirements": "molestie lorem quisque ut erat curabitur gravida nisi at nibh in hac habitasse platea dictumst aliquam augue quam sollicitudin",
@@ -216,7 +261,10 @@
         "genre": "action",
         "email": "ebiglyf@china.com.cn",
         "release_date": "12/21/2020",
-        "platform": "macOS",
+        "platform": [
+            "PC",
+            "Linux"
+        ],
         "price": 10,
         "images": "http://dummyimage.com/185x100.png/ff4444/ffffff",
         "min_requirements": "quis orci nullam molestie nibh in lectus pellentesque at nulla suspendisse",
@@ -230,7 +278,10 @@
         "genre": "adventure",
         "email": "egurgeg@sina.com.cn",
         "release_date": "6/28/2021",
-        "platform": "macOS",
+        "platform": [
+            "PC",
+            "Linux"
+        ],
         "price": 30,
         "images": "http://dummyimage.com/116x100.png/dddddd/000000",
         "min_requirements": "quisque ut erat curabitur gravida nisi at nibh in hac habitasse platea dictumst aliquam augue",
@@ -244,7 +295,10 @@
         "genre": "adventure",
         "email": "hganfortheh@nasa.gov",
         "release_date": "4/14/2021",
-        "platform": "macOS",
+        "platform": [
+            "PC",
+            "Linux"
+        ],
         "price": 30,
         "images": "http://dummyimage.com/230x100.png/5fa2dd/ffffff",
         "min_requirements": "diam vitae quam suspendisse potenti nullam porttitor lacus at turpis donec posuere metus vitae",
@@ -258,7 +312,10 @@
         "genre": "action",
         "email": "lfauldsi@sun.com",
         "release_date": "11/21/2020",
-        "platform": "PC",
+        "platform": [
+            "PC",
+            "Linux"
+        ],
         "price": 20,
         "images": "http://dummyimage.com/105x100.png/ff4444/ffffff",
         "min_requirements": "augue vestibulum rutrum rutrum neque aenean auctor gravida sem praesent id massa",
@@ -272,7 +329,11 @@
         "genre": "strategy",
         "email": "rrosseyj@example.com",
         "release_date": "5/12/2021",
-        "platform": "PC",
+        "platform": [
+            "PC",
+            "Linux",
+            "macOS"
+        ],
         "price": 40,
         "images": "http://dummyimage.com/208x100.png/ff4444/ffffff",
         "min_requirements": "sapien urna pretium nisl ut volutpat sapien arcu sed augue aliquam erat volutpat in congue etiam justo etiam",
@@ -286,7 +347,10 @@
         "genre": "action",
         "email": "gfollingk@wp.com",
         "release_date": "3/21/2021",
-        "platform": "Linux",
+        "platform": [
+            "PC",
+            "Linux"
+        ],
         "price": 30,
         "images": "http://dummyimage.com/183x100.png/dddddd/000000",
         "min_requirements": "nisl nunc nisl duis bibendum felis sed interdum venenatis turpis enim blandit mi in porttitor pede justo eu massa",
@@ -300,7 +364,10 @@
         "genre": "action",
         "email": "cjoburnl@slideshare.net",
         "release_date": "8/2/2021",
-        "platform": "Linux",
+        "platform": [
+            "PC",
+            "Linux"
+        ],
         "price": 10,
         "images": "http://dummyimage.com/111x100.png/dddddd/000000",
         "min_requirements": "pharetra magna ac consequat metus sapien ut nunc vestibulum ante",
@@ -314,7 +381,10 @@
         "genre": "strategy",
         "email": "jliddym@auda.org.au",
         "release_date": "6/21/2021",
-        "platform": "PC",
+        "platform": [
+            "PC",
+            "Linux"
+        ],
         "price": 30,
         "images": "http://dummyimage.com/135x100.png/dddddd/000000",
         "min_requirements": "tincidunt lacus at velit vivamus vel nulla eget eros elementum pellentesque quisque porta volutpat erat",
@@ -328,7 +398,10 @@
         "genre": "adventure",
         "email": "froskelleyn@eventbrite.com",
         "release_date": "2/4/2021",
-        "platform": "PC",
+        "platform": [
+            "PC",
+            "Linux"
+        ],
         "price": 40,
         "images": "http://dummyimage.com/171x100.png/5fa2dd/ffffff",
         "min_requirements": "in imperdiet et commodo vulputate justo in blandit ultrices enim lorem ipsum dolor sit amet consectetuer adipiscing",
@@ -342,7 +415,10 @@
         "genre": "strategy",
         "email": "mdahlborgo@so-net.ne.jp",
         "release_date": "7/26/2021",
-        "platform": "PC",
+        "platform": [
+            "PC",
+            "Linux"
+        ],
         "price": 10,
         "images": "http://dummyimage.com/210x100.png/5fa2dd/ffffff",
         "min_requirements": "diam vitae quam suspendisse potenti nullam porttitor lacus at turpis donec posuere metus vitae ipsum aliquam",
