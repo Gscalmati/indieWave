@@ -24,7 +24,14 @@ console.log(newId());
 
 productsController = {
     categories: function (req, res){
-        res.render("products/categories"); 
+        /*Creo un array por cada género*/
+        let arcade = products.filter((game)=>game.genre == "arcade")
+        let action = products.filter((game)=>game.genre == "action")
+        let sports = products.filter((game)=>game.genre == "sports")
+        let strategy = products.filter((game)=>game.genre == "strategy")
+        let adventure = products.filter((game)=>game.genre == "adventure")
+        
+        res.render("products/categories", {arcade, action, sports, strategy, adventure}); 
     },
     categorygames: function (req, res){
         let category = req.params.category;
