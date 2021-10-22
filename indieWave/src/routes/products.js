@@ -19,7 +19,7 @@ router.get("/create", productsController.create);
 
 router.get("/:id", productsController.detail);
 
-router.get("/:category", productsController.categorygames);
+router.get("/categories/:category", productsController.categorygames);
 
 
 module.exports = router;

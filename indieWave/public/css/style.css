@@ -41,7 +41,6 @@
 
 html, body {
     width: 100%;
-    height: 100%;
     margin: 0;
 }
 
@@ -145,7 +144,7 @@ main a {
 
 main {
     width: 95vw;
-    /*height: 100%; /*QUE ONDA CON ESTO*/
+    height: 100%; 
     margin: 185px auto 20px;
     background-color: rgba(92, 44, 109, 0.8);
     box-sizing: border-box;
