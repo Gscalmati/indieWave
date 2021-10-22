@@ -18,22 +18,30 @@
     <%- include("../partials/header.ejs") %>
         <main>
             <div id="subtitle">
-                <h2>Categoria</h2>
+                <h2>
+                    <%= title %>
+                </h2>
             </div>
-            <!-- crear ¿5? sections de cinco articles con juegos de la categoría correspondiente -->
+            <% for( let i=0; i < 5; i++ ) { %>
             <section id="category">
-                <article class="category-article">
-                    <div>
-                        <img class="responsive-img" src="https://via.placeholder.com/1000x1000"
-                            alt="Foto producto Indie Game">
-                    </div>
-                    <div class="detalle">
-                        <h3>Nombre del producto</h3>
-                        <p>$1.000</p>
-                    </div>
-                </article>
+                    <% for( let j=0; j < categoryGames.length; j++ ) { %>
+                    <article class="category-article">
+                        <div>
+                            <img class="responsive-img" src="<%= categoryGames[j].images%>" alt="Foto producto Indie Game">
+                        </div>
+                        <div class="detalle">
+                            <h3>
+                                <%= categoryGames[j].game_name%>
+                            </h3>
+                            <p>
+                                $<%= categoryGames[j].price%>
+                            </p>
+                        </div>
+                    </article>
+                <% } %>
 
             </section>
+            <% } %>
 
         </main>
         <%- include("../partials/footer.ejs") %>
