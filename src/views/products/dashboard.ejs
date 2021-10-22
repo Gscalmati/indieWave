@@ -20,9 +20,28 @@
         <h2>Hola ahi viene la tabla</br></h2>
         <table>Soy la tabla</table>
 
-        <table><thead><th>ID</th>
-
-        </thead><tbody><tr><td>HOLI</td></tr></tbody></table>
+        <table>
+            <thead>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Desarrolladora</th>
+                <th>Género</th>
+                <th>Precio</th>
+            </thead>
+            <tbody>
+                <% products.forEach(producto => { %>
+                <tr>
+                    <td><%= producto.id%> </td>
+                    <td><%= producto.game_name%></td>
+                    <td><%= producto.developer%></td>
+                    <td><%= producto.genre%></td>
+                    <td>$<%= producto.price%></td>
+                    <td>EDITAR</td>
+                    <td>BORRAR</td>
+                </tr>
+                <%  }) %> 
+            </tbody>
+        </table>
     </main>
 
     <footer>

@@ -70,7 +70,7 @@ productsController = {
     },
 
     dashboard: function (req, res) {
-        res.render("products/dashboard")
+        res.render("products/dashboard", {products})
     },
 
     cart: function (req, res) {
