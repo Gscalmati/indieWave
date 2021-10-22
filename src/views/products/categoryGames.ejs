@@ -23,25 +23,28 @@
                 </h2>
             </div>
             <% for( let i=0; i < 5; i++ ) { %>
-            <section id="category">
+                <section id="category">
                     <% for( let j=0; j < categoryGames.length; j++ ) { %>
-                    <article class="category-article">
-                        <div>
-                            <img class="responsive-img" src="<%= categoryGames[j].images%>" alt="Foto producto Indie Game">
-                        </div>
-                        <div class="detalle">
-                            <h3>
-                                <%= categoryGames[j].game_name%>
-                            </h3>
-                            <p>
-                                $<%= categoryGames[j].price%>
-                            </p>
-                        </div>
-                    </article>
-                <% } %>
+                        <article class="category-article">
+                            <a href="/products/<%= categoryGames[j].id %> ">
+                                <div>
+                                    <img class="responsive-img" src="<%= categoryGames[j].images%>"
+                                        alt="Foto producto Indie Game">
+                                </div>
+                                <div class="detalle">
+                                    <h3>
+                                        <%= categoryGames[j].game_name%>
+                                    </h3>
+                                    <p>
+                                        $<%= categoryGames[j].price%>
+                                    </p>
+                                </div>
+                            </a>
+                        </article>
+                        <% } %>
 
-            </section>
-            <% } %>
+                </section>
+                <% } %>
 
         </main>
         <%- include("../partials/footer.ejs") %>
