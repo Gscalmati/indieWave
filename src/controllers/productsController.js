@@ -35,7 +35,7 @@ productsController = {
     },
     categorygames: function (req, res) {
         let category = req.params.category;
-        
+
         let categoryGames = products.filter((game) => game.genre == category)
 
         let title = ""
@@ -57,8 +57,6 @@ productsController = {
                 break;
 
         }
-
-
         res.render("products/categoryGames", { categoryGames, category, title });
     },
 
