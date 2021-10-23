@@ -28,20 +28,22 @@
                 <% for( let i=0; i < 5; i++ ) { %>
                     <!-- crear cinco articles, cada uno con un juego perteneciente a la categoría correspondiente -->
                     <article class="category-article">
-                        <a href="/products/<%= arcade[i].id %> ">
-                            <div>
+                        <div>
+                            <a href="/products/<%= arcade[i].id %> ">
                                 <img class="responsive-img" src="<%= arcade[i].images %> "
                                     alt="Foto producto Indie Game">
-                            </div>
-                            <div class="detalle">
-                                <h3>
+                            </a>
+                        </div>
+                        <div class="detalle">
+                            <h3>
+                                <a href="/products/<%= arcade[i].id %> ">
                                     <%= arcade[i].game_name %>
-                                </h3>
-                                <p>
-                                    $<%= arcade[i].price %>
-                                </p>
-                            </div>
-                        </a>
+                                </a>
+                            </h3>
+                            <p>
+                                $<%= arcade[i].price %>
+                            </p>
+                        </div>
                     </article>
                     <% } %>
             </section>
@@ -64,7 +66,7 @@
                                     <%= action[i].game_name %>
                                 </h3>
                                 <p>
-                                    <%= action[i].price %>
+                                    $<%= action[i].price %>
                                 </p>
                             </div>
                         </a>
@@ -90,7 +92,7 @@
                                     <%= sports[i].game_name %>
                                 </h3>
                                 <p>
-                                    <%= sports[i].price %>
+                                    $<%= sports[i].price %>
                                 </p>
                             </div>
                         </a>
@@ -116,7 +118,7 @@
                                     <%= strategy[i].game_name %>
                                 </h3>
                                 <p>
-                                    <%= strategy[i].price %>
+                                    $<%= strategy[i].price %>
                                 </p>
                             </div>
                         </a>
@@ -142,7 +144,7 @@
                                 <%= adventure[i].game_name %>
                             </h3>
                             <p>
-                                <%= adventure[i].price %>
+                                $<%= adventure[i].price %>
                             </p>
                         </div>
                         </a>
