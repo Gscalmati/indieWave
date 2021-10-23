@@ -17,15 +17,14 @@
     <%- include("../partials/header.ejs") %> 
     </header>
     <main>
-        <h2>Hola ahi viene la tabla</br></h2>
-        <table>Soy la tabla</table>
-
+        <h2>Dashboard</br></h2>
         <table>
             <thead>
                 <th>ID</th>
                 <th>Nombre</th>
                 <th>Desarrolladora</th>
                 <th>Género</th>
+                <th>Fecha de Lanzamiento</th>
                 <th>Precio</th>
             </thead>
             <tbody>
@@ -33,11 +32,18 @@
                 <tr>
                     <td><%= producto.id%> </td>
                     <td><%= producto.game_name%></td>
-                    <td><%= producto.developer%></td>
                     <td><%= producto.genre%></td>
+                    <td><%= producto.developer%></td>
+                    <td>$<%= producto.release_date%></td>
                     <td>$<%= producto.price%></td>
-                    <td>EDITAR</td>
-                    <td>BORRAR</td>
+                    <td><form method="GET" action="/products/edit/<%= producto.id %>">
+                        <input type="submit" value="EDITAR">
+                    </form>
+                </td>
+                    <td><form method="POST" action="/products/<% producto.id %>?_method=DELETE">
+                        <input type="submit" value="BORRAR">
+                    </form>
+                </td>
                 </tr>
                 <%  }) %> 
             </tbody>

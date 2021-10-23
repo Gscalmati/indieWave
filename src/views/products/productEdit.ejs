@@ -21,9 +21,9 @@
             <h2 id="title">Editar Producto</h2>
             <form id="create-form" action="" method="post">
 
-                <input type="text" name="product-name" id="product-name" aria-label="nombre del juego" placeholder="Nombre del juego">
+                <input type="text" name="product-name" id="product-name" aria-label="nombre del juego" value="<%= producto.game_name%>">
 
-                <input type="text" name="dev" id="dev" aria-label="desarrollador" placeholder="Desarrollador">
+                <input type="text" name="dev" id="dev" aria-label="desarrollador" value="<%= producto.developer %>">
 
                 <div id="gender">
                     <label for="categoria">Género:</label>
@@ -36,11 +36,11 @@
                     </select>
                 </div>
 
-                <input type="email" name="email" id="email" aria-label="email" placeholder="Email de contacto">
+                <input type="email" name="email" id="email" aria-label="email" value="<%= producto.email %>">
 
 
                 <label for="date">Fecha de lanzamiento</label>
-                <input type="date" name="date" id="date" aria-label="fecha de lanzamiento" placeholder="Fecha de lanzamiento">
+                <input type="date" name="date" id="date" aria-label="fecha de lanzamiento" value="<%= producto.release_date %>">
                 
                 <span id="subtitle">Plataforma</span>
                 <div id="checkbox-wrapper">
@@ -52,7 +52,7 @@
                     <input type="checkbox" name="linux" id="linux">
                 </div>
 
-                <input type="number" name="price" id="price" aria-label="price" placeholder="Precio">
+                <input type="number" name="price" id="price" aria-label="price" value="<%= producto.price %>">
 
                 <label for="logo" id="image" >Cargar Logo</label>
                 <input type="file" name="logo" accept=".png, .jpeg, .jpg" id="logo" aria-label="logo" alt="logo">
@@ -60,11 +60,11 @@
                 <label for="image" id="image" >Cargar Imágenes</label>
                 <input type="file" name="image" accept=".png, .jpeg, .jpg" id="image" aria-label="imagen" alt="Imagen" multiple>
 
-                <textarea rows="7" name="requeriment-min" id="requeriment-min" aria-label="requisitos minimos" placeholder="Requisitos mínimos"></textarea>
+                <textarea rows="7" name="requeriment-min" id="requeriment-min" aria-label="requisitos minimos"><%= producto.min_requirements %></textarea>
 
-                <textarea rows="7" name="requeriment" id="requeriment" aria-label="requeriment" placeholder="Requisitos recomendados"></textarea>
+                <textarea rows="7" name="requeriment" id="requeriment" aria-label="requeriment" ><%= producto.rec_requirements %></textarea>
 
-                <textarea rows="9" name="descripcion" id="descripcion" maxlength="500" aria-label="descripcion" placeholder="Descripción . . ."></textarea>
+                <textarea rows="9" name="descripcion" id="descripcion" maxlength="500" aria-label="descripcion"><%= producto.description %></textarea>
                 
                 <button type="reset" id="delete-btn">Borrar</button>
 

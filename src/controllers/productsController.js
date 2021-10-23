@@ -1,10 +1,6 @@
 const path = require("path");
 const fs = require("fs");
 
-/*const { privateDecrypt } = require("crypto");
-const { json } = require("stream/consumers");
-*/
-
 let jsonProducts = fs.readFileSync(path.resolve(__dirname, '../data/products.json'), 'utf-8');
 let products = JSON.parse(jsonProducts); //Convertimos el json a array
 
@@ -23,6 +19,7 @@ console.log(newId());
 
 
 productsController = {
+
     categories: function (req, res) {
         /*Creo un array por cada género*/
         let arcade = products.filter((game) => game.genre == "arcade")
@@ -33,6 +30,7 @@ productsController = {
 
         res.render("products/categories", { arcade, action, sports, strategy, adventure });
     },
+
     categorygames: function (req, res) {
         let category = req.params.category;
 
@@ -76,9 +74,15 @@ productsController = {
     cart: function (req, res) {
         res.render("products/shoppingCart");
     },
+
     edit: function (req, res) {
-        res.render("products/productEdit");
+        let productoEdit = products.filter(product =>{
+            return (product.id == req.params.id)
+        })
+        console.log(productoEdit)
+        res.render("products/productEdit", {producto: productoEdit[0]});
     },
+    
     create: function (req, res) {
         res.render("products/productCreate")
     },
@@ -100,13 +104,13 @@ productsController = {
         }
         /* Array de Plataformas */
         if (req.body.windows) {
-            newProduct.platform.push("windows")
+            newProduct.platform.push("Windows")
         };
         if (req.body.macos) {
-            newProduct.platform.push("macos")
+            newProduct.platform.push("macOS")
         };
         if (req.body.linux) {
-            newProduct.platform.push("linux")
+            newProduct.platform.push("Linux")
         };
 
         products.push(newProduct);
