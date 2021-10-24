@@ -28,11 +28,26 @@
                 <div id="gender">
                     <label for="categoria">Género:</label>
                     <select name="categoria">
-                        <option value="arcade">Arcade</option>
-                        <option value="accion">Acción</option>
-                        <option value="deportivo">Deportivo</option>
-                        <option value="estrategia">Estrategia</option>
-                        <option value="aventura">Aventura</option>
+                        <option value="arcade" 
+                        <% if (producto.genre === "arcade" ){ %> 
+                            selected 
+                        <% } %> > Arcade </option>
+                        <option value="accion"
+                        <% if (producto.genre === "action" ){ %> 
+                            selected 
+                        <% } %> > Acción</option>
+                        <option value="deportivo"
+                        <% if (producto.genre === "sports" ){ %> 
+                            selected 
+                        <% } %> > Deportivo</option>
+                        <option value="estrategia"
+                        <% if (producto.genre === "strategy" ){ %> 
+                            selected 
+                        <% } %> > Estrategia</option>
+                        <option value="aventura" 
+                        <% if (producto.genre === "adventure" ){ %> 
+                            selected 
+                        <% } %> > Aventura</option>
                     </select>
                 </div>
 
