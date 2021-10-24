@@ -15,8 +15,6 @@ const newId = function () {
     return idNum + 1;
 }
 
-console.log(newId());
-
 
 productsController = {
 
@@ -79,7 +77,6 @@ productsController = {
         let productoEdit = products.filter(product =>{
             return (product.id == req.params.id)
         })
-        console.log(productoEdit)
         res.render("products/productEdit", {producto: productoEdit[0]});
     },
     

@@ -44,12 +44,25 @@
                 
                 <span id="subtitle">Plataforma</span>
                 <div id="checkbox-wrapper">
+
                     <label for="windows">Windows</label>
-                    <input type="checkbox" name="windows" id="windows">
+                    <input type="checkbox" name="windows" id="windows" 
+                    <% if (producto.platform.includes("windows")) { %>
+                        checked 
+                    <% } %> > 
+
                     <label for="macos">macOS</label>
-                    <input type="checkbox" name="macos" id="macos">
+                    <input type="checkbox" name="macos" id="macos"
+                    <% if (producto.platform.includes("macos")) { %>
+                        checked 
+                    <% } %> > 
+
                     <label for="linux">Linux</label>
-                    <input type="checkbox" name="linux" id="linux">
+                    <input type="checkbox" name="linux" id="linux"
+                    <% if (producto.platform.includes("linux")) { %>
+                        checked 
+                    <% } %> > 
+
                 </div>
 
                 <input type="number" name="price" id="price" aria-label="price" value="<%= producto.price %>">
