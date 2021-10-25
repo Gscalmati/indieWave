@@ -30,3 +30,4 @@
 - Juani pone fecha para sus tareas **martes 26/11** 
 - Revisamos el dashboard.
 - Listados: ¿Le pedimos al user fotos de 'x' tamaño?
+- Forms crear y editar: editar/eliminar botones.
