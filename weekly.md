@@ -23,3 +23,10 @@
 - ¿Unimos las rutas de categorias y de id de producto? (/products/:category/:id?) ¿Responderían al mismo método del controlador?
 - Revisar labels de formularios create y edit.
 - ¿Las rutas en router se leen de arriba a abajo? (caso "products/:category" después de "products/otracosa")
+
+## Domingo 24/10/2021
+
+- **Juani nos quiere meter en una estafa piramidal**
+- Juani pone fecha para sus tareas **martes 26/11** 
+- Revisamos el dashboard.
+- Listados: ¿Le pedimos al user fotos de 'x' tamaño?
