@@ -6,26 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="/css/style.css">
-
     <link rel="stylesheet" href="/css/home.css">
+
     <link rel="icon" href="/img/favicon.ico" type="image/x-icon" />
 
     <title>IW - Dashboard</title>
 </head>
 <body>
-    <header>
+
     <%- include("../partials/header.ejs") %> 
-    </header>
+   
     <main>
         <h2>Dashboard</br></h2>
-        <table>
+        <table id="dashboard">
             <thead>
+            <tr>
                 <th>ID</th>
                 <th>Nombre</th>
                 <th>Género</th>
                 <th>Desarrolladora</th>
                 <th>Fecha de Lanzamiento</th>
                 <th>Precio</th>
+                <th></th>
+                <th></th>
+            </tr>
             </thead>
             <tbody>
                 <% products.forEach(producto => { %>
@@ -34,7 +38,7 @@
                     <td><%= producto.game_name%></td>
                     <td><%= producto.genre%></td>
                     <td><%= producto.developer%></td>
-                    <td>$<%= producto.release_date%></td>
+                    <td><%= producto.release_date%></td>
                     <td>$<%= producto.price%></td>
                     <td><form method="GET" action="/products/edit/<%= producto.id %>">
                         <input type="submit" value="EDITAR">
@@ -50,8 +54,8 @@
         </table>
     </main>
 
-    <footer>
+
         <%- include("../partials/footer.ejs") %> 
-    </footer>
+
 </body>
 </html>

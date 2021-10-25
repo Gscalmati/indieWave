@@ -595,3 +595,78 @@ main #extras-area #sale {
         color: var(--space-cadet);
     }
 }
+
+ /*** DASHBOARD ***/
+
+/** MOBILE **/
+
+#dashboard {
+    width: 100%;
+    
+    background-color: var(--thistle);
+
+    border: 2px solid var(--steelpink);
+    border-collapse: collapse;
+
+    text-align: center;
+
+    font-size: 8px;
+}
+
+#dashboard th {
+    border: 2px solid var(--steelpink);
+    color: var(--eminence);
+    padding: 5px 0px;
+
+    font-size: 5px;
+}
+
+
+#dashboard td{
+    padding: 5px 0px;
+    color: var(--space-cadet);
+
+    border: 2px solid var(--steelpink);
+}
+
+#dashboard input {
+    font-size: 5px;
+}
+
+
+
+@media (min-width: 768px){
+
+    /** TABLET **/
+
+    #dashboard {
+        font-size: 9px;
+    }
+
+    #dashboard input {
+        font-size: 5px;
+    }
+
+    #dashboard th {
+        font-size: 8px
+    }
+
+}
+
+@media (min-width: 1024px){
+
+/** DESKTOP **/
+
+#dashboard {
+    font-size: 16px;
+}
+
+#dashboard input {
+    font-size: 12px;
+}
+
+#dashboard th {
+    font-size: 16px
+}
+
+}
