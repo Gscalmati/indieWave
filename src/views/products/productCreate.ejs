@@ -21,10 +21,10 @@
             <h2 id="title">Crear Producto</h2>
             <form id="create-form" action="/products" method="post" enctype="multipart/form-data">
 
-                <input type="text" name="productName" id="productName" aria-label="nombre del juego" placeholder="Nombre del juego">
+                <input type="text" name="productName" id="productName" aria-label="nombre del juego" placeholder="Nombre del juego" required>
 
                 
-                <input type="text" name="dev" id="dev" aria-label="desarrollador" placeholder="Desarrollador">
+                <input type="text" name="dev" id="dev" aria-label="desarrollador" placeholder="Desarrollador" required>
 
                 <div id="gender">
                     <label for="categoria">Género:</label>
@@ -36,11 +36,11 @@
                         <option value="aventura">Aventura</option>
                     </select>
                 </div>
-                <input type="email" name="email" id="email" aria-label="email" placeholder="Email de contacto">
+                <input type="email" name="email" id="email" aria-label="email" placeholder="Email de contacto" required>
 
 
                 <label for="date">Fecha de lanzamiento</label>
-                <input type="date" name="date" id="date" aria-label="fecha de lanzamiento" placeholder="Fecha de lanzamiento">
+                <input type="date" name="date" id="date" aria-label="fecha de lanzamiento" placeholder="Fecha de lanzamiento" required>
                 
                 <span id="subtitle">Plataforma</span>
                 <div id="checkbox-wrapper">
@@ -52,19 +52,19 @@
                     <input type="checkbox" name="linux" id="linux">
                 </div>
 
-                <input type="number" name="price" id="price" aria-label="price" placeholder="Precio">
+                <input type="number" name="price" id="price" aria-label="price" placeholder="Precio" required>
 
                 <label for="logo" id="image" >Cargar Logo</label>
-                <input type="file" name="logo" accept=".png, .jpeg, .jpg" id="logo" aria-label="logo" alt="logo">
+                <input type="file" name="logo" accept=".png, .jpeg, .jpg" id="logo" aria-label="logo" alt="logo" required>
 
                 <label for="image" id="image" >Cargar Imágenes</label>
                 <input type="file" name="image" accept=".png, .jpeg, .jpg" id="image" aria-label="imagen" alt="Imagen" multiple>
 
-                <textarea rows="7" name="requerimentMin" id="requerimentMin" aria-label="requisitos minimos" placeholder="Requisitos mínimos"></textarea>
+                <textarea rows="7" name="requerimentMin" id="requerimentMin" aria-label="requisitos minimos" placeholder="Requisitos mínimos" required></textarea>
 
-                <textarea rows="7" name="requeriment" id="requeriment" aria-label="requeriment" placeholder="Requisitos recomendados"></textarea>
+                <textarea rows="7" name="requeriment" id="requeriment" aria-label="requeriment" placeholder="Requisitos recomendados" required></textarea>
 
-                <textarea rows="9" name="description" id="description" maxlength="500" aria-label="descripcion" placeholder="Descripción . . ."></textarea>
+                <textarea rows="9" name="description" id="description" maxlength="500" aria-label="descripcion" placeholder="Descripción . . ." required></textarea>
                 
                 <button type="reset" id="delete-btn">Borrar</button>
                 
