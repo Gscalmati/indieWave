@@ -8,17 +8,17 @@ const multer = require("multer");
 const storage = multer.diskStorage({
     destination : (req, file, cb) =>{
         console.log(req.body);
-        if (!fs.existsSync(path.resolve(__dirname, `../../public/img/${req.body.productName}-imgs`))){
-            fs.mkdirSync(path.resolve(__dirname, `../../public/img/${req.body.productName}-imgs`));
+        if (!fs.existsSync(path.resolve(__dirname, `../../public/img/${req.body.game_name}-imgs`))){
+            fs.mkdirSync(path.resolve(__dirname, `../../public/img/${req.body.game_name}-imgs`));
         }
-        cb(null, path.resolve(__dirname, `../../public/img/${req.body.productName}-imgs`));
+        cb(null, path.resolve(__dirname, `../../public/img/${req.body.game_name}-imgs`));
     },
     filename: (req, file, cb) => {
         let newFilename
         if (file.fieldname === "logo"){
-            newFilename = "Logo" + req.body.productName + Date.now() + path.extname(file.originalname)
+            newFilename = "Logo" + req.body.game_name + Date.now() + path.extname(file.originalname)
         } else{
-            newFilename = "Img"+ req.body.productName + Date.now() + path.extname(file.originalname)
+            newFilename = "Img"+ req.body.game_name + Date.now() + path.extname(file.originalname)
         }
         cb(null, newFilename )
     }
@@ -29,7 +29,7 @@ const productsController = require("../controllers/productsController");
 
 
 router.get("/", productsController.categories);
-router.post("/", upload.fields([{name: "logo"},{name: "image"}]), productsController.store);
+router.post("/", upload.fields([{name: "logo"},{name: "images"}]), productsController.store);
 
 /* CRUD */
 router.get("/dashboard", productsController.dashboard);

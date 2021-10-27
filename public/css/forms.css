@@ -110,13 +110,13 @@ label{
 #label-login, #label-register{
     margin-top: 0px;
 }
-#gender{
+#genre{
     width: 80%;
     margin-top: 40px;
     text-align: center;
     font-size: 18px;
 }
-#gender select{
+#genre select{
     font-family: "ubuntu";
     font-size: 18px;
     width: 50%;
