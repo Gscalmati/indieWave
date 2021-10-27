@@ -85,18 +85,27 @@ productsController = {
     },
 
     store: function (req, res) {
+
+        let imagesArray = []
+        
+        req.files["images"].forEach((image)=>{
+            imagesArray.push(image.filename)
+            console.log(image.filename)
+        })
+
         let newProduct = {
             id: newId(),
-            game_name: req.body.productName,
-            developer: req.body.dev,
-            genre: req.body.categoria,
+            game_name: req.body.game_name,
+            developer: req.body.developer,
+            genre: req.body.genre,
             email: req.body.email,
-            release_date: req.body.date,
+            release_date: req.body.release_date,
             platform: [],
             price: req.body.price,
-            images: req.body.image,
-            min_requirements: req.body.requerimentMin,
-            rec_requirements: req.body.requeriment,
+            logo: req.files["logo"][0].filename,
+            images: imagesArray,
+            min_requirements: req.body.min_requirements,
+            rec_requirements: req.body.rec_requirements,
             description: req.body.description
         }
         /* Array de Plataformas */

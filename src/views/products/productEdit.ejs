@@ -21,13 +21,13 @@
             <h2 id="title">Editar Producto </h2>
             <form id="create-form" action="/products/edit/<%= producto.id %>?_method=PUT" method="POST">
 
-                <input type="text" name="product-name" id="product-name" aria-label="nombre del juego" value="<%= producto.game_name%>">
+                <input type="text" name="game_name" id="game_name" aria-label="nombre del juego" value="<%= producto.game_name%>">
 
-                <input type="text" name="dev" id="dev" aria-label="desarrollador" value="<%= producto.developer %>">
+                <input type="text" name="developer" id="developer" aria-label="desarrollador" value="<%= producto.developer %>">
 
                 <div id="gender">
-                    <label for="categoria">Género:</label>
-                    <select name="categoria">
+                    <label for="genre">Género:</label>
+                    <select name="genre">
                         <option value="arcade" 
                         <% if (producto.genre === "arcade" ){ %> 
                             selected 
@@ -54,8 +54,8 @@
                 <input type="email" name="email" id="email" aria-label="email" value="<%= producto.email %>">
 
 
-                <label for="date">Fecha de lanzamiento</label>
-                <input type="date" name="date" id="date" aria-label="fecha de lanzamiento" value="<%= producto.release_date %>">
+                <label for="release_date">Fecha de lanzamiento</label>
+                <input type="date" name="release_date" id="release_date" aria-label="fecha de lanzamiento" value="<%= producto.release_date %>">
                 
                 <span id="subtitle">Plataforma</span>
                 <div id="checkbox-wrapper">
@@ -82,17 +82,17 @@
 
                 <input type="number" name="price" id="price" aria-label="price" value="<%= producto.price %>">
 
-                <label for="logo" id="image" >Cargar Logo</label>
+                <label for="logo" id="logo" >Cargar Logo</label>
                 <input type="file" name="logo" accept=".png, .jpeg, .jpg" id="logo" aria-label="logo" alt="logo">
 
-                <label for="image" id="image" >Cargar Imágenes</label>
-                <input type="file" name="image" accept=".png, .jpeg, .jpg" id="image" aria-label="imagen" alt="Imagen" multiple>
+                <label for="images" id="images" >Cargar Imágenes</label>
+                <input type="file" name="images" accept=".png, .jpeg, .jpg" id="images" aria-label="imágenes" alt="Imágenes" multiple>
 
-                <textarea rows="7" name="requeriment-min" id="requeriment-min" aria-label="requisitos minimos"><%= producto.min_requirements %></textarea>
+                <textarea rows="7" name="min_requirements" id="min_requirements" aria-label="requisitos minimos"><%= producto.min_requirements %></textarea>
 
-                <textarea rows="7" name="requeriment" id="requeriment" aria-label="requeriment" ><%= producto.rec_requirements %></textarea>
+                <textarea rows="7" name="rec_requirements" id="rec_requirements" aria-label="requisitos recomendados" ><%= producto.rec_requirements %></textarea>
 
-                <textarea rows="9" name="descripcion" id="descripcion" maxlength="500" aria-label="descripcion"><%= producto.description %></textarea>
+                <textarea rows="9" name="description" id="description" maxlength="500" aria-label="descripcion"><%= producto.description %></textarea>
                 
                 <button type="reset" id="delete-btn">Borrar</button>
                 <button type="submit" id="send-btn">Enviar</button>  
