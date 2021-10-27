@@ -90,7 +90,6 @@ productsController = {
         
         req.files["images"].forEach((image)=>{
             imagesArray.push(image.filename)
-            console.log(image.filename)
         })
 
         let newProduct = {
@@ -131,20 +130,25 @@ productsController = {
         res.send("Artículo editado")
     },
     update (req, res) {
-
+        let imagesArray = []
+        let logo = 
+        req.files["images"].forEach((image)=>{
+            imagesArray.push(image.filename)
+        })
         // Editamos el producto buscandolo con una condición
         products.forEach(producto => {
             if (producto.id == req.params.id) {
-                producto.game_name= req.body.productName,
-                producto.developer= req.body.dev,
-                producto.genre= req.body.categoria,
+                producto.game_name= req.body.game_name,
+                producto.developer= req.body.developer,
+                producto.genre= req.body.genre,
                 producto.email= req.body.email,
-                producto.release_date= req.body.date,
+                producto.release_date= req.body.release_date,
                 producto.platform= [],
                 producto.price= req.body.price,
-                producto.images= req.body.image,
-                producto.min_requirements= req.body.requerimentMin,
-                producto.rec_requirements= req.body.requeriment,
+                producto.logo= req.files["logo"][0].filename,
+                producto.images= imagesArray,
+                producto.min_requirements= req.body.min_requirements,
+                producto.rec_requirements= req.body.rec_requirements,
                 producto.description= req.body.description
             }
         })

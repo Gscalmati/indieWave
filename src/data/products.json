@@ -497,5 +497,26 @@
         "min_requirements": "lo q pinte",
         "rec_requirements": "pinto",
         "description": "puto el que lee"
+    },
+    {
+        "id": 31,
+        "game_name": "xsokas",
+        "developer": "checho",
+        "genre": "aventura",
+        "email": "checho@gmail.com",
+        "release_date": "2021-10-26",
+        "platform": [
+            "Windows"
+        ],
+        "price": "2",
+        "logo": "Logoxsokas1635378775774.jpg",
+        "images": [
+            "Imgxsokas1635378775810.jpeg",
+            "Imgxsokas1635378775814.jpeg",
+            "Imgxsokas1635378775819.jpeg"
+        ],
+        "min_requirements": "nada potato",
+        "rec_requirements": "big potato",
+        "description": "prueba de crear producto"
     }
 ]
