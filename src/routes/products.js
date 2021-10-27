@@ -27,14 +27,6 @@ const upload = multer({storage});
 
 const productsController = require("../controllers/productsController");
 
-/* Middlewares req.body=vacio????*/
-function makeDirectory (req, res, next){
-    console.log(req.body)
-    fs.mkdirSync(path.resolve(__dirname, `../../public/img/${req.body.productName}-imgs`));
-    next();
-}
-
-
 
 router.get("/", productsController.categories);
 router.post("/", upload.fields([{name: "logo"},{name: "image"}]), productsController.store);
