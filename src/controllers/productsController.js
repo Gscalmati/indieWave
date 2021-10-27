@@ -126,20 +126,25 @@ productsController = {
         // Editamos el producto buscandolo con una condición
         products.forEach(producto => {
             if (producto.id == req.params.id) {
-                producto.name = req.body.name;
-                producto.description = req.body.description;
-                producto.price = req.body.price;
-                producto.discount = req.body.discount;
-                producto.category = req.body.category;
-                producto.image = 'default-image.png';
+                producto.game_name= req.body.productName,
+                producto.developer= req.body.dev,
+                producto.genre= req.body.categoria,
+                producto.email= req.body.email,
+                producto.release_date= req.body.date,
+                producto.platform= [],
+                producto.price= req.body.price,
+                producto.images= req.body.image,
+                producto.min_requirements= req.body.requerimentMin,
+                producto.rec_requirements= req.body.requeriment,
+                producto.description= req.body.description
             }
         })
 
         // Pasamos a json todos los productos y sobreescribimos la db
         let jsonDeProductos = JSON.stringify(products, null, 4);
-        fs.writeFileSync(path.resolve(__dirname, '../db/products.json'), jsonDeProductos);
+        fs.writeFileSync(path.resolve(__dirname, '../data/products.json'), jsonDeProductos);
 
-        res.redirect('/products');
+        res.redirect('/products/dashboard');
     }
 }
 

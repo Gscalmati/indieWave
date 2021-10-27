@@ -18,8 +18,8 @@
     <%- include("../partials/header.ejs") %>
 
         <main id="main-edit-create">
-            <h2 id="title">Editar Producto <%= product.id %> </h2>
-            <form id="create-form" action="" method="">
+            <h2 id="title">Editar Producto </h2>
+            <form id="create-form" action="/products/edit/<%= producto.id %>?_method=PUT" method="POST">
 
                 <input type="text" name="product-name" id="product-name" aria-label="nombre del juego" value="<%= producto.game_name%>">
 
@@ -95,8 +95,8 @@
                 <textarea rows="9" name="descripcion" id="descripcion" maxlength="500" aria-label="descripcion"><%= producto.description %></textarea>
                 
                 <button type="reset" id="delete-btn">Borrar</button>
-
-                <button type="submit" id="send-btn">Enviar</button>                
+                <button type="submit" id="send-btn">Enviar</button>  
+                
             </form>
         </main>
 

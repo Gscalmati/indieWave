@@ -1,21 +1,16 @@
 [
     {
         "id": 1,
-        "game_name": "Asoka",
         "developer": "Edgars",
         "genre": "arcade",
         "email": "sedgars0@de.vu",
-        "release_date": "12/26/2020",
-        "platform": [
-            "windows",
-            "linux"
-        ],
-        "price": 20,
+        "release_date": "",
+        "platform": [],
+        "price": "20",
         "logo": "http://dummyimage.com/236x100.png/ff4444/ffffff",
         "image": "http://dummyimage.com/236x100.png/ff4444/ffffff",
-        "min_requirements": "eros vestibulum ac est lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet sapien urna pretium nisl ut",
         "rec_requirements": "vestibulum ac est lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet sapien urna pretium",
-        "description": "pharetra magna vestibulum aliquet ultrices erat tortor sollicitudin mi sit amet lobortis sapien sapien non mi integer"
+        "images": ""
     },
     {
         "id": 2,
@@ -487,5 +482,20 @@
         "min_requirements": "Nada",
         "rec_requirements": "Tu mamá",
         "description": "No hace falta"
+    },
+    {
+        "id": 30,
+        "game_name": "Draco",
+        "developer": "draco company",
+        "genre": "accion",
+        "email": "a@hotmail.com",
+        "release_date": "2021-10-06",
+        "platform": [
+            "Windows"
+        ],
+        "price": "10",
+        "min_requirements": "lo q pinte",
+        "rec_requirements": "pinto",
+        "description": "puto el que lee"
     }
 ]

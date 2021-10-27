@@ -41,11 +41,12 @@ router.get("/shoppingCart", productsController.cart);
 router.get("/edit/:id", productsController.edit);
 
 router.post("/edit", productsController.edit);
-
-// router.put("/edit/:id", productsController.edit)
+/*Actualizar producto */
+router.put("/edit/:id", productsController.update);
 /* Crear Producto*/
 router.get("/create", productsController.create);
-
+/*Borrar producto */
+//router.delete()
 /* Detalle de producto*/
 router.get("/:id", productsController.detail);
 
