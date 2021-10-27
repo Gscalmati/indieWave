@@ -120,6 +120,26 @@ productsController = {
 
     editArt: function (req, res) {
         res.send("Artículo editado")
+    },
+    update (req, res) {
+
+        // Editamos el producto buscandolo con una condición
+        products.forEach(producto => {
+            if (producto.id == req.params.id) {
+                producto.name = req.body.name;
+                producto.description = req.body.description;
+                producto.price = req.body.price;
+                producto.discount = req.body.discount;
+                producto.category = req.body.category;
+                producto.image = 'default-image.png';
+            }
+        })
+
+        // Pasamos a json todos los productos y sobreescribimos la db
+        let jsonDeProductos = JSON.stringify(products, null, 4);
+        fs.writeFileSync(path.resolve(__dirname, '../db/products.json'), jsonDeProductos);
+
+        res.redirect('/products');
     }
 }
 

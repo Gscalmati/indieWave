@@ -50,6 +50,7 @@ router.get("/edit/:id", productsController.edit);
 
 router.post("/edit", productsController.edit);
 
+// router.put("/edit/:id", productsController.edit)
 /* Crear Producto*/
 router.get("/create", productsController.create);
 
