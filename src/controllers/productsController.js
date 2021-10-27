@@ -85,6 +85,14 @@ productsController = {
     },
 
     store: function (req, res) {
+
+        let imagesArray = []
+        
+        req.files["image"].forEach((image)=>{
+            imagesArray.push(image.filename)
+            console.log(image.filename)
+        })
+
         let newProduct = {
             id: newId(),
             game_name: req.body.productName,
@@ -94,7 +102,8 @@ productsController = {
             release_date: req.body.date,
             platform: [],
             price: req.body.price,
-            images: req.body.image,
+            logo: req.files["logo"][0].filename,
+            images: imagesArray,
             min_requirements: req.body.requerimentMin,
             rec_requirements: req.body.requeriment,
             description: req.body.description
