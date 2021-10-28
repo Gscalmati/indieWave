@@ -474,7 +474,12 @@ main #extras-area #sale {
     main #game-area #game-info button {
         width: 50%;
     }
-    main #game-area #game-info #game-desc {
+    main #game-area #game-info #game-desc{
+        margin: auto;
+        width: 50%;
+    }
+
+    main #game-area #game-info #game-logo {
         margin: auto;
         width: 50%;
     }
@@ -508,6 +513,9 @@ main #extras-area #sale {
         font-size: 1.2rem;
     }
     main #game-area #game-info #game-desc {
+        width: 100%;
+    }
+    main #game-area #game-info #game-logo {
         width: 100%;
     }
     main #game-area #game-info #game-info-button-wrapper {

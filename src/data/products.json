@@ -8,9 +8,8 @@
         "platform": [],
         "price": "20",
         "logo": "http://dummyimage.com/236x100.png/ff4444/ffffff",
-        "image": "http://dummyimage.com/236x100.png/ff4444/ffffff",
-        "rec_requirements": "vestibulum ac est lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet sapien urna pretium",
-        "images": ""
+        "images": "http://dummyimage.com/236x100.png/ff4444/ffffff",
+        "rec_requirements": "vestibulum ac est lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet sapien urna pretium"
     },
     {
         "id": 2,
@@ -518,5 +517,26 @@
         "min_requirements": "nada potato",
         "rec_requirements": "big potato",
         "description": "prueba de crear producto"
+    },
+    {
+        "id": 32,
+        "game_name": "Undertale",
+        "developer": "Tobyfox",
+        "genre": "aventura",
+        "email": "alla@hotmail.com",
+        "release_date": "1998-05-12",
+        "platform": [
+            "Windows"
+        ],
+        "price": "25",
+        "logo": "LogoUndertale1635387192356.png",
+        "images": [
+            "ImgUndertale1635387192360.jpg",
+            "ImgUndertale1635387192384.jpg",
+            "ImgUndertale1635387192388.png"
+        ],
+        "min_requirements": "Todos",
+        "rec_requirements": "Ninguno",
+        "description": "Alto juegazo"
     }
 ]
