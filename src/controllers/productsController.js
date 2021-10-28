@@ -57,16 +57,34 @@ productsController = {
     },
 
     detail: function (req, res) {
-        let detallado = products.filter(product => {
+        let detallado = products.find(product => {
             return (product.id == req.params.id);
         })
 
-        res.render("products/productDetail", { detallado: detallado[0] });
+        let title = ""
+        switch (detallado.genre) {
+            case "arcade":
+                title = "Arcade";
+                break;
+            case "action":
+                title = "Acción"
+                break;
+            case "strategy":
+                title = "Estrategia"
+                break;
+            case "adventure":
+                title = "Aventura"
+                break;
+            case "sports":
+                title = "Deportes"
+                break;
+        }
+        res.render("products/productDetail", { detallado: detallado, title: title });
         /* No imprime en el EJS */
     },
 
     dashboard: function (req, res) {
-        res.render("products/dashboard", {products})
+        res.render("products/dashboard", { products })
     },
 
     cart: function (req, res) {
@@ -74,12 +92,12 @@ productsController = {
     },
 
     edit: function (req, res) {
-        let productoEdit = products.filter(product =>{
+        let productoEdit = products.find(product => {
             return (product.id == req.params.id)
         })
-        res.render("products/productEdit", {producto: productoEdit[0]});
+        res.render("products/productEdit", { producto: productoEdit });
     },
-    
+
     create: function (req, res) {
         res.render("products/productCreate")
     },
@@ -87,8 +105,8 @@ productsController = {
     store: function (req, res) {
 
         let imagesArray = []
-        
-        req.files["images"].forEach((image)=>{
+
+        req.files["images"].forEach((image) => {
             imagesArray.push(image.filename)
         })
 
@@ -129,27 +147,36 @@ productsController = {
     editArt: function (req, res) {
         res.send("Artículo editado")
     },
-    update (req, res) {
+    update(req, res) {
+
+        // Reviso si se subieron nuevas imágenes al editar
         let imagesArray = []
-        let logo = 
-        req.files["images"].forEach((image)=>{
-            imagesArray.push(image.filename)
-        })
+        if (req.files['images'] != undefined) {
+            req.files["images"].forEach((image) => {
+                imagesArray.push(image.filename)
+            })
+        }
+
+        let logo;
+        if (req.files["logo"] != undefined) {
+            logo = req.files["logo"][0].filename
+        }
+
         // Editamos el producto buscandolo con una condición
         products.forEach(producto => {
             if (producto.id == req.params.id) {
-                producto.game_name= req.body.game_name,
-                producto.developer= req.body.developer,
-                producto.genre= req.body.genre,
-                producto.email= req.body.email,
-                producto.release_date= req.body.release_date,
-                producto.platform= [],
-                producto.price= req.body.price,
-                producto.logo= req.files["logo"][0].filename,
-                producto.images= imagesArray,
-                producto.min_requirements= req.body.min_requirements,
-                producto.rec_requirements= req.body.rec_requirements,
-                producto.description= req.body.description
+                producto.game_name = req.body.game_name
+                producto.developer = req.body.developer
+                producto.genre = req.body.genre
+                producto.email = req.body.email
+                producto.release_date = req.body.release_date
+                producto.platform = []
+                producto.price = req.body.price
+                producto.logo = logo
+                producto.images = imagesArray
+                producto.min_requirements = req.body.min_requirements
+                producto.rec_requirements = req.body.rec_requirements
+                producto.description = req.body.description
             }
         })
 

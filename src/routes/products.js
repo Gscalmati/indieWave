@@ -6,8 +6,7 @@ const fs = require('fs');
 /* Configuración de Multer  */
 const multer = require("multer");
 const storage = multer.diskStorage({
-    destination : (req, file, cb) =>{
-        console.log(req.body);
+    destination : (req, file, cb) =>{               
         if (!fs.existsSync(path.resolve(__dirname, `../../public/img/${req.body.game_name}-imgs`))){
             fs.mkdirSync(path.resolve(__dirname, `../../public/img/${req.body.game_name}-imgs`));
         }
@@ -42,7 +41,7 @@ router.get("/edit/:id", productsController.edit);
 
 router.post("/edit", productsController.edit);
 /*Actualizar producto */
-router.put("/edit/:id", productsController.update);
+router.put("/edit/:id", upload.fields([{name: "logo"},{name: "images"}]), productsController.update);
 /* Crear Producto*/
 router.get("/create", productsController.create);
 
