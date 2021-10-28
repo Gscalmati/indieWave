@@ -31,3 +31,7 @@
 - Revisamos el dashboard.
 - Listados: ¿Le pedimos al user fotos de 'x' tamaño?
 - Forms crear y editar: editar/eliminar botones.
+
+## Miércoles 27/10/2021
+
+- **SEAMOS CONSISTENTES CON LOS NOMBRES**
