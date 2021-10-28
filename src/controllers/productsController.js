@@ -167,7 +167,7 @@ productsController = {
 
         let jsonDeProductos = JSON.stringify(productosRestantes, null, 4);
         fs.writeFileSync(path.resolve(__dirname, '../data/products.json'), jsonDeProductos);
-
+        
         res.redirect('/products/dashboard');
     }
 }

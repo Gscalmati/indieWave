@@ -51,6 +51,6 @@ router.get("/:id", productsController.detail);
 
 router.get("/categories/:category", productsController.categorygames);
 /*Borrar producto */
-router.delete('/:id', productsController.delete);
+router.delete('/dashboard/:id', productsController.delete);
 
 module.exports = router;
