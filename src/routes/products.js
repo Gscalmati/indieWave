@@ -45,12 +45,12 @@ router.post("/edit", productsController.edit);
 router.put("/edit/:id", upload.fields([{name: "logo"},{name: "images"}]), productsController.update);
 /* Crear Producto*/
 router.get("/create", productsController.create);
-/*Borrar producto */
-//router.delete()
+
 /* Detalle de producto*/
 router.get("/:id", productsController.detail);
 
 router.get("/categories/:category", productsController.categorygames);
-
+/*Borrar producto */
+router.delete('/:id', productsController.delete);
 
 module.exports = router;
