@@ -19,7 +19,7 @@
 
         <main id="main-edit-create">
             <h2 id="title">Editar Producto </h2>
-            <form id="create-form" action="/products/edit/<%= producto.id %>?_method=PUT" method="POST">
+            <form id="create-form" action="/products/edit/<%= producto.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
 
                 <input type="text" name="game_name" id="game_name" aria-label="nombre del juego" value="<%= producto.game_name%>">
 

@@ -42,7 +42,7 @@ router.get("/edit/:id", productsController.edit);
 
 router.post("/edit", productsController.edit);
 /*Actualizar producto */
-router.put("/edit/:id", productsController.update);
+router.put("/edit/:id", upload.fields([{name: "logo"},{name: "images"}]), productsController.update);
 /* Crear Producto*/
 router.get("/create", productsController.create);
 /*Borrar producto */
