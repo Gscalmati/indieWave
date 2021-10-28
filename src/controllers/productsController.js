@@ -158,6 +158,17 @@ productsController = {
         fs.writeFileSync(path.resolve(__dirname, '../data/products.json'), jsonDeProductos);
 
         res.redirect('/products/dashboard');
+    },
+    delete (req, res) {
+
+        let productosRestantes = products.filter(producto => {
+            return producto.id != req.params.id;
+        })
+
+        let jsonDeProductos = JSON.stringify(productosRestantes, null, 4);
+        fs.writeFileSync(path.resolve(__dirname, '../data/products.json'), jsonDeProductos);
+
+        res.redirect('/products/dashboard');
     }
 }
 
