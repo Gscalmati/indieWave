@@ -57,11 +57,29 @@ productsController = {
     },
 
     detail: function (req, res) {
-        let detallado = products.filter(product => {
+        let detallado = products.find(product => {
             return (product.id == req.params.id);
         })
 
-        res.render("products/productDetail", { detallado: detallado[0] });
+        let title = ""
+        switch (detallado.genre) {
+            case "arcade":
+                title = "Arcade";
+                break;
+            case "action":
+                title = "Acción"
+                break;
+            case "strategy":
+                title = "Estrategia"
+                break;
+            case "adventure":
+                title = "Aventura"
+                break;
+            case "sports":
+                title = "Deportes"
+                break;
+        }
+        res.render("products/productDetail", { detallado: detallado, title: title });
         /* No imprime en el EJS */
     },
 
@@ -74,10 +92,10 @@ productsController = {
     },
 
     edit: function (req, res) {
-        let productoEdit = products.filter(product => {
+        let productoEdit = products.find(product => {
             return (product.id == req.params.id)
         })
-        res.render("products/productEdit", { producto: productoEdit[0] });
+        res.render("products/productEdit", { producto: productoEdit });
     },
 
     create: function (req, res) {
