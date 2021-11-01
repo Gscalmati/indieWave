@@ -449,5 +449,24 @@
         "min_requirements": "Todos",
         "rec_requirements": "Ninguno",
         "description": "Alto juegazo"
+    },
+    {
+        "id": 33,
+        "game_name": "Overtale",
+        "developer": "Toby Cat",
+        "genre": "action",
+        "email": "Overtale@email.com",
+        "release_date": "2021-10-31",
+        "platform": [],
+        "price": "20",
+        "logo": "/img/Overtale-imgs/LogoOvertale1635733067431.png",
+        "images": [
+            "/img/Overtale-imgs/ImgOvertale1635733067433.jpg",
+            "/img/Overtale-imgs/ImgOvertale1635733067433.jpg",
+            "/img/Overtale-imgs/ImgOvertale1635733067436.png"
+        ],
+        "min_requirements": "Todos",
+        "rec_requirements": "Ninguno",
+        "description": "No tengo ganas"
     }
 ]

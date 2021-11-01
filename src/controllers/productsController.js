@@ -141,7 +141,7 @@ productsController = {
 
         fs.writeFileSync(path.resolve(__dirname, '../data/products.json'), jsonNuevo)
 
-        res.redirect("/products");
+        res.redirect("/products/dashboard");
     },
 
     editArt: function (req, res) {
