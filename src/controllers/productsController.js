@@ -61,25 +61,25 @@ productsController = {
             return (product.id == req.params.id);
         })
 
-        let title = ""
+        let category = ""
         switch (detallado.genre) {
             case "arcade":
-                title = "Arcade";
+                category = "Arcade";
                 break;
             case "action":
-                title = "Acción"
+                category = "Acción"
                 break;
             case "strategy":
-                title = "Estrategia"
+                category = "Estrategia"
                 break;
             case "adventure":
-                title = "Aventura"
+                category = "Aventura"
                 break;
             case "sports":
-                title = "Deportes"
+                category = "Deportes"
                 break;
         }
-        res.render("products/productDetail", { detallado: detallado, title: title });
+        res.render("products/productDetail", { detallado: detallado, category: category });
         /* No imprime en el EJS */
     },
 
@@ -107,7 +107,7 @@ productsController = {
         let imagesArray = []
 
         req.files["images"].forEach((image) => {
-            imagesArray.push(image.filename)
+            imagesArray.push(`/img/${req.body.game_name}-imgs/${image.filename}`)
         })
 
         let newProduct = {
@@ -119,7 +119,7 @@ productsController = {
             release_date: req.body.release_date,
             platform: [],
             price: req.body.price,
-            logo: req.files["logo"][0].filename,
+            logo: `/img/${req.body.game_name}-imgs/${req.files["logo"][0].filename}`,
             images: imagesArray,
             min_requirements: req.body.min_requirements,
             rec_requirements: req.body.rec_requirements,

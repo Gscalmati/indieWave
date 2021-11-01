@@ -19,7 +19,7 @@
     <main>
         <section id="title-area">
             <div id="breadcrumb">
-                <p>Todos los juegos > <%= title %> > <%= detallado.game_name %></p>
+                <p>Todos los juegos > <a href="/products/categories/<%= detallado.genre %>"><%= category %> ></a> <%= detallado.game_name %></p>
             </div>
             <h2> <%= detallado.game_name %> </h2>
             
@@ -29,7 +29,7 @@
                 <div id="main-img">
                     <img class="responsive-img"
                     <% if (detallado.images[0] != undefined) {%>   
-                    src="/img/<%= detallado.game_name  %>-Imgs/<%= detallado.images[0]%>" alt="carrousel">
+                    src="<%= detallado.images[0]%>" alt="carrousel">
                     <% } else {%>
                         src="https://via.placeholder.com/1120x500" alt="carrousel">    
                     <% } %> 
@@ -39,7 +39,7 @@
                     <div class="img-div">
                         <img class="responsive-img" 
                         <% if (detallado.images[1] != undefined) {%>   
-                            src="/img/<%= detallado.game_name  %>-Imgs/<%= detallado.images[1]%>">
+                            src="<%= detallado.images[1]%>">
                             <% } else {%>
                                 src="https://via.placeholder.com/200x100">    
                             <% } %> 
@@ -47,7 +47,7 @@
                     <div class="img-div">
                         <img class="responsive-img"
                         <% if (detallado.images[2] != undefined) {%>   
-                            src="/img/<%= detallado.game_name  %>-Imgs/<%= detallado.images[2]%>">
+                            src="<%= detallado.images[2]%>">
                             <% } else {%>
                                 src="https://via.placeholder.com/200x100">    
                             <% } %> 
@@ -55,7 +55,7 @@
                     <div class="img-div">
                         <img class="responsive-img" 
                         <% if (detallado.images[3] != undefined) {%>   
-                            src="/img/<%= detallado.game_name  %>-Imgs/<%= detallado.images[3]%>">
+                            src="<%= detallado.images[3]%>">
                             <% } else {%>
                                 src="https://via.placeholder.com/200x100">    
                             <% } %> 
@@ -63,7 +63,7 @@
                     <div id="last-div" class="img-div">
                         <img class="responsive-img" src="https://via.placeholder.com/200x100"
                         <% if (detallado.images[4] != undefined) {%>   
-                            src="/img/<%= detallado.game_name  %>-Imgs/<%= detallado.images[4]%>">
+                            src="<%= detallado.images[4]%>">
                             <% } else {%>
                                 src="src="https://via.placeholder.com/200x100">    
                             <% } %> 
@@ -75,7 +75,7 @@
                 <div id="game-logo">
                     <img class="responsive-img" 
                     <% if (detallado.logo != undefined) {%>   
-                        src="/img/<%= detallado.game_name  %>-Imgs/<%= detallado.logo%>">
+                        src="<%= detallado.logo%>">
                         <% } else {%>
                             src="https://via.placeholder.com/1120x500">    
                         <% } %>
