@@ -445,14 +445,6 @@
         "description": "luctus cum sociis natoque penatibus et magnis dis parturient montes"
     },
     {
-        "id": 26,
-        "platform": []
-    },
-    {
-        "id": 27,
-        "platform": []
-    },
-    {
         "id": 28,
         "game_name": "LaChola",
         "developer": "Tu mamá",
@@ -540,4 +532,3 @@
         "description": "Alto juegazo"
     }
 ]
-
