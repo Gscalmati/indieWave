@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,50 +13,68 @@
 
     <title>IW - Dashboard</title>
 </head>
+
 <body>
 
-    <%- include("../partials/header.ejs") %> 
-   
-    <main>
-        <h2>Dashboard</br></h2>
-        <table id="dashboard">
-            <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nombre</th>
-                <th>Género</th>
-                <th>Desarrolladora</th>
-                <th>Fecha de Lanzamiento</th>
-                <th>Precio</th>
-                <th></th>
-                <th></th>
-            </tr>
-            </thead>
-            <tbody>
-                <% products.forEach(producto => { %>
-                <tr>
-                    <td><%= producto.id%> </td>
-                    <td><%= producto.game_name%></td>
-                    <td><%= producto.genre%></td>
-                    <td><%= producto.developer%></td>
-                    <td><%= producto.release_date%></td>
-                    <td>$<%= producto.price%></td>
-                    <td><form method="GET" action="/products/edit/<%= producto.id %>">
-                        <input type="submit" value="EDITAR">
-                    </form>
-                </td>
-                    <td><form method="POST" action="/products/dashboard/<%= producto.id %>?_method=DELETE">
-                            <input type="submit" value="BORRAR">
-                        </form>
-                    </td>
-                </tr>
-                <%  }) %> 
-            </tbody>
-        </table>
-    </main>
+    <%- include("../partials/header.ejs") %>
+
+        <main>
+            <h2>Dashboard</br></h2>
+            <div id="add-button">
+                <button><a href="/products/create">Agregar</a></button>
+            </div>
+            <table id="dashboard">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Género</th>
+                        <th>Desarrolladora</th>
+                        <th>Fecha de Lanzamiento</th>
+                        <th>Precio</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% products.forEach(producto=> { %>
+                        <tr>
+                            <td>
+                                <%= producto.id%>
+                            </td>
+                            <td>
+                                <%= producto.game_name%>
+                            </td>
+                            <td>
+                                <%= producto.genre%>
+                            </td>
+                            <td>
+                                <%= producto.developer%>
+                            </td>
+                            <td>
+                                <%= producto.release_date%>
+                            </td>
+                            <td>$<%= producto.price%>
+                            </td>
+                            <td>
+                                <form method="GET" action="/products/edit/<%= producto.id %>">
+                                    <input type="submit" value="EDITAR">
+                                </form>
+                            </td>
+                            <td>
+                                <form method="POST" action="/products/dashboard/<%= producto.id %>?_method=DELETE">
+                                    <input type="submit" value="BORRAR">
+                                </form>
+                            </td>
+                        </tr>
+                        <% }) %>
+                </tbody>
+            </table>
+        </main>
 
 
-        <%- include("../partials/footer.ejs") %> 
+        <%- include("../partials/footer.ejs") %>
 
 </body>
+
 </html>

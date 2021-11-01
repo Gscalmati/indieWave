@@ -608,6 +608,10 @@ main #extras-area #sale {
 
 /** MOBILE **/
 
+main{
+   
+}
+
 #dashboard {
     width: 100%;
     
@@ -619,6 +623,20 @@ main #extras-area #sale {
     text-align: center;
 
     font-size: 8px;
+}
+
+#add-button{
+    margin: 2% 0px;
+
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+
+#add-button a{
+    font-size: 20px;
+    font-family: "ubuntu";
 }
 
 #dashboard th {
@@ -639,6 +657,7 @@ main #extras-area #sale {
 
 #dashboard input {
     font-size: 5px;
+    font-family: "ubuntu";
 }
 /*HOME*/
 /*featured*/
