@@ -1,4 +1,12 @@
 /*MOBILE - TABLET*/
+main #form-div{
+    margin: 104.5px auto;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+}
+
+
 #body-edit-create{
     height: auto;
 } 
