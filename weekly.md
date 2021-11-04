@@ -35,3 +35,9 @@
 ## Miércoles 27/10/2021
 
 - **SEAMOS CONSISTENTES CON LOS NOMBRES**
+
+## Domingo 31/10/2021
+
+- Usemos EJS para mostrar juegos destacados y últimos lanzamientos en home.
+- Gio nos ghostea.
+- COMO CORNO SE ARREGLA LO DEL HTML/BODY? Nos va a romper la vista de category products cuando pongamos wrap a menos que haya **al menos 15 juegos**

@@ -468,5 +468,28 @@
         "min_requirements": "Todos",
         "rec_requirements": "Ninguno",
         "description": "No tengo ganas"
+    },
+    {
+        "id": 34,
+        "game_name": "Slay the Spire",
+        "developer": "Gio",
+        "genre": "strategy",
+        "email": "gioscalmati@hotmail.com",
+        "release_date": "11-09-2001",
+        "platform": [
+            "Windows",
+            "macOS",
+            "Linux"
+        ],
+        "price": "100",
+        "images": [
+            "/img/Slay the Spire-imgs/ImgSlay the Spire1635807931653.jpg",
+            "/img/Slay the Spire-imgs/ImgSlay the Spire1635807931662.jpg",
+            "/img/Slay the Spire-imgs/ImgSlay the Spire1635807931669.jpg"
+        ],
+        "min_requirements": "Jugar cartitas",
+        "rec_requirements": "Jugar BIEN las cartitas",
+        "description": "Juegazo, mejor que Undertale, por lejos",
+        "logo": "/img/Slay the Spire-imgs/LogoSlay the Spire1635807931652.jpg"
     }
 ]

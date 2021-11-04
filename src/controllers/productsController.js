@@ -110,13 +110,16 @@ productsController = {
             imagesArray.push(`/img/${req.body.game_name}-imgs/${image.filename}`)
         })
 
+        let date = req.body.release_date.split("-").reverse();
+
+
         let newProduct = {
             id: newId(),
             game_name: req.body.game_name,
             developer: req.body.developer,
             genre: req.body.genre,
             email: req.body.email,
-            release_date: req.body.release_date,
+            release_date: date,
             platform: [],
             price: req.body.price,
             logo: `/img/${req.body.game_name}-imgs/${req.files["logo"][0].filename}`,
@@ -149,19 +152,7 @@ productsController = {
     },
     update(req, res) {
 
-        // Reviso si se subieron nuevas imágenes al editar
-        let imagesArray = []
-        if (req.files['images'] != undefined) {
-            req.files["images"].forEach((image) => {
-                imagesArray.push(image.filename)
-            })
-        }
-
-        let logo;
-        if (req.files["logo"] != undefined) {
-            logo = req.files["logo"][0].filename
-        }
-
+        
         // Editamos el producto buscandolo con una condición
         products.forEach(producto => {
             if (producto.id == req.params.id) {
@@ -169,11 +160,32 @@ productsController = {
                 producto.developer = req.body.developer
                 producto.genre = req.body.genre
                 producto.email = req.body.email
-                producto.release_date = req.body.release_date
-                producto.platform = []
+                if (req.body.release_date) {
+                    let date = req.body.release_date.split("-").reverse().join("-");
+                    producto.release_date = date;
+                };
+                producto.platform = [];
+                if (req.body.windows) {
+                    producto.platform.push("Windows")
+                };
+                if (req.body.macos) {
+                    producto.platform.push("macOS")
+                };
+                if (req.body.linux) {
+                    producto.platform.push("Linux")
+                };
                 producto.price = req.body.price
-                producto.logo = logo
-                producto.images = imagesArray
+                 // Reviso si se subieron nuevas imágenes al editar
+                if (req.files["logo"] != undefined) {
+                    producto.logo = `/img/${req.body.game_name}-imgs/${req.files["logo"][0].filename}`
+                }
+                if (req.files['images'] != undefined) {
+                    let imagesArray = [];
+                    req.files["images"].forEach((image) => {
+                        imagesArray.push(`/img/${req.body.game_name}-imgs/${image.filename}`)
+                    })
+                    producto.images = imagesArray
+                }
                 producto.min_requirements = req.body.min_requirements
                 producto.rec_requirements = req.body.rec_requirements
                 producto.description = req.body.description
