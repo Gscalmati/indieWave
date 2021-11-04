@@ -58,7 +58,7 @@
 
 ## Comenzar a hacer
 * Organizar bien las tareas ahora que el sprint se viene _picante_
-* Usar las weaklies para trabajar juntos o hacer consultas.
+* Usar las weeklies para trabajar juntos o hacer consultas.
 
 ## Hacer más
 * No olvidarnos de weekly.md
@@ -69,5 +69,28 @@
 * Encarar las vistas desde "mobile first".
 
 ## Hacer menos
+
+## Dejar de hacer
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# Retro Meeting - Sprint 4
+
+
+## Comenzar a hacer
+* Ser mas consistentes con los nombres de variables, métodos, etc.
+
+## Hacer más
+* Explicar lo que hicimos antes de las weeklys
+* Juani - Organizarse mejor
+
+
+## Continuar haciendo
+* **Jugar poco al LoL.**
+* Jugar Rocket League para relajar después de las reuniones.
+
+
+## Hacer menos
+* Confiarse cuando hay pocas tareas
 
 ## Dejar de hacer
