@@ -440,11 +440,11 @@
             "Windows"
         ],
         "price": "25",
-        "logo": "/img/Undertale-imgs/LogoUndertale1635387192356.png",
+        "logo": "/img/products/Undertale-imgs/LogoUndertale1635387192356.png",
         "images": [
-            "/img/Undertale-imgs/ImgUndertale1635387192360.jpg",
-            "/img/Undertale-imgs/ImgUndertale1635387192384.jpg",
-            "/img/Undertale-imgs/ImgUndertale1635387192388.png"
+            "/img/products/Undertale-imgs/ImgUndertale1635387192360.jpg",
+            "/img/products/Undertale-imgs/ImgUndertale1635387192384.jpg",
+            "/img/products/Undertale-imgs/ImgUndertale1635387192388.png"
         ],
         "min_requirements": "Todos",
         "rec_requirements": "Ninguno",
@@ -459,11 +459,11 @@
         "release_date": "2021-10-31",
         "platform": [],
         "price": "20",
-        "logo": "/img/Overtale-imgs/LogoOvertale1635733067431.png",
+        "logo": "/img/products/Overtale-imgs/LogoOvertale1635733067431.png",
         "images": [
-            "/img/Overtale-imgs/ImgOvertale1635733067433.jpg",
-            "/img/Overtale-imgs/ImgOvertale1635733067433.jpg",
-            "/img/Overtale-imgs/ImgOvertale1635733067436.png"
+            "/img/products/Overtale-imgs/ImgOvertale1635733067433.jpg",
+            "/img/products/Overtale-imgs/ImgOvertale1635733067433.jpg",
+            "/img/products/Overtale-imgs/ImgOvertale1635733067436.png"
         ],
         "min_requirements": "Todos",
         "rec_requirements": "Ninguno",
@@ -483,13 +483,13 @@
         ],
         "price": "100",
         "images": [
-            "/img/Slay the Spire-imgs/ImgSlay the Spire1635807931653.jpg",
-            "/img/Slay the Spire-imgs/ImgSlay the Spire1635807931662.jpg",
-            "/img/Slay the Spire-imgs/ImgSlay the Spire1635807931669.jpg"
+            "/img/products/Slay the Spire-imgs/ImgSlay the Spire1635807931653.jpg",
+            "/img/products/Slay the Spire-imgs/ImgSlay the Spire1635807931662.jpg",
+            "/img/products/Slay the Spire-imgs/ImgSlay the Spire1635807931669.jpg"
         ],
         "min_requirements": "Jugar cartitas",
         "rec_requirements": "Jugar BIEN las cartitas",
         "description": "Juegazo, mejor que Undertale, por lejos",
-        "logo": "/img/Slay the Spire-imgs/LogoSlay the Spire1635807931652.jpg"
+        "logo": "/img/products/Slay the Spire-imgs/LogoSlay the Spire1635807931652.jpg"
     }
 ]

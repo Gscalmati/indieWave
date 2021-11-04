@@ -23,10 +23,10 @@
                 </h2>
             </div>
             <!-- Este primer for eventualmente va a volar cuando tengamos la base de datos -->
-            <% for( let i=0; i < 5; i++ ) { %>
+           
                 <section id="category">
                     <!-- Hasta tener más productos (min 15 para que no se rompa por lo de html/body) mostramos solo 5 productos -->
-                    <% for( let j=0; j < 5; j++ ) { %>
+                    <% for( let j=0; j < categoryGames.length; j++ ) { %>
                         <article class="category-article">
                             <a href="/products/<%= categoryGames[j].id %> ">
                                 <div>
@@ -46,7 +46,7 @@
                         <% } %>
 
                 </section>
-                <% } %>
+               
 
         </main>
         <%- include("../partials/footer.ejs") %>

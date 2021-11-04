@@ -800,12 +800,12 @@ main{
   #category{
     display: flex;
     background-color: var(--eminence);
-    justify-content: space-around;
+    justify-content: space-between;
     padding: 0px 10px 10px;
   }
   #category .category-article {
     margin-top: 2%;
-    width: 15%;
+    width: 17%;
   }
 }
 
