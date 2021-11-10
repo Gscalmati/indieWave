@@ -3,8 +3,13 @@ const router = express.Router();
 
 const usersController = require("../controllers/usersController");
 
-router.get("/register", usersController.register);
+const loggedMiddleware = require("../middlewares/loggedMiddleware");
 
-router.get("/login", usersController.login);
+
+router.get("/register", loggedMiddleware, usersController.register);
+
+router.get("/login", loggedMiddleware, usersController.login);
+
+router.post("/login", usersController.logged);
 
 module.exports = router;
