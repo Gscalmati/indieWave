@@ -19,11 +19,14 @@
 
         <main>
             <div id="form-div">
-                <form id="register-form" action="">
+                <form id="register-form" action="" method="post" enctype="multipart/form-data">
                     <input type="text" name="name" id="name" aria-label="nombre" placeholder="Nombre" required>
-                    <input type="text" name="surname" id="surname" aria-label="apellido" placeholder="Apellido" required>
-                    <input type="email" name="email" id="email" aria-label="e-mail"
-                        placeholder="e-mail" required>
+                    <input type="text" name="surname" id="surname" aria-label="apellido" placeholder="Apellido"
+                        required>
+                    <input type="email" name="email" id="email" aria-label="e-mail" placeholder="e-mail" required>
+                    <label for="profile-pic" id="profile-pic">Cargar imagen de perfil</label>
+                    <input type="file" name="profile-pic" accept=".png, .jpeg, .jpg" id="profile-pic" 
+                        required>
                     <input type="text" name="username" id="username" aria-label="nombre de usuario"
                         placeholder="Nombre de usuario" required>
                     <input type="password" name="password" id="password" aria-label="contraseña"

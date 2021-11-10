@@ -107,7 +107,7 @@ productsController = {
         let imagesArray = []
 
         req.files["images"].forEach((image) => {
-            imagesArray.push(`/img/${req.body.game_name}-imgs/${image.filename}`)
+            imagesArray.push(`/img/products/${req.body.game_name}-imgs/${image.filename}`)
         })
 
         let date = req.body.release_date.split("-").reverse();
@@ -122,7 +122,7 @@ productsController = {
             release_date: date,
             platform: [],
             price: req.body.price,
-            logo: `/img/${req.body.game_name}-imgs/${req.files["logo"][0].filename}`,
+            logo: `/img/products/${req.body.game_name}-imgs/${req.files["logo"][0].filename}`,
             images: imagesArray,
             min_requirements: req.body.min_requirements,
             rec_requirements: req.body.rec_requirements,
