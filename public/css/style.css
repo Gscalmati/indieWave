@@ -39,12 +39,13 @@
     object-fit: cover;
 }
 
-html{
+html {
     padding: 0px;
     min-height: 100vh;
 }
 
-html, body {
+html,
+body {
     width: 100%;
     margin: 0;
 }
@@ -62,13 +63,16 @@ button {
     cursor: pointer;
 }
 
+
 /*** GENERAL STYLES ***/
+
 
 /** MOBILE **/
 
+
 /* Header */
 
-header{
+header {
     background-color: black;
     color: var(--steelpink);
     width: 100%;
@@ -106,7 +110,8 @@ header .imagen-logo {
     margin: 5px;
 }
 
-header .barra-principal, header ul {
+header .barra-principal,
+header ul {
     flex-direction: column;
 }
 
@@ -141,6 +146,7 @@ header a {
     color: inherit;
 }
 
+
 /* Main*/
 
 main a {
@@ -151,8 +157,6 @@ main a {
 main {
     width: 95vw;
     min-height: 100vh;
-
-
     margin: 185px auto 20px;
     background-color: rgba(92, 44, 109, 0.8);
     box-sizing: border-box;
@@ -160,6 +164,7 @@ main {
     font-family: ubuntu;
     color: var(--turquoise);
 }
+
 
 /* Footer */
 
@@ -215,6 +220,7 @@ footer .imagen-logo {
     margin: 0px;
 }
 
+
 /** TABLET **/
 
 @media (min-width: 768px) and (max-width:1024px) {
@@ -226,7 +232,8 @@ footer .imagen-logo {
         width: 15%;
         margin: 5px;
     }
-    header .barra-principal, header ul {
+    header .barra-principal,
+    header ul {
         flex-direction: column;
     }
     header nav ul li {
@@ -244,7 +251,8 @@ footer .imagen-logo {
     header .barra-principal {
         max-height: 100%;
     }
-    header .barra-principal, header ul {
+    header .barra-principal,
+    header ul {
         flex-direction: column;
     }
     /* Main */
@@ -264,6 +272,7 @@ footer .imagen-logo {
     }
 }
 
+
 /** DESKTOP **/
 
 @media (min-width: 1025px) {
@@ -271,7 +280,8 @@ footer .imagen-logo {
     header .barra-principal {
         max-height: 65px;
     }
-    header .barra-principal, header ul {
+    header .barra-principal,
+    header ul {
         flex-direction: row;
     }
     header .barra-principal li {
@@ -326,7 +336,9 @@ footer .imagen-logo {
     }
 }
 
+
 /*** PRODUCT DETAIL ***/
+
 
 /**MOBILE**/
 
@@ -466,7 +478,7 @@ main #extras-area #game-summary {
 
 main #extras-area #game-summary p {
     margin: 0;
-    padding: 10px; 
+    padding: 10px;
     background-color: rgba(184, 174, 200, 0.8);
     color: var(--space-cadet);
     border-radius: 7px;
@@ -476,17 +488,17 @@ main #extras-area #sale {
     display: none;
 }
 
+
 /** TABLET **/
 
 @media (min-width: 768px) {
     main #game-area #game-info button {
         width: 50%;
     }
-    main #game-area #game-info #game-desc{
+    main #game-area #game-info #game-desc {
         margin: auto;
         width: 50%;
     }
-
     main #game-area #game-info #game-logo {
         margin: auto;
         width: 50%;
@@ -495,6 +507,7 @@ main #extras-area #sale {
         font-size: 30px;
     }
 }
+
 
 /** DESKTOP **/
 
@@ -612,34 +625,28 @@ main #extras-area #sale {
     }
 }
 
- /*** DASHBOARD ***/
+
+/*** DASHBOARD ***/
+
 
 /** MOBILE **/
 
-
 #dashboard {
     width: 100%;
-    
     background-color: var(--thistle);
-
     border: 2px solid var(--steelpink);
     border-collapse: collapse;
-
     text-align: center;
-
     font-size: 8px;
 }
 
-#add-button{
+#add-button {
     margin: 2% 0px;
-
     display: flex;
     justify-content: flex-end;
 }
 
-
-
-#add-button a{
+#add-button a {
     font-size: 20px;
     font-family: "ubuntu";
 }
@@ -648,15 +655,12 @@ main #extras-area #sale {
     border: 2px solid var(--steelpink);
     color: var(--eminence);
     padding: 5px 0px;
-
     font-size: 5px;
 }
 
-
-#dashboard td{
+#dashboard td {
     padding: 5px 0px;
     color: var(--space-cadet);
-
     border: 2px solid var(--steelpink);
 }
 
@@ -664,32 +668,43 @@ main #extras-area #sale {
     font-size: 5px;
     font-family: "ubuntu";
 }
+
+
 /*HOME*/
+
+
 /*featured*/
-#featured{
+
+#featured {
     text-align: center;
-  }
-  #featured .product-article{
+}
+
+#featured .product-article {
     width: 70%;
     background-color: var(--space-cadet);
     margin: auto;
     border: solid 2px var(--turquoise);
     margin-top: 10%;
-  }
-  #featured .product-article .detail-prod h3{
+}
+
+#featured .product-article .detail-prod h3 {
     color: var(--turquoise);
     border: solid 2px var(--steelpink);
     padding-top: 5px;
     margin: 5px;
     padding-bottom: 5px;
     font-size: 18px;
-  }
-  #featured .product-article .detail-prod p{
+}
+
+#featured .product-article .detail-prod p {
     color: var(--turquoise);
-  }
-  
-  /*Subtitulo*/
-  #subtitle-home, #subtitle-featured-home{
+}
+
+
+/*Subtitulo*/
+
+#subtitle-home,
+#subtitle-featured-home {
     background-color: var(--eminence);
     color: var( --turquoise);
     margin: auto;
@@ -697,79 +712,100 @@ main #extras-area #sale {
     width: 80%;
     text-align: center;
     margin-top: 5%;
-  }
-  /*category*/
-  #category{
+}
+
+
+/*category*/
+
+#category {
     text-align: center;
-  }
-  #category .category-article{
+}
+
+#category .category-article {
     width: 80%;
     background-color: var(--space-cadet);
-    
     border: solid 2px var(--turquoise);
     margin-top: 10%;
-  }
-  #category .category-article .detalle h3{
+}
+
+#category .category-article .detalle h3 {
     color: var(--turquoise);
     border: solid 2px var(--steelpink);
     padding-top: 5px;
     margin: 5px;
     padding-bottom: 5px;
     font-size: 17px;
-  }
-  #category .category-article .detalle p{
+}
+
+#category .category-article .detalle p {
     color: var(--turquoise);
-  }
-  /*slide */
-  .sheetSlider{
+}
+
+
+/*slide */
+
+.sheetSlider {
     border: solid var(--space-cadet);
     width: 90%;
     margin: auto;
-  }
-  .sh__item img{
+}
+
+.sh__item img {
     height: -webkit-fill-available;
-  }
-  
-  /*medias*/
-  .container {
+}
+
+
+/*medias*/
+
+.container {
     margin: auto;
     background-color: var(--eminence);
     width: 70%;
     padding: 30px;
     border: solid 5px var(--space-cadet);
-  }
-  #featured {
+}
+
+#featured {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-  }
-  #category{
+}
+
+#category {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-  }
+}
+
+
 /*FORMS*/
+
+
 /*MOBILE - TABLET*/
-main #form-div{
+
+main #form-div {
     margin: 104.5px auto;
     height: 100vh;
     width: 100%;
     display: flex;
 }
 
-
-#body-edit-create{
+#body-edit-create {
     height: auto;
-} 
+}
 
-#main-edit-create{
+#main-edit-create {
     flex-direction: column;
 }
-main #title{
+
+main #title {
     text-align: center;
 }
 
-#register-form, #login-form, #edit-form, #create-form{
+#register-form,
+#login-form,
+#edit-form,
+#create-form {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -777,13 +813,13 @@ main #title{
     align-items: center;
 }
 
-#form-selection-wrapper{
+#form-selection-wrapper {
     display: flex;
     justify-content: space-evenly;
     width: 100%;
 }
 
-#checkbox-wrapper{
+#checkbox-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -794,15 +830,24 @@ main #title{
     margin-top: 5px;
 }
 
-#register-form #checkbox-wrapper input, #login-form #checkbox-wrapper input, #create-form #checkbox-wrapper input, #edit-form #checkbox-wrapper input{
+#register-form #checkbox-wrapper input,
+#login-form #checkbox-wrapper input,
+#create-form #checkbox-wrapper input,
+#edit-form #checkbox-wrapper input {
     margin-top: 0;
     margin-right: 10px;
     width: 14px;
 }
-#create-form #checkbox-wrapper label, #edit-form #checkbox-wrapper label{
+
+#create-form #checkbox-wrapper label,
+#edit-form #checkbox-wrapper label {
     margin-top: 0px;
 }
-#register-form input, #login-form input, #edit-form input, #create-form input{
+
+#register-form input,
+#login-form input,
+#edit-form input,
+#create-form input {
     font-family: ubuntu;
     height: 30px;
     font-size: 12px;
@@ -810,7 +855,8 @@ main #title{
     width: 80%;
 }
 
-#register-form button, #login-form button{
+#register-form button,
+#login-form button {
     font-family: ubuntu;
     height: 30px;
     background-color: var(--thistle);
@@ -818,7 +864,9 @@ main #title{
     color: var(--space-cadet);
     min-width: 120px;
 }
-#edit-form button, #create-form button{
+
+#edit-form button,
+#create-form button {
     font-family: ubuntu;
     height: 30px;
     background-color: var(--thistle);
@@ -828,192 +876,594 @@ main #title{
     margin-top: 5%;
 }
 
-#register-form #submit-btn, #login-form #submit-btn{
+#register-form #submit-btn,
+#login-form #submit-btn {
     width: 80%;
     height: 40px;
 }
-#edit-form #delete-btn, #create-form #delete-btn, #send-btn{
+
+#edit-form #delete-btn,
+#create-form #delete-btn,
+#send-btn {
     width: 80%;
     height: 40px;
     margin-top: 5%;
 }
 
-#register-form a, #login-form a{
+#register-form a,
+#login-form a {
     color: var(--turquoise);
     font-size: 12px;
 }
 
-#forgot-pass{
+#forgot-pass {
     margin-top: 15px;
 }
-#edit-form a, #create-form a{
+
+#edit-form a,
+#create-form a {
     color: var(--space-cadet);
     font-size: 24px;
 }
-#subtitle{
+
+#subtitle {
     margin-top: 20px;
 }
-#requeriment{
+
+#requeriment {
     margin-top: 2px
 }
-textarea{
-    resize: none; 
-    margin-top: 20px; 
-    margin-bottom: 0px; 
+
+textarea {
+    resize: none;
+    margin-top: 20px;
+    margin-bottom: 0px;
     font-size: 12px;
     width: 80%;
 }
-label{
+
+label {
     margin-top: 40px;
 }
-#label-login, #label-register{
+
+#label-login,
+#label-register {
     margin-top: 0px;
 }
-#genre{
+
+#genre {
     width: 80%;
     margin-top: 40px;
     text-align: center;
     font-size: 18px;
 }
-#genre select{
+
+#genre select {
     font-family: "ubuntu";
     font-size: 18px;
     width: 50%;
 }
 
-
-
-@media (min-width: 768px){
-
+@media (min-width: 768px) {
     /** TABLET **/
-
     #dashboard {
         font-size: 9px;
     }
-
     #dashboard input {
         font-size: 5px;
     }
-
     #dashboard th {
         font-size: 8px
     }
     /*Media home*/
-  .container {
-    text-align: center;
-    width: 70%; 
-    background-color: var(--eminence);
-    padding: 30px;
-    border: solid 5px var(--thistle);
-  }
-  
-  #subtitle-home {
-    margin-left: 0px;
-    width: 25%;
-  }
-  #subtitle-featured-home{
-    margin-left: 0px;
-    width: 25%;
-  }
-  
-  #featured{
-    display: flex;
-    background-color: var(--eminence);
-    justify-content: space-around;
-    padding: 0px 10px 10px;
-  }
-  #featured .product-article {
-    margin-top: 2%;
-    width: 20%;
-    margin-bottom: 2%;
-  }
-  #category{
-    display: flex;
-    background-color: var(--eminence);
-    justify-content: space-between;
-    padding: 0px 10px 10px;
-  }
-  #category .category-article {
-    margin-top: 2%;
-    width: 17%;
-  }
+    .container {
+        text-align: center;
+        width: 70%;
+        background-color: var(--eminence);
+        padding: 30px;
+        border: solid 5px var(--thistle);
+    }
+    #subtitle-home {
+        margin-left: 0px;
+        width: 25%;
+    }
+    #subtitle-featured-home {
+        margin-left: 0px;
+        width: 25%;
+    }
+    #featured {
+        display: flex;
+        background-color: var(--eminence);
+        justify-content: space-around;
+        padding: 0px 10px 10px;
+    }
+    #featured .product-article {
+        margin-top: 2%;
+        width: 20%;
+        margin-bottom: 2%;
+    }
+    #category {
+        display: flex;
+        background-color: var(--eminence);
+        justify-content: space-between;
+        padding: 0px 10px 10px;
+    }
+    #category .category-article {
+        margin-top: 2%;
+        width: 17%;
+    }
 }
 
-/** DESKTOP **/
-@media (min-width: 1024px){
 
+/** DESKTOP **/
+
+@media (min-width: 1024px) {
     #dashboard {
         font-size: 16px;
     }
-
     #dashboard input {
         font-size: 12px;
     }
-
     #dashboard th {
         font-size: 16px
     }
-
-    /*FORMS DEESKTOP*/
-    #register-form, #login-form, #edit-form, #create-form{
+    /*FORMS DESKTOP*/
+    #register-form,
+    #login-form,
+    #edit-form,
+    #create-form {
         width: 35%;
         margin: auto;
     }
-    
-    #form-selection-wrapper{
+    #form-selection-wrapper {
         justify-content: space-between;
     }
-    
-    #checkbox-wrapper{
+    #checkbox-wrapper {
         font-size: 18px;
         margin: 0;
     }
-    
-    #register-form #checkbox-wrapper input, #login-form #checkbox-wrapper input, #create-form #checkbox-wrapper input, #edit-form #checkbox-wrapper input{
+    #register-form #checkbox-wrapper input,
+    #login-form #checkbox-wrapper input,
+    #create-form #checkbox-wrapper input,
+    #edit-form #checkbox-wrapper input {
         margin-top: 0;
         margin-right: 10px;
         width: 20px;
     }
-    
-    #register-form input, #login-form input, #edit-form input, #create-form input{
+    #register-form input,
+    #login-form input,
+    #edit-form input,
+    #create-form input {
         height: 50px;
         font-size: 16px;
         width: 100%;
     }
-    
-    #register-form button, #login-form button{
+    #register-form button,
+    #login-form button {
         height: 50px;
         font-size: 24px;
         min-width: 160px;
     }
-    #edit-form button, #create-form button{
+    #edit-form button,
+    #create-form button {
         height: 50px;
         font-size: 24px;
         min-width: auto;
     }
-    
-    #register-form #submit-btn, #login-form #submit-btn, #edit-form #delete-btn, #create-form #delete-btn, #send-btn{
+    #register-form #submit-btn,
+    #login-form #submit-btn,
+    #edit-form #delete-btn,
+    #create-form #delete-btn,
+    #send-btn {
         width: 100%;
     }
-
-    #register-form a, #login-form a{
+    #register-form a,
+    #login-form a {
         font-size: 16px;
     }
-    #edit-form a, #create-form a{
+    #edit-form a,
+    #create-form a {
         color: var(--space-cadet);
         font-size: 24px;
     }
-    textarea{
-        resize: none; 
-        margin-top: 20px; 
-        margin-bottom: 0px; 
+    textarea {
+        resize: none;
+        margin-top: 20px;
+        margin-bottom: 0px;
         font-size: 16px;
         width: 100%;
-    } 
-    label{
-        margin-top: 20px;
     }
-    #forgot-pass{
+    label {
+        margin: 0;
+    }
+    #forgot-pass {
         margin-top: 15px;
+    }
+}
+
+
+/*** SHOPPING CART ***/
+
+
+/** MOBILE **/
+
+.shopping-cart h2 {
+    font-family: ubuntu;
+    color: var(--turquoise);
+    font-size: 1.5em;
+    padding: 0 2%;
+    margin: 1% 0;
+    border-bottom: var(--steelpink) solid 1px;
+}
+
+.shopping-cart .upper-part {
+    width: 90%;
+    margin: auto;
+}
+
+.shopping-cart ul {
+    list-style-type: none;
+    margin: 0%;
+    padding: 0px;
+    width: 100%;
+    font-size: 1rem;
+    font-family: ubuntu;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.shopping-cart ul li {
+    width: 20%;
+    text-align: center;
+    color: var(--turquoise);
+    border-left: solid 1px var(--steelpink);
+    border-right: solid 1px var(--steelpink);
+}
+
+
+/* Productos del carrito */
+
+.shopping-cart .producto {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 1%;
+    font-family: ubuntu;
+    background-color: rgba(184, 174, 200, 0.8);
+    border-radius: 7px 7px 7px 7px;
+    border-color: var(--thistle) solid 3px;
+}
+
+.shopping-cart .producto div img {
+    width: 100%;
+}
+
+.shopping-cart .producto .categoria-producto {
+    width: 20%;
+    text-align: center;
+}
+
+.shopping-cart .upper-part .producto .descripcion-producto .titulo-producto {
+    font-size: 0.6em;
+    color: var(--space-cadet);
+    font-weight: 700;
+}
+
+.shopping-cart .descripcion-producto {
+    display: flex;
+    flex-direction: column;
+    justify-items: flex-start;
+}
+
+.shopping-cart .upper-part .cart-bar {
+    font-size: 8px;
+}
+
+.shopping-cart .upper-part .producto .descripcion-producto #eliminar {
+    font-size: 0.3em;
+    align-self: flex-end;
+    margin-top: 10%;
+    text-decoration: underline;
+    color: var(--steelpink);
+}
+
+.shopping-cart .upper-part .producto .precio {
+    color: var(--medium-aquamarine);
+    font-size: 0.8em;
+}
+
+
+/*Parte inferior*/
+
+.shopping-cart .bottom-part {
+    display: flex;
+    margin: 2% auto;
+    justify-content: space-between;
+    width: 90%;
+    flex-wrap: wrap;
+}
+
+
+/* Descuentos */
+
+.shopping-cart .bottom-part .cupones {
+    background-color: rgba(184, 174, 200, 0.8);
+    width: 100%;
+    margin-bottom: 3%;
+    font-size: 0.6em;
+    font-family: ubuntu;
+    color: var(--turquoise);
+    height: fit-content;
+    border-radius: 7px 7px 7px 7px;
+    border-color: var(--thistle) solid 3px;
+}
+
+.shopping-cart .bottom-part .cupones label {
+    margin: 0px;
+}
+
+.shopping-cart .bottom-part .cupones input {
+    font-size: 1em;
+}
+
+.shopping-cart .bottom-part .cupones button {
+    font-size: 1em;
+}
+
+.shopping-cart .cupones form {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2%;
+}
+
+.shopping-cart .cupones form button {
+    font-size: 1rem;
+    padding: 2% 3%;
+    background-color: var(--thistle);
+    font-weight: 600;
+    color: var(--space-cadet);
+}
+
+.shopping-cart .cupones form input {
+    width: 20%;
+}
+
+
+/* Total */
+
+.shopping-cart .subtotal {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(184, 174, 200, 0.8);
+    border-radius: 7px 7px 7px 7px;
+    border-color: var(--thistle) solid 3px;
+    padding: 2%;
+}
+
+.shopping-cart .bottom-part .descuento-wrapper {
+    margin: 0px 0px 10px;
+    display: flex;
+    justify-content: space-around;
+    font-size: 1em;
+    font-family: ubuntu;
+    font-weight: 100;
+    color: var(--medium-aquamarine)
+}
+
+.shopping-cart .bottom-part .total-wrapper {
+    margin: 0px 0px 10px;
+    display: flex;
+    justify-content: space-around;
+    font-size: 1em;
+    font-family: ubuntu;
+}
+
+.shopping-cart .bottom-part .total-wrapper .valor-total {
+    color: var(--space-cadet);
+    font-weight: 600;
+}
+
+.shopping-cart .bottom-part .total-wrapper .precio-total {
+    color: var(--space-cadet);
+    font-weight: 600;
+}
+
+
+/* Botones */
+
+.shopping-cart .bottom-part #botones {
+    font-size: 0.6em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0px 0px 10px;
+}
+
+.shopping-cart .bottom-part #botones #seguir-comprando {
+    font-family: ubuntu;
+    font-size: 1.1em;
+    background-color: var(--thistle);
+    color: var(--space-cadet);
+    padding: 5px 8px;
+}
+
+.shopping-cart .bottom-part #botones #comprar {
+    font-family: ubuntu;
+    font-size: 1.5em;
+    background-color: var(--thistle);
+    font-weight: 600;
+    color: var(--space-cadet);
+    width: auto;
+    padding: 5%;
+}
+
+
+/* Oferta especial */
+
+.shopping-cart .oferta-especial {
+    display: none;
+}
+
+
+/* Laptop - Tablet */
+
+@media (min-width:768px) {
+    /* Productos del carrito */
+    .shopping-cart .upper-part .producto .descripcion-producto .titulo-producto {
+        font-size: 1em;
+    }
+    .shopping-cart .upper-part .cart-bar {
+        font-size: 15px;
+    }
+    .shopping-cart .upper-part .producto .descripcion-producto #eliminar {
+        font-size: 0.6em;
+    }
+    .shopping-cart .upper-part .producto .precio {
+        font-size: 1.3em;
+    }
+    /* Cupones */
+    .shopping-cart .bottom-part .cupones {
+        width: 45%;
+        font-size: 0.7em;
+    }
+    .bottom-part .cupones input {
+        font-size: 0.8em;
+    }
+    .shopping-cart .bottom-part .cupones button {
+        font-size: 1em;
+    }
+    /* Subtotal */
+    .shopping-cart .bottom-part .subtotal {
+        width: 45%;
+    }
+    .shopping-cart .bottom-part .subtotal .descuento-wrapper {
+        font-size: 1em;
+        margin: 0px 0px 10px;
+        justify-content: space-around;
+    }
+    .shopping-cart .bottom-part .subtotal .total-wrapper {
+        font-size: 1em;
+        margin: 0px 0px 10px;
+        justify-content: space-around;
+    }
+    .shopping-cart .bottom-part .subtotal #botones {
+        font-size: 0.6em;
+        margin: 0px 0px 10px;
+        justify-content: space-around;
+    }
+    /* Oferta Especial */
+    .shopping-cart .oferta-especial {
+        display: block;
+        margin: 1% 5%;
+        width: 50%;
+        font-family: ubuntu;
+    }
+    .shopping-cart .oferta-especial .titulo-oferta {
+        font-size: 1.6em;
+        font-weight: 600;
+        color: var(--space-cadet);
+        background-color: rgba(184, 174, 200, 0.8);
+        padding: 1% 4% 1px 4%;
+        border: 3px var(--steelpink) solid;
+        border-radius: 7px 7px 0px 0px;
+        border-bottom: none;
+    }
+    .shopping-cart .oferta-especial .wrapper-oferta {
+        background-color: rgba(184, 174, 200, 0.8);
+        color: var(--space-cadet);
+        border: 3px var(--steelpink) solid;
+        border-radius: 0px 7px 7px 7px;
+    }
+    .shopping-cart .oferta-especial .imagen-oferta {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+    .shopping-cart .oferta-especial .titulo-juego {
+        width: auto;
+        font-size: 1.8em;
+        text-align: center;
+        margin: 5% 0;
+        color: var(--space-cadet);
+    }
+    .shopping-cart .oferta-especial .descripcion-oferta {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .shopping-cart .oferta-especial .descuento-juego {
+        font-size: 2em;
+        margin: 0 5% 5%;
+        color: var(--medium-aquamarine);
+    }
+    .shopping-cart .oferta-especial .fas {
+        font-size: 2em;
+        margin: 0 5% 5%;
+    }
+}
+
+
+/* Desktop */
+
+@media (min-width:1025px) {
+    .shopping-cart h2 {
+        font-family: ubuntu;
+        color: var(--turquoise);
+        font-size: 3em;
+        padding: 0 2%;
+        margin: 1% 0;
+        border-bottom: var(--steelpink) solid 1px;
+    }
+    .shopping-cart .upper-part {
+        width: 90%;
+        margin: auto;
+    }
+    .shopping-cart main ul {
+        list-style-type: none;
+        margin: 0%;
+        padding: 0px;
+        width: 100%;
+        font-size: 1rem;
+        font-family: ubuntu;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .shopping-cart main ul li {
+        width: 20%;
+        text-align: center;
+        color: var(--turquoise);
+        border-left: solid 1px var(--steelpink);
+        border-right: solid 1px var(--steelpink);
+    }
+    /* Productos del carrito */
+    .shopping-cart .upper-part .producto .descripcion-producto .titulo-producto {
+        font-size: 1.2em;
+    }
+    .shopping-cart .upper-part .cart-bar {
+        font-size: 15px;
+    }
+    .shopping-cart .upper-part .producto .descripcion-producto #eliminar {
+        font-size: 0.8em;
+    }
+    .shopping-cart .upper-part .producto .precio {
+        font-size: 1.3em;
+    }
+    /*Parte inferior*/
+    /* Cupones */
+    .shopping-cart .bottom-part .cupones {
+        font-size: 1em;
+    }
+    /* Subtotal */
+    .shopping-cart .bottom-part .subtotal .descuento-wrapper {
+        font-size: 1.5em;
+    }
+    .shopping-cart .bottom-part .subtotal .total-wrapper {
+        font-size: 1.5em;
+    }
+    .shopping-cart .bottom-part .subtotal #botones {
+        font-size: 1em;
     }
 }
