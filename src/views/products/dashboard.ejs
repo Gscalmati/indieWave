@@ -19,7 +19,8 @@
     <%- include("../partials/header.ejs") %>
 
         <main>
-            <h2>Dashboard</br></h2>
+            <h2>Dashboard</br>
+            </h2>
             <div id="add-button">
                 <button><a href="/products/create">Agregar</a></button>
             </div>
@@ -43,7 +44,9 @@
                                 <%= producto.id%>
                             </td>
                             <td>
-                                <%= producto.game_name%>
+                                <a href="/products/<%= producto.id %>">
+                                    <%= producto.game_name%>
+                                </a>
                             </td>
                             <td>
                                 <%= producto.genre%>
@@ -54,7 +57,8 @@
                             <td>
                                 <%= producto.release_date%>
                             </td>
-                            <td>$<%= producto.price%>
+                            <td>$
+                                <%= producto.price%>
                             </td>
                             <td>
                                 <form method="GET" action="/products/edit/<%= producto.id %>">
