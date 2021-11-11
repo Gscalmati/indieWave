@@ -35,7 +35,7 @@ router.post("/", uploadProduct.fields([{ name: "logo" }, { name: "images" }]), p
 router.get("/dashboard", productsController.dashboard);
 
 /* Carrito */
-router.get("/shoppingCart", guestMiddleware, productsController.cart);
+router.get("/shoppingCart", guestRoutesMiddleware, productsController.cart);
 
 /* Editar producto */
 router.get("/edit/:id", productsController.edit);
