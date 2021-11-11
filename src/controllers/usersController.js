@@ -1,7 +1,5 @@
-const path = require("path");
-
+const path = require ("path");
 const fs = require("fs");
-
 const bcryptjs = require("bcryptjs")
 
 let jsonUsers = fs.readFileSync(path.resolve(__dirname, '../data/users.json'), 'utf-8');
@@ -17,13 +15,6 @@ const newId = function () {
     })
     return idNum + 1;
 }
-/* Config Express Validator */
-const { check } = require("express-validator");
-const validations = [
-    check("username").isEmpty().withMessage("Ingrese un Email o Usuario Válido"),
-    check("password").isEmpty().withMessage("Ingrese su constraseña"),
-]
-
 
 let usersController = {
     register: (req, res) => {
@@ -31,15 +22,15 @@ let usersController = {
     },
 
     store: function (req, res) {
-        console.log(req.file)
         let newUser = {
             id: newId(),
+            username: req.body.username,
             name: req.body.name,
             surname: req.body.surname,
             email: req.body.email,
-            password: bcrypt.hashSync(req.body.password, 10),
-            profilepic: `/img/users/${req.file.filename}`,
-            newsletter: req.body.newsletter
+            password: bcryptjs.hashSync(req.body.password, 10),
+            profilepic: req.file != undefined ? `/img/users/${req.file.filename}` : "/img/users/default.png",
+            news: req.body.news != undefined
         }
 
         users.push(newUser);
@@ -54,7 +45,7 @@ let usersController = {
     },
 
     logged: (req, res) => { /* Es importante modificar de NAME a USERNAME*/
-        let userFound = users.find(user => ((user.email === req.body.username) || (user.name === req.body.username)) &&
+        let userFound = users.find(user => ((user.email === req.body.email) || (user.username === req.body.username)) &&
             (bcryptjs.compareSync(req.body.password, user.password)));
         if (userFound != undefined) {
             delete userFound.password;
