@@ -9,19 +9,26 @@
             <ul>
                 <li><a href="/products">Categorías</a></li>
                 <li><a href="#">Ofertas</a></li>
-                <li><a href="/users/register">Registrarse</a></li>
-                <li><a href="/users/login">Ingresar</a></li>
-                <li><a href="#">Ayuda</a></li>
+                <% if (locals.loggedSession) { %>
+                    <div id="usuario">
+                        <%= locals.userLogged.name %>
+                    </div>
+                    <li><a href="/users/logout">Log Out</a></li>
+                    <%  } else { %>
+                        <li><a href="/users/register">Registrarse</a></li>
+                        <li><a href="/users/login">Ingresar</a></li>
+                        <li><a href="#">Ayuda</a></li>
+                        <% }%>
+
             </ul>
         </nav>
         <div class="iconos">
-            <% if (locals.user) { %>
-                <a>
-                    <%= user.email %>
-                </a>
+
+            <a href="#"><i class="fas fa-search"></i></a>
+            <% if (locals.loggedSession) { %>
+                <a href="/products/shoppingCart"><i class="fas fa-shopping-cart"></i></a>
                 <%  } %>
-                    <a href="#"><i class="fas fa-search"></i></a>
-                    <a href="/products/shoppingCart"><i class="fas fa-shopping-cart"></i></a>
+
 
         </div>
     </div>

@@ -13,7 +13,8 @@ app.use(session({
     resave: false,
     saveUninitialized: false
 }));
-
+const loggedUserMiddleware = require("./middlewares/loggedUserMiddleware");
+app.use(loggedUserMiddleware);
 
 /* Configuracion Express */
 app.use(express.static(path.resolve(__dirname, "../public")));

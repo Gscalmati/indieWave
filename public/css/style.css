@@ -133,6 +133,10 @@ header nav ul li {
     margin: 5px 0px;
 }
 
+header #usuario {
+    font-size: 1em;
+}
+
 header .iconos {
     margin: 5px;
     font-size: 0.6em;
@@ -290,6 +294,16 @@ footer .imagen-logo {
     header .imagen-logo {
         width: 10%;
         margin: 15px 5px;
+    }
+    header #usuario {
+        font-size: 1em;
+        text-align: center;
+        width: auto;
+        align-self: center;
+        background-color: var(--thistle);
+        color: var(--steelpink);
+        padding: 1%;
+        border-radius: 7px;
     }
     header .iconos {
         width: 10%;

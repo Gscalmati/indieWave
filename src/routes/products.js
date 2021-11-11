@@ -25,7 +25,7 @@ const storageProducts = multer.diskStorage({
 const uploadProduct = multer({ storageProducts });
 
 const productsController = require("../controllers/productsController");
-const guestMiddleware = require("../middlewares/guestMiddleware");
+const guestMiddleware = require("../middlewares/guestRoutesMiddleware");
 
 
 router.get("/", productsController.categories);

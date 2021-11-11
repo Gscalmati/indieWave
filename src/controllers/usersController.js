@@ -33,6 +33,11 @@ let usersController = {
             return res.redirect("/");
         }
         res.render("users/login", { errors: "Usuario o contraseña incorrecta" });
+    },
+
+    logout: (req, res) => {
+        req.session.destroy();
+        res.redirect("/")
     }
 }
 
