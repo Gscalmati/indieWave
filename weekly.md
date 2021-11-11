@@ -41,3 +41,12 @@
 - Usemos EJS para mostrar juegos destacados y últimos lanzamientos en home.
 - Gio nos ghostea.
 - COMO CORNO SE ARREGLA LO DEL HTML/BODY? Nos va a romper la vista de category products cuando pongamos wrap a menos que haya **al menos 15 juegos**
+
+## Miércoles 10/11/2021
+- Gio arma el nuevo login con validaciones. Ya se puede iniciar sesión, lo cual da acceso al carrito y niega el acceso a logueo y registro.
+- El tema de accesos le correspondía a Juani. **Hay que mirar Trello**.
+- Juani unifica CSS de forms. Hay que chequear que nada se rompa.
+- Facu arma el registro de usuarios. Multer no está funcionando --> **NO SE POR QUÉ CORNO ANTES ANDABA Y AHORA NO PERO AHORA ANDA**
+- Gio, más grande que bokita tomando Danonino
+- Definimos validaciones para registro de usuario
+- **Facu no se acuerda una goma**
