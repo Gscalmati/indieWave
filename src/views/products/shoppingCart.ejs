@@ -11,106 +11,105 @@
 
 
     <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/shoppingCart.css">
 
-    <link rel="icon" href="/img/favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon" />
 </head>
 
 <body>
 
     <%- include("../partials/header.ejs") %>
 
-    <main>
+        <main class="shopping-cart">
 
-        <h2>Carrito de compras</h2>
+            <h2>Carrito de compras</h2>
 
-        <section class="upper-part">
-            <ul class="cart-bar">
-                <li id="barra-producto">Producto</li>
-                <li id="barra-descripcion">Descripción</li>
-                <li>Precio</li>
-                <li>Subtotal</li>
-            </ul>
+            <section class="upper-part">
+                <ul class="cart-bar">
+                    <li id="barra-producto">Producto</li>
+                    <li id="barra-descripcion">Descripción</li>
+                    <li>Precio</li>
+                    <li>Subtotal</li>
+                </ul>
 
-            <article class="producto">
-                <div class="categoria-producto">
-                    <img class="thumbnail-producto responsive-img" src="https://via.placeholder.com/100x100">
-                </div>
-                <div class="categoria-producto descripcion-producto">
-                    <div class="titulo-producto "><a href="/products/productDetail">Undertale</a></div>
-                    <div id="eliminar">Eliminar</div>
-                </div>
-                <div class="precio categoria-producto">$19.99</div>
-                <div class="precio categoria-producto">$19.99</div>
-            </article>
+                <article class="producto">
+                    <div class="categoria-producto">
+                        <img class="thumbnail-producto responsive-img" src="https://via.placeholder.com/100x100">
+                    </div>
+                    <div class="categoria-producto descripcion-producto">
+                        <div class="titulo-producto "><a href="/products/productDetail">Undertale</a></div>
+                        <div id="eliminar">Eliminar</div>
+                    </div>
+                    <div class="precio categoria-producto">$19.99</div>
+                    <div class="precio categoria-producto">$19.99</div>
+                </article>
 
-            <article class="producto">
-                <div class="categoria-producto">
-                    <img class="thumbnail-producto responsive-img" src="https://via.placeholder.com/100x100">
-                </div>
-                <div class="categoria-producto descripcion-producto">
-                    <div class="titulo-producto "><a href="/products/productDetail">Slay the Spire</a></div>
-                    <div id="eliminar">Eliminar</div>
-                </div>
-                <div class="precio categoria-producto">$19.99</div>
-                <div class="precio categoria-producto">$19.99</div>
-            </article>
+                <article class="producto">
+                    <div class="categoria-producto">
+                        <img class="thumbnail-producto responsive-img" src="https://via.placeholder.com/100x100">
+                    </div>
+                    <div class="categoria-producto descripcion-producto">
+                        <div class="titulo-producto "><a href="/products/productDetail">Slay the Spire</a></div>
+                        <div id="eliminar">Eliminar</div>
+                    </div>
+                    <div class="precio categoria-producto">$19.99</div>
+                    <div class="precio categoria-producto">$19.99</div>
+                </article>
 
-        </section>
+            </section>
 
-        <section class="bottom-part">
-            <div class="cupones">
-                <form action="/shoppingCart" method="get">
-                    <label>INGRESE CUPÓN</label>
-                    <input type="text" name="descuento" placeholder="#12345">
-                    <button type="submit" for="descuento">APLICAR</button>
-                </form>
-            </div>
-
-            <div class="subtotal">
-
-                <div class="descuento-wrapper">
-                    <text class="texto-descuento">Descuento</text>
-                    <text class="precio-descuento">%%%</text>
-                </div>
-
-                <div class="total-wrapper">
-                    <text class="valor-total">Total</text>
-                    <text class="precio-total">$$$</text>
-                </div>
-
-                <div id="botones">
-                    <form action="/" method="get">
-                        <button id="seguir-comprando">Seguir Comprando</button>
-                    </form>
-
+            <section class="bottom-part">
+                <div class="cupones">
                     <form action="/shoppingCart" method="get">
-                        <button id="comprar">COMPRAR</button>
+                        <label>INGRESE CUPÓN</label>
+                        <input type="text" name="descuento" placeholder="#12345">
+                        <button type="submit" for="descuento">APLICAR</button>
                     </form>
-
-
                 </div>
 
-        </section>
+                <div class="subtotal">
+
+                    <div class="descuento-wrapper">
+                        <text class="texto-descuento">Descuento</text>
+                        <text class="precio-descuento">%%%</text>
+                    </div>
+
+                    <div class="total-wrapper">
+                        <text class="valor-total">Total</text>
+                        <text class="precio-total">$$$</text>
+                    </div>
+
+                    <div id="botones">
+                        <form action="/" method="get">
+                            <button id="seguir-comprando">Seguir Comprando</button>
+                        </form>
+
+                        <form action="/shoppingCart" method="get">
+                            <button id="comprar">COMPRAR</button>
+                        </form>
 
 
-        <article class="oferta-especial">
-            <text class="titulo-oferta">OFERTA ESPECIAL</text>
+                    </div>
 
-            <div class="wrapper-oferta">
-                <div class="imagen-oferta">
-                <img src="https://via.placeholder.com/150x100">
+            </section>
+
+
+            <article class="oferta-especial">
+                <text class="titulo-oferta">OFERTA ESPECIAL</text>
+
+                <div class="wrapper-oferta">
+                    <div class="imagen-oferta">
+                        <img src="https://via.placeholder.com/150x100">
+                    </div>
+                    <div class="titulo-juego">This War Of Mine</div>
+                    <div class="descripcion-oferta">
+                        <div class="descuento-juego">80% OFF</div>
+                        <i class="fas fa-cart-plus"></i>
+                    </div>
                 </div>
-                <div class="titulo-juego">This War Of Mine</div>
-                <div class="descripcion-oferta">
-                    <div class="descuento-juego">80% OFF</div>
-                    <i class="fas fa-cart-plus"></i>
-                </div>
-            </div>
-        </article>
-    </main>
+            </article>
+        </main>
 
-    <%- include("../partials/footer.ejs") %>
+        <%- include("../partials/footer.ejs") %>
 
 </body>
 

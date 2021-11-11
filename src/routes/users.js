@@ -17,6 +17,7 @@ const storageUsers = multer.diskStorage({
 const uploadUser = multer({storageUsers});
 const usersController = require("../controllers/usersController");
 
+<<<<<<< HEAD
 /* Vista registro de usuarios */ 
 router.get("/register", usersController.register);
 
@@ -25,5 +26,17 @@ router.post("/register",uploadUser.single("profile-pic") ,usersController.store)
 
 /*Vista login*/
 router.get("/login", usersController.login);
+=======
+const loggedMiddleware = require("../middlewares/loggedRoutesMiddleware");
+
+
+router.get("/register", loggedMiddleware, usersController.register);
+
+router.get("/login", loggedMiddleware, usersController.login);
+
+router.post("/login", usersController.logged);
+
+router.get("/logout", usersController.logout);
+>>>>>>> 8446b016f852d444c72790bcc5f0266da198562a
 
 module.exports = router;

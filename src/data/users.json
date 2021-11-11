@@ -1,10 +1,9 @@
-[
-    {
+[{
         "id": 1,
         "name": "Tawny frogmouth",
         "surname": "Waadenburg",
         "email": "jwaadenburg0@issuu.com",
-        "password": "t5wUiX6r",
+        "password": "$2a$10$YAP6wRFEfI13wQxNBa8FwuFqdBZr3VbXWME4QvEWAYrkHanL1S.jq",
         "newsletter": true
     },
     {

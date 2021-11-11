@@ -1,11 +1,9 @@
-*{
-    box-sizing: border-box;
-}
+
 
 /* Carrito de Compras */
 
 /* Mobile */
-    main {
+    /*main {
         margin-top: 180px;
 
         background-color: transparent;
@@ -19,9 +17,9 @@
         display: flex;
         flex-wrap: wrap;
         align-content: center;
-    }
+    }*/
         
-     main h2{
+    .shopping-cart main h2{
             font-family: ubuntu;
             color: var(--turquoise);
             font-size: 1.5em;
@@ -29,14 +27,14 @@
             margin: 1% 0;
             border-bottom: var(--steelpink) solid 1px;
         }
-        
-        .upper-part{
+
+      .shopping-cart .upper-part{
             width: 90%;
             margin: auto;
         
         }
         
-        main ul{
+        .shopping-cart ul{
             list-style-type: none;
          
             margin: 0%;
@@ -52,7 +50,7 @@
         }
         
         
-        main ul li{
+        .shopping-cart ul li{
             width: 20%;
             text-align: center;
             color: var(--turquoise);
@@ -64,7 +62,7 @@
         
         /* Productos del carrito */
 
-        .producto{
+        .shopping-cart .producto{
             display: flex;
             justify-content: space-evenly;
             align-items: center;
@@ -78,16 +76,16 @@
         }
         
         
-        .producto div img{
+        .shopping-cart .producto div img{
             width: 100%;
         }
         
-        .producto .categoria-producto{
+        .shopping-cart .producto .categoria-producto{
             width: 20%;
             text-align: center;
         }
         
-        .upper-part .producto .descripcion-producto .titulo-producto{
+        .shopping-cart .upper-part .producto .descripcion-producto .titulo-producto{
             font-size: 0.6em;
 
             color: var(--space-cadet);
@@ -96,7 +94,7 @@
           
         }
         
-        .descripcion-producto{
+        .shopping-cart .descripcion-producto{
             display: flex;
             flex-direction: column;
             justify-items: flex-start;
@@ -104,11 +102,11 @@
             
         }
 
-        .upper-part .cart-bar{
+        .shopping-cart .upper-part .cart-bar{
             font-size: 8px;
         }
         
-        .upper-part .producto .descripcion-producto #eliminar{
+        .shopping-cart .upper-part .producto .descripcion-producto #eliminar{
             font-size: 0.3em;
         
             align-self: flex-end;
@@ -119,7 +117,7 @@
           
         }
         
-        .upper-part .producto .precio{
+        .shopping-cart .upper-part .producto .precio{
             color: var(--medium-aquamarine);
             font-size: 0.8em;
             
@@ -128,7 +126,7 @@
         
         
         /*Parte inferior*/
-        .bottom-part{
+        .shopping-cart .bottom-part{
             display: flex;
             margin: 2% auto;
             justify-content: space-between;
@@ -143,7 +141,7 @@
     
         
         
-        .bottom-part .cupones{
+        .shopping-cart .bottom-part .cupones{
            background-color: rgba(184, 174, 200, 0.8);
 
            width: 100%;
@@ -160,22 +158,22 @@
         
         }
 
-        .bottom-part .cupones input{
+        .shopping-cart .bottom-part .cupones input{
             font-size: 1em;
           }
     
-        .bottom-part .cupones button{
+        .shopping-cart .bottom-part .cupones button{
           font-size: 1em;
         }
         
-        .cupones form{
+        .shopping-cart .cupones form{
             display: flex;
             justify-content: space-around;
             align-items: center;
             padding: 2%;
         }
         
-        .cupones form button{
+        .shopping-cart .cupones form button{
             font-size: 1rem;
            
             padding: 2% 3%;
@@ -185,13 +183,13 @@
             color: var(--space-cadet);
         }
         
-        .cupones form input{
+        .shopping-cart .cupones form input{
             width: 20%;
         }
         
         /* Total */
         
-        .subtotal{
+        .shopping-cart .subtotal{
             width: 100%;
             display: flex;
             flex-direction: column;
@@ -203,7 +201,7 @@
             padding: 2%;
         }
         
-        .bottom-part .descuento-wrapper{
+        .shopping-cart .bottom-part .descuento-wrapper{
             margin: 0px 0px 10px;
          
             display: flex;
@@ -215,7 +213,7 @@
             color: var(--medium-aquamarine)
         }
         
-        .bottom-part .total-wrapper {
+        .shopping-cart .bottom-part .total-wrapper {
             margin: 0px 0px 10px;
 
             display: flex;
@@ -225,13 +223,13 @@
             font-family: ubuntu;
         }
         
-        .bottom-part .total-wrapper .valor-total{
+        .shopping-cart .bottom-part .total-wrapper .valor-total{
             color: var(--space-cadet);
             font-weight: 600;
         
         }
         
-        .bottom-part .total-wrapper .precio-total{
+        .shopping-cart .bottom-part .total-wrapper .precio-total{
             color: var(--space-cadet);
             font-weight: 600;
         
@@ -241,7 +239,7 @@
 
         
         
-        .bottom-part #botones{
+        .shopping-cart .bottom-part #botones{
             font-size: 0.6em;
 
             display: flex;
@@ -252,7 +250,7 @@
             
         }
         
-        .bottom-part #botones #seguir-comprando{
+        .shopping-cart .bottom-part #botones #seguir-comprando{
             font-family: ubuntu;
         
             font-size: 1.1em;
@@ -263,7 +261,7 @@
             
         }
         
-        .bottom-part #botones #comprar{
+        .shopping-cart .bottom-part #botones #comprar{
             font-family: ubuntu;
         
             font-size: 1.5em;
@@ -279,7 +277,7 @@
         
         /* Oferta especial */
 
-        .oferta-especial{
+        .shopping-cart .oferta-especial{
             display: none;
         }
         
@@ -290,7 +288,7 @@
 @media (min-width:768px) {
     /* Main */
 
-    main {
+    .shopping-cart main {
         margin-top: 240px;
         height: auto;
         display: block;
@@ -298,25 +296,25 @@
 
 /* Productos del carrito */
 
-.upper-part .producto .descripcion-producto .titulo-producto{
+.shopping-cart .upper-part .producto .descripcion-producto .titulo-producto{
     font-size: 1em;
 }
 
-.upper-part .cart-bar{
+.shopping-cart .upper-part .cart-bar{
     font-size: 15px;
 }
 
-.upper-part .producto .descripcion-producto #eliminar{
+.shopping-cart .upper-part .producto .descripcion-producto #eliminar{
     font-size: 0.6em;
 }
 
-.upper-part .producto .precio{
+.shopping-cart .upper-part .producto .precio{
     font-size: 1.3em;    
 }
 
     /* Cupones */
 
-    .bottom-part .cupones{
+    .shopping-cart .bottom-part .cupones{
         width: 45%;
         font-size: 0.7em;
     }
@@ -325,30 +323,30 @@
         font-size: 0.8em;
       }
 
-    .bottom-part .cupones button{
+      .shopping-cart .bottom-part .cupones button{
       font-size: 1em;
     }
 
     /* Subtotal */
 
-    .bottom-part .subtotal{
+    .shopping-cart .bottom-part .subtotal{
         width: 45%;
     }
 
-    .bottom-part .subtotal .descuento-wrapper{
+    .shopping-cart .bottom-part .subtotal .descuento-wrapper{
             
         font-size: 1em;
         margin: 0px 0px 10px;
         justify-content: space-around;
     }
 
-    .bottom-part .subtotal .total-wrapper{
+    .shopping-cart .bottom-part .subtotal .total-wrapper{
         font-size: 1em;
         margin: 0px 0px 10px;
         justify-content: space-around;
     }
 
-    .bottom-part .subtotal #botones{
+    .shopping-cart .bottom-part .subtotal #botones{
         font-size: 0.6em;
         margin: 0px 0px 10px;
         justify-content: space-around;
@@ -356,7 +354,7 @@
 
     /* Oferta Especial */
 
-    .oferta-especial{
+    .shopping-cart .oferta-especial{
         display: block;
 
         margin: 1% 5%;
@@ -365,7 +363,7 @@
 
     }
     
-    .oferta-especial .titulo-oferta{
+    .shopping-cart .oferta-especial .titulo-oferta{
         font-size: 1.6em;
         font-weight: 600;
         color: var(--space-cadet);
@@ -379,7 +377,7 @@
         border-bottom: none;    
     }
     
-    .oferta-especial .wrapper-oferta{
+    .shopping-cart .oferta-especial .wrapper-oferta{
     
         background-color: rgba(184, 174, 200, 0.8);
     
@@ -389,7 +387,7 @@
         border-radius: 0px 7px 7px 7px;
     }
     
-    .oferta-especial .imagen-oferta{
+    .shopping-cart .oferta-especial .imagen-oferta{
         width: 100%;
         display: flex;
         justify-content: center;
@@ -397,7 +395,7 @@
     }
     
     
-    .oferta-especial .titulo-juego{
+    .shopping-cart .oferta-especial .titulo-juego{
         width: auto;
         font-size: 1.8em;
         text-align: center;
@@ -405,20 +403,20 @@
         color: var(--space-cadet);
     }
     
-    .oferta-especial .descripcion-oferta{
+    .shopping-cart .oferta-especial .descripcion-oferta{
         display: flex;
         align-items: center;
         justify-content: space-around;
     }
     
-    .oferta-especial .descuento-juego{
+    .shopping-cart .oferta-especial .descuento-juego{
         font-size: 2em;
         margin: 0 5% 5%;
     
         color: var(--medium-aquamarine);
     }
     
-    .oferta-especial .fas{
+    .shopping-cart .oferta-especial .fas{
         font-size: 2em;
         margin: 0 5% 5%;
     
@@ -429,11 +427,7 @@
 
     @media (min-width:1025px){
 
-        main {
-            margin-top: 70px;
-        }
-        
-        main h2{
+        .shopping-cart main h2{
             font-family: ubuntu;
             color: var(--turquoise);
             font-size: 3em;
@@ -442,13 +436,13 @@
             border-bottom: var(--steelpink) solid 1px;
         }
         
-        .upper-part{
+        .shopping-cart .upper-part{
             width: 90%;
             margin: auto;
         
         }
         
-        main ul{
+        .shopping-cart main ul{
             list-style-type: none;
          
             margin: 0%;
@@ -464,7 +458,7 @@
         }
         
         
-        main ul li{
+        .shopping-cart main ul li{
             width: 20%;
             text-align: center;
             color: var(--turquoise);
@@ -476,19 +470,19 @@
         
         /* Productos del carrito */
 
-    .upper-part .producto .descripcion-producto .titulo-producto{
+        .shopping-cart .upper-part .producto .descripcion-producto .titulo-producto{
         font-size: 1.2em;
     }
     
-    .upper-part .cart-bar{
+    .shopping-cart .upper-part .cart-bar{
          font-size: 15px;
     }
 
-    .upper-part .producto .descripcion-producto #eliminar{
+    .shopping-cart .upper-part .producto .descripcion-producto #eliminar{
             font-size: 0.8em;
     }
 
-    .upper-part .producto .precio{
+    .shopping-cart .upper-part .producto .precio{
         font-size: 1.3em;    
     }
         
@@ -496,7 +490,7 @@
 
          /* Cupones */
 
-    .bottom-part .cupones{
+    .shopping-cart .bottom-part .cupones{
 
         font-size: 1em;
     }
@@ -504,16 +498,16 @@
     /* Subtotal */
 
 
-    .bottom-part .subtotal .descuento-wrapper{
+    .shopping-cart .bottom-part .subtotal .descuento-wrapper{
             
         font-size: 1.5em;
     }
 
-    .bottom-part .subtotal .total-wrapper{
+    .shopping-cart .bottom-part .subtotal .total-wrapper{
         font-size: 1.5em;
     }
 
-    .bottom-part .subtotal #botones{
+    .shopping-cart .bottom-part .subtotal #botones{
         font-size: 1em;
     }
 }
