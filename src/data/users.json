@@ -1,10 +1,11 @@
-[{
+[
+    {
         "id": 1,
         "name": "Tawny frogmouth",
         "surname": "Waadenburg",
         "email": "jwaadenburg0@issuu.com",
         "password": "$2a$10$YAP6wRFEfI13wQxNBa8FwuFqdBZr3VbXWME4QvEWAYrkHanL1S.jq",
-        "newsletter": true
+        "news": true
     },
     {
         "id": 2,
@@ -12,7 +13,7 @@
         "surname": "Joannet",
         "email": "vjoannet1@delicious.com",
         "password": "CpVWUJj",
-        "newsletter": true
+        "news": true
     },
     {
         "id": 3,
@@ -20,7 +21,7 @@
         "surname": "Raggett",
         "email": "hraggett2@narod.ru",
         "password": "cXU0xhvb",
-        "newsletter": false
+        "news": false
     },
     {
         "id": 4,
@@ -28,7 +29,7 @@
         "surname": "Wrintmore",
         "email": "wwrintmore3@apple.com",
         "password": "7AWXghff",
-        "newsletter": false
+        "news": false
     },
     {
         "id": 5,
@@ -36,7 +37,7 @@
         "surname": "Constanza",
         "email": "kconstanza4@un.org",
         "password": "PbzSQHQz275C",
-        "newsletter": true
+        "news": true
     },
     {
         "id": 6,
@@ -44,7 +45,7 @@
         "surname": "Schollar",
         "email": "wschollar5@geocities.jp",
         "password": "KDuchvmn",
-        "newsletter": false
+        "news": false
     },
     {
         "id": 7,
@@ -52,7 +53,7 @@
         "surname": "Lockner",
         "email": "rlockner6@columbia.edu",
         "password": "o5noaCr2V",
-        "newsletter": true
+        "news": true
     },
     {
         "id": 8,
@@ -60,7 +61,7 @@
         "surname": "Klimpt",
         "email": "mklimpt7@businesswire.com",
         "password": "Qxd42qwQ",
-        "newsletter": false
+        "news": false
     },
     {
         "id": 9,
@@ -68,7 +69,7 @@
         "surname": "Montel",
         "email": "pmontel8@spiegel.de",
         "password": "8pqnwlQyrHd",
-        "newsletter": false
+        "news": false
     },
     {
         "id": 10,
@@ -76,14 +77,16 @@
         "surname": "Pettegree",
         "email": "epettegree9@microsoft.com",
         "password": "EsUi0D",
-        "newsletter": false
+        "news": false
     },
     {
         "id": 11,
-        "name": "Prueba",
-        "surname": "Prueba",
-        "email": "prueba@email.com",
-        "password": "$2a$10$f567tpfnGO0R/F7QdQ1MLeYaVwNPQQfFDZpgcsU1mRXeVVnT//QXS",
-        "profilepic": "/img/users/undefined"
+        "username": "FacuBlanco",
+        "name": "Facundo Matías",
+        "surname": "Blanco",
+        "email": "fmblanco97@gmail.com",
+        "password": "$2a$10$.at6ghqPtB2aZ7jNORuIv.8reA3t6fOavBpOb.bYxhrqvPV5sXUOK",
+        "profilepic": "/img/users/default.png",
+        "news": true
     }
 ]
