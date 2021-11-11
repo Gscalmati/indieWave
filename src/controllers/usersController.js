@@ -1,14 +1,8 @@
-<<<<<<< HEAD
-const path = require ("path");
-const fs = require("fs");
-const bcrypt = require("bcryptjs")
-=======
 const path = require("path");
 
 const fs = require("fs");
 
 const bcryptjs = require("bcryptjs")
->>>>>>> 8446b016f852d444c72790bcc5f0266da198562a
 
 let jsonUsers = fs.readFileSync(path.resolve(__dirname, '../data/users.json'), 'utf-8');
 let users = JSON.parse(jsonUsers); //Convertimos el json a array
