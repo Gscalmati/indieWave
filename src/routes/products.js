@@ -22,7 +22,7 @@ const storageProducts = multer.diskStorage({
         cb(null, newFilename)
     }
 })
-const uploadProduct = multer({ storageProducts });
+const uploadProduct = multer({storage: storageProducts });
 
 const productsController = require("../controllers/productsController");
 const guestMiddleware = require("../middlewares/guestRoutesMiddleware");

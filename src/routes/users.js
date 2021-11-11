@@ -10,11 +10,12 @@ const storageUsers = multer.diskStorage({
         cb(null, path.resolve(__dirname, `../../public/img/users`));
     },
     filename: (req, file, cb) => {
-        let newFilename = "prueba" + path.extname(file.originalname)
+        let newFilename = req.body.email + path.extname(file.originalname)
         cb(null, newFilename )
     }
 })
-const uploadUser = multer({storageUsers});
+const uploadUser = multer({storage: storageUsers});
+
 const usersController = require("../controllers/usersController");
 
 /* Vista registro de usuarios */ 
