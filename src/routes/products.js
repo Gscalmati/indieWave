@@ -28,9 +28,9 @@ const productsController = require("../controllers/productsController");
 
 /* Middleware */
 const authMiddleware = require("../middlewares/authMiddleware");
+//const authAdMinddleware = require("../middlewares/authAdMinddleware");
 
-
-router.get("/", productsController.categories);
+router.get("/", productsController.categories); //authAdMinddleware
 router.post("/", uploadProduct.fields([{ name: "logo" }, { name: "images" }]), productsController.store);
 
 /* CRUD */
