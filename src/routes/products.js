@@ -25,7 +25,9 @@ const storageProducts = multer.diskStorage({
 const uploadProduct = multer({storage: storageProducts });
 
 const productsController = require("../controllers/productsController");
-const guestRoutesMiddleware = require("../middlewares/guestRoutesMiddleware");
+
+/* Middleware */
+const authMiddleware = require("../middlewares/authMiddleware");
 
 
 router.get("/", productsController.categories);
@@ -35,7 +37,7 @@ router.post("/", uploadProduct.fields([{ name: "logo" }, { name: "images" }]), p
 router.get("/dashboard", productsController.dashboard);
 
 /* Carrito */
-router.get("/shoppingCart", guestRoutesMiddleware, productsController.cart);
+router.get("/shoppingCart", authMiddleware, productsController.cart);
 
 /* Editar producto */
 router.get("/edit/:id", productsController.edit);

@@ -18,14 +18,18 @@ const uploadUser = multer({ storage: storageUsers });
 
 const usersController = require("../controllers/usersController");
 
+/* Middleware */
 const loggedRoutesMiddleware = require("../middlewares/loggedRoutesMiddleware");
+const guestRoutesMiddleware = require('../middlewares/guestRoutesMiddleware')
 
 
-router.get("/register", loggedRoutesMiddleware, usersController.register);
+router.get("/register", guestRoutesMiddleware, usersController.register);
 
-router.get("/login", loggedRoutesMiddleware, usersController.login);
+router.post("/register", loggedRoutesMiddleware, usersController.register);
 
-router.post("/login", usersController.logged);
+router.get("/login", guestRoutesMiddleware, usersController.login);
+
+router.post("/login", loggedRoutesMiddleware, usersController.logged);
 
 router.get("/logout", usersController.logout);
 
