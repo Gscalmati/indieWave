@@ -98,5 +98,16 @@
         "password": "elmasgrande",
         "profilepic": "/img/users/default.png",
         "admin": true
+    },
+    {
+        "id": 13,
+        "username": "juani",
+        "name": "Juan Ignacio",
+        "surname": "Bottassi",
+        "email": "juan_bota96@hotmail.com",
+        "password": "$2a$10$rwupVlVCjJwBTZz81vbWauGSOig3oFi6PzVRFvMT9Id8aJEa3iJ36",
+        "profilepic": "/img/users/juan_bota96@hotmail.com.jpeg",
+        "news": false,
+        "admin": true
     }
 ]

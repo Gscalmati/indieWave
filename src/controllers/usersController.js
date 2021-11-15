@@ -55,7 +55,7 @@ let usersController = {
     },
 
     logged: (req, res) => { /* Es importante modificar de NAME a USERNAME*/
-        let userFound = users.find(user => ((user.email === req.body.email) || (user.username === req.body.username)) &&
+        let userFound = users.find(user => ((user.email === req.body.username) || (user.username === req.body.username)) &&
             (bcryptjs.compareSync(req.body.password, user.password)));
         if (userFound != undefined) {
             delete userFound.password;

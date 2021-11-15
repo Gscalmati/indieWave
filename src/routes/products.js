@@ -28,13 +28,13 @@ const productsController = require("../controllers/productsController");
 
 /* Middleware */
 const authMiddleware = require("../middlewares/authMiddleware");
-//const authAdMinddleware = require("../middlewares/authAdMinddleware");
+const authAdminMiddleware = require("../middlewares/authAdminMiddleware");
 
 router.get("/", productsController.categories); //authAdMinddleware
 router.post("/", uploadProduct.fields([{ name: "logo" }, { name: "images" }]), productsController.store);
 
 /* CRUD */
-router.get("/dashboard", productsController.dashboard);
+router.get("/dashboard", authAdminMiddleware, productsController.dashboard);
 
 /* Carrito */
 router.get("/shoppingCart", authMiddleware, productsController.cart);
