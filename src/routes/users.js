@@ -20,12 +20,13 @@ const usersController = require("../controllers/usersController");
 
 /* Middleware */
 const loggedRoutesMiddleware = require("../middlewares/loggedRoutesMiddleware");
-const guestRoutesMiddleware = require('../middlewares/guestRoutesMiddleware')
+const guestRoutesMiddleware = require('../middlewares/guestRoutesMiddleware');
+const userRegisterValidations = require('../middlewares/userRegisterValidations');
 
 
 router.get("/register", guestRoutesMiddleware, usersController.register);
 
-router.post("/register", loggedRoutesMiddleware, usersController.register);
+router.post("/register", loggedRoutesMiddleware, uploadUser.single("profile-pic"), userRegisterValidations, usersController.store);
 
 router.get("/login", guestRoutesMiddleware, usersController.login);
 

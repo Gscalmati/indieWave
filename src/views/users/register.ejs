@@ -18,17 +18,30 @@
 
         <main>
             <div id="form-div">
-                <form id="register-form" action="" method="post" enctype="multipart/form-data">
-                    <input type="text" name="name" id="name" aria-label="nombre" placeholder="Nombre" required>
-                    <input type="text" name="surname" id="surname" aria-label="apellido" placeholder="Apellido"
-                        required>
-                    <input type="email" name="email" id="email" aria-label="e-mail" placeholder="e-mail" required>
+                <form id="register-form" method="post" enctype="multipart/form-data">
+                    <input type="text" name="name" id="name" aria-label="nombre" placeholder="Nombre" value="<%= locals.old && old.name %>" required>
+                    <input type="text" name="surname" id="surname" aria-label="apellido" value="<%= locals.old && old.surname %>" placeholder="Apellido" required>
+                    <!-- Qué onda con este or ¿Cómo debería estar puesto? -->
+                    <% if ((locals.errors && errors.name) || (locals.errors && errors.surname)) { %>
+                        <i class="fas fa-exclamation-circle"></i><p class="error-msg"><%=errors.name.msg%> </p>
+                    <% } %>
+                    <!--  -->
+                    <input type="email" name="email" id="email" aria-label="e-mail" placeholder="e-mail" value="<%= locals.old && old.email %>" required>
+                    <% if (locals.errors && errors.email) { %>
+                        <i class="fas fa-exclamation-circle"></i><p class="error-msg"><%= errors.email.msg %> </p>
+                    <% } %>
                     <label for="profile-pic" id="profile-pic">Cargar imagen de perfil</label>
                     <input type="file" name="profile-pic" accept=".png, .jpeg, .jpg" id="profile-pic">
                     <input type="text" name="username" id="username" aria-label="nombre de usuario"
-                        placeholder="Nombre de usuario" required>
+                        placeholder="Nombre de usuario" value="<%= locals.old && old.username %>" required>
+                    <% if (locals.errors && errors.username) { %>
+                        <i class="fas fa-exclamation-circle"></i><p class="error-msg"><%= errors.username.msg %> </p>
+                    <% } %>
                     <input type="password" name="password" id="password" aria-label="contraseña"
-                        placeholder="Contraseña" required>
+                        placeholder="Contraseña" value="<%= locals.old && old.password %>" required>
+                    <% if (locals.errors && errors.password) { %>
+                        <i class="fas fa-exclamation-circle"></i><p class="error-msg"><%= errors.password.msg %> </p>
+                    <% } %>
                     <div id="checkbox-wrapper">
                         <input type="checkbox" name="news" id="news">
                         <label id="label-register" for="news">Me gustaría recibir novedades</label>
