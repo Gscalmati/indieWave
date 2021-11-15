@@ -26,7 +26,7 @@ const userRegisterValidations = require('../middlewares/userRegisterValidations'
 
 router.get("/register", guestRoutesMiddleware, usersController.register);
 
-router.post("/register", loggedRoutesMiddleware, userRegisterValidations, usersController.store);
+router.post("/register", loggedRoutesMiddleware, uploadUser.single("profile-pic"), userRegisterValidations, usersController.store);
 
 router.get("/login", guestRoutesMiddleware, usersController.login);
 

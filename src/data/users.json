@@ -88,5 +88,15 @@
         "password": "$2a$10$.at6ghqPtB2aZ7jNORuIv.8reA3t6fOavBpOb.bYxhrqvPV5sXUOK",
         "profilepic": "/img/users/default.png",
         "news": true
+    },
+    {
+        "id": 12,
+        "username": "admin",
+        "name": "Adminito  Román",
+        "surname": "Riquelme",
+        "email": "romanestafeli@bokita.com",
+        "password": "elmasgrande",
+        "profilepic": "/img/users/default.png",
+        "admin": true
     }
 ]

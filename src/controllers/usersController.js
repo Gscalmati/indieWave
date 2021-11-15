@@ -24,6 +24,7 @@ let usersController = {
 
     store: function (req, res) {
         let errors = validationResult(req);
+        console.log("req.body antes de cualquier falopa " + req.body.username)
 
         if (errors.isEmpty()){
             let newUser = {
@@ -43,7 +44,9 @@ let usersController = {
             fs.writeFileSync(path.resolve(__dirname, '../data/users.json'), newJson)
             res.redirect("/users/login");
         } else {
-            res.render('register', {errors: errors.mapped(), old: req.body})
+            console.log(errors.mapped())
+            console.log(req.body)
+            res.render('users/register', {errors: errors.mapped(), old: req.body})
         }
     },
 
