@@ -50,3 +50,13 @@
 - Gio, más grande que bokita tomando Danonino
 - Definimos validaciones para registro de usuario
 - **Facu no se acuerda una goma**
+
+## Domingo 14/11/2021
+- **A Facu le duele la pancita :,(**
+- Implementamos validaciones de registro
+- **Gio demuestra su superioridad al detectar errores que nadie ve**
+- **Preguntar por validacion name/surname**
+- Decidir formato del texto de las validaciones y adaptarlo a mobile
+- Juani implementa el chequeo de admin
+- **Juani tiene un tema con los typos**
+- Juani va a armar la vista de perfil

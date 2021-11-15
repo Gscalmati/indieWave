@@ -1,6 +1,7 @@
-module.exports = function guestRoutesMiddleware(req, res, next) {
-    if (!req.session.userLogged ) { //&& req.body.email === fmblanco97@gmail.com &&
-        return res.redirect("/users/login");// redirect login o register
+module.exports = function authAdminMiddleware(req, res, next) {
+    console.log(req.session.userLogged );
+    if(req.session.userLogged == undefined || req.session.userLogged.admin === undefined){
+        return res.redirect("/");
     }
     next()
 }
