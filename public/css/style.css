@@ -958,6 +958,12 @@ label {
     width: 50%;
 }
 
+.error-msg{
+    color: var(--thistle);
+    font-size: 11px;
+    margin: 10px 0px;
+}
+
 @media (min-width: 768px) {
     /** TABLET **/
     #dashboard {
@@ -1005,6 +1011,9 @@ label {
     #category .category-article {
         margin-top: 2%;
         width: 17%;
+    }
+    .error-msg{
+        font-size: 13px;
     }
 }
 
@@ -1090,8 +1099,15 @@ label {
     label {
         margin: 0;
     }
+    label[for=profile-pic]{
+        margin-top: 15px;
+        font-size: 18px;
+    }
     #forgot-pass {
         margin-top: 15px;
+    }
+    .error-msg{
+        font-size: 14px;
     }
 }
 
