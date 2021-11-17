@@ -24,7 +24,7 @@ let usersController = {
 
     store: function (req, res) {
         let errors = validationResult(req);
-        console.log("req.body antes de cualquier falopa " + req.body.username)
+        
 
         if (errors.isEmpty()){
             let newUser = {
@@ -71,6 +71,7 @@ let usersController = {
     },
 
     profile: (req, res) => {
+        console.log(req.session);
         res.render("users/profile");
     }
 }

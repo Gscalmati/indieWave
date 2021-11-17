@@ -1434,6 +1434,28 @@ label {
         font-size: 2em;
         margin: 0 5% 5%;
     }
+    /*** PROFILE ***/
+    main #profile-div{
+        margin: 200.5px auto;
+        display: flex;
+        justify-content: center;
+        border: solid 5px var(--steelpink);
+        padding: 10px;
+        width: 55%;
+    }
+    #profilepic-profile{
+        width: 100px;
+    }
+    .img-profilepic{
+        width: 150px;
+        margin: 0px 50px;
+        border: solid 2px var(--turquoise);
+    }
+    #username-surname{
+        margin-left: 175px;
+        width: 100%;
+        padding: 30px;
+    } 
 }
 
 

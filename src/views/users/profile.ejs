@@ -17,10 +17,20 @@
     <%- include("../partials/header.ejs") %>
 
         <main>
-            <div id="form-div">
-
+            <div id="profile-div">
+                <div id="profilepic-profile">
+                    <img class="img-profilepic" src="<%= locals.userLogged.profilepic %>">
+                </div>
                 
-
+                <div id="username-surname">
+                    <h2><%= locals.userLogged.username%>, <%= locals.userLogged.surname %> </h2>
+                
+                    <div id="email-profile">
+                        <h3><%= locals.userLogged.email %> </h3>
+                    </div>
+                </div>
+                
+                
             </div>
 
         </main>
