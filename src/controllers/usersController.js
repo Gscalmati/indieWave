@@ -68,6 +68,10 @@ let usersController = {
     logout: (req, res) => {
         req.session.destroy();
         res.redirect("/")
+    },
+
+    profile: (req, res) => {
+        res.render("users/profile");
     }
 }
 

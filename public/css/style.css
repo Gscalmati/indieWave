@@ -684,7 +684,7 @@ main #extras-area #sale {
 }
 
 
-/*HOME*/
+/*** HOME ***/
 
 
 /*featured*/
@@ -792,10 +792,10 @@ main #extras-area #sale {
 }
 
 
-/*FORMS*/
+/*** FORMS ***/
 
 
-/*MOBILE - TABLET*/
+/** MOBILE - TABLET **/
 
 main #form-div {
     margin: 104.5px auto;
@@ -964,8 +964,9 @@ label {
     margin: 10px 0px;
 }
 
+/** TABLET **/
 @media (min-width: 768px) {
-    /** TABLET **/
+    
     #dashboard {
         font-size: 9px;
     }
@@ -1030,7 +1031,7 @@ label {
     #dashboard th {
         font-size: 16px
     }
-    /*FORMS DESKTOP*/
+    /** FORMS DESKTOP **/
     #register-form,
     #login-form,
     #edit-form,
@@ -1337,7 +1338,7 @@ label {
 }
 
 
-/* Laptop - Tablet */
+/** Laptop - Tablet **/
 
 @media (min-width:768px) {
     /* Productos del carrito */
@@ -1436,7 +1437,7 @@ label {
 }
 
 
-/* Desktop */
+/** Desktop **/
 
 @media (min-width:1025px) {
     .shopping-cart h2 {
