@@ -882,6 +882,21 @@ main #title {
     outline: none;
 }
 
+#register-form input,
+#login-form input,
+#edit-form input,
+#create-form input {
+    font-family: ubuntu;
+    height: 30px;
+    font-size: 12px;
+    margin-top: 20px;
+    width: 80%;
+    background-color: silver;
+    box-shadow: black 3px 4px;
+    outline: none;
+}
+
+
 #register-form input[type=file],
 #login-form input[type=file],
 #edit-form input[type=file],
