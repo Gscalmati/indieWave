@@ -2,12 +2,13 @@ const path = require("path");
 const fs = require("fs");
 const bcryptjs = require("bcryptjs");
 const { validationResult } = require('express-validator');
+const { createBrotliCompress } = require("zlib");
 
 let jsonUsers = fs.readFileSync(path.resolve(__dirname, '../data/users.json'), 'utf-8');
 let users = JSON.parse(jsonUsers); //Convertimos el json a array
 
 /* Función para conseguir el nuevo ID */
-const newId = function () {
+const newId = function() {
     let idNum = 0;
     users.forEach(user => {
         if (user.id > idNum) {
@@ -22,11 +23,11 @@ let usersController = {
         res.render("users/register");
     },
 
-    store: function (req, res) {
+    store: function(req, res) {
         let errors = validationResult(req);
-        
 
-        if (errors.isEmpty()){
+
+        if (errors.isEmpty()) {
             let newUser = {
                 id: newId(),
                 username: req.body.username,
@@ -46,7 +47,7 @@ let usersController = {
         } else {
             console.log(errors.mapped())
             console.log(req.body)
-            res.render('users/register', {errors: errors.mapped(), old: req.body})
+            res.render('users/register', { errors: errors.mapped(), old: req.body })
         }
     },
 
@@ -55,11 +56,20 @@ let usersController = {
     },
 
     logged: (req, res) => { /* Es importante modificar de NAME a USERNAME*/
-        let userFound = users.find(user => ((user.email === req.body.username) || (user.username === req.body.username)) &&
-            (bcryptjs.compareSync(req.body.password, user.password)));
+        console.log(req.body)
+        let userFound = users.find(user => {
+            console.log(user);
+            return ((user.email === req.body.username) || (user.username === req.body.username)) &&
+                (bcryptjs.compareSync(req.body.password, user.password));
+        });
+
+
         if (userFound != undefined) {
-            delete userFound.password;
-            req.session.userLogged = userFound;
+            let copyUser = { // Usamos Spread Operator para copiar, porque de otra forma el "delete" borra la referencia
+                ...userFound
+            }
+            delete copyUser.password
+            req.session.userLogged = copyUser;
             return res.redirect("/");
         }
         res.render("users/login", { errors: "Usuario o contraseña incorrecta" });
