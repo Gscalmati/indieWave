@@ -643,7 +643,7 @@ main #extras-area #sale {
 /*** DASHBOARD ***/
 
 
-/** MOBILE **/
+/** MOBILE - TABLET - DESKTOP **/
 
 #dashboard {
     width: 100%;
@@ -652,6 +652,16 @@ main #extras-area #sale {
     border-collapse: collapse;
     text-align: center;
     font-size: 8px;
+}
+
+#dashboard {
+    font-size: 9px;
+}
+#dashboard input {
+    font-size: 5px;
+}
+#dashboard th {
+    font-size: 8px
 }
 
 #add-button {
@@ -867,6 +877,25 @@ main #title {
     font-size: 12px;
     margin-top: 20px;
     width: 80%;
+    background-color: silver;
+    box-shadow: black 3px 4px;
+    outline: none;
+}
+
+#register-form input[type=file],
+#login-form input[type=file],
+#edit-form input[type=file],
+#create-form input[type=file] {
+    box-shadow: none;
+    background: initial;
+}
+
+#register-form input[type=checkbox],
+#login-form input[type=checkbox],
+#edit-form input[type=checkbox],
+#create-form input[type=checkbox] {
+    box-shadow: none;
+    background: initial;
 }
 
 #register-form button,
@@ -959,7 +988,7 @@ label {
 }
 
 .error-msg{
-    color: var(--thistle);
+    color: orange;
     font-size: 11px;
     margin: 10px 0px;
 }
@@ -967,15 +996,6 @@ label {
 /** TABLET **/
 @media (min-width: 768px) {
     
-    #dashboard {
-        font-size: 9px;
-    }
-    #dashboard input {
-        font-size: 5px;
-    }
-    #dashboard th {
-        font-size: 8px
-    }
     /*Media home*/
     .container {
         text-align: center;
