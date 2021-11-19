@@ -73,7 +73,7 @@ let usersController = {
 
             // Seteo de cookies
             if (req.body.remember) {
-                res.cookie('usuario', copyUser.email, { maxAge: (1000 * 60) * 2 })
+                res.cookie('usuario', copyUser.email, { maxAge: (1000 * 60) * 60 })
             }
 
             return res.redirect("/");
@@ -83,6 +83,7 @@ let usersController = {
 
     logout: (req, res) => {
         req.session.destroy();
+        //res.clearCookie("usuario")  Esto va a utilizarse cuando hagamos un Autologin una vez realizad la BD
         res.redirect("/")
     },
 
