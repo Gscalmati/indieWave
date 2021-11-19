@@ -5,6 +5,8 @@ const path = require("path");
 
 const methodOverride = require("method-override");
 
+const cookies = require("cookie-parser")
+
 
 /* COnfiguracion Session */
 const session = require("express-session");
@@ -26,9 +28,14 @@ app.use(express.json());
 /* Configuracion Method Override */
 app.use(methodOverride("_method"));
 
+/* Configuracion Cookie Parser */
+app.use(cookies());
+
 /* Configuracion template engine */
 app.set("view engine", "ejs");
 app.set("views", path.resolve(__dirname, "views"))
+
+
 
 
 /* Configuracion rutas */

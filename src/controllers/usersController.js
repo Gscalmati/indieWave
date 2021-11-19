@@ -45,20 +45,20 @@ let usersController = {
             fs.writeFileSync(path.resolve(__dirname, '../data/users.json'), newJson)
             res.redirect("/users/login");
         } else {
-            console.log(errors.mapped())
-            console.log(req.body)
             res.render('users/register', { errors: errors.mapped(), old: req.body })
         }
     },
 
     login: (req, res) => {
+        if (req.cookies.usuario) {
+            return res.render("users/login", { usuario: req.cookies.usuario });
+        }
+
         res.render("users/login");
     },
 
     logged: (req, res) => { /* Es importante modificar de NAME a USERNAME*/
-        console.log(req.body)
         let userFound = users.find(user => {
-            console.log(user);
             return ((user.email === req.body.username) || (user.username === req.body.username)) &&
                 (bcryptjs.compareSync(req.body.password, user.password));
         });
@@ -70,6 +70,12 @@ let usersController = {
             }
             delete copyUser.password
             req.session.userLogged = copyUser;
+
+            // Seteo de cookies
+            if (req.body.remember) {
+                res.cookie('usuario', copyUser.email, { maxAge: (1000 * 60) * 2 })
+            }
+
             return res.redirect("/");
         }
         res.render("users/login", { errors: "Usuario o contraseña incorrecta" });
