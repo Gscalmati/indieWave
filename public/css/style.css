@@ -683,6 +683,34 @@ main #extras-area #sale {
     font-family: "ubuntu";
 }
 
+/** DASHBOARD TABLET **/
+@media (min-width: 768px) {
+    
+    #dashboard {
+        font-size: 9px;
+    }
+    #dashboard input {
+        font-size: 5px;
+    }
+    #dashboard th {
+        font-size: 8px
+    }
+}
+
+
+/** DASHBOARD DESKTOP **/
+
+@media (min-width: 1024px) {
+    #dashboard {
+        font-size: 16px;
+    }
+    #dashboard input {
+        font-size: 12px;
+    }
+    #dashboard th {
+        font-size: 16px
+    }
+}
 
 /*** HOME ***/
 
@@ -792,6 +820,47 @@ main #extras-area #sale {
 }
 
 
+/**Media TABLET home**/
+
+@media (min-width: 768px) {
+    
+    .container {
+        text-align: center;
+        width: 70%;
+        background-color: var(--eminence);
+        padding: 30px;
+        border: solid 5px var(--thistle);
+    }
+    #subtitle-home {
+        margin-left: 0px;
+        width: 25%;
+    }
+    #subtitle-featured-home {
+        margin-left: 0px;
+        width: 25%;
+    }
+    #featured {
+        display: flex;
+        background-color: var(--eminence);
+        justify-content: space-around;
+        padding: 0px 10px 10px;
+    }
+    #featured .product-article {
+        margin-top: 2%;
+        width: 20%;
+        margin-bottom: 2%;
+    }
+    #category {
+        display: flex;
+        background-color: var(--eminence);
+        justify-content: space-between;
+        padding: 0px 10px 10px;
+    }
+    #category .category-article {
+        margin-top: 2%;
+        width: 17%;
+    }
+}
 /*** FORMS ***/
 
 
@@ -964,74 +1033,18 @@ label {
     margin: 10px 0px;
 }
 
-/** TABLET **/
+/** FORMS TABLET **/
 @media (min-width: 768px) {
-    
-    #dashboard {
-        font-size: 9px;
-    }
-    #dashboard input {
-        font-size: 5px;
-    }
-    #dashboard th {
-        font-size: 8px
-    }
-    /*Media home*/
-    .container {
-        text-align: center;
-        width: 70%;
-        background-color: var(--eminence);
-        padding: 30px;
-        border: solid 5px var(--thistle);
-    }
-    #subtitle-home {
-        margin-left: 0px;
-        width: 25%;
-    }
-    #subtitle-featured-home {
-        margin-left: 0px;
-        width: 25%;
-    }
-    #featured {
-        display: flex;
-        background-color: var(--eminence);
-        justify-content: space-around;
-        padding: 0px 10px 10px;
-    }
-    #featured .product-article {
-        margin-top: 2%;
-        width: 20%;
-        margin-bottom: 2%;
-    }
-    #category {
-        display: flex;
-        background-color: var(--eminence);
-        justify-content: space-between;
-        padding: 0px 10px 10px;
-    }
-    #category .category-article {
-        margin-top: 2%;
-        width: 17%;
-    }
-    .error-msg{
+  
+    .error-msg{     
         font-size: 13px;
     }
 }
 
-
-/** DESKTOP **/
+/** FORMS DESKTOP **/
 
 @media (min-width: 1024px) {
-    #dashboard {
-        font-size: 16px;
-    }
-    #dashboard input {
-        font-size: 12px;
-    }
-    #dashboard th {
-        font-size: 16px
-    }
-    /** FORMS DESKTOP **/
+    
     #register-form,
     #login-form,
     #edit-form,
@@ -1111,6 +1124,8 @@ label {
         font-size: 14px;
     }
 }
+
+
 
 
 /*** SHOPPING CART ***/
@@ -1434,28 +1449,7 @@ label {
         font-size: 2em;
         margin: 0 5% 5%;
     }
-    /*** PROFILE ***/
-    main #profile-div{
-        margin: 200.5px auto;
-        display: flex;
-        justify-content: center;
-        border: solid 5px var(--steelpink);
-        padding: 10px;
-        width: 55%;
-    }
-    #profilepic-profile{
-        width: 100px;
-    }
-    .img-profilepic{
-        width: 150px;
-        margin: 0px 50px;
-        border: solid 2px var(--turquoise);
-    }
-    #username-surname{
-        margin-left: 175px;
-        width: 100%;
-        padding: 30px;
-    } 
+    
 }
 
 
@@ -1520,3 +1514,31 @@ label {
         font-size: 1em;
     }
 }
+
+/*** PROFILE ***/
+
+/**  TABLET **/
+
+@media (min-width:768px) {
+    main #profile-div{
+        margin: 200.5px auto;
+        display: flex;
+        justify-content: center;
+        border: solid 5px var(--steelpink);
+        padding: 10px;
+        width: 55%;
+    }
+    #profilepic-profile{
+        width: 100px;
+    }
+    .img-profilepic{
+        width: 150px;
+        margin: 0px 50px;
+        border: solid 2px var(--turquoise);
+    }
+    #username-surname{
+        margin-left: 175px;
+        width: 100%;
+        padding: 30px;
+    }
+} 
