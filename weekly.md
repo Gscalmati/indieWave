@@ -60,3 +60,10 @@
 - Juani implementa el chequeo de admin
 - **Juani tiene un tema con los typos**
 - Juani va a armar la vista de perfil
+
+## Miércoles 17/11/2021
+- Arreglamos el tema de session copiando el array con spread
+- Juani avanza con profile. Falta responsive.
+- **Ordenar css**
+- ¿Cómo mantener el formato de los input en autofill?
+- Arreglamos name/surname validation
