@@ -1080,10 +1080,6 @@ label {
 
 /** FORMS TABLET **/
 @media (min-width: 768px) {
-<<<<<<< HEAD
-  
-    .error-msg{     
-=======
     
     /*Media home*/
     .container {
@@ -1123,7 +1119,6 @@ label {
         width: 17%;
     }
     .error-msg{
->>>>>>> f76444f607c7fe459178b62a57ac3d0eaa18b4f7
         font-size: 13px;
     }
 }
