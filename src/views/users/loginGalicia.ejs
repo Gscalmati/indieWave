@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <!-- <link rel="stylesheet" href="/css/style.css"> -->
+    <link rel="stylesheet" href="/css/galicia.css">
+    <title>IndieWave</title>
+
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon" />
+</head>
+
+<body>
+
+    <%- include("../partials/header.ejs") %>
+
+        <main>
+            <section class="main-section">
+                <div id="form-div">
+
+                    <form id="login-form" action="/users/loginGalicia" method="POST">
+
+                        <% if (locals.errors) { %>
+                            <div>
+                                <span class="error-msg"><i class="fas fa-exclamation-circle"></i> <%= locals.errors %></span>
+                            </div>
+                            <% } %>
+
+                                <input type="text" name="username" id="username" aria-label="nombre de usuario o e-mail" <% if (locals && locals.usuario) { %> value=
+                                <%=locals.usuario %>
+                                    <% } %>
+                                        placeholder= "Ingrese usuario o email">
+                                        <input type="password" name="password" id="password" aria-label="contraseña" placeholder="Contraseña">
+                                        <div id="checkbox-wrapper">
+                                            <input type="checkbox" name="remember" id="remember" <% if (locals && locals.usuario) { %> checked
+                                            <% } %>>
+                                                <label id="label-login" for="remember">Recuérdame</label>
+                                        </div>
+                                        <button type="submit" id="submit-btn">Ingresar</button>
+                                        <a id="forgot-pass" href="#">¿Olvidaste tu contraseña?</a>
+                    </form>
+
+                </div>
+
+                <div class="images-aside">
+                    <div class="images-array">
+
+                    </div>
+
+                </div>
+            </section>
+
+        </main>
+
+        <%- include("../partials/footer.ejs") %>
+
+</body>

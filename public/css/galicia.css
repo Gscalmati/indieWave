@@ -1,0 +1,679 @@
+@font-face {
+    font-family: ubuntu;
+    src: url("../fonts/ubuntu-font-family-0.80/UbuntuMono-R.ttf");
+}
+
+@font-face {
+    font-family: videophreak;
+    src: url("../fonts/VIDEOPHREAK.ttf");
+}
+
+@keyframes bordes-header {
+    0% {
+        border: solid var(--turquoise) 2px;
+        padding: 2px;
+    }
+    50% {
+        padding: 4px;
+        border: solid var(--turquoise) 2px;
+    }
+    100% {
+        padding: 8px;
+        border: solid var(--turquoise) 2px;
+    }
+}
+
+:root {
+    --steelpink: #d30cb8;
+    --turquoise: #6df1d8;
+    --medium-aquamarine: #58dd94;
+    --eminence: #5c2c6d;
+    --cadet-blue: #5da4a6;
+    --thistle: #b8aec8;
+    --space-cadet: #3c345c;
+}
+
+.responsive-img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+html {
+    padding: 0px;
+    min-height: 100vh;
+}
+
+html,
+body {
+    width: 100%;
+    margin: 0;
+}
+
+body {
+    min-height: 100vh;
+    background-color: green;
+}
+
+button {
+    cursor: pointer;
+}
+
+header {
+    background-color: black;
+    color: var(--steelpink);
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    font-family: videophreak;
+    position: fixed;
+    z-index: 11;
+    top: 0;
+    left: 0;
+    max-height: 100%;
+}
+
+header .barra-principal {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    border-top: solid 2px var(--steelpink);
+    border-bottom: solid 2px var(--steelpink);
+    max-height: 100%;
+}
+
+header img {
+    width: 100%;
+}
+
+header .imagen-logo {
+    width: 30%;
+    margin: 5px;
+}
+
+header .barra-principal,
+header ul {
+    flex-direction: column;
+}
+
+header nav {
+    width: 70%;
+}
+
+header nav ul {
+    margin: 0%;
+    padding: 0%;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+header nav ul li {
+    text-align: center;
+    font-size: 0.5em;
+    margin: 5px 0px;
+}
+
+header #usuario {
+    font-size: 1em;
+}
+
+header .iconos {
+    margin: 5px;
+    font-size: 0.6em;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+header a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* Main*/
+
+main a {
+    text-decoration: none;
+    color: inherit;
+}
+
+main {
+    width: 100%;
+    min-height: 100vh;
+    margin: 185px auto 20px;
+    background-color: rgba(92, 44, 109, 0.8);
+    box-sizing: border-box;
+    padding: 16px;
+    font-family: ubuntu;
+    color: var(--turquoise);
+}
+
+
+/* Footer */
+
+footer .barra-principal {
+    background-color: black;
+    color: var(--steelpink);
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    font-family: ubuntu;
+}
+
+footer .iconos {
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 0.8em;
+}
+
+footer img {
+    width: 100%;
+}
+
+footer nav {
+    width: 70%;
+}
+
+footer nav ul {
+    margin: 0%;
+    padding: 0%;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+footer nav ul li {
+    text-align: center;
+    font-size: 0.5em;
+}
+
+footer a {
+    text-decoration: none;
+    color: var(--steelpink);
+}
+
+footer .imagen-logo {
+    width: 10%;
+    margin: 0px;
+}
+
+
+/** TABLET **/
+
+@media (min-width: 768px) and (max-width:1024px) {
+    /* Header */
+    header .barra-principal {
+        max-height: 100%;
+    }
+    header .imagen-logo {
+        width: 15%;
+        margin: 5px;
+    }
+    header .barra-principal,
+    header ul {
+        flex-direction: column;
+    }
+    header nav ul li {
+        text-align: center;
+        font-size: 1em;
+        margin: 5px 0px;
+    }
+    header .iconos {
+        margin: 5px;
+        font-size: 1em;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+    }
+    header .barra-principal {
+        max-height: 100%;
+    }
+    header .barra-principal,
+    header ul {
+        flex-direction: column;
+    }
+    /* Main */
+    main {
+        margin: 250px auto 20px;
+    }
+    /* Footer */
+    footer nav ul li {
+        font-size: 1em;
+    }
+    footer .iconos {
+        height: 90px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+}
+
+
+/** DESKTOP **/
+
+@media (min-width: 1025px) {
+    /* Header */
+    header .barra-principal {
+        max-height: 65px;
+    }
+    header .barra-principal,
+    header ul {
+        flex-direction: row;
+    }
+    header .barra-principal li {
+        font-size: 1em;
+    }
+    header .imagen-logo {
+        width: 10%;
+        margin: 15px 5px;
+    }
+    header #usuario {
+        font-size: 1em;
+        text-align: center;
+        width: auto;
+        align-self: center;
+        background-color: var(--thistle);
+        color: var(--steelpink);
+        padding: 1%;
+        border-radius: 7px;
+    }
+    header .iconos {
+        width: 10%;
+        display: flex;
+        justify-content: space-around;
+        font-size: 1.5em;
+    }
+    /* Main */
+    main {
+        width: 100%;
+        margin: 90px auto 20px;
+    }
+    /* Footer */
+    footer .imagen-logo {
+        margin: 50px 0px 50px 50px;
+    }
+    footer nav ul li {
+        font-size: 1em;
+    }
+    footer .iconos {
+        width: 10%;
+        flex-direction: row;
+        justify-content: space-around;
+        font-size: 1.5em;
+    }
+    /* Animations */
+    header nav ul li {
+        box-sizing: border-box;
+        width: 10%;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    header nav ul li a:hover {
+        animation: bordes-header 200ms forwards;
+    }
+    /* Transitions */
+    header .barra-principal .iconos i:hover {
+        color: var(--turquoise);
+    }
+    header .barra-principal .iconos i {
+        transition: color 400ms;
+    }
+}
+
+
+/*** FORMS ***/
+
+
+/** MOBILE - TABLET **/
+
+main #form-div {
+    height: 100vh;
+    width: 60%;
+    display: flex;
+}
+
+#body-edit-create {
+    height: auto;
+}
+
+#main-edit-create {
+    flex-direction: column;
+}
+
+main #title {
+    text-align: center;
+}
+
+#register-form,
+#login-form,
+#edit-form,
+#create-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: auto;
+    align-items: center;
+}
+
+#form-selection-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+#checkbox-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    font-size: 15px;
+    width: 100%;
+    margin: 18px auto;
+    margin-top: 5px;
+}
+
+#register-form #checkbox-wrapper input,
+#login-form #checkbox-wrapper input,
+#create-form #checkbox-wrapper input,
+#edit-form #checkbox-wrapper input {
+    margin-top: 0;
+    margin-right: 10px;
+    width: 14px;
+}
+
+#create-form #checkbox-wrapper label,
+#edit-form #checkbox-wrapper label {
+    margin-top: 0px;
+}
+
+#register-form input,
+#login-form input,
+#edit-form input,
+#create-form input {
+    font-family: ubuntu;
+    height: 30px;
+    font-size: 12px;
+    margin-top: 20px;
+    width: 80%;
+}
+
+#register-form button,
+#login-form button {
+    font-family: ubuntu;
+    height: 30px;
+    background-color: var(--thistle);
+    font-size: 18px;
+    color: var(--space-cadet);
+    min-width: 120px;
+}
+
+#edit-form button,
+#create-form button {
+    font-family: ubuntu;
+    height: 30px;
+    background-color: var(--thistle);
+    font-size: 18px;
+    color: var(--space-cadet);
+    min-width: 120px;
+    margin-top: 5%;
+}
+
+#register-form #submit-btn,
+#login-form #submit-btn {
+    width: 80%;
+    height: 40px;
+}
+
+#edit-form #delete-btn,
+#create-form #delete-btn,
+#send-btn {
+    width: 80%;
+    height: 40px;
+    margin-top: 5%;
+}
+
+#register-form a,
+#login-form a {
+    color: var(--turquoise);
+    font-size: 12px;
+}
+
+#forgot-pass {
+    margin-top: 15px;
+}
+
+#edit-form a,
+#create-form a {
+    color: var(--space-cadet);
+    font-size: 24px;
+}
+
+#subtitle {
+    margin-top: 20px;
+}
+
+#requeriment {
+    margin-top: 2px
+}
+
+textarea {
+    resize: none;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    font-size: 12px;
+    width: 80%;
+}
+
+label {
+    margin-top: 40px;
+}
+
+#label-login,
+#label-register {
+    margin-top: 0px;
+}
+
+#genre {
+    width: 80%;
+    margin-top: 40px;
+    text-align: center;
+    font-size: 18px;
+}
+
+#genre select {
+    font-family: "ubuntu";
+    font-size: 18px;
+    width: 50%;
+}
+
+.error-msg {
+    color: var(--thistle);
+    font-size: 11px;
+    margin: 10px 0px;
+}
+
+
+/** TABLET **/
+
+@media (min-width: 768px) {
+    #dashboard {
+        font-size: 9px;
+    }
+    #dashboard input {
+        font-size: 5px;
+    }
+    #dashboard th {
+        font-size: 8px
+    }
+    /*Media home*/
+    .container {
+        text-align: center;
+        width: 70%;
+        background-color: var(--eminence);
+        padding: 30px;
+        border: solid 5px var(--thistle);
+    }
+    #subtitle-home {
+        margin-left: 0px;
+        width: 25%;
+    }
+    #subtitle-featured-home {
+        margin-left: 0px;
+        width: 25%;
+    }
+    #featured {
+        display: flex;
+        background-color: var(--eminence);
+        justify-content: space-around;
+        padding: 0px 10px 10px;
+    }
+    #featured .product-article {
+        margin-top: 2%;
+        width: 20%;
+        margin-bottom: 2%;
+    }
+    #category {
+        display: flex;
+        background-color: var(--eminence);
+        justify-content: space-between;
+        padding: 0px 10px 10px;
+    }
+    #category .category-article {
+        margin-top: 2%;
+        width: 17%;
+    }
+    .error-msg {
+        font-size: 13px;
+    }
+}
+
+
+/** DESKTOP **/
+
+@media (min-width: 1024px) {
+    #dashboard {
+        font-size: 16px;
+    }
+    #dashboard input {
+        font-size: 12px;
+    }
+    #dashboard th {
+        font-size: 16px
+    }
+    /** FORMS DESKTOP **/
+    #register-form,
+    #login-form,
+    #edit-form,
+    #create-form {
+        width: 35%;
+        margin: auto;
+    }
+    #form-selection-wrapper {
+        justify-content: space-between;
+    }
+    #checkbox-wrapper {
+        font-size: 18px;
+        margin: 0;
+    }
+    #register-form #checkbox-wrapper input,
+    #login-form #checkbox-wrapper input,
+    #create-form #checkbox-wrapper input,
+    #edit-form #checkbox-wrapper input {
+        margin-top: 0;
+        margin-right: 10px;
+        width: 20px;
+    }
+    #register-form input,
+    #login-form input,
+    #edit-form input,
+    #create-form input {
+        height: 50px;
+        font-size: 16px;
+        width: 100%;
+    }
+    #register-form button,
+    #login-form button {
+        height: 50px;
+        font-size: 24px;
+        min-width: 160px;
+    }
+    #edit-form button,
+    #create-form button {
+        height: 50px;
+        font-size: 24px;
+        min-width: auto;
+    }
+    #register-form #submit-btn,
+    #login-form #submit-btn,
+    #edit-form #delete-btn,
+    #create-form #delete-btn,
+    #send-btn {
+        width: 100%;
+    }
+    #register-form a,
+    #login-form a {
+        font-size: 16px;
+    }
+    #edit-form a,
+    #create-form a {
+        color: var(--space-cadet);
+        font-size: 24px;
+    }
+    textarea {
+        resize: none;
+        margin-top: 20px;
+        margin-bottom: 0px;
+        font-size: 16px;
+        width: 100%;
+    }
+    label {
+        margin: 0;
+    }
+    label[for=profile-pic] {
+        margin-top: 15px;
+        font-size: 18px;
+    }
+    #forgot-pass {
+        margin-top: 15px;
+    }
+    .error-msg {
+        font-size: 14px;
+    }
+}
+
+
+/*** IMAGES-ASIDE ***/
+
+
+/** MAIN SECTION **/
+
+.main-section {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+
+/** IMAGES-ARRAY **/
+
+.main-section .images-array {
+    background-color: wheat;
+    width: 40%;
+    height: 100vh;
+}

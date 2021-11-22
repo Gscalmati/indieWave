@@ -131,10 +131,29 @@ header nav ul li {
     text-align: center;
     font-size: 0.5em;
     margin: 5px 0px;
+    display: flex;
+    justify-content: center;
+}
+
+header #usuario #anchor {
+    display: flex;
+    justify-content: center;
+    color: var(--steelpink);
+    border-radius: 7px;
+    width: 50%
+}
+
+header #profile-pic-wrapper {
+    display: none;
+}
+
+header #profile-pic-wrapper img {
+    width: 100%;
 }
 
 header #usuario {
-    font-size: 1em;
+    font-size: 0.5em;
+    text-decoration: underline;
 }
 
 header .iconos {
@@ -245,6 +264,23 @@ footer .imagen-logo {
         font-size: 1em;
         margin: 5px 0px;
     }
+    header #usuario #anchor {
+        display: flex;
+        justify-content: center;
+        color: var(--steelpink);
+        border-radius: 7px;
+        width: 50%
+    }
+    header #profile-pic-wrapper {
+        display: none;
+    }
+    header #profile-pic-wrapper img {
+        width: 100%;
+    }
+    header #usuario {
+        font-size: 1em;
+        text-decoration: underline;
+    }
     header .iconos {
         margin: 5px;
         font-size: 1em;
@@ -298,12 +334,19 @@ footer .imagen-logo {
     header #usuario {
         font-size: 1em;
         text-align: center;
-        width: auto;
         align-self: center;
-        background-color: var(--thistle);
+        text-decoration: none;
+    }
+    header #profile-pic-wrapper {
+        display: flex;
+        width: 1.5em;
+    }
+    header #usuario #anchor {
         color: var(--steelpink);
-        padding: 1%;
         border-radius: 7px;
+        width: 80%;
+        justify-content: space-around;
+        align-items: center;
     }
     header .iconos {
         width: 10%;
@@ -332,7 +375,7 @@ footer .imagen-logo {
     /* Animations */
     header nav ul li {
         box-sizing: border-box;
-        width: 10%;
+        width: 15%;
         height: 50px;
         display: flex;
         justify-content: center;
@@ -958,15 +1001,16 @@ label {
     width: 50%;
 }
 
-.error-msg{
+.error-msg {
     color: var(--thistle);
     font-size: 11px;
     margin: 10px 0px;
 }
 
+
 /** TABLET **/
+
 @media (min-width: 768px) {
-    
     #dashboard {
         font-size: 9px;
     }
@@ -1013,7 +1057,7 @@ label {
         margin-top: 2%;
         width: 17%;
     }
-    .error-msg{
+    .error-msg {
         font-size: 13px;
     }
 }
@@ -1100,14 +1144,14 @@ label {
     label {
         margin: 0;
     }
-    label[for=profile-pic]{
+    label[for=profile-pic] {
         margin-top: 15px;
         font-size: 18px;
     }
     #forgot-pass {
         margin-top: 15px;
     }
-    .error-msg{
+    .error-msg {
         font-size: 14px;
     }
 }
@@ -1435,7 +1479,7 @@ label {
         margin: 0 5% 5%;
     }
     /*** PROFILE ***/
-    main #profile-div{
+    main #profile-div {
         margin: 200.5px auto;
         display: flex;
         justify-content: center;
@@ -1443,19 +1487,19 @@ label {
         padding: 10px;
         width: 55%;
     }
-    #profilepic-profile{
+    #profilepic-profile {
         width: 100px;
     }
-    .img-profilepic{
+    .img-profilepic {
         width: 150px;
         margin: 0px 50px;
         border: solid 2px var(--turquoise);
     }
-    #username-surname{
+    #username-surname {
         margin-left: 175px;
         width: 100%;
         padding: 30px;
-    } 
+    }
 }
 
 

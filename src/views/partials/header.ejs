@@ -10,9 +10,17 @@
                 <li><a href="/products">Categorías</a></li>
                 <li><a href="#">Ofertas</a></li>
                 <% if (locals.loggedSession) { %>
-                    <div id="usuario">
-                         <a href="/users/profile"><%= locals.userLogged.username %> </a> <!--Cambiar por imagen de perfil?-->
-                    </div>
+                    <li id="usuario">
+                        <a href="/users/profile" id="anchor">
+                            <div id="profile-pic-wrapper">
+                                <img src="<%= locals.userLogged.profilepic %>" alt="Foto Perfil">
+                            </div>
+                            <span>
+                            <%= locals.userLogged.username %>
+                        </span>
+                        </a>
+                        <!--Cambiar por imagen de perfil?-->
+                    </li>
                     <li><a href="/users/logout">Log Out</a></li>
                     <%  } else { %>
                         <li><a href="/users/register">Registrarse</a></li>

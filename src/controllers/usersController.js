@@ -57,6 +57,38 @@ let usersController = {
         res.render("users/login");
     },
 
+    loginGalicia: (req, res) => {
+        if (req.cookies.usuario) {
+            return res.render("users/loginGalicia", { usuario: req.cookies.usuario });
+        }
+
+        res.render("users/loginGalicia");
+    },
+
+    loggedGalicia: (req, res) => { /* Es importante modificar de NAME a USERNAME*/
+        let userFound = users.find(user => {
+            return ((user.email === req.body.username) || (user.username === req.body.username)) &&
+                (bcryptjs.compareSync(req.body.password, user.password));
+        });
+
+
+        if (userFound != undefined) {
+            let copyUser = { // Usamos Spread Operator para copiar, porque de otra forma el "delete" borra la referencia
+                ...userFound
+            }
+            delete copyUser.password
+            req.session.userLogged = copyUser;
+
+            // Seteo de cookies
+            if (req.body.remember) {
+                res.cookie('usuario', copyUser.email, { maxAge: (1000 * 60) * 60 })
+            }
+
+            return res.redirect("/");
+        }
+        res.render("users/loginGalicia", { errors: "Usuario o contraseña incorrecta" });
+    },
+
     logged: (req, res) => { /* Es importante modificar de NAME a USERNAME*/
         let userFound = users.find(user => {
             return ((user.email === req.body.username) || (user.username === req.body.username)) &&
