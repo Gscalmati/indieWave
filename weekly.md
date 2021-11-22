@@ -67,3 +67,8 @@
 - **Ordenar css**
 - ¿Cómo mantener el formato de los input en autofill?
 - Arreglamos name/surname validation
+
+## Domingo 21/11/2021
+- Juani ordenó el CSS y avanza con la vista de profile.
+- Gio arma la cookie para recordar el usuario. La vamos a terminar cuando tengamos la BD de verdad.
+- Elegimos imagen default
