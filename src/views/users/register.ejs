@@ -23,7 +23,7 @@
                     <input type="text" name="surname" id="surname" aria-label="apellido" value="<%= locals.old && old.surname %>" placeholder="Apellido" required>
                     <% if ((locals.errors && errors.name) || (locals.errors && errors.surname)) { %>
                     <!-- Qué onda con este or ¿Cómo debería estar puesto? -->
-                        <span class="error-msg"><i class="fas fa-exclamation-circle"></i> <%=errors.name.msg || errors.surname.msg%></span>
+                        <span class="error-msg"><i class="fas fa-exclamation-circle"></i> <%=(errors.name && errors.name.msg) || (errors.surname && errors.surname.msg)%></span>
                     <% } %>
                     <!--  -->
                     <input type="email" name="email" id="email" aria-label="e-mail" placeholder="e-mail" value="<%= locals.old && old.email %>" required>

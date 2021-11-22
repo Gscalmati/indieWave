@@ -644,7 +644,7 @@ main #extras-area #sale {
 /*** DASHBOARD ***/
 
 
-/** MOBILE **/
+/** MOBILE - TABLET - DESKTOP **/
 
 #dashboard {
     width: 100%;
@@ -653,6 +653,16 @@ main #extras-area #sale {
     border-collapse: collapse;
     text-align: center;
     font-size: 8px;
+}
+
+#dashboard {
+    font-size: 9px;
+}
+#dashboard input {
+    font-size: 5px;
+}
+#dashboard th {
+    font-size: 8px
 }
 
 #add-button {
@@ -937,6 +947,40 @@ main #title {
     font-size: 12px;
     margin-top: 20px;
     width: 80%;
+    background-color: silver;
+    box-shadow: black 3px 4px;
+    outline: none;
+}
+
+#register-form input,
+#login-form input,
+#edit-form input,
+#create-form input {
+    font-family: ubuntu;
+    height: 30px;
+    font-size: 12px;
+    margin-top: 20px;
+    width: 80%;
+    background-color: silver;
+    box-shadow: black 3px 4px;
+    outline: none;
+}
+
+
+#register-form input[type=file],
+#login-form input[type=file],
+#edit-form input[type=file],
+#create-form input[type=file] {
+    box-shadow: none;
+    background: initial;
+}
+
+#register-form input[type=checkbox],
+#login-form input[type=checkbox],
+#edit-form input[type=checkbox],
+#create-form input[type=checkbox] {
+    box-shadow: none;
+    background: initial;
 }
 
 #register-form button,
@@ -1029,15 +1073,57 @@ label {
 }
 
 .error-msg{
-    color: var(--thistle);
+    color: orange;
     font-size: 11px;
     margin: 10px 0px;
 }
 
 /** FORMS TABLET **/
 @media (min-width: 768px) {
+<<<<<<< HEAD
   
     .error-msg{     
+=======
+    
+    /*Media home*/
+    .container {
+        text-align: center;
+        width: 70%;
+        background-color: var(--eminence);
+        padding: 30px;
+        border: solid 5px var(--thistle);
+    }
+    #subtitle-home {
+        margin-left: 0px;
+        width: 25%;
+    }
+    #subtitle-featured-home {
+        margin-left: 0px;
+        width: 25%;
+    }
+    #featured {
+        display: flex;
+        background-color: var(--eminence);
+        justify-content: space-around;
+        padding: 0px 10px 10px;
+    }
+    #featured .product-article {
+        margin-top: 2%;
+        width: 20%;
+        margin-bottom: 2%;
+    }
+    #category {
+        display: flex;
+        background-color: var(--eminence);
+        justify-content: space-between;
+        padding: 0px 10px 10px;
+    }
+    #category .category-article {
+        margin-top: 2%;
+        width: 17%;
+    }
+    .error-msg{
+>>>>>>> f76444f607c7fe459178b62a57ac3d0eaa18b4f7
         font-size: 13px;
     }
 }
