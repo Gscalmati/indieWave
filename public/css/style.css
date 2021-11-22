@@ -125,6 +125,7 @@ header nav ul {
     list-style-type: none;
     display: flex;
     justify-content: space-evenly;
+    text-align: center;
 }
 
 header nav ul li {
@@ -686,7 +687,7 @@ main #extras-area #sale {
 /*** DASHBOARD ***/
 
 
-/** MOBILE **/
+/** MOBILE - TABLET - DESKTOP **/
 
 #dashboard {
     width: 100%;
@@ -695,6 +696,16 @@ main #extras-area #sale {
     border-collapse: collapse;
     text-align: center;
     font-size: 8px;
+}
+
+#dashboard {
+    font-size: 9px;
+}
+#dashboard input {
+    font-size: 5px;
+}
+#dashboard th {
+    font-size: 8px
 }
 
 #add-button {
@@ -726,6 +737,34 @@ main #extras-area #sale {
     font-family: "ubuntu";
 }
 
+/** DASHBOARD TABLET **/
+@media (min-width: 768px) {
+    
+    #dashboard {
+        font-size: 9px;
+    }
+    #dashboard input {
+        font-size: 5px;
+    }
+    #dashboard th {
+        font-size: 8px
+    }
+}
+
+
+/** DASHBOARD DESKTOP **/
+
+@media (min-width: 1024px) {
+    #dashboard {
+        font-size: 16px;
+    }
+    #dashboard input {
+        font-size: 12px;
+    }
+    #dashboard th {
+        font-size: 16px
+    }
+}
 
 /*** HOME ***/
 
@@ -835,6 +874,47 @@ main #extras-area #sale {
 }
 
 
+/**Media TABLET home**/
+
+@media (min-width: 768px) {
+    
+    .container {
+        text-align: center;
+        width: 70%;
+        background-color: var(--eminence);
+        padding: 30px;
+        border: solid 5px var(--thistle);
+    }
+    #subtitle-home {
+        margin-left: 0px;
+        width: 25%;
+    }
+    #subtitle-featured-home {
+        margin-left: 0px;
+        width: 25%;
+    }
+    #featured {
+        display: flex;
+        background-color: var(--eminence);
+        justify-content: space-around;
+        padding: 0px 10px 10px;
+    }
+    #featured .product-article {
+        margin-top: 2%;
+        width: 20%;
+        margin-bottom: 2%;
+    }
+    #category {
+        display: flex;
+        background-color: var(--eminence);
+        justify-content: space-between;
+        padding: 0px 10px 10px;
+    }
+    #category .category-article {
+        margin-top: 2%;
+        width: 17%;
+    }
+}
 /*** FORMS ***/
 
 
@@ -910,6 +990,40 @@ main #title {
     font-size: 12px;
     margin-top: 20px;
     width: 80%;
+    background-color: silver;
+    box-shadow: black 3px 4px;
+    outline: none;
+}
+
+#register-form input,
+#login-form input,
+#edit-form input,
+#create-form input {
+    font-family: ubuntu;
+    height: 30px;
+    font-size: 12px;
+    margin-top: 20px;
+    width: 80%;
+    background-color: silver;
+    box-shadow: black 3px 4px;
+    outline: none;
+}
+
+
+#register-form input[type=file],
+#login-form input[type=file],
+#edit-form input[type=file],
+#create-form input[type=file] {
+    box-shadow: none;
+    background: initial;
+}
+
+#register-form input[type=checkbox],
+#login-form input[type=checkbox],
+#edit-form input[type=checkbox],
+#create-form input[type=checkbox] {
+    box-shadow: none;
+    background: initial;
 }
 
 #register-form button,
@@ -1001,12 +1115,18 @@ label {
     width: 50%;
 }
 
+<<<<<<< HEAD
 .error-msg {
     color: var(--thistle);
+=======
+.error-msg{
+    color: orange;
+>>>>>>> aa1681a2079ca1d74e7a4822e1ed0d81218420b6
     font-size: 11px;
     margin: 10px 0px;
 }
 
+<<<<<<< HEAD
 
 /** TABLET **/
 
@@ -1020,6 +1140,11 @@ label {
     #dashboard th {
         font-size: 8px
     }
+=======
+/** FORMS TABLET **/
+@media (min-width: 768px) {
+    
+>>>>>>> aa1681a2079ca1d74e7a4822e1ed0d81218420b6
     /*Media home*/
     .container {
         text-align: center;
@@ -1062,20 +1187,10 @@ label {
     }
 }
 
-
-/** DESKTOP **/
+/** FORMS DESKTOP **/
 
 @media (min-width: 1024px) {
-    #dashboard {
-        font-size: 16px;
-    }
-    #dashboard input {
-        font-size: 12px;
-    }
-    #dashboard th {
-        font-size: 16px
-    }
-    /** FORMS DESKTOP **/
+    
     #register-form,
     #login-form,
     #edit-form,
@@ -1155,6 +1270,8 @@ label {
         font-size: 14px;
     }
 }
+
+
 
 
 /*** SHOPPING CART ***/
@@ -1478,6 +1595,7 @@ label {
         font-size: 2em;
         margin: 0 5% 5%;
     }
+<<<<<<< HEAD
     /*** PROFILE ***/
     main #profile-div {
         margin: 200.5px auto;
@@ -1500,6 +1618,9 @@ label {
         width: 100%;
         padding: 30px;
     }
+=======
+    
+>>>>>>> aa1681a2079ca1d74e7a4822e1ed0d81218420b6
 }
 
 
@@ -1564,3 +1685,43 @@ label {
         font-size: 1em;
     }
 }
+
+/*** PROFILE ***/
+
+
+main #profilepic-profile{
+    width: 100%;
+    text-align: center;
+}
+
+/*profilepic*/
+main div #img-profilepic{
+    width: 80%;
+    border: solid 3px var(--turquoise);
+}
+
+/*h2*/
+main div #name-lastname{
+    font-size: 1.2em;
+}
+
+/*h2 h3*/
+main #username-surname{
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    border: solid 3px var(--steelpink);
+    margin-top: 10px;
+}
+
+/**  TABLET **/
+
+@media (min-width:768px) {
+    main #profile-div{
+        display: flex;
+        align-items: center;
+    }
+    
+} 
+
+
