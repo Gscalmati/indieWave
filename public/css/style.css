@@ -341,12 +341,12 @@ footer .imagen-logo {
     header #profile-pic-wrapper {
         display: flex;
         width: 1.5em;
+        margin-right: 10px;
     }
     header #usuario #anchor {
         color: var(--steelpink);
         border-radius: 7px;
-        width: 80%;
-        justify-content: space-around;
+        width: 100%;
         align-items: center;
     }
     header .iconos {
@@ -701,9 +701,11 @@ main #extras-area #sale {
 #dashboard {
     font-size: 9px;
 }
+
 #dashboard input {
     font-size: 5px;
 }
+
 #dashboard th {
     font-size: 8px
 }
@@ -737,9 +739,10 @@ main #extras-area #sale {
     font-family: "ubuntu";
 }
 
+
 /** DASHBOARD TABLET **/
+
 @media (min-width: 768px) {
-    
     #dashboard {
         font-size: 9px;
     }
@@ -765,6 +768,7 @@ main #extras-area #sale {
         font-size: 16px
     }
 }
+
 
 /*** HOME ***/
 
@@ -877,7 +881,6 @@ main #extras-area #sale {
 /**Media TABLET home**/
 
 @media (min-width: 768px) {
-    
     .container {
         text-align: center;
         width: 70%;
@@ -915,6 +918,8 @@ main #extras-area #sale {
         width: 17%;
     }
 }
+
+
 /*** FORMS ***/
 
 
@@ -1008,7 +1013,6 @@ main #title {
     box-shadow: black 3px 4px;
     outline: none;
 }
-
 
 #register-form input[type=file],
 #login-form input[type=file],
@@ -1115,36 +1119,16 @@ label {
     width: 50%;
 }
 
-<<<<<<< HEAD
 .error-msg {
-    color: var(--thistle);
-=======
-.error-msg{
     color: orange;
->>>>>>> aa1681a2079ca1d74e7a4822e1ed0d81218420b6
     font-size: 11px;
     margin: 10px 0px;
 }
 
-<<<<<<< HEAD
 
-/** TABLET **/
-
-@media (min-width: 768px) {
-    #dashboard {
-        font-size: 9px;
-    }
-    #dashboard input {
-        font-size: 5px;
-    }
-    #dashboard th {
-        font-size: 8px
-    }
-=======
 /** FORMS TABLET **/
+
 @media (min-width: 768px) {
-    
->>>>>>> aa1681a2079ca1d74e7a4822e1ed0d81218420b6
     /*Media home*/
     .container {
         text-align: center;
@@ -1187,10 +1171,10 @@ label {
     }
 }
 
+
 /** FORMS DESKTOP **/
 
 @media (min-width: 1024px) {
-    
     #register-form,
     #login-form,
     #edit-form,
@@ -1270,8 +1254,6 @@ label {
         font-size: 14px;
     }
 }
-
-
 
 
 /*** SHOPPING CART ***/
@@ -1595,32 +1577,6 @@ label {
         font-size: 2em;
         margin: 0 5% 5%;
     }
-<<<<<<< HEAD
-    /*** PROFILE ***/
-    main #profile-div {
-        margin: 200.5px auto;
-        display: flex;
-        justify-content: center;
-        border: solid 5px var(--steelpink);
-        padding: 10px;
-        width: 55%;
-    }
-    #profilepic-profile {
-        width: 100px;
-    }
-    .img-profilepic {
-        width: 150px;
-        margin: 0px 50px;
-        border: solid 2px var(--turquoise);
-    }
-    #username-surname {
-        margin-left: 175px;
-        width: 100%;
-        padding: 30px;
-    }
-=======
-    
->>>>>>> aa1681a2079ca1d74e7a4822e1ed0d81218420b6
 }
 
 
@@ -1686,27 +1642,33 @@ label {
     }
 }
 
+
 /*** PROFILE ***/
 
-
-main #profilepic-profile{
+main #profilepic-profile {
     width: 100%;
     text-align: center;
 }
 
+
 /*profilepic*/
-main div #img-profilepic{
+
+main div #img-profilepic {
     width: 80%;
     border: solid 3px var(--turquoise);
 }
 
+
 /*h2*/
-main div #name-lastname{
+
+main div #name-lastname {
     font-size: 1.2em;
 }
 
+
 /*h2 h3*/
-main #username-surname{
+
+main #username-surname {
     width: 100%;
     box-sizing: border-box;
     text-align: center;
@@ -1714,14 +1676,12 @@ main #username-surname{
     margin-top: 10px;
 }
 
+
 /**  TABLET **/
 
 @media (min-width:768px) {
-    main #profile-div{
+    main #profile-div {
         display: flex;
         align-items: center;
     }
-    
-} 
-
-
+}
