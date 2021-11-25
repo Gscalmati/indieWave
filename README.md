@@ -1,7 +1,7 @@
 # INDIEWAVE, el Ecommerce para los Gamers Indie
 
 ## CUENTA ADMINISTRADOR PARA TESTEO ##
-**Username:** Admin
+**Username:** Admin\
 **Pass:** admin1234
 
 # Descripción del Ecommerce #
