@@ -72,3 +72,9 @@
 - Juani ordenó el CSS y avanza con la vista de profile.
 - Gio arma la cookie para recordar el usuario. La vamos a terminar cuando tengamos la BD de verdad.
 - Elegimos imagen default
+
+## Miércoles 24/11/2021
+- Hablamos del tema vacaciones
+- Juani añade "Editar Perfil", a implementar con la nueva BD.
+- Avanzamos con vista de perfil. 
+- **Gio tiene que poner tamaño en px para la foto de perfil en el header**
