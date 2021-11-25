@@ -1,5 +1,9 @@
 # INDIEWAVE, el Ecommerce para los Gamers Indie
 
+## CUENTA ADMINISTRADOR PARA TESTEO ##
+**Username:** Admin
+**Pass:** admin1234
+
 # Descripción del Ecommerce #
 
 Nuesto proyecto se bautiza "INDIE WAVE", una tienda pensada y creado para el gamer, en donde encontrar nuevas experiencias indie. Si sos gamer, sos del equipo INDIE WAVE
