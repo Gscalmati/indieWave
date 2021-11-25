@@ -8,25 +8,30 @@
         <nav>
             <ul>
                 <li><a href="/products">Categorías</a></li>
-                <li><a href="#">Ofertas</a></li>
-                <% if (locals.loggedSession) { %>
-                    <li id="usuario">
-                        <a href="/users/profile" id="anchor">
-                            <div id="profile-pic-wrapper">
-                                <img src="<%= locals.userLogged.profilepic %>" alt="Foto Perfil">
-                            </div>
-                            <span>
+                <% if (locals.userLogged && locals.userLogged.admin) { %>
+                    <li><a href="/products/dashboard">Dashboard</a></li>
+                    <% } else {%>
+                        <li><a href="#">Ofertas</a></li>
+                        <% } %>
+                            <% if (locals.loggedSession) { %>
+                                <li id="usuario">
+                                    <a href="/users/profile" id="anchor">
+                                        <div id="profile-pic-wrapper">
+                                            <img src="<%= locals.userLogged.profilepic %>" alt="Foto Perfil">
+                                        </div>
+                                        <span>
                             <%= locals.userLogged.username %>
                         </span>
-                        </a>
-                        <!--Cambiar por imagen de perfil?-->
-                    </li>
-                    <li><a href="/users/logout">Log Out</a></li>
-                    <%  } else { %>
-                        <li><a href="/users/register">Registrarse</a></li>
-                        <li><a href="/users/login">Ingresar</a></li>
-                        <li><a href="#">Ayuda</a></li>
-                        <% }%>
+
+                                    </a>
+                                    <!--Cambiar por imagen de perfil?-->
+                                </li>
+                                <li><a href="/users/logout">Log Out</a></li>
+                                <%  } else { %>
+                                    <li><a href="/users/register">Registrarse</a></li>
+                                    <li><a href="/users/login">Ingresar</a></li>
+                                    <li><a href="#">Ayuda</a></li>
+                                    <% }%>
 
             </ul>
         </nav>
