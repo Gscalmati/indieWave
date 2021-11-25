@@ -1644,18 +1644,28 @@ label {
 
 
 /*** PROFILE ***/
-
+/*profilepic*/
 main #profilepic-profile {
+    width: 150px;
+    height: 150px;
+    background-color: black;
+}
+/**/
+main #profile-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
-    text-align: center;
+    height: 100vh;
+    justify-content: center;
 }
 
-
-/*profilepic*/
-
 main div #img-profilepic {
-    width: 80%;
+    width: 100%;
     border: solid 3px var(--turquoise);
+    height: 100%;
+    box-sizing: border-box;
+    object-fit: contain;
 }
 
 
@@ -1673,8 +1683,34 @@ main #username-surname {
     box-sizing: border-box;
     text-align: center;
     border: solid 3px var(--steelpink);
-    margin-top: 10px;
+    margin-top: 35px;
+    padding: 20px;
 }
+
+/* form */
+main #profile-form{
+    display: flex;
+    width: auto;
+    justify-content: center;
+    height: 30px;
+    margin: 15px;
+    margin-top: 35px;
+}
+main #button{
+    height: 100%;
+    background: var(--thistle);
+    font-size: 1.2em;
+    color: var(--space-cadet);
+    font-family: 'ubuntu';
+}
+
+/* div main*/
+main .flex-wrapper{
+    display: flex;
+    min-height: 100%;
+    width: 100%;
+}
+
 
 
 /**  TABLET **/
@@ -1683,5 +1719,22 @@ main #username-surname {
     main #profile-div {
         display: flex;
         align-items: center;
+    }
+    main #wrapper{
+        margin: 15px;
+    }
+    
+    main #profilepic-profile{
+        width: 300px;
+        height: 300px;
+    }
+
+    /* form */
+    main #profile-form{
+        margin-top: 60px;
+    }
+    main #username-surname {
+        margin-top: 30px;
+        padding: 40px;
     }
 }
