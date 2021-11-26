@@ -94,3 +94,24 @@
 * Confiarse cuando hay pocas tareas
 
 ## Dejar de hacer
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# Retro Meeting - Sprint 5
+
+
+## Comenzar a hacer
+* **Jugar DBD**
+
+## Hacer más
+* Jugar Rocket League para relajar después de las reuniones.
+* Estar al tanto de weekly y Trello.
+
+## Continuar haciendo
+* Ser mas consistentes con los nombres de variables, métodos, etc.
+* **Jugar poco al LoL.**
+* Explicar lo que hicimos antes de las weeklys
+
+## Hacer menos
+
+## Dejar de hacer
