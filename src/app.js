@@ -35,8 +35,10 @@ app.use(cookies());
 app.set("view engine", "ejs");
 app.set("views", path.resolve(__dirname, "views"))
 
-
-
+/*Configuración 404*/
+app.use((req, res, next) =>{
+    res.status(404).render('404')
+})
 
 /* Configuracion rutas */
 const routerMain = require(path.resolve(__dirname, "routes/main"));
