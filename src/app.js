@@ -35,10 +35,6 @@ app.use(cookies());
 app.set("view engine", "ejs");
 app.set("views", path.resolve(__dirname, "views"))
 
-/*Configuración 404*/
-app.use((req, res, next) =>{
-    res.status(404).render('404')
-})
 
 /* Configuracion rutas */
 const routerMain = require(path.resolve(__dirname, "routes/main"));
@@ -52,6 +48,10 @@ app.use("/products", routerProducts);
 app.use("/users", routerUsers);
 
 
+/*Configuración 404*/
+app.use((req, res, next) =>{
+    res.status(404).render('./main/404');
+})
 
 app.listen(process.env.PORT || 3000, () => {
     console.log("Running on 3000")

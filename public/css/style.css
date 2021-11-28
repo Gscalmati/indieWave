@@ -8,6 +8,11 @@
     src: url("../fonts/VIDEOPHREAK.ttf");
 }
 
+@font-face {
+    font-family: glitch;
+    src: url("../fonts/Doctor\ Glitch.otf");
+}
+
 @keyframes bordes-header {
     0% {
         border: solid var(--turquoise) 2px;
@@ -1737,4 +1742,48 @@ main .flex-wrapper{
         margin-top: 30px;
         padding: 40px;
     }
+}
+
+
+/***  404  ***/
+
+/** MOBILE - TABLET - DESKTOP **/
+
+#body-404 {
+    background-image: url("/img/404.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+#main-404 {
+    display: flex;
+    width: 100vw;
+    min-height: 100vh;
+    margin: 0 auto;
+    background-color: rgba(0,0,0,0.6);
+}
+
+#textbox-404 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+#error-404 {
+    font-family: "glitch";
+    font-size: 30px;
+    color: white;
+    letter-spacing: 15px;
+}
+
+#text-404 {
+    font-family: "glitch";
+    font-size: 60px;
+    color: white;
+    letter-spacing: 10px;
 }
