@@ -1776,12 +1776,12 @@ main .flex-wrapper{
 
 #error-404 {
     font-family: "glitch";
-    font-size: 30px;
+    font-size: 40px;
     color: white;
     letter-spacing: 15px;
 }
 
-#text-404 {
+.text-404 {
     font-family: "glitch";
     font-size: 60px;
     color: white;
