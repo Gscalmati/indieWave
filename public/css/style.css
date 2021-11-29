@@ -1749,7 +1749,7 @@ main .flex-wrapper{
 
 /** MOBILE - TABLET - DESKTOP **/
 
-#body-404 {
+#body-error {
     background-image: url("/img/404.jpg");
     background-size: cover;
     background-position: center;
@@ -1758,7 +1758,7 @@ main .flex-wrapper{
     min-height: 100vh;
 }
 
-#main-404 {
+#main-error {
     display: flex;
     width: 100vw;
     min-height: 100vh;
@@ -1766,7 +1766,7 @@ main .flex-wrapper{
     background-color: rgba(0,0,0,0.6);
 }
 
-#textbox-404 {
+#textbox-error {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1774,14 +1774,14 @@ main .flex-wrapper{
     margin: auto;
 }
 
-#error-404 {
+#number-error {
     font-family: "glitch";
     font-size: 40px;
     color: white;
     letter-spacing: 15px;
 }
 
-.text-404 {
+.text-error {
     font-family: "glitch";
     font-size: 60px;
     color: white;

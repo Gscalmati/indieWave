@@ -49,8 +49,12 @@ app.use("/users", routerUsers);
 
 
 /*Configuración 404*/
-app.use((req, res, next) =>{
-    res.status(404).render('./main/404');
+app.use((req, res, next) => {
+    res.status(404).render('./main/error', {error: "404"});
+})
+
+app.use((err, req, res, next) => {
+    res.status(500).render('./main/error', {error: "500"});
 })
 
 app.listen(process.env.PORT || 3000, () => {
