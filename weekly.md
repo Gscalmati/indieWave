@@ -78,3 +78,12 @@
 - Juani añade "Editar Perfil", a implementar con la nueva BD.
 - Avanzamos con vista de perfil. 
 - **Gio tiene que poner tamaño en px para la foto de perfil en el header**
+
+
+## Domingo 28/11/2021
+- Facu arma vista de error 404 y DB.
+- **Los otros dos zánganos se rascaron
+- Gio va a tener hecha la data para poblar la DB el miércoles.
+- Gio va a **intentar** tener el login Galicia-style para el domingo
+- Juani fantasmea el miércoles, pero va a intentar avanzar con sequelize y modelos un poco.
+- **Preguntar a Uri por qué hace falta el parámetro "err" para manejar el error 500.**
