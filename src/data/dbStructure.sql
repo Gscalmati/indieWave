@@ -27,17 +27,8 @@ CREATE TABLE `genres` (
   `name` varchar(50) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name_UNIQUE` (`name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `genres`
---
-
-LOCK TABLES `genres` WRITE;
-/*!40000 ALTER TABLE `genres` DISABLE KEYS */;
-/*!40000 ALTER TABLE `genres` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `images`
@@ -58,15 +49,6 @@ CREATE TABLE `images` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `images`
---
-
-LOCK TABLES `images` WRITE;
-/*!40000 ALTER TABLE `images` DISABLE KEYS */;
-/*!40000 ALTER TABLE `images` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `platforms`
 --
 
@@ -78,17 +60,8 @@ CREATE TABLE `platforms` (
   `name` varchar(30) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name_UNIQUE` (`name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `platforms`
---
-
-LOCK TABLES `platforms` WRITE;
-/*!40000 ALTER TABLE `platforms` DISABLE KEYS */;
-/*!40000 ALTER TABLE `platforms` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `products`
@@ -104,7 +77,7 @@ CREATE TABLE `products` (
   `email` varchar(50) DEFAULT NULL,
   `release_date` date NOT NULL,
   `price` int(10) unsigned NOT NULL,
-  `logo` varchar(100) NOT NULL,
+  `logo` varchar(100) DEFAULT NULL,
   `min_requirements` text NOT NULL,
   `rec_requirements` text NOT NULL,
   `description` text NOT NULL,
@@ -115,15 +88,6 @@ CREATE TABLE `products` (
   CONSTRAINT `fk_product_genre` FOREIGN KEY (`genre_id`) REFERENCES `genres` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `products`
---
-
-LOCK TABLES `products` WRITE;
-/*!40000 ALTER TABLE `products` DISABLE KEYS */;
-/*!40000 ALTER TABLE `products` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `products_platforms`
@@ -145,15 +109,6 @@ CREATE TABLE `products_platforms` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `products_platforms`
---
-
-LOCK TABLES `products_platforms` WRITE;
-/*!40000 ALTER TABLE `products_platforms` DISABLE KEYS */;
-/*!40000 ALTER TABLE `products_platforms` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `shopping_products`
 --
 
@@ -173,15 +128,6 @@ CREATE TABLE `shopping_products` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `shopping_products`
---
-
-LOCK TABLES `shopping_products` WRITE;
-/*!40000 ALTER TABLE `shopping_products` DISABLE KEYS */;
-/*!40000 ALTER TABLE `shopping_products` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `shoppingcart`
 --
 
@@ -197,15 +143,6 @@ CREATE TABLE `shoppingcart` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `shoppingcart`
---
-
-LOCK TABLES `shoppingcart` WRITE;
-/*!40000 ALTER TABLE `shoppingcart` DISABLE KEYS */;
-/*!40000 ALTER TABLE `shoppingcart` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `users`
 --
 
@@ -218,7 +155,7 @@ CREATE TABLE `users` (
   `name` varchar(50) NOT NULL,
   `surname` varchar(50) NOT NULL,
   `email` varchar(50) DEFAULT NULL,
-  `profile_pic` varchar(100) DEFAULT NULL,
+  `profile_pic` varchar(100) NOT NULL DEFAULT '/img/users/default.png',
   `password` varchar(12) NOT NULL,
   `admin` tinyint(1) unsigned DEFAULT 0,
   PRIMARY KEY (`id`),
@@ -226,15 +163,6 @@ CREATE TABLE `users` (
   UNIQUE KEY `email_UNIQUE` (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `users`
---
-
-LOCK TABLES `users` WRITE;
-/*!40000 ALTER TABLE `users` DISABLE KEYS */;
-/*!40000 ALTER TABLE `users` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `users_products(library)`
@@ -254,15 +182,6 @@ CREATE TABLE `users_products(library)` (
   CONSTRAINT `fk_up_user` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `users_products(library)`
---
-
-LOCK TABLES `users_products(library)` WRITE;
-/*!40000 ALTER TABLE `users_products(library)` DISABLE KEYS */;
-/*!40000 ALTER TABLE `users_products(library)` ENABLE KEYS */;
-UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -273,4 +192,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-11-28 22:37:01genresgenres
+-- Dump completed on 2021-12-01 21:37:01
