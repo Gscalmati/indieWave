@@ -87,3 +87,10 @@
 - Gio va a **intentar** tener el login Galicia-style para el domingo
 - Juani fantasmea el miércoles, pero va a intentar avanzar con sequelize y modelos un poco.
 - **Preguntar a Uri por qué hace falta el parámetro "err" para manejar el error 500.**
+
+## Miércoles 01/12/2021
+- Arreglamos dbData y dbStructure.
+- Facu añade DB ""completa""
+- **Hay que poblar la tabla de carritos**
+- **Carrito: ¿Precio total?** --> columna "total" en la tabla "carrito" que sume los precios de los productos con los que tiene relacion en "shopping_products"
+- **CORROBORAR DB CON LOS PROFES**
