@@ -70,7 +70,7 @@ header {
     align-items: center;
     font-family: videophreak;
     position: fixed;
-    z-index: 11;
+    z-index: 20;
     top: 0;
     left: 0;
     max-height: 100%;
@@ -304,6 +304,9 @@ footer .imagen-logo {
         margin: 90px auto 20px;
     }
     /* Footer */
+    footer {
+        z-index: 20;
+    }
     footer .imagen-logo {
         margin: 50px 0px 50px 50px;
     }
@@ -687,7 +690,10 @@ label {
 
 @media (min-width: 1024px) {
     main {
+        /* Para simular que la imagen siga por abajo del Header y Footer */
         padding: 0px;
+        margin-bottom: 0px;
+        margin-top: 70px;
     }
     .main-section .images-array {
         /*background-image: url(https://i.pinimg.com/564x/ec/12/d3/ec12d382b145585bbb4164bdf84c7484.jpg);*/
@@ -695,6 +701,8 @@ label {
         background-size: auto;
         width: 50VW;
         height: 100vh;
-        background-repeat: repeat-y;
+        background-repeat: repeat;
+        right: 20px;
+        z-index: 15;
     }
 }
