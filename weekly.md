@@ -94,3 +94,12 @@
 - **Hay que poblar la tabla de carritos**
 - **Carrito: ¿Precio total?** --> columna "total" en la tabla "carrito" que sume los precios de los productos con los que tiene relacion en "shopping_products"
 - **CORROBORAR DB CON LOS PROFES**
+
+## Domingo 01/12/2021
+- **Gio fantasmea porque tiene que CEnAr Con SuS PaDrES**
+- Gio avanza con nuevo login.
+- Juani avanza con Sequelize
+- Hay que repartir/asignar lo de CRUD
+- Ver como añadir las cosas que no añadimos por tener la base vieja
+- **Productos del home clickeables**
+- Añadir columna "on_sale" a la tabla de productos
