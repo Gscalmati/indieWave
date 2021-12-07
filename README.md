@@ -52,3 +52,7 @@ Todas retiradas de la plataforma https://www.1001fonts.com/
 # Trello #
 
 Link: https://trello.com/b/z6NH0uTS/proyecto-integrador
+
+# Heroku #
+
+Link: https://indiewave.herokuapp.com
