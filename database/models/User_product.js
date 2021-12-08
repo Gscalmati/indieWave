@@ -17,8 +17,8 @@ module.exports= (sequelize, dataTypes) => {
         }
     };
     let config = {
-        tableName: "`users_products(library)`", //(library) .Va?
-        timesTamps:false
+        tableName: "users_products(library)", 
+        timestamps:false
     }
 
     const User_product= sequelize.define(alias,cols, config);

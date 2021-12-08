@@ -15,7 +15,7 @@ module.exports= (sequelize, dataTypes) => {
     };
     let config = {
         tableName: "shoppingcart",
-        timesTamps:false
+        timestamps:false
     }
 
     const Shoppingcart= sequelize.define(alias,cols, config);
@@ -30,7 +30,7 @@ module.exports= (sequelize, dataTypes) => {
             through: "shopping_products",
             foreignKey: "shopping_cart_id",
             otherKey: "product_id",
-            timesTamps: false
+            timestamps: false
         })
     }
 

@@ -55,7 +55,7 @@ module.exports= (sequelize, dataTypes) => {
     };
     let config = {
         tableName: "products",
-        timesTamps:false
+        timestamps:false
     }
 
     const Product= sequelize.define(alias,cols, config);
@@ -74,21 +74,21 @@ module.exports= (sequelize, dataTypes) => {
             through: "products_platform",
             foreignKey: "product_id",
             otherKey: "platform_id",
-            timesTamps: false
+            timestamps: false
         });
         Product.belongsToMany(models.Shoppingcart,{
             as: "shoppingcart",
             through: "shopping_products",
             foreignKey: "product_id",
             otherKey: "shopping_cart_id",
-            timesTamps: false
+            timestamps: false
         });
         Product.belongsToMany(models.Users,{
             as: "users",
             through: "Users_products",
             foreignKey: "product_id",
             otherKey: "user_id",
-            timesTamps: false
+            timestamps: false
         })
     }
 

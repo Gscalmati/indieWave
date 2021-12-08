@@ -20,7 +20,7 @@ module.exports= (sequelize, dataTypes) => {
     };
     let config = {
         tableName: "products_platforms",
-        timesTamps:false
+        timestamps:false
     }
 
     const Product_platform= sequelize.define(alias,cols, config);

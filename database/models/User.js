@@ -42,7 +42,7 @@ module.exports= (sequelize, dataTypes) => {
     };
     let config = {
         tableName: "users",
-        timesTamps:false
+        timestamps:false
     }
 
     const Users= sequelize.define(alias,cols, config);
@@ -57,7 +57,7 @@ module.exports= (sequelize, dataTypes) => {
             through: "users_products",
             foreignKey: "user_id",
             otherKey: "product_id",
-            timesTamps: false
+            timestamps: false
         })
     }
 
