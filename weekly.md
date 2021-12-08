@@ -103,3 +103,7 @@
 - Ver como añadir las cosas que no añadimos por tener la base vieja
 - **Productos del home clickeables**
 - Añadir columna "on_sale" a la tabla de productos
+
+## Miércoles 08/12/2021
+- Juani termina modelos y relaciones
+- Hay que repartir/asignar lo de CRUD
