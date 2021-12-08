@@ -20,5 +20,19 @@ module.exports= (sequelize, dataTypes) => {
 
     const Shoppingcart= sequelize.define(alias,cols, config);
 
+    Shoppingcart = function (models){
+        Shoppingcart.belongsTo(models.Users,{
+            as: "users",
+            foreignKey: "user_id"
+        });
+        Shoppingcart.belongsToMany(models.Products,{
+            as: "products",
+            through: "shopping_products",
+            foreignKey: "shopping_cart_id",
+            otherKey: "product_id",
+            timesTamps: false
+        })
+    }
+
     return Shoppingcart;
 }

@@ -17,7 +17,7 @@ module.exports= (sequelize, dataTypes) => {
         }
     };
     let config = {
-        tableName: "users_products",
+        tableName: "`users_products(library)`", //(library) .Va?
         timesTamps:false
     }
 
