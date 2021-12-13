@@ -9,6 +9,7 @@ let users = JSON.parse(jsonUsers); //Convertimos el json a array
 
 // Traer la DB
 let db = require("../../database/models");
+const { Sequelize } = require("../../database/models");
 
 /* Función para conseguir el nuevo ID */
 const newId = function() {
@@ -31,30 +32,24 @@ let usersController = {
 
 
         if (errors.isEmpty()) {
-            db.User.create({
-                username: req.body.username,
-                name: req.body.name,
-                surname: req.body.surname,
-                email: req.body.email,
-                profilepic: req.file != undefined ? `/img/users/${req.file.filename}` : "/img/users/default.png",
-                password: bcryptjs.hashSync(req.body.password, 10),
-                admin: false
-            });
-            /* let newUser = {
-                 id: newId(),
-                 username: req.body.username,
-                 name: req.body.name,
-                 surname: req.body.surname,
-                 email: req.body.email,
-                 password: bcryptjs.hashSync(req.body.password, 10),
-                 profilepic: req.file != undefined ? `/img/users/${req.file.filename}` : "/img/users/default.png",
-                 news: req.body.news != undefined   
-             }
-             users.push(newUser);
-             let newJson = JSON.stringify(users);
 
-             fs.writeFileSync(path.resolve(__dirname, '../data/users.json'), newJson)
-             */
+            let file = req.file != undefined ? `/img/users/${req.file.filename}` : undefined;
+
+            db.Users.create({
+                    username: req.body.username,
+                    name: req.body.name,
+                    surname: req.body.surname,
+                    email: req.body.email,
+                    profile_pic: file,
+                    password: bcryptjs.hashSync(req.body.password, 10),
+                    admin: false
+                })
+                .then(user => {
+                    db.Shoppingcarts.create({
+                        user_id: user.get("id")
+                    })
+
+                })
 
             res.redirect("/users/login");
         } else {
@@ -103,6 +98,14 @@ let usersController = {
     },
 
     logged: (req, res) => { /* Es importante modificar de NAME a USERNAME*/
+        db.User.findOne({
+                where: {
+                    username: req.body.username
+                }
+            })
+            .then(element => {
+
+            })
         let userFound = users.find(user => {
             return ((user.email === req.body.username) || (user.username === req.body.username)) &&
                 (bcryptjs.compareSync(req.body.password, user.password));

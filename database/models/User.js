@@ -1,58 +1,57 @@
-module.exports= (sequelize, dataTypes) => {
+module.exports = (sequelize, dataTypes) => {
     let alias = "Users";
     let cols = {
-        id:{
+        id: {
             type: dataTypes.INTEGER.UNSIGNED,
-            primaryKey:true,
+            primaryKey: true,
             allowNull: false,
-            autoIncrement:true
+            autoIncrement: true
         },
-        username:{
+        username: {
             type: dataTypes.STRING,
-            unique:true,
-            fields:['username'],
+            unique: true,
+            fields: ['username'],
             allowNull: true,
             defaultValue: null,
         },
-        name:{
+        name: {
             type: dataTypes.STRING,
         },
-        surname:{
+        surname: {
             type: dataTypes.INTEGER,
         },
-        email:{
-            type: dataTypes.INTEGER,
+        email: {
             type: dataTypes.STRING,
-            unique:true,
-            fields:['email'],
+            unique: true,
+            fields: ['email'],
             allowNull: true,
             defaultValue: null
         },
-        profile_pic:{
-            type: dataTypes.INTEGER,
-            defaultValue: true
+        profile_pic: {
+            type: dataTypes.STRING,
+            defaultValue: "/img/users/default.png"
         },
-        password:{
+        password: {
             type: dataTypes.INTEGER,
         },
-        admin:{
+        admin: {
             type: dataTypes.INTEGER.UNSIGNED,
             allowNull: true
         },
     };
     let config = {
         tableName: "users",
-        timestamps:false
+        timestamps: false
     }
 
-    const Users= sequelize.define(alias,cols, config);
+    const Users = sequelize.define(alias, cols, config);
 
-    Users.associate = function(models){
-        Users.belongsTo(models.Shoppingcart,{
+    Users.associate = function(models) {
+        Users.belongsTo(models.Shoppingcarts, {
             as: "shoppingcart",
             foreignKey: "user_id"
         });
-        Users.belongsToMany(models.Products,{
+        Users.belongsToMany(models.Products, {
             as: "products",
             through: "users_products",
             foreignKey: "user_id",

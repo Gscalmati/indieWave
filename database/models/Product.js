@@ -76,7 +76,7 @@ module.exports = (sequelize, dataTypes) => {
             otherKey: "platform_id",
             timestamps: false
         });
-        Product.belongsToMany(models.Shoppingcart, {
+        Product.belongsToMany(models.Shoppingcarts, {
             as: "shoppingcart",
             through: "shopping_product",
             foreignKey: "product_id",
