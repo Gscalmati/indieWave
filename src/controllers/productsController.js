@@ -1,6 +1,9 @@
 const path = require("path");
 const fs = require("fs");
 
+//Requiere la base de datos
+const db = require("../../database/models")
+
 let jsonProducts = fs.readFileSync(path.resolve(__dirname, '../data/products.json'), 'utf-8');
 let products = JSON.parse(jsonProducts); //Convertimos el json a array
 
@@ -17,8 +20,7 @@ const newId = function () {
 
 
 productsController = {
-
-    categories: function (req, res) {
+        categories: function (req, res) {
         /*Creo un array por cada género*/
         let arcade = products.filter((game) => game.genre == "arcade")
         let action = products.filter((game) => game.genre == "action")
@@ -208,6 +210,14 @@ productsController = {
         fs.writeFileSync(path.resolve(__dirname, '../data/products.json'), jsonDeProductos);
         
         res.redirect('/products/dashboard');
+    },
+    list: function(req,res){
+        db.Products.findAll({
+            include : [{association: "genres"}]
+        })
+            .then(function (products) {
+                res.render("productsListGenre", {products:products})
+            })
     }
 }
 
