@@ -7,6 +7,9 @@ const { createBrotliCompress } = require("zlib");
 let jsonUsers = fs.readFileSync(path.resolve(__dirname, '../data/users.json'), 'utf-8');
 let users = JSON.parse(jsonUsers); //Convertimos el json a array
 
+// Traer la DB
+let db = require("../../database/models");
+
 /* Función para conseguir el nuevo ID */
 const newId = function() {
     let idNum = 0;
@@ -28,21 +31,31 @@ let usersController = {
 
 
         if (errors.isEmpty()) {
-            let newUser = {
-                id: newId(),
+            db.User.create({
                 username: req.body.username,
                 name: req.body.name,
                 surname: req.body.surname,
                 email: req.body.email,
-                password: bcryptjs.hashSync(req.body.password, 10),
                 profilepic: req.file != undefined ? `/img/users/${req.file.filename}` : "/img/users/default.png",
-                news: req.body.news != undefined
-            }
+                password: bcryptjs.hashSync(req.body.password, 10),
+                admin: false
+            });
+            /* let newUser = {
+                 id: newId(),
+                 username: req.body.username,
+                 name: req.body.name,
+                 surname: req.body.surname,
+                 email: req.body.email,
+                 password: bcryptjs.hashSync(req.body.password, 10),
+                 profilepic: req.file != undefined ? `/img/users/${req.file.filename}` : "/img/users/default.png",
+                 news: req.body.news != undefined   
+             }
+             users.push(newUser);
+             let newJson = JSON.stringify(users);
 
-            users.push(newUser);
-            let newJson = JSON.stringify(users);
+             fs.writeFileSync(path.resolve(__dirname, '../data/users.json'), newJson)
+             */
 
-            fs.writeFileSync(path.resolve(__dirname, '../data/users.json'), newJson)
             res.redirect("/users/login");
         } else {
             res.render('users/register', { errors: errors.mapped(), old: req.body })
