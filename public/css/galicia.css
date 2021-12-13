@@ -680,7 +680,6 @@ label {
         padding: 0px;
     }
     .main-section .images-array {
-        background-image: url(https://i.pinimg.com/564x/ec/12/d3/ec12d382b145585bbb4164bdf84c7484.jpg);
         background-size: 50vw;
         width: 50VW;
         height: 100vh;
@@ -696,9 +695,8 @@ label {
         margin-top: 70px;
     }
     .main-section .images-array {
-        /*background-image: url(https://i.pinimg.com/564x/ec/12/d3/ec12d382b145585bbb4164bdf84c7484.jpg);*/
-        background-image: url(https://c4.wallpaperflare.com/wallpaper/86/560/11/retrowave-sunset-synthwave-wallpaper-preview.jpg);
-        background-size: auto;
+        background-position: center;
+        background-size: cover;
         width: 50VW;
         height: 100vh;
         background-repeat: repeat;
