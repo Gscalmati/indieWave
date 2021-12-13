@@ -107,3 +107,8 @@
 ## Miércoles 08/12/2021
 - Juani termina modelos y relaciones
 - Hay que repartir/asignar lo de CRUD
+
+## Domingo 12/12/2021
+- Arreglamos *el impar* de macanas de Juani.
+- Gio tiene que armar un script para poblar products_genres.
+- Armamos script para fondo de galicia.
