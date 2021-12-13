@@ -66,6 +66,7 @@ let usersController = {
     },
 
     loginGalicia: (req, res) => {
+
         if (req.cookies.usuario) {
             return res.render("users/loginGalicia", { usuario: req.cookies.usuario });
         }
