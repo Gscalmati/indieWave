@@ -35,11 +35,11 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: true,
             defaultValue: null
         },
-        min_requiremen: {
+        min_requirements: {
             type: dataTypes.TEXT,
             allowNull: false
         },
-        rec_requiremen: {
+        rec_requirements: {
             type: dataTypes.TEXT,
             allowNull: false
         },
