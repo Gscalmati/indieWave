@@ -31,58 +31,32 @@ productsController = {
         res.render("products/categories", { arcade, action, sports, strategy, adventure });
     },
 
-    categorygames: function (req, res) {
-        let category = req.params.category;
-
-        let categoryGames = products.filter((game) => game.genre == category)
-
-        let title = ""
-        switch (category) {
-            case "arcade":
-                title = "Arcade";
-                break;
-            case "action":
-                title = "Acción"
-                break;
-            case "strategy":
-                title = "Estrategia"
-                break;
-            case "adventure":
-                title = "Aventura"
-                break;
-            case "sports":
-                title = "Deportes"
-                break;
-
-        }
-        res.render("products/categoryGames", { categoryGames, category, title });
+    detail: function (req, res) {
+        db.Products.findByPk(req.params.id, {
+            include: [{association: "genres"},{association: "images"},{association: "platforms"}]
+        })
+            .then(function(product){
+                res.render("products/productDetail",{product:product})
+            })
     },
 
-    detail: function (req, res) {
-        let detallado = products.find(product => {
-            return (product.id == req.params.id);
-        })
+    delete: function (req, res) {
 
-        let category = ""
-        switch (detallado.genre) {
-            case "arcade":
-                category = "Arcade";
-                break;
-            case "action":
-                category = "Acción"
-                break;
-            case "strategy":
-                category = "Estrategia"
-                break;
-            case "adventure":
-                category = "Aventura"
-                break;
-            case "sports":
-                category = "Deportes"
-                break;
-        }
-        res.render("products/productDetail", { detallado: detallado, category: category });
-        /* No imprime en el EJS */
+        db.Products.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
+        res.redirect('/products/dashboard');
+    },
+
+    list: function(req,res){
+        db.Products.findAll({
+            include: [{association: "genres"}]
+        })
+            .then(function (products) {
+                res.render("products/categoryGames", {products:products})
+            })
     },
 
     dashboard: function (req, res) {
@@ -199,26 +173,8 @@ productsController = {
         fs.writeFileSync(path.resolve(__dirname, '../data/products.json'), jsonDeProductos);
 
         res.redirect('/products/dashboard');
-    },
-    delete (req, res) {
-
-        let productosRestantes = products.filter(producto => {
-            return producto.id != req.params.id;
-        })
-
-        let jsonDeProductos = JSON.stringify(productosRestantes, null, 4);
-        fs.writeFileSync(path.resolve(__dirname, '../data/products.json'), jsonDeProductos);
-        
-        res.redirect('/products/dashboard');
-    },
-    list: function(req,res){
-        db.Products.findAll({
-            include : [{association: "genres"}]
-        })
-            .then(function (products) {
-                res.render("productsListGenre", {products:products})
-            })
     }
+    
 }
 
 module.exports = productsController;

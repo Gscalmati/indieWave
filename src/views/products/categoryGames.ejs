@@ -19,26 +19,26 @@
         <main>
             <div id="subtitle">
                 <h2>
-                    <%= title %>
+                    <%= products.genre.name %>
                 </h2>
             </div>
             <!-- Este primer for eventualmente va a volar cuando tengamos la base de datos -->
            
                 <section id="category">
                     <!-- Hasta tener más productos (min 15 para que no se rompa por lo de html/body) mostramos solo 5 productos -->
-                    <% for( let j=0; j < categoryGames.length; j++ ) { %>
+                    <% for( let j=0; j < products.length; j++ ) { %>
                         <article class="category-article">
-                            <a href="/products/<%= categoryGames[j].id %> ">
+                            <a href="/products/<%= products[j].id %> ">
                                 <div>
-                                    <img class="responsive-img" src="<%= categoryGames[j].logo%>"
+                                    <img class="responsive-img" src="<%= products[j].logo%>"
                                         alt="Foto producto Indie Game">
                                 </div>
                                 <div class="detalle">
                                     <h3>
-                                        <%= categoryGames[j].game_name%>
+                                        <%= products[j].name%>
                                     </h3>
                                     <p>
-                                        $<%= categoryGames[j].price%>
+                                        $<%= products[j].price%>
                                     </p>
                                 </div>
                             </a>
