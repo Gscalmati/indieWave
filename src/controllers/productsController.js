@@ -114,8 +114,7 @@ productsController = {
             })
         }
 
-        console.log(imagesArray);
-
+        
         //let date = req.body.release_date.split("-").reverse(); <---- ¿Qué corno hacía esto?
 
         (async () => {
@@ -127,8 +126,6 @@ productsController = {
             });
 
             /*Creo una entrada en la tabla de productos*/
-
-            console.log(req.body.release_date);
 
             let newProduct = await db.Products.create({
                 name: req.body.game_name,
@@ -144,16 +141,15 @@ productsController = {
             })
 
             /*Creo una entrada en la tabla de imágenes por cada imagen*/
-            if (imagesArray) {
-                imagesArray.forEach(async (image) => {
+            if (imagesArray.length != 0) {
+                //imagesArray.forEach(async (image) => 
+                for (image of imagesArray){
                     await db.Images.create({
                         product_id: newProduct.id,
                         image: image,
                     })
-                });
+                };
             }
-
-            console.log(imagesArray);
 
             /*Creo una entrada en la tabla product_platform por cada plataforma*/
             if (req.body.linux) {
