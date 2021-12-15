@@ -19,53 +19,53 @@
     <main>
         <section id="title-area">
             <div id="breadcrumb">
-                <p><a href="/products">Todos los juegos ></a> <a href="/products/categories/<%= detallado.genre %>"><%= category %> ></a> <%= detallado.game_name %></p>
+                <p><a href="/products">Todos los juegos ></a> <a href="/products/categories/<%= products.genres.name %>"><%= products.genres.name %> ></a> <%= products.name %></p>
             </div>
-            <h2> <%= detallado.game_name %> </h2>
+            <h2> <%= products.name %> </h2>
             
         </section>
         <section id="game-area">
             <article id="carrousel">
-                <div id="main-img">
-                    <img class="responsive-img"
-                    <% if (detallado.images[0] != undefined) {%>   
-                    src="<%= detallado.images[0]%>" alt="carrousel">
-                    <% } else {%>
-                        src="https://via.placeholder.com/1120x500" alt="carrousel">    
-                    <% } %> 
+                <div class="img-div">
+                    <img class="responsive-img" 
+                    <% if (products.images.image != undefined) {%>   
+                        src="<%= products.images.image %>">
+                        <% } else {%>
+                            src="https://via.placeholder.com/200x100">    
+                        <% } %> 
                 </div>
                 <div id="img-bar">
                     <i class="fas fa-chevron-left"></i>
                     <div class="img-div">
                         <img class="responsive-img" 
-                        <% if (detallado.images[1] != undefined) {%>   
-                            src="<%= detallado.images[1]%>">
+                        <% if (products.images.image != undefined) {%>   
+                            src="<%= products.images.image %>">
                             <% } else {%>
                                 src="https://via.placeholder.com/200x100">    
                             <% } %> 
                     </div>
                     <div class="img-div">
                         <img class="responsive-img"
-                        <% if (detallado.images[2] != undefined) {%>   
-                            src="<%= detallado.images[2]%>">
+                        <% if (products.images.image != undefined) {%>   
+                            src="<%= products.images.image %>">
                             <% } else {%>
                                 src="https://via.placeholder.com/200x100">    
                             <% } %> 
                     </div>
                     <div class="img-div">
-                        <img class="responsive-img" 
-                        <% if (detallado.images[3] != undefined) {%>   
-                            src="<%= detallado.images[3]%>">
+                        <img class="responsive-img"
+                        <% if (products.images.image != undefined) {%>   
+                            src="<%= products.images.image %>">
                             <% } else {%>
                                 src="https://via.placeholder.com/200x100">    
                             <% } %> 
                     </div>
-                    <div id="last-div" class="img-div">
-                        <img class="responsive-img" src="https://via.placeholder.com/200x100"
-                        <% if (detallado.images[4] != undefined) {%>   
-                            src="<%= detallado.images[4]%>">
+                    <div class="img-div">
+                        <img class="responsive-img"
+                        <% if (products.images.image != undefined) {%>   
+                            src="<%= products.images.image %>">
                             <% } else {%>
-                                src="src="https://via.placeholder.com/200x100">    
+                                src="https://via.placeholder.com/200x100">    
                             <% } %> 
                     </div>
                     <i class="fas fa-chevron-right"></i>
@@ -74,8 +74,8 @@
             <aside id="game-info">
                 <div id="game-logo">
                     <img class="responsive-img" 
-                    <% if (detallado.logo != undefined) {%>   
-                        src="<%= detallado.logo%>">
+                    <% if (products.logo != undefined) {%>   
+                        src="<%= products.logo%>">
                         <% } else {%>
                             src="https://via.placeholder.com/1120x500">    
                         <% } %>
@@ -83,19 +83,22 @@
                 <div id="game-desc">
                     <div>
                         <span>Desarrollador</span>
-                        <span><%= detallado.developer %></span>
+                        <span><%= products.developer %></span>
                     </div>
                     <div>
                         <span>Fecha de lanzamiento</span>
-                        <span><%= detallado.release_date %></span>
+                        <span><%= products.release_date %></span>
                     </div>
                     <div>
                         <span>Plataforma</span>
-                        <span><%= detallado.platform.join(", ") %></span>
+                        <% for( let i = 0; i < products.platforms.length; i++ ) { %>
+                            <span><%= products.platform[i].name %></span>
+                        <% } %>
+                        
                     </div>
                 </div>
                 <div id="game-info-button-wrapper">
-                    <span id="price-tag">$<%= detallado.price %></span>
+                    <span id="price-tag">$<%= products.price %></span>
                     <button id="game-to-cart-btn">Añadir al Carro</button>
                     <button id="game-to-wishlist-btn">Añadir a Lista de Deseados</button>
                 </div>
@@ -109,18 +112,18 @@
                         <div>
                             <h4>Mínimos</h4>
                         </div>
-                        <p><%= detallado.min_requirements %></p>
+                        <p><%= products.min_requirements %></p>
                     </div>
                     <div id="recommended">
                         <div>
                             <h4>Recomendados</h4>
                         </div>
-                        <p><%= detallado.rec_requirements %></p>
+                        <p><%= products.rec_requirements %></p>
                     </div>
                 </article>
 
                 <article id="game-summary">
-                    <p><%= detallado.description %>
+                    <p><%= products.description %>
                     </p>
                 </article>
 
