@@ -7,7 +7,6 @@ const db = require("../../database/models")
 let jsonProducts = fs.readFileSync(path.resolve(__dirname, '../data/products.json'), 'utf-8');
 let products = JSON.parse(jsonProducts);
 
-let db = require("../../database/models");
 /*
 // Función para conseguir el nuevo ID 
 const newId = function () {
@@ -22,7 +21,7 @@ const newId = function () {
 */
 
 productsController = {
-        categories: function (req, res) {
+    categories: function (req, res) {
         /*Creo un array por cada género*/
         let arcade = products.filter((game) => game.genre == "arcade")
         let action = products.filter((game) => game.genre == "action")
@@ -33,12 +32,38 @@ productsController = {
         res.render("products/categories", { arcade, action, sports, strategy, adventure });
     },
 
+    categorygames: function (req, res) {
+        let category = req.params.category;
+
+        let categoryGames = products.filter((game) => game.genre == category)
+
+        let title = ""
+        switch (category) {
+            case "arcade":
+                title = "Arcade";
+                break;
+            case "action":
+                title = "Acción"
+                break;
+            case "strategy":
+                title = "Estrategia"
+                break;
+            case "adventure":
+                title = "Aventura"
+                break;
+            case "sports":
+                title = "Deportes"
+                break;
+
+        }
+        res.render("products/categoryGames", { categoryGames, category, title });
+    },
     detail: function (req, res) {
         db.Products.findByPk(req.params.id, {
-            include: [{association: "genres"},{association: "images"},{association: "platforms"}]
+            include: [{ association: "genres" }, { association: "images" }, { association: "platforms" }]
         })
-            .then(function(product){
-                res.render("products/productDetail",{product:product})
+            .then(function (product) {
+                res.render("products/productDetail", { product: product })
             })
     },
 
@@ -52,12 +77,12 @@ productsController = {
         res.redirect('/products/dashboard');
     },
 
-    list: function(req,res){
+    list: function (req, res) {
         db.Products.findAll({
-            include: [{association: "genres"}]
+            include: [{ association: "genres" }]
         })
             .then(function (products) {
-                res.render("products/categoryGames", {products:products})
+                res.render("products/categoryGames", { products: products })
             })
     },
 
@@ -90,7 +115,7 @@ productsController = {
             })
         }
 
-        
+
         //let date = req.body.release_date.split("-").reverse(); <---- ¿Qué corno hacía esto?
 
         (async () => {
@@ -119,7 +144,7 @@ productsController = {
             /*Creo una entrada en la tabla de imágenes por cada imagen*/
             if (imagesArray.length != 0) {
                 //imagesArray.forEach(async (image) => 
-                for (image of imagesArray){
+                for (image of imagesArray) {
                     await db.Images.create({
                         product_id: newProduct.id,
                         image: image,
@@ -148,6 +173,7 @@ productsController = {
             };
 
         })()
+
 
         res.redirect("/products/dashboard");
     },
@@ -204,7 +230,7 @@ productsController = {
         res.redirect('/products/dashboard');
 
     }
-    
+
 }
 
 module.exports = productsController;
