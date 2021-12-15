@@ -5,9 +5,11 @@ const fs = require("fs");
 const db = require("../../database/models")
 
 let jsonProducts = fs.readFileSync(path.resolve(__dirname, '../data/products.json'), 'utf-8');
-let products = JSON.parse(jsonProducts); //Convertimos el json a array
+let products = JSON.parse(jsonProducts);
 
-/* Función para conseguir el nuevo ID */
+let db = require("../../database/models");
+/*
+// Función para conseguir el nuevo ID 
 const newId = function () {
     let idNum = 0;
     products.forEach(product => {
@@ -17,7 +19,7 @@ const newId = function () {
     })
     return idNum + 1;
 }
-
+*/
 
 productsController = {
         categories: function (req, res) {
@@ -80,45 +82,76 @@ productsController = {
 
     store: function (req, res) {
 
-        let imagesArray = []
+        let imagesArray = [];
 
-        req.files["images"].forEach((image) => {
-            imagesArray.push(`/img/products/${req.body.game_name}-imgs/${image.filename}`)
-        })
-
-        let date = req.body.release_date.split("-").reverse();
-
-
-        let newProduct = {
-            id: newId(),
-            game_name: req.body.game_name,
-            developer: req.body.developer,
-            genre: req.body.genre,
-            email: req.body.email,
-            release_date: date,
-            platform: [],
-            price: req.body.price,
-            logo: `/img/products/${req.body.game_name}-imgs/${req.files["logo"][0].filename}`,
-            images: imagesArray,
-            min_requirements: req.body.min_requirements,
-            rec_requirements: req.body.rec_requirements,
-            description: req.body.description
+        if (req.files["images"]) {
+            req.files["images"].forEach((image) => {
+                imagesArray.push(`/img/products/${req.body.game_name}-imgs/${image.filename}`)
+            })
         }
-        /* Array de Plataformas */
-        if (req.body.windows) {
-            newProduct.platform.push("Windows")
-        };
-        if (req.body.macos) {
-            newProduct.platform.push("macOS")
-        };
-        if (req.body.linux) {
-            newProduct.platform.push("Linux")
-        };
 
-        products.push(newProduct);
-        let jsonNuevo = JSON.stringify(products);
+        console.log(imagesArray);
 
-        fs.writeFileSync(path.resolve(__dirname, '../data/products.json'), jsonNuevo)
+        //let date = req.body.release_date.split("-").reverse(); <---- ¿Qué corno hacía esto?
+
+        (async () => {
+
+            /*Busco el id del género al que pertenece el producto*/
+
+            let genre = await db.Genres.findOne({
+                where: { name: req.body.genre }
+            });
+
+            /*Creo una entrada en la tabla de productos*/
+
+            console.log(req.body.release_date);
+
+            let newProduct = await db.Products.create({
+                name: req.body.game_name,
+                developer: req.body.developer,
+                email: req.body.email,
+                release_date: req.body.release_date,
+                price: req.body.price,
+                logo: req.files["logo"] != undefined ? `/img/products/${req.body.game_name}-imgs/${req.files["logo"][0].filename}` : undefined,
+                min_requirements: req.body.min_requirements,
+                rec_requirements: req.body.rec_requirements,
+                description: req.body.description,
+                genre_id: genre.id,
+            })
+
+            /*Creo una entrada en la tabla de imágenes por cada imagen*/
+            if (imagesArray) {
+                imagesArray.forEach(async (image) => {
+                    await db.Images.create({
+                        product_id: newProduct.id,
+                        image: image,
+                    })
+                });
+            }
+
+            console.log(imagesArray);
+
+            /*Creo una entrada en la tabla product_platform por cada plataforma*/
+            if (req.body.linux) {
+                await db.Products_platforms.create({
+                    product_id: newProduct.id,
+                    platform_id: 1,
+                })
+            };
+            if (req.body.macos) {
+                await db.Products_platforms.create({
+                    product_id: newProduct.id,
+                    platform_id: 2,
+                })
+            };
+            if (req.body.windows) {
+                await db.Products_platforms.create({
+                    product_id: newProduct.id,
+                    platform_id: 3,
+                })
+            };
+
+        })()
 
         res.redirect("/products/dashboard");
     },
@@ -128,7 +161,7 @@ productsController = {
     },
     update(req, res) {
 
-        
+
         // Editamos el producto buscandolo con una condición
         products.forEach(producto => {
             if (producto.id == req.params.id) {
@@ -151,7 +184,7 @@ productsController = {
                     producto.platform.push("Linux")
                 };
                 producto.price = req.body.price
-                 // Reviso si se subieron nuevas imágenes al editar
+                // Reviso si se subieron nuevas imágenes al editar
                 if (req.files["logo"] != undefined) {
                     producto.logo = `/img/${req.body.game_name}-imgs/${req.files["logo"][0].filename}`
                 }
@@ -173,6 +206,7 @@ productsController = {
         fs.writeFileSync(path.resolve(__dirname, '../data/products.json'), jsonDeProductos);
 
         res.redirect('/products/dashboard');
+
     }
     
 }

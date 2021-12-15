@@ -35,11 +35,11 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: true,
             defaultValue: null
         },
-        min_requiremen: {
+        min_requirements: {
             type: dataTypes.TEXT,
             allowNull: false
         },
-        rec_requiremen: {
+        rec_requirements: {
             type: dataTypes.TEXT,
             allowNull: false
         },
@@ -50,7 +50,7 @@ module.exports = (sequelize, dataTypes) => {
         genre_id: {
             type: dataTypes.INTEGER.UNSIGNED,
             allowNull: false
-                //FK genre_id --> product referencia a la tabla genres
+            //FK genre_id --> product referencia a la tabla genres
         }
     };
     let config = {
@@ -60,14 +60,14 @@ module.exports = (sequelize, dataTypes) => {
 
     const Product = sequelize.define(alias, cols, config);
 
-    Product.associate = function(models) {
+    Product.associate = function (models) {
         Product.belongsTo(models.Genres, {
             as: "genres",
             foreignKey: "genre_id"
         });
         Product.belongsTo(models.Images, {
             as: "images",
-            foreignKey: "prduct_id"
+            foreignKey: "product_id"
         });
         Product.belongsToMany(models.Platforms, {
             as: "platforms",
