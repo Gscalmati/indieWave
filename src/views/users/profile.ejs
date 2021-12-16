@@ -19,29 +19,37 @@
         <main>
             <div class="flex-wrapper">
                 <div id="profile-div">
-                    <div id="profilepic-profile"> 
-                        <img id="img-profilepic"  src="<%= locals.userLogged.profilepic %>"> <!-- if profilepic return profile else default-img -->
+                    <div id="profilepic-profile">
+                        <img id="img-profilepic" src="<%= locals.userLogged.profile_pic %>">
+                        <!-- if profilepic return profile else default-img -->
                     </div>
                     <div id="wrapper">
                         <div id="username-surname">
-                            <h2><%= locals.userLogged.username%></h2>
+                            <h2>
+                                <%= locals.userLogged.username%>
+                            </h2>
 
-                            <h2 id="name-lastname"><%= locals.userLogged.name%>, <%= locals.userLogged.surname %> </h2>
-                        
+                            <h2 id="name-lastname">
+                                <%= locals.userLogged.name%>,
+                                    <%= locals.userLogged.surname %>
+                            </h2>
+
                             <div id="email-profile">
-                                <h3><%= locals.userLogged.email %> </h3>
+                                <h3>
+                                    <%= locals.userLogged.email %>
+                                </h3>
                             </div>
-                            
+
                         </div>
                         <div id="profile-form">
                             <form method="get">
-                                    <button type="submit" id="button">Editar Perfil</button>
+                                <button type="submit" id="button">Editar Perfil</button>
                             </form>
                         </div>
                     </div>
-                </div>     
+                </div>
             </div>
-           
+
 
         </main>
 
