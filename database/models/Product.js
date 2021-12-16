@@ -50,7 +50,7 @@ module.exports = (sequelize, dataTypes) => {
         genre_id: {
             type: dataTypes.INTEGER.UNSIGNED,
             allowNull: false
-            //FK genre_id --> product referencia a la tabla genres
+                //FK genre_id --> product referencia a la tabla genres
         }
     };
     let config = {
@@ -59,8 +59,8 @@ module.exports = (sequelize, dataTypes) => {
     }
 
     const Product = sequelize.define(alias, cols, config);
-    
-    Product.associate = function (models) {
+
+    Product.associate = function(models) {
         Product.belongsTo(models.Genres, {
             as: "genre",
             foreignKey: "genre_id"

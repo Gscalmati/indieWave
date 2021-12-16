@@ -1,33 +1,33 @@
-module.exports= (sequelize, dataTypes) => {
+module.exports = (sequelize, dataTypes) => {
     let alias = "Images";
     let cols = {
-        id:{
+        id: {
             type: dataTypes.INTEGER.UNSIGNED,
-            primaryKey:true,
+            primaryKey: true,
             allowNull: false,
-            autoIncrement:true
+            autoIncrement: true
         },
-        product_id:{
+        product_id: {
             type: dataTypes.INTEGER.UNSIGNED,
-            
+
             //FK images --> products_id referencia a la tabla products
         },
-        image:{
+        image: {
             type: dataTypes.STRING,
-            inique:true,
-            fields:['image'],
+            inique: true,
+            fields: ['image'],
             allowNull: false
         }
     };
     let config = {
         tableName: "images",
-        timestamps:false
+        timestamps: false
     }
 
-    const Image= sequelize.define(alias,cols, config);
+    const Image = sequelize.define(alias, cols, config);
 
-    Image.associate = function(models){
-        Image.belongsTo(models.Products,{
+    Image.associate = function(models) {
+        Image.belongsTo(models.Products, {
             as: "products",
             foreignKey: "product_id"
         })

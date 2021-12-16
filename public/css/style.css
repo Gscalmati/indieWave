@@ -1649,14 +1649,20 @@ label {
 
 
 /*** PROFILE ***/
+
+
 /*profilepic*/
+
 main #profilepic-profile {
     width: 150px;
     height: 150px;
     background-color: black;
 }
+
+
 /**/
-main #profile-div{
+
+main #profile-div {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1692,8 +1698,10 @@ main #username-surname {
     padding: 20px;
 }
 
+
 /* form */
-main #profile-form{
+
+main #profile-form {
     display: flex;
     width: auto;
     justify-content: center;
@@ -1701,7 +1709,8 @@ main #profile-form{
     margin: 15px;
     margin-top: 35px;
 }
-main #button{
+
+main #button {
     height: 100%;
     background: var(--thistle);
     font-size: 1.2em;
@@ -1709,13 +1718,14 @@ main #button{
     font-family: 'ubuntu';
 }
 
+
 /* div main*/
-main .flex-wrapper{
+
+main .flex-wrapper {
     display: flex;
     min-height: 100%;
     width: 100%;
 }
-
 
 
 /**  TABLET **/
@@ -1725,17 +1735,15 @@ main .flex-wrapper{
         display: flex;
         align-items: center;
     }
-    main #wrapper{
+    main #wrapper {
         margin: 15px;
     }
-    
-    main #profilepic-profile{
+    main #profilepic-profile {
         width: 300px;
         height: 300px;
     }
-
     /* form */
-    main #profile-form{
+    main #profile-form {
         margin-top: 60px;
     }
     main #username-surname {
@@ -1746,6 +1754,7 @@ main .flex-wrapper{
 
 
 /***  404  ***/
+
 
 /** MOBILE - TABLET - DESKTOP **/
 
@@ -1763,7 +1772,7 @@ main .flex-wrapper{
     width: 100vw;
     min-height: 100vh;
     margin: 0 auto;
-    background-color: rgba(0,0,0,0.6);
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
 #textbox-error {
@@ -1786,4 +1795,70 @@ main .flex-wrapper{
     font-size: 60px;
     color: white;
     letter-spacing: 10px;
+}
+
+
+/*** LOGIN FORM ***
+
+/** IMAGES-ASIDE **/
+
+
+/** MAIN SECTION **/
+
+#main-login-form {
+    width: 100%;
+    min-height: 100vh;
+    margin: 185px auto 20px;
+    background-color: rgba(92, 44, 109, 0.8);
+    box-sizing: border-box;
+    padding: 16px;
+    font-family: ubuntu;
+    color: var(--turquoise);
+}
+
+#main-login-form #form-div {
+    height: AUTO;
+}
+
+#main-login-form .main-section {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+
+/** IMAGES-ARRAY **/
+
+@media (min-width: 768px) {
+    #main-login-form {
+        padding: 0px;
+    }
+    #main-login-form .main-section .images-array {
+        background-size: 50vw;
+        width: 50VW;
+        height: 100vh;
+        background-repeat: repeat-y;
+    }
+}
+
+@media (min-width: 1024px) {
+    /* Main */
+    #main-login-form {
+        width: 100%;
+        margin: 90px auto 20px;
+    }
+    #main-login-form {
+        /* Para simular que la imagen siga por abajo del Header y Footer */
+        padding: 0px;
+        margin-bottom: 0px;
+        margin-top: 70px;
+    }
+    #main-login-form .main-section .images-array {
+        background-position: center;
+        background-size: cover;
+        width: 50VW;
+        height: 100vh;
+        background-repeat: repeat;
+        right: 20px;
+        z-index: 15;
+    }
 }
