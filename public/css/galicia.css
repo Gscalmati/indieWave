@@ -662,12 +662,14 @@ label {
 }
 
 
-/*** IMAGES-ASIDE ***/
+/*** LOGIN FORM ***
+
+/** IMAGES-ASIDE **/
 
 
 /** MAIN SECTION **/
 
-.main-section {
+#main-login-form .main-section {
     display: flex;
     flex-wrap: nowrap;
 }
@@ -676,10 +678,10 @@ label {
 /** IMAGES-ARRAY **/
 
 @media (min-width: 768px) {
-    main {
+    #main-login-form {
         padding: 0px;
     }
-    .main-section .images-array {
+    #main-login-form .main-section .images-array {
         background-size: 50vw;
         width: 50VW;
         height: 100vh;
@@ -688,13 +690,13 @@ label {
 }
 
 @media (min-width: 1024px) {
-    main {
+    #main-login-form {
         /* Para simular que la imagen siga por abajo del Header y Footer */
         padding: 0px;
         margin-bottom: 0px;
         margin-top: 70px;
     }
-    .main-section .images-array {
+    #main-login-form .main-section .images-array {
         background-position: center;
         background-size: cover;
         width: 50VW;
