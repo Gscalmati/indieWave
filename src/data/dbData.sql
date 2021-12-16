@@ -89,4 +89,4 @@ insert into users (id, username, name, surname, email, profile_pic, password, ad
 insert into users (id, username, name, surname, email, profile_pic, password, admin) values (18, 'bbrimilcombeh', 'Beth', 'Levomefolate Calcium Acetylcysteine and Mecobalamin Algal', 'bmasselh@about.com', '/img/users/default.png', 'U7jLaP5', 0);
 insert into users (id, username, name, surname, email, profile_pic, password, admin) values (19, 'sthornei', 'Salmon', 'Gabapentin', 'smoninii@senate.gov', '/img/users/default.png', 'CL3NUW6Q', 0);
 insert into users (id, username, name, surname, email, profile_pic, password, admin) values (20, 'sdutnellj', 'Shaine', 'U-max Beauty', 'smussillij@apple.com', '/img/users/default.png', 'QdjyEhDhXco', 0);
-
+insert into users (id, username, name, surname, email, profile_pic, password, admin) values (21, 'Admin', 'Admin', 'Istrador', 'admin@istrador.com', '/img/users/default.png', '$2a$10$FM71wW9fiToy276LHt2A2.cV2KGTL7RZPGdFc1QQG4eZ2nLXc28yC', 1);

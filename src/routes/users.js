@@ -29,13 +29,8 @@ router.get("/register", guestRoutesMiddleware, usersController.register);
 
 router.post("/register", loggedRoutesMiddleware, uploadUser.single("profile-pic"), userRegisterValidations, usersController.store);
 /* Galicia routes */
-router.get("/loginGalicia", guestRoutesMiddleware, usersController.loginGalicia);
-router.post("/loginGalicia", loggedRoutesMiddleware, usersController.loggedGalicia);
-
 router.get("/login", guestRoutesMiddleware, usersController.login);
-
 router.post("/login", loggedRoutesMiddleware, usersController.logged);
-
 
 
 router.get("/logout", usersController.logout);

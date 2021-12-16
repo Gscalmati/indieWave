@@ -1,5 +1,4 @@
-[
-    {
+[{
         "id": 1,
         "name": "Tawny frogmouth",
         "surname": "Waadenburg",
@@ -116,7 +115,7 @@
         "name": "Giovanni",
         "surname": "Scalmati",
         "email": "gioscalmati@hotmail.com",
-        "password": "$2a$10$KsicAqm4WvrpVAnlon6jFuLpjmWRFed.y12L8x4Sa0Yl6bc.Mh5iO",
+        "password": "$2a$10$alh0Kb8MZtK/MtxPiC2byezsV43aujPpSXFC5M37hhe6/um20gJk.",
         "profilepic": "/img/users/gioscalmati@hotmail.com.jpg",
         "news": false,
         "admin": true
