@@ -59,13 +59,13 @@ module.exports = (sequelize, dataTypes) => {
     }
 
     const Product = sequelize.define(alias, cols, config);
-
+    
     Product.associate = function (models) {
         Product.belongsTo(models.Genres, {
-            as: "genres",
+            as: "genre",
             foreignKey: "genre_id"
         });
-        Product.belongsTo(models.Images, {
+        Product.hasMany(models.Images, {
             as: "images",
             foreignKey: "product_id"
         });
@@ -78,7 +78,7 @@ module.exports = (sequelize, dataTypes) => {
         });
         Product.belongsToMany(models.Shoppingcarts, {
             as: "shoppingcart",
-            through: "shopping_product",
+            through: "shopping_products", //shopping_product?
             foreignKey: "product_id",
             otherKey: "shopping_cart_id",
             timestamps: false
