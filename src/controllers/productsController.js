@@ -87,7 +87,14 @@ productsController = {
     },
 
     dashboard: function (req, res) {
-        res.render("products/dashboard", { products })
+
+        (async () => {
+            
+            let productsDb = await db.Products.findAll({include: [{association: "genre"}]});
+            res.render("products/dashboard", { products: productsDb })
+            
+        })()
+
     },
 
     cart: function (req, res) {
@@ -143,7 +150,6 @@ productsController = {
 
             /*Creo una entrada en la tabla de imágenes por cada imagen*/
             if (imagesArray.length != 0) {
-                //imagesArray.forEach(async (image) => 
                 for (image of imagesArray) {
                     await db.Images.create({
                         product_id: newProduct.id,
@@ -183,8 +189,71 @@ productsController = {
     },
     update(req, res) {
 
+        let imagesArray = [];
 
-        // Editamos el producto buscandolo con una condición
+        if (req.files["images"]) {
+            req.files["images"].forEach((image) => {
+                imagesArray.push(`/img/products/${req.body.game_name}-imgs/${image.filename}`)
+            })
+        }
+
+
+        (async () => {
+
+            /*Busco el id del género al que pertenece el producto*/
+
+            let genre = await db.Genres.findOne({
+                where: { name: req.body.genre }
+            });
+
+            //Editos campos del producto
+            await db.Products.update({
+                name: req.body.game_name,
+                developer: req.body.developer,
+                email: req.body.email,
+                release_date: req.body.release_date,
+                price: req.body.price,
+                logo: req.files["logo"] != undefined ? `/img/products/${req.body.game_name}-imgs/${req.files["logo"][0].filename}` : undefined,
+                min_requirements: req.body.min_requirements,
+                rec_requirements: req.body.rec_requirements,
+                description: req.body.description,
+                genre_id: genre.id,
+            },
+                { where: { id: req.params.id } });
+
+            //Borro todas las entradas del producto en Product_platforms y las vulevo a definir según lo ingresado por el usuario al editar
+            await db.Products_platforms.destroy({ where: { product_id: req.params.id } });
+
+            if (req.body.linux) {
+                await db.Products_platforms.create({
+                    product_id: req.params.id,
+                    platform_id: 1,
+                })
+            };
+            if (req.body.macos) {
+                await db.Products_platforms.create({
+                    product_id: req.params.id,
+                    platform_id: 2,
+                })
+            };
+            if (req.body.windows) {
+                await db.Products_platforms.create({
+                    product_id: req.params.id,
+                    platform_id: 3,
+                })
+            };
+
+            /*Creo una entrada en la tabla de imágenes por cada imagen nueva (por ahora, no borramos las viejas)*/
+            if (imagesArray.length != 0) {
+                for (image of imagesArray) {
+                    await db.Images.create({
+                        product_id: newProduct.id,
+                        image: image,
+                    })
+                };
+            }
+        })()
+
         products.forEach(producto => {
             if (producto.id == req.params.id) {
                 producto.game_name = req.body.game_name
