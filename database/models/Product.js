@@ -60,37 +60,37 @@ module.exports = (sequelize, dataTypes) => {
 
     const Product = sequelize.define(alias, cols, config);
 
-    Product.associate = function(models) {
-        Product.belongsTo(models.Genres, {
-            as: "genre",
-            foreignKey: "genre_id"
-        });
-        Product.hasMany(models.Images, {
-            as: "images",
-            foreignKey: "product_id"
-        });
-        Product.belongsToMany(models.Platforms, {
-            as: "platforms",
-            through: "products_platform",
-            foreignKey: "product_id",
-            otherKey: "platform_id",
-            timestamps: false
-        });
-        Product.belongsToMany(models.Shoppingcarts, {
-            as: "shoppingcart",
-            through: "shopping_products", //shopping_product?
-            foreignKey: "product_id",
-            otherKey: "shopping_cart_id",
-            timestamps: false
-        });
-        Product.belongsToMany(models.Users, {
-            as: "users",
-            through: "Users_products",
-            foreignKey: "product_id",
-            otherKey: "user_id",
-            timestamps: false
-        })
-    }
+    /* Product.associate = function(models) {
+         Product.belongsTo(models.Genres, {
+             as: "genre",
+             foreignKey: "genre_id"
+         });
+         Product.hasMany(models.Images, {
+             as: "images",
+             foreignKey: "product_id"
+         });
+         Product.belongsToMany(models.Platforms, {
+             as: "platforms",
+             through: "products_platform",
+             foreignKey: "product_id",
+             otherKey: "platform_id",
+             timestamps: false
+         });
+         Product.belongsToMany(models.Shoppingcarts, {
+             as: "shoppingcart",
+             through: "shopping_products", //shopping_product?
+             foreignKey: "product_id",
+             otherKey: "shopping_cart_id",
+             timestamps: false
+         });
+         Product.belongsToMany(models.Users, {
+             as: "users",
+             through: "Users_products",
+             foreignKey: "product_id",
+             otherKey: "user_id",
+             timestamps: false
+         })
+}*/
 
     return Product;
 }

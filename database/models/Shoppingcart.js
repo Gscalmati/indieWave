@@ -20,19 +20,19 @@ module.exports = (sequelize, dataTypes) => {
 
     let Shoppingcart = sequelize.define(alias, cols, config);
 
-    /* Shoppingcart.associate = function(models) {
-         Shoppingcart.belongsTo(models.Users, {
-             as: "users",
-             foreignKey: "user_id"
-         });
-         Shoppingcart.belongsToMany(models.Products, {
-             as: "products",
-             through: "shopping_products",
-             foreignKey: "shopping_cart_id",
-             otherKey: "product_id",
-             timestamps: false
-         })
-     }*/
+    /*Shoppingcart.associate = function(models) {
+        Shoppingcart.belongsTo(models.Users, {
+            as: "users",
+            foreignKey: "user_id"
+        });
+        Shoppingcart.belongsToMany(models.Products, {
+            as: "products",
+            through: "shopping_products",
+            foreignKey: "shopping_cart_id",
+            otherKey: "product_id",
+            timestamps: false
+        })
+    }*/
 
     return Shoppingcart;
 }
