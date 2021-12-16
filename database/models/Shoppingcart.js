@@ -20,7 +20,7 @@ module.exports = (sequelize, dataTypes) => {
 
     let Shoppingcart = sequelize.define(alias, cols, config);
 
-    /*Shoppingcart.associate = function(models) {
+    Shoppingcart.associate = function(models) {
         Shoppingcart.belongsTo(models.Users, {
             as: "users",
             foreignKey: "user_id"
@@ -32,7 +32,7 @@ module.exports = (sequelize, dataTypes) => {
             otherKey: "product_id",
             timestamps: false
         })
-    }*/
+    }
 
     return Shoppingcart;
 }
