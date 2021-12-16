@@ -42,7 +42,8 @@ router.get("/shoppingCart", authMiddleware, productsController.cart);
 /* Editar producto */
 router.get("/edit/:id", productsController.edit);
 
-router.post("/edit", productsController.edit);
+//router.post("/edit", productsController.edit); Esta ruta está alpedovich.
+
 /*Actualizar producto */
 router.put("/edit/:id", uploadProduct.fields([{ name: "logo" }, { name: "images" }]), productsController.update);
 /* Crear Producto*/
