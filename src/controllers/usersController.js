@@ -10,6 +10,7 @@ let users = JSON.parse(jsonUsers); //Convertimos el json a array
 // Traer la DB
 let db = require("../../database/models");
 const { Sequelize } = require("../../database/models");
+const { Op } = require("sequelize");
 
 /* Función para conseguir el nuevo ID */
 const newId = function() {
@@ -59,35 +60,46 @@ let usersController = {
 
     login: (req, res) => {
 
-        if (req.cookies.usuario) {
+
+        /*if (req.cookies.usuario) {
             return res.render("users/login", { usuario: req.cookies.usuario });
-        }
+        }*/
 
         res.render("users/login");
     },
 
     logged: (req, res) => { /* Es importante modificar de NAME a USERNAME*/
-        let userFound = users.find(user => {
-            return ((user.email === req.body.username) || (user.username === req.body.username)) &&
-                (bcryptjs.compareSync(req.body.password, user.password));
-        });
+        let userFound;
+        (async function() { // Creo un IIFE - Immediately Invoked Function Expression
+            try {
+                userFound = await db.Users.findOne({
+                    where: {
+                        [Op.or]: [{ username: req.body.username }, { email: req.body.username }]
+                    },
+                    raw: true
+                });
 
+                if (bcryptjs.compare(req.body.password, userFound.password)) {
+                    console.log("True");
+                    delete userFound.password
+                    req.session.userLogged = userFound;
 
-        if (userFound != undefined) {
-            let copyUser = { // Usamos Spread Operator para copiar, porque de otra forma el "delete" borra la referencia
-                ...userFound
+                    console.log(req.session.userLogged);
+
+                    // Seteo de cookies
+                    if (req.body.remember) {
+                        res.cookie('usuario', userFound, { maxAge: (1000 * 60) * 60 })
+                    }
+
+                    return res.redirect("/");
+                } else {
+                    console.log("True");
+                    res.render("users/login", { errors: "Usuario o contraseña incorrecta" });
+                }
+            } catch (error) {
+                console.log(error);
             }
-            delete copyUser.password
-            req.session.userLogged = copyUser;
-
-            // Seteo de cookies
-            if (req.body.remember) {
-                res.cookie('usuario', copyUser.email, { maxAge: (1000 * 60) * 60 })
-            }
-
-            return res.redirect("/");
-        }
-        res.render("users/login", { errors: "Usuario o contraseña incorrecta" });
+        })()
     },
 
     logout: (req, res) => {
