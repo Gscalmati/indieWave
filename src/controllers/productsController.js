@@ -89,10 +89,10 @@ productsController = {
     dashboard: function (req, res) {
 
         (async () => {
-            
-            let productsDb = await db.Products.findAll({include: [{association: "genre"}]});
+
+            let productsDb = await db.Products.findAll({ include: [{ association: "genre" }] });
             res.render("products/dashboard", { products: productsDb })
-            
+
         })()
 
     },
@@ -102,10 +102,25 @@ productsController = {
     },
 
     edit: function (req, res) {
-        let productoEdit = products.find(product => {
-            return (product.id == req.params.id)
-        })
-        res.render("products/productEdit", { producto: productoEdit });
+        (async () => {
+            try {
+
+                /* Busco el producto a editar */
+                let productToEdit = await db.Products.findByPk(req.params.id, {
+                    include: [{ association: "genre" }, { association: "platforms" }]
+                });
+                
+                /* Por comodidad, me guardo las plataformas del producto */
+                let productPlatforms = [];
+                for (platform of productToEdit.platforms){
+                    productPlatforms.push(platform.name);
+                }
+                res.render("products/productEdit", { product: productToEdit, productPlatforms});
+            } catch (error) {
+                console.log(error)
+            }
+        })()
+
     },
 
     create: function (req, res) {
@@ -126,57 +141,61 @@ productsController = {
         //let date = req.body.release_date.split("-").reverse(); <---- ¿Qué corno hacía esto?
 
         (async () => {
+            try {
 
-            /*Busco el id del género al que pertenece el producto*/
+                /*Busco el id del género al que pertenece el producto*/
 
-            let genre = await db.Genres.findOne({
-                where: { name: req.body.genre }
-            });
+                let genre = await db.Genres.findOne({
+                    where: { name: req.body.genre }
+                });
 
-            /*Creo una entrada en la tabla de productos*/
+                /*Creo una entrada en la tabla de productos*/
 
-            let newProduct = await db.Products.create({
-                name: req.body.game_name,
-                developer: req.body.developer,
-                email: req.body.email,
-                release_date: req.body.release_date,
-                price: req.body.price,
-                logo: req.files["logo"] != undefined ? `/img/products/${req.body.game_name}-imgs/${req.files["logo"][0].filename}` : undefined,
-                min_requirements: req.body.min_requirements,
-                rec_requirements: req.body.rec_requirements,
-                description: req.body.description,
-                genre_id: genre.id,
-            })
+                let newProduct = await db.Products.create({
+                    name: req.body.game_name,
+                    developer: req.body.developer,
+                    email: req.body.email,
+                    release_date: req.body.release_date,
+                    price: req.body.price,
+                    logo: req.files["logo"] != undefined ? `/img/products/${req.body.game_name}-imgs/${req.files["logo"][0].filename}` : undefined,
+                    min_requirements: req.body.min_requirements,
+                    rec_requirements: req.body.rec_requirements,
+                    description: req.body.description,
+                    genre_id: genre.id,
+                })
 
-            /*Creo una entrada en la tabla de imágenes por cada imagen*/
-            if (imagesArray.length != 0) {
-                for (image of imagesArray) {
-                    await db.Images.create({
+                /*Creo una entrada en la tabla de imágenes por cada imagen*/
+                if (imagesArray.length != 0) {
+                    for (image of imagesArray) {
+                        await db.Images.create({
+                            product_id: newProduct.id,
+                            image: image,
+                        })
+                    };
+                }
+
+                /*Creo una entrada en la tabla product_platform por cada plataforma*/
+                if (req.body.linux) {
+                    await db.Products_platforms.create({
                         product_id: newProduct.id,
-                        image: image,
+                        platform_id: 1,
                     })
                 };
+                if (req.body.macos) {
+                    await db.Products_platforms.create({
+                        product_id: newProduct.id,
+                        platform_id: 2,
+                    })
+                };
+                if (req.body.windows) {
+                    await db.Products_platforms.create({
+                        product_id: newProduct.id,
+                        platform_id: 3,
+                    })
+                };
+            } catch (error) {
+                console.log(error)
             }
-
-            /*Creo una entrada en la tabla product_platform por cada plataforma*/
-            if (req.body.linux) {
-                await db.Products_platforms.create({
-                    product_id: newProduct.id,
-                    platform_id: 1,
-                })
-            };
-            if (req.body.macos) {
-                await db.Products_platforms.create({
-                    product_id: newProduct.id,
-                    platform_id: 2,
-                })
-            };
-            if (req.body.windows) {
-                await db.Products_platforms.create({
-                    product_id: newProduct.id,
-                    platform_id: 3,
-                })
-            };
 
         })()
 
@@ -253,48 +272,6 @@ productsController = {
                 };
             }
         })()
-
-        products.forEach(producto => {
-            if (producto.id == req.params.id) {
-                producto.game_name = req.body.game_name
-                producto.developer = req.body.developer
-                producto.genre = req.body.genre
-                producto.email = req.body.email
-                if (req.body.release_date) {
-                    let date = req.body.release_date.split("-").reverse().join("-");
-                    producto.release_date = date;
-                };
-                producto.platform = [];
-                if (req.body.windows) {
-                    producto.platform.push("Windows")
-                };
-                if (req.body.macos) {
-                    producto.platform.push("macOS")
-                };
-                if (req.body.linux) {
-                    producto.platform.push("Linux")
-                };
-                producto.price = req.body.price
-                // Reviso si se subieron nuevas imágenes al editar
-                if (req.files["logo"] != undefined) {
-                    producto.logo = `/img/${req.body.game_name}-imgs/${req.files["logo"][0].filename}`
-                }
-                if (req.files['images'] != undefined) {
-                    let imagesArray = [];
-                    req.files["images"].forEach((image) => {
-                        imagesArray.push(`/img/${req.body.game_name}-imgs/${image.filename}`)
-                    })
-                    producto.images = imagesArray
-                }
-                producto.min_requirements = req.body.min_requirements
-                producto.rec_requirements = req.body.rec_requirements
-                producto.description = req.body.description
-            }
-        })
-
-        // Pasamos a json todos los productos y sobreescribimos la db
-        let jsonDeProductos = JSON.stringify(products, null, 4);
-        fs.writeFileSync(path.resolve(__dirname, '../data/products.json'), jsonDeProductos);
 
         res.redirect('/products/dashboard');
 

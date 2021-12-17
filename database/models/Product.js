@@ -71,7 +71,7 @@ module.exports = (sequelize, dataTypes) => {
         });
         Product.belongsToMany(models.Platforms, {
             as: "platforms",
-            through: "products_platform",
+            through: "products_platforms",
             foreignKey: "product_id",
             otherKey: "platform_id",
             timestamps: false

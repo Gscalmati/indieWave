@@ -23,7 +23,7 @@ module.exports= (sequelize, dataTypes) => {
     Platform.associate = function(models){
         Platform.belongsToMany(models.Products,{
             as: "products",
-            through: "products_platform",
+            through: "products_platforms",
             foreignKey: "platform_id",
             otherKey: "product_id",
             timestamps: false
