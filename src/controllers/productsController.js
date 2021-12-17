@@ -89,10 +89,10 @@ productsController = {
     dashboard: function (req, res) {
 
         (async () => {
-            
-            let productsDb = await db.Products.findAll({include: [{association: "genre"}]});
+
+            let productsDb = await db.Products.findAll({ include: [{ association: "genre" }] });
             res.render("products/dashboard", { products: productsDb })
-            
+
         })()
 
     },
@@ -102,9 +102,12 @@ productsController = {
     },
 
     edit: function (req, res) {
-        let productoEdit = products.find(product => {
-            return (product.id == req.params.id)
-        })
+        (async () => {
+            let productoEdit = await db.Products.findByPk(req.params.id, {
+                include: [{ association: "genre" }, { association: "platforms" }]
+            })
+        })()
+
         res.render("products/productEdit", { producto: productoEdit });
     },
 
@@ -253,48 +256,6 @@ productsController = {
                 };
             }
         })()
-
-        products.forEach(producto => {
-            if (producto.id == req.params.id) {
-                producto.game_name = req.body.game_name
-                producto.developer = req.body.developer
-                producto.genre = req.body.genre
-                producto.email = req.body.email
-                if (req.body.release_date) {
-                    let date = req.body.release_date.split("-").reverse().join("-");
-                    producto.release_date = date;
-                };
-                producto.platform = [];
-                if (req.body.windows) {
-                    producto.platform.push("Windows")
-                };
-                if (req.body.macos) {
-                    producto.platform.push("macOS")
-                };
-                if (req.body.linux) {
-                    producto.platform.push("Linux")
-                };
-                producto.price = req.body.price
-                // Reviso si se subieron nuevas imágenes al editar
-                if (req.files["logo"] != undefined) {
-                    producto.logo = `/img/${req.body.game_name}-imgs/${req.files["logo"][0].filename}`
-                }
-                if (req.files['images'] != undefined) {
-                    let imagesArray = [];
-                    req.files["images"].forEach((image) => {
-                        imagesArray.push(`/img/${req.body.game_name}-imgs/${image.filename}`)
-                    })
-                    producto.images = imagesArray
-                }
-                producto.min_requirements = req.body.min_requirements
-                producto.rec_requirements = req.body.rec_requirements
-                producto.description = req.body.description
-            }
-        })
-
-        // Pasamos a json todos los productos y sobreescribimos la db
-        let jsonDeProductos = JSON.stringify(products, null, 4);
-        fs.writeFileSync(path.resolve(__dirname, '../data/products.json'), jsonDeProductos);
 
         res.redirect('/products/dashboard');
 
