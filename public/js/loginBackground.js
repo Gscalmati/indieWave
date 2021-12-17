@@ -7,5 +7,3 @@
 
         let randomImg = arrayImg[Math.floor(Math.random() * arrayImg.length)];
         document.querySelector(".images-array").style.backgroundImage = `url(${randomImg})`;
-
-        console.log(randomImg)

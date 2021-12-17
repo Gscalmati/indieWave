@@ -5,9 +5,6 @@ const path = require("path");
 
 const methodOverride = require("method-override");
 
-const cookies = require("cookie-parser")
-
-
 /* COnfiguracion Session */
 const session = require("express-session");
 app.use(session({
@@ -15,8 +12,12 @@ app.use(session({
     resave: false,
     saveUninitialized: false
 }));
-const loggedUserMiddleware = require("./middlewares/loggedUserMiddleware");
-app.use(loggedUserMiddleware);
+
+/* Configuracion Cookie Parser */
+const cookieParser = require("cookie-parser")
+app.use(cookieParser());
+
+
 
 /* Configuracion Express */
 app.use(express.static(path.resolve(__dirname, "../public")));
@@ -28,13 +29,13 @@ app.use(express.json());
 /* Configuracion Method Override */
 app.use(methodOverride("_method"));
 
-/* Configuracion Cookie Parser */
-app.use(cookies());
-
 /* Configuracion template engine */
 app.set("view engine", "ejs");
 app.set("views", path.resolve(__dirname, "views"))
 
+/* Middleware Global */
+const loggedUserMiddleware = require("./middlewares/loggedUserMiddleware");
+app.use(loggedUserMiddleware);
 
 /* Configuracion rutas */
 const routerMain = require(path.resolve(__dirname, "routes/main"));
@@ -50,11 +51,12 @@ app.use("/users", routerUsers);
 
 /*Configuración 404*/
 app.use((req, res, next) => {
-    res.status(404).render('./main/error', {error: "404"});
+    res.status(404).render('./main/error', { error: "404" });
 })
 
 app.use((err, req, res, next) => {
-    res.status(500).render('./main/error', {error: "500"});
+    res.status(500).render('./main/error', { error: "500" });
+    console.log(err);
 })
 
 app.listen(process.env.PORT || 3000, () => {
