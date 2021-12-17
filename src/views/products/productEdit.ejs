@@ -18,68 +18,68 @@
 
         <main id="main-edit-create">
             <h2 id="title">Editar Producto </h2>
-            <form id="create-form" action="/products/edit/<%= producto.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+            <form id="create-form" action="/products/edit/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
 
-                <input type="text" name="game_name" id="game_name" aria-label="nombre del juego" value="<%= producto.game_name%>">
+                <input type="text" name="game_name" id="game_name" aria-label="nombre del juego" value="<%= product.name%>">
 
-                <input type="text" name="developer" id="developer" aria-label="desarrollador" value="<%= producto.developer %>">
+                <input type="text" name="developer" id="developer" aria-label="desarrollador" value="<%= product.developer %>">
 
                 <div id="genre">
                     <label for="genre">Género:</label>
                     <select name="genre">
                         <option value="arcade" 
-                        <% if (producto.genre === "arcade" ){ %> 
+                        <% if (product.genre === "arcade" ){ %> 
                             selected 
                         <% } %> > Arcade </option>
                         <option value="action"
-                        <% if (producto.genre === "action" ){ %> 
+                        <% if (product.genre === "action" ){ %> 
                             selected 
                         <% } %> > Acción</option>
                         <option value="sports"
-                        <% if (producto.genre === "sports" ){ %> 
+                        <% if (product.genre === "sports" ){ %> 
                             selected 
                         <% } %> > Deportes</option>
                         <option value="strategy"
-                        <% if (producto.genre === "strategy" ){ %> 
+                        <% if (product.genre === "strategy" ){ %> 
                             selected 
                         <% } %> > Estrategia</option>
                         <option value="adventure" 
-                        <% if (producto.genre === "adventure" ){ %> 
+                        <% if (product.genre === "adventure" ){ %> 
                             selected 
                         <% } %> > Aventura</option>
                     </select>
                 </div>
 
-                <input type="email" name="email" id="email" aria-label="email" value="<%= producto.email %>">
+                <input type="email" name="email" id="email" aria-label="email" value="<%= product.email %>">
 
 
                 <label for="release_date">Fecha de lanzamiento</label>
-                <input type="date" name="release_date" id="release_date" aria-label="fecha de lanzamiento" value="<%= producto.release_date %>">
+                <input type="date" name="release_date" id="release_date" aria-label="fecha de lanzamiento" value="<%= product.release_date %>">
                 
                 <span id="subtitle">Plataforma</span>
                 <div id="checkbox-wrapper">
 
                     <label for="windows">Windows</label>
                     <input type="checkbox" name="windows" id="windows" 
-                    <% if (producto.platform.includes("Windows")) { %>
+                    <% if (productPlatforms.includes("Windows")) { %>
                         checked 
                     <% } %> > 
 
                     <label for="macos">macOS</label>
                     <input type="checkbox" name="macos" id="macos"
-                    <% if (producto.platform.includes("macOS")) { %>
+                    <% if (productPlatforms.includes("macOS")) { %>
                         checked 
                     <% } %> > 
 
                     <label for="linux">Linux</label>
                     <input type="checkbox" name="linux" id="linux"
-                    <% if (producto.platform.includes("Linux")) { %>
+                    <% if (productPlatforms.includes("Linux")) { %>
                         checked 
                     <% } %> > 
 
                 </div>
 
-                <input type="number" name="price" id="price" aria-label="price" value="<%= producto.price %>">
+                <input type="number" name="price" id="price" aria-label="price" value="<%= product.price %>">
 
                 <label for="logo" id="logo" >Cargar Logo</label>
                 <input type="file" name="logo" accept=".png, .jpeg, .jpg" id="logo" aria-label="logo" alt="logo">
@@ -87,11 +87,11 @@
                 <label for="images" id="images" >Cargar Imágenes</label>
                 <input type="file" name="images" accept=".png, .jpeg, .jpg" id="images" aria-label="imágenes" alt="Imágenes" multiple>
 
-                <textarea rows="7" name="min_requirements" id="min_requirements" aria-label="requisitos minimos"><%= producto.min_requirements %></textarea>
+                <textarea rows="7" name="min_requirements" id="min_requirements" aria-label="requisitos minimos"><%= product.min_requirements %></textarea>
 
-                <textarea rows="7" name="rec_requirements" id="rec_requirements" aria-label="requisitos recomendados" ><%= producto.rec_requirements %></textarea>
+                <textarea rows="7" name="rec_requirements" id="rec_requirements" aria-label="requisitos recomendados" ><%= product.rec_requirements %></textarea>
 
-                <textarea rows="9" name="description" id="description" maxlength="500" aria-label="descripcion"><%= producto.description %></textarea>
+                <textarea rows="9" name="description" id="description" maxlength="500" aria-label="descripcion"><%= product.description %></textarea>
                 
                 <button type="reset" id="delete-btn">Borrar</button>
                 <button type="submit" id="send-btn">Enviar</button>  
