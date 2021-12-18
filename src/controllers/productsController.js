@@ -27,48 +27,73 @@ productsController = {
     categories: function (req, res) {
 
         (async () => {
-            /* Obtengo todos los géneros definidos en la base de datos */
-            let genres = await db.Genres.findAll();
+            try {
+                /* Obtengo todos los géneros definidos en la base de datos */
+                let genres = await db.Genres.findAll();
 
-            /* Creo un array de arrays donde el primer elemento es el nombre del género y los siguientes son los productos pertenecientes a ese género */
-            let productsByGenre = [];
-            for (genre of genres) {
-                let genreData = []
-                let products = await db.Products.findAll({ include: [{ association: "genre", where: { name: genre.name } }] });
-                genreData.push(genre.name);
-                for (product of products) {
-                    genreData.push(product);
+                /* Creo un array de arrays donde el primer elemento es el nombre del género y los siguientes son los productos pertenecientes a ese género */
+                let productsByGenre = [];
+                for (genre of genres) {
+                    let genreData = []
+                    let products = await db.Products.findAll({ include: [{ association: "genre", where: { name: genre.name } }] });
+                    genreData.push(genre.name);
+                    for (product of products) {
+                        genreData.push(product);
+                    }
+                    productsByGenre.push(genreData);
                 }
-                productsByGenre.push(genreData);
+                res.render("products/categories", { productsByGenre });
+            } catch (error) {
+                console.log(error)
             }
-            res.render("products/categories", { productsByGenre });
         })()
     },
 
     categorygames: function (req, res) {
         (async () => {
-            let categoryGames = await db.Products.findAll({ include: [{ association: "genre", where: { name: req.params.category } }] });
-            res.render("products/categoryGames", { categoryGames, category: req.params.category });
+            try {
+                let categoryGames = await db.Products.findAll({ include: [{ association: "genre", where: { name: req.params.category } }] });
+                res.render("products/categoryGames", { categoryGames, category: req.params.category });
+            } catch (error) {
+                console.log(error)
+            }
         })()
     },
 
     detail: function (req, res) {
-        db.Products.findByPk(req.params.id, {
-            include: [{ association: "genre" }, { association: "images" }, { association: "platforms" }]
-        })
-            .then(function (product) {
-                res.render("products/productDetail", { product: product })
-            })
+        (async () => {
+            try {
+                let product = await db.Products.findByPk(req.params.id, {
+                    include: [{ association: "genre" }, { association: "platforms" }]
+                });
+
+                let productPlatforms = [];
+                for (platform of product.platforms) {
+                    productPlatforms.push(platform.name);
+                }
+
+                /* Limito la búsqueda a 4 imágenes?? */
+                let productImages = await db.Products.findAll({where : { product_id : product.id}});
+
+                res.render("products/productDetail", { product, productPlatforms, productImages })
+            } catch (error) {
+                console.log(error)
+            }
+        })()
     },
 
     delete: function (req, res) {
 
-        db.Products.destroy({
-            where: {
-                id: req.params.id
-            }
-        })
-        res.redirect('/products/dashboard');
+        try {
+            db.Products.destroy({
+                where: {
+                    id: req.params.id
+                }
+            })
+            res.redirect('/products/dashboard');
+        } catch (error) {
+            console.log(error)
+        }
     },
 
 
@@ -88,9 +113,12 @@ productsController = {
     dashboard: function (req, res) {
 
         (async () => {
-
-            let productsDb = await db.Products.findAll({ include: [{ association: "genre" }] });
-            res.render("products/dashboard", { products: productsDb })
+            try {
+                let productsDb = await db.Products.findAll({ include: [{ association: "genre" }] });
+                res.render("products/dashboard", { products: productsDb })
+            } catch (error) {
+                console.log(error)
+            }
 
         })()
 
@@ -218,62 +246,66 @@ productsController = {
 
         (async () => {
 
-            /*Busco el id del género al que pertenece el producto*/
+            try {
 
-            let genre = await db.Genres.findOne({
-                where: { name: req.body.genre }
-            });
+                /*Busco el id del género al que pertenece el producto*/
 
-            //Editos campos del producto
-            await db.Products.update({
-                name: req.body.game_name,
-                developer: req.body.developer,
-                email: req.body.email,
-                release_date: req.body.release_date,
-                price: req.body.price,
-                logo: req.files["logo"] != undefined ? `/img/products/${req.body.game_name}-imgs/${req.files["logo"][0].filename}` : undefined,
-                min_requirements: req.body.min_requirements,
-                rec_requirements: req.body.rec_requirements,
-                description: req.body.description,
-                genre_id: genre.id,
-            },
-                { where: { id: req.params.id } });
+                let genre = await db.Genres.findOne({
+                    where: { name: req.body.genre }
+                });
 
-            //Borro todas las entradas del producto en Product_platforms y las vulevo a definir según lo ingresado por el usuario al editar
-            await db.Products_platforms.destroy({ where: { product_id: req.params.id } });
+                //Editos campos del producto
+                await db.Products.update({
+                    name: req.body.game_name,
+                    developer: req.body.developer,
+                    email: req.body.email,
+                    release_date: req.body.release_date,
+                    price: req.body.price,
+                    logo: req.files["logo"] != undefined ? `/img/products/${req.body.game_name}-imgs/${req.files["logo"][0].filename}` : undefined,
+                    min_requirements: req.body.min_requirements,
+                    rec_requirements: req.body.rec_requirements,
+                    description: req.body.description,
+                    genre_id: genre.id,
+                },
+                    { where: { id: req.params.id } });
 
-            if (req.body.linux) {
-                await db.Products_platforms.create({
-                    product_id: req.params.id,
-                    platform_id: 1,
-                })
-            };
-            if (req.body.macos) {
-                await db.Products_platforms.create({
-                    product_id: req.params.id,
-                    platform_id: 2,
-                })
-            };
-            if (req.body.windows) {
-                await db.Products_platforms.create({
-                    product_id: req.params.id,
-                    platform_id: 3,
-                })
-            };
+                //Borro todas las entradas del producto en Product_platforms y las vulevo a definir según lo ingresado por el usuario al editar
+                await db.Products_platforms.destroy({ where: { product_id: req.params.id } });
 
-            /*Creo una entrada en la tabla de imágenes por cada imagen nueva (por ahora, no borramos las viejas)*/
-            if (imagesArray.length != 0) {
-                for (image of imagesArray) {
-                    await db.Images.create({
-                        product_id: newProduct.id,
-                        image: image,
+                if (req.body.linux) {
+                    await db.Products_platforms.create({
+                        product_id: req.params.id,
+                        platform_id: 1,
                     })
                 };
+                if (req.body.macos) {
+                    await db.Products_platforms.create({
+                        product_id: req.params.id,
+                        platform_id: 2,
+                    })
+                };
+                if (req.body.windows) {
+                    await db.Products_platforms.create({
+                        product_id: req.params.id,
+                        platform_id: 3,
+                    })
+                };
+
+                /*Creo una entrada en la tabla de imágenes por cada imagen nueva (por ahora, no borramos las viejas)*/
+                if (imagesArray.length != 0) {
+                    for (image of imagesArray) {
+                        await db.Images.create({
+                            product_id: newProduct.id,
+                            image: image,
+                        })
+                    };
+                }
+
+                res.redirect('/products/dashboard');
+            } catch (error) {
+                console.log(error)
             }
         })()
-
-        res.redirect('/products/dashboard');
-
     }
 
 }
