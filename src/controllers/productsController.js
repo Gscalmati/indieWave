@@ -25,16 +25,25 @@ const newId = function () {
 
 productsController = {
     categories: function (req, res) {
-        /*
-        Creo un array por cada género
-        let arcade ;
-        let Acción = products.filter((game) => game.genre == "Acción")
-        let Deportes = products.filter((game) => game.genre == "Deportes")
-        let Estrategia = products.filter((game) => game.genre == "Estrategia")
-        let Aventura = products.filter((game) => game.genre == "Aventura")
 
-        res.render("products/categories", { Arcade, Acción, Deportes, Estrategia, Aventura });
-        */
+        (async () => {
+            /* Obtengo todos los géneros definidos en la base de datos */
+            let genres = await db.Genres.findAll();
+
+            /* Creo un array de arrays donde el primer elemento es el nombre del género y los siguientes son los productos pertenecientes a ese género */
+            let productsByGenre = [];
+            for (genre of genres){
+                let genreData = []
+                let products = await db.Products.findAll({ include: [{ association: "genre", where: { name: genre.name } }] });
+                genreData.push(genre.name);
+                for (product of products){
+                    genreData.push(product);
+                }
+                productsByGenre.push(genreData);
+            }
+            console.log(productsByGenre);
+            res.render("products/categories", { productsByGenre });
+        })()
     },
 
     categorygames: function (req, res) {
@@ -82,7 +91,7 @@ productsController = {
         res.redirect('/products/dashboard');
     },
 
-    
+
     /*Este método no se ejecuta nunca
 
     list: function (req, res) {
@@ -119,13 +128,13 @@ productsController = {
                 let productToEdit = await db.Products.findByPk(req.params.id, {
                     include: [{ association: "genre" }, { association: "platforms" }]
                 });
-                
+
                 /* Por comodidad, me guardo las plataformas del producto */
                 let productPlatforms = [];
-                for (platform of productToEdit.platforms){
+                for (platform of productToEdit.platforms) {
                     productPlatforms.push(platform.name);
                 }
-                res.render("products/productEdit", { product: productToEdit, productPlatforms});
+                res.render("products/productEdit", { product: productToEdit, productPlatforms });
             } catch (error) {
                 console.log(error)
             }
