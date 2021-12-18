@@ -3,17 +3,24 @@ let db = require("../../database/models");
 module.exports = function loggedUserMiddleware(req, res, next) {
     res.locals.loggedSession = false;
 
-    /*if(req.cookies.usuario){
-        db.Users.findByPK()
-        buscar en BD con dato de la cookie y asignarle a req.session.userlogged
-        Esto es para hacer un AUTOLOGIN
-    }
-    */
+    (async function() {
 
-    if (req.session.userLogged) {
-        res.locals.loggedSession = true;
-        res.locals.userLogged = req.session.userLogged
-    }
+        if (req.session.userLogged == undefined && (req.cookies != undefined && req.cookies.email != undefined)) {
+            res.locals.loggedSession = true;
 
-    next()
+            res.locals.userLogged = await db.Users.findOne({
+                where: {
+                    email: req.cookies.email
+                }
+            })
+        }
+
+        if (req.session.userLogged) {
+
+            res.locals.loggedSession = true;
+            res.locals.userLogged = req.session.userLogged
+        }
+
+        next()
+    })()
 }

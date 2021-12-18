@@ -80,20 +80,17 @@ let usersController = {
                 });
 
                 if (bcryptjs.compare(req.body.password, userFound.password)) {
-                    console.log("True");
                     delete userFound.password
                     req.session.userLogged = userFound;
 
-                    console.log(req.session.userLogged);
-
                     // Seteo de cookies
-                    if (req.body.remember) {
-                        res.cookie('usuario', userFound, { maxAge: (1000 * 60) * 60 })
+                    if (req.body.remember != undefined) {
+                        res.cookie('email', userFound.email, { maxAge: 6000 * 100 * 10 })
                     }
+
 
                     return res.redirect("/");
                 } else {
-                    console.log("True");
                     res.render("users/login", { errors: "Usuario o contraseña incorrecta" });
                 }
             } catch (error) {
