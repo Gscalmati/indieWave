@@ -9,134 +9,151 @@
     <link rel="stylesheet" href="/css/style.css">
     <!-- <link rel="stylesheet" href="/css/productDetail.css"> -->
     <title>IndieWave</title>
-    <link rel="icon" href="/img/favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon" />
 </head>
 
 <body>
-    
+
     <%- include("../partials/header.ejs") %>
 
-    <main>
-        <section id="title-area">
-            <div id="breadcrumb">
-                <p><a href="/products">Todos los juegos ></a> <a href="/products/categories/<%= product.genre.name %>"><%= product.genre.name %> ></a> <%= product.name %></p>
-            </div>
-            <h2> <%= product.name %> </h2>
-            
-        </section>
-        <section id="game-area">
-            <article id="carrousel">
-                <div id="main-img">
-                    <img class="responsive-img"
-                    <% if (product.images.image != undefined) {%>   
-                    src="<%= product.images.image%>" alt="carrousel">
-                    <% } else {%>
-                        src="https://via.placeholder.com/1120x500" alt="carrousel">    
-                    <% } %> 
-                </div>
-                <div id="img-bar">
-                    <i class="fas fa-chevron-left"></i>
-                    <div class="img-div">
-                        <img class="responsive-img" 
-                        <% if (product.images.image != undefined) {%>   
-                            src="<%= product.images.image %>">
-                            <% } else {%>
-                                src="https://via.placeholder.com/200x100">    
-                            <% } %> 
-                    </div>
-                    <div class="img-div">
-                        <img class="responsive-img"
-                        <% if (product.images.image != undefined) {%>   
-                            src="<%= product.images.image %>">
-                            <% } else {%>
-                                src="https://via.placeholder.com/200x100">    
-                            <% } %> 
-                    </div>
-                    <div class="img-div">
-                        <img class="responsive-img"
-                        <% if (product.images.image != undefined) {%>   
-                            src="<%= product.images.image %>">
-                            <% } else {%>
-                                src="https://via.placeholder.com/200x100">    
-                            <% } %> 
-                    </div>
-                    <div class="img-div">
-                        <img class="responsive-img"
-                        <% if (product.images.image != undefined) {%>   
-                            src="<%= product.images.image %>">
-                            <% } else {%>
-                                src="https://via.placeholder.com/200x100">    
-                            <% } %> 
-                    </div>
-                    <i class="fas fa-chevron-right"></i>
-                </div>
-            </article>
-            <aside id="game-info">
-                <div id="game-logo">
-                    <img class="responsive-img" 
-                    <% if (product.logo != undefined) {%>   
-                        src="<%= product.logo%>">
-                        <% } else {%>
-                            src="https://via.placeholder.com/1120x500">    
-                        <% } %>
-                </div>
-                <div id="game-desc">
-                    <div>
-                        <span>Desarrollador</span>
-                        <span><%= product.developer %></span>
-                    </div>
-                    <div>
-                        <span>Fecha de lanzamiento</span>
-                        <span><%= product.release_date %></span>
-                    </div>
-                    
-                </div>
-                <div id="game-info-button-wrapper">
-                    <span id="price-tag">$<%= product.price %></span>
-                    <button id="game-to-cart-btn">Añadir al Carro</button>
-                    <button id="game-to-wishlist-btn">Añadir a Lista de Deseados</button>
-                </div>
-            </aside>
-        </section>
-        <section id="extras-area">
-            <div id="req-dlc-wrapper">
-                <h3>Requisitos del Sistema</h3>
-                <article id="requisites">
-                    <div id="minimum">
-                        <div>
-                            <h4>Mínimos</h4>
-                        </div>
-                        <p><%= product.min_requirements %></p>
-                    </div>
-                    <div id="recommended">
-                        <div>
-                            <h4>Recomendados</h4>
-                        </div>
-                        <p><%= product.rec_requirements %></p>
-                    </div>
-                </article>
-
-                <article id="game-summary">
-                    <p><%= product.description %>
+        <main>
+            <section id="title-area">
+                <div id="breadcrumb">
+                    <p><a href="/products">Todos los juegos ></a> <a
+                            href="/products/categories/<%= product.genre.name %>">
+                            <%= product.genre.name %> >
+                        </a>
+                        <%= product.name %>
                     </p>
-                </article>
-
-            </div>
-            <aside id="sale">
-                <div id="sale-content-wrapper">
-                    <div id="sale-img">
-                        <img class="responsive-img" src="https://via.placeholder.com/200x300">
-                    </div>
-                    <div id="sale-title">
-                        <p>80% OFF</p>
-                    </div>
-                    <button id="sale-buy-btn">COMPRAR AHORA</button>
                 </div>
-            </aside>
-        </section>
-    </main>
-    
-    <%- include("../partials/footer.ejs") %>
+                <h2>
+                    <%= product.name %>
+                </h2>
+
+            </section>
+            <section id="game-area">
+                <article id="carrousel">
+                    <div id="main-img">
+                        <img class="responsive-img" <% if (product.images.image !=undefined) {%>
+                        src="<%= product.images.image%>" alt="carrousel">
+                            <% } else {%>
+                                src="https://via.placeholder.com/1120x500" alt="carrousel">
+                                <% } %>
+                    </div>
+                    <div id="img-bar">
+                        <i class="fas fa-chevron-left"></i>
+                        <div class="img-div">
+                            <img class="responsive-img" <% if (product.images.image !=undefined) {%>
+                            src="<%= product.images.image %>">
+                                <% } else {%>
+                                    src="https://via.placeholder.com/200x100">
+                                    <% } %>
+                        </div>
+                        <div class="img-div">
+                            <img class="responsive-img" <% if (product.images.image !=undefined) {%>
+                            src="<%= product.images.image %>">
+                                <% } else {%>
+                                    src="https://via.placeholder.com/200x100">
+                                    <% } %>
+                        </div>
+                        <div class="img-div">
+                            <img class="responsive-img" <% if (product.images.image !=undefined) {%>
+                            src="<%= product.images.image %>">
+                                <% } else {%>
+                                    src="https://via.placeholder.com/200x100">
+                                    <% } %>
+                        </div>
+                        <div id="last-div" class="img-div">
+                            <img class="responsive-img" <% if (product.images.image !=undefined) {%>
+                            src="<%= product.images.image %>">
+                                <% } else {%>
+                                    src="https://via.placeholder.com/200x100">
+                                    <% } %>
+                        </div>
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </article>
+                <aside id="game-info">
+                    <div id="game-logo">
+                        <img class="responsive-img" <% if (product.logo !=undefined) {%>
+                        src="<%= product.logo%>">
+                            <% } else {%>
+                                src="https://via.placeholder.com/1120x500">
+                                <% } %>
+                    </div>
+                    <div id="game-desc">
+                        <div>
+                            <span>Desarrollador</span>
+                            <span>
+                                <%= product.developer %>
+                            </span>
+                        </div>
+                        <div>
+                            <span>Fecha de lanzamiento</span>
+                            <span>
+                                <%= product.release_date %>
+                            </span>
+                        </div>
+                        <div>
+                            <span>Plataforma</span>
+                            <span>
+                                <%= detallado.platform.join(", ") %></span>
+                            <% for( let i = 0; i < products.platforms.length; i++ ) { %>
+                                <span><%= products.platform[i].name %></span>
+                            <% } %>
+                        </div>
+                    </div>
+                    <div id=" game-info-button-wrapper">
+                                    <span id="price-tag">$<%= product.price %></span>
+                                    <button id="game-to-cart-btn">Añadir al Carro</button>
+                                    <button id="game-to-wishlist-btn">Añadir a Lista de Deseados</button>
+                        </div>
+                </aside>
+            </section>
+            <section id="extras-area">
+                <div id="req-dlc-wrapper">
+                    <h3>Requisitos del Sistema</h3>
+                    <article id="requisites">
+                        <div id="minimum">
+                            <div>
+                                <h4>Mínimos</h4>
+                            </div>
+                            <p>
+                                <%= product.min_requirements %>
+                            </p>
+                        </div>
+                        <div id="recommended">
+                            <div>
+                                <h4>Recomendados</h4>
+                            </div>
+                            <p>
+                                <%= product.rec_requirements %>
+                            </p>
+                        </div>
+                    </article>
+
+                    <article id="game-summary">
+                        <p>
+                            <%= product.description %>
+                        </p>
+                    </article>
+
+                </div>
+                <aside id="sale">
+                    <div id="sale-content-wrapper">
+                        <div id="sale-img">
+                            <img class="responsive-img" src="https://via.placeholder.com/200x300">
+                        </div>
+                        <div id="sale-title">
+                            <p>80% OFF</p>
+                        </div>
+                        <button id="sale-buy-btn">COMPRAR AHORA</button>
+                    </div>
+                </aside>
+            </section>
+        </main>
+
+        <%- include("../partials/footer.ejs") %>
 
 </body>
 
