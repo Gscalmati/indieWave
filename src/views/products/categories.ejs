@@ -19,7 +19,7 @@
         <main>
             <!-- Crear un section por cada una de las 5 categorias -->
             <div id="subtitle">
-                <a href="/products/categories/arcade">
+                <a href="/products/categories/Arcade">
                     <h2>Arcade</h2>
                 </a>
             </div>
@@ -29,19 +29,19 @@
                     <!-- crear cinco articles, cada uno con un juego perteneciente a la categoría correspondiente -->
                     <article class="category-article">
                         <div>
-                            <a href="/products/<%= arcade[i].id %> ">
-                                <img class="responsive-img" src="<%= arcade[i].logo %> "
+                            <a href="/products/<%= Arcade[i].id %> ">
+                                <img class="responsive-img" src="<%= Arcade[i].logo %> "
                                     alt="Foto producto Indie Game">
                             </a>
                         </div>
                         <div class="detalle">
                             <h3>
-                                <a href="/products/<%= arcade[i].id %> ">
-                                    <%= arcade[i].game_name %>
+                                <a href="/products/<%= Arcade[i].id %> ">
+                                    <%= Arcade[i].name %>
                                 </a>
                             </h3>
                             <p>
-                                $<%= arcade[i].price %>
+                                $<%= Arcade[i].price %>
                             </p>
                         </div>
                     </article>
@@ -49,24 +49,24 @@
             </section>
 
             <div id="subtitle">
-                <h2><a href="/products/categories/action">Acción</a></h2>
+                <h2><a href="/products/categories/Acción">Acción</a></h2>
             </div>
 
             <section id="category">
                 <% for( let i=0; i < 5; i++ ) { %>
                     <!-- crear cinco articles, cada uno con un juego perteneciente a la categoría correspondiente -->
                     <article class="category-article">
-                        <a href="/products/<%= action[i].id %> ">
+                        <a href="/products/<%= Acción[i].id %> ">
                             <div>
-                                <img class="responsive-img" src="<%= action[i].logo %> "
+                                <img class="responsive-img" src="<%= Acción[i].logo %> "
                                     alt="Foto producto Indie Game">
                             </div>
                             <div class="detalle">
                                 <h3>
-                                    <%= action[i].game_name %>
+                                    <%= Acción[i].name %>
                                 </h3>
                                 <p>
-                                    $<%= action[i].price %>
+                                    $<%= Acción[i].price %>
                                 </p>
                             </div>
                         </a>
@@ -75,24 +75,24 @@
             </section>
 
             <div id="subtitle">
-                <h2><a href="/products/categories/sports">Deportes</a></h2>
+                <h2><a href="/products/categories/Deportes">Deportes</a></h2>
             </div>
 
             <section id="category">
                 <% for( let i=0; i < 5; i++ ) { %>
                     <!-- crear cinco articles, cada uno con un juego perteneciente a la categoría correspondiente -->
                     <article class="category-article">
-                        <a href="/products/<%= sports[i].id %> ">
+                        <a href="/products/<%= Deportes[i].id %> ">
                             <div>
-                                <img class="responsive-img" src="<%= sports[i].logo %> "
+                                <img class="responsive-img" src="<%= Deportes[i].logo %> "
                                     alt="Foto producto Indie Game">
                             </div>
                             <div class="detalle">
                                 <h3>
-                                    <%= sports[i].game_name %>
+                                    <%= Deportes[i].name %>
                                 </h3>
                                 <p>
-                                    $<%= sports[i].price %>
+                                    $<%= Deportes[i].price %>
                                 </p>
                             </div>
                         </a>
@@ -101,24 +101,24 @@
             </section>
 
             <div id="subtitle">
-                <h2><a href="/products/categories/strategy">Estrategia</a></h2>
+                <h2><a href="/products/categories/Estrategia">Estrategia</a></h2>
             </div>
 
             <section id="category">
                 <% for( let i=0; i < 5; i++ ) { %>
                     <!-- crear cinco articles, cada uno con un juego perteneciente a la categoría correspondiente -->
                     <article class="category-article">
-                        <a href="/products/<%= strategy[i].id %> ">
+                        <a href="/products/<%= Estrategia[i].id %> ">
                             <div>
-                                <img class="responsive-img" src="<%= strategy[i].logo %> "
+                                <img class="responsive-img" src="<%= Estrategia[i].logo %> "
                                     alt="Foto producto Indie Game">
                             </div>
                             <div class="detalle">
                                 <h3>
-                                    <%= strategy[i].game_name %>
+                                    <%= Estrategia[i].name %>
                                 </h3>
                                 <p>
-                                    $<%= strategy[i].price %>
+                                    $<%= Estrategia[i].price %>
                                 </p>
                             </div>
                         </a>
@@ -127,24 +127,24 @@
             </section>
 
             <div id="subtitle">
-                <h2><a href="/products/categories/adventure">Aventuras</a></h2>
+                <h2><a href="/products/categories/Aventura">Aventuras</a></h2>
             </div>
 
             <section id="category">
                 <% for( let i=0; i < 5; i++ ) { %>
                     <!-- crear cinco articles, cada uno con un juego perteneciente a la categoría correspondiente -->
                     <article class="category-article">
-                        <a href="/products/<%= adventure[i].id %> ">
+                        <a href="/products/<%= Aventura[i].id %> ">
                         <div>
-                            <img class="responsive-img" src="<%= adventure[i].logo %> "
+                            <img class="responsive-img" src="<%= Aventura[i].logo %> "
                                 alt="Foto producto Indie Game">
                         </div>
                         <div class="detalle">
                             <h3>
-                                <%= adventure[i].game_name %>
+                                <%= Aventura[i].name %>
                             </h3>
                             <p>
-                                $<%= adventure[i].price %>
+                                $<%= Aventura[i].price %>
                             </p>
                         </div>
                         </a>

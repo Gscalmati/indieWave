@@ -27,24 +27,24 @@
                 <div id="genre">
                     <label for="genre">Género:</label>
                     <select name="genre">
-                        <option value="arcade" 
-                        <% if (product.genre === "arcade" ){ %> 
+                        <option value="Arcade" 
+                        <% if (product.genre.name === "Arcade" ){ %> 
                             selected 
                         <% } %> > Arcade </option>
-                        <option value="action"
-                        <% if (product.genre === "action" ){ %> 
+                        <option value="Acción"
+                        <% if (product.genre.name === "Acción" ){ %> 
                             selected 
                         <% } %> > Acción</option>
-                        <option value="sports"
-                        <% if (product.genre === "sports" ){ %> 
+                        <option value="Deportes"
+                        <% if (product.genre.name === "Deportes" ){ %> 
                             selected 
                         <% } %> > Deportes</option>
-                        <option value="strategy"
-                        <% if (product.genre === "strategy" ){ %> 
+                        <option value="Estrategia"
+                        <% if (product.genre.name === "Estrategia" ){ %> 
                             selected 
                         <% } %> > Estrategia</option>
-                        <option value="adventure" 
-                        <% if (product.genre === "adventure" ){ %> 
+                        <option value="Aventura" 
+                        <% if (product.genre.name === "Aventura" ){ %> 
                             selected 
                         <% } %> > Aventura</option>
                     </select>

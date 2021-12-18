@@ -3,7 +3,7 @@
         "id": 1,
         "game_name": "Gio",
         "developer": "El manija",
-        "genre": "arcade",
+        "genre": "Arcade",
         "email": "sedgars0@de.vu",
         "release_date": "06-10-2021",
         "platform": [],
@@ -18,7 +18,7 @@
         "id": 2,
         "game_name": "Voltsillam",
         "developer": "Epperson",
-        "genre": "action",
+        "genre": "Acción",
         "email": "gepperson1@ox.ac.uk",
         "release_date": "7/26/2021",
         "platform": [
@@ -36,7 +36,7 @@
         "id": 3,
         "game_name": "Fixflex",
         "developer": "Dukesbury",
-        "genre": "sports",
+        "genre": "Deportes",
         "email": "cdukesbury2@furl.net",
         "release_date": "8/30/2021",
         "platform": [
@@ -54,7 +54,7 @@
         "id": 4,
         "game_name": "Overhold",
         "developer": "Thickens",
-        "genre": "strategy",
+        "genre": "Estrategia",
         "email": "tthickens3@ning.com",
         "release_date": "12/10/2020",
         "platform": [
@@ -72,7 +72,7 @@
         "id": 5,
         "game_name": "Sub-Ex",
         "developer": "Downham",
-        "genre": "adventure",
+        "genre": "Aventura",
         "email": "sdownham4@blogspot.com",
         "release_date": "2/5/2021",
         "platform": [
@@ -90,7 +90,7 @@
         "id": 6,
         "game_name": "Ronstring",
         "developer": "Sangster",
-        "genre": "sports",
+        "genre": "Deportes",
         "email": "fsangster5@wikimedia.org",
         "release_date": "7/21/2021",
         "platform": [
@@ -109,7 +109,7 @@
         "id": 7,
         "game_name": "Ventosanzap",
         "developer": "Hogsden",
-        "genre": "arcade",
+        "genre": "Arcade",
         "email": "fhogsden6@latimes.com",
         "release_date": "11/20/2020",
         "platform": [
@@ -128,7 +128,7 @@
         "id": 8,
         "game_name": "Alpha",
         "developer": "Tutin",
-        "genre": "sports",
+        "genre": "Deportes",
         "email": "ctutin7@ebay.com",
         "release_date": "11/30/2020",
         "platform": [
@@ -146,7 +146,7 @@
         "id": 9,
         "game_name": "Alpha",
         "developer": "MacArdle",
-        "genre": "arcade",
+        "genre": "Arcade",
         "email": "amacardle8@earthlink.net",
         "release_date": "10/5/2021",
         "platform": [
@@ -163,7 +163,7 @@
         "id": 10,
         "game_name": "Overhold",
         "developer": "France",
-        "genre": "sports",
+        "genre": "Deportes",
         "email": "jfrance9@purevolume.com",
         "release_date": "4/3/2021",
         "platform": [
@@ -180,7 +180,7 @@
         "id": 11,
         "game_name": "Subin",
         "developer": "Girauld",
-        "genre": "arcade",
+        "genre": "Arcade",
         "email": "cgiraulda@accuweather.com",
         "release_date": "7/11/2021",
         "platform": [
@@ -198,7 +198,7 @@
         "id": 12,
         "game_name": "Redhold",
         "developer": "Wernham",
-        "genre": "sports",
+        "genre": "Deportes",
         "email": "awernhamb@flickr.com",
         "release_date": "5/14/2021",
         "platform": [
@@ -216,7 +216,7 @@
         "id": 13,
         "game_name": "Stronghold",
         "developer": "Starsmeare",
-        "genre": "arcade",
+        "genre": "Arcade",
         "email": "bstarsmearec@ca.gov",
         "release_date": "8/10/2021",
         "platform": [
@@ -234,7 +234,7 @@
         "id": 14,
         "game_name": "Tempsoft",
         "developer": "Earengey",
-        "genre": "strategy",
+        "genre": "Estrategia",
         "email": "uearengeyd@dropbox.com",
         "release_date": "3/19/2021",
         "platform": [
@@ -252,7 +252,7 @@
         "id": 16,
         "game_name": "Zontrax",
         "developer": "Bigly",
-        "genre": "action",
+        "genre": "Acción",
         "email": "ebiglyf@china.com.cn",
         "release_date": "12/21/2020",
         "platform": [
@@ -270,7 +270,7 @@
         "id": 17,
         "game_name": "Vagram",
         "developer": "Gurge",
-        "genre": "adventure",
+        "genre": "Aventura",
         "email": "egurgeg@sina.com.cn",
         "release_date": "6/28/2021",
         "platform": [
@@ -288,7 +288,7 @@
         "id": 18,
         "game_name": "Home Ing",
         "developer": "Ganforthe",
-        "genre": "adventure",
+        "genre": "Aventura",
         "email": "hganfortheh@nasa.gov",
         "release_date": "4/14/2021",
         "platform": [
@@ -306,7 +306,7 @@
         "id": 19,
         "game_name": "Fixflex",
         "developer": "Faulds",
-        "genre": "action",
+        "genre": "Acción",
         "email": "lfauldsi@sun.com",
         "release_date": "11/21/2020",
         "platform": [
@@ -324,7 +324,7 @@
         "id": 20,
         "game_name": "Konklux",
         "developer": "Rossey",
-        "genre": "strategy",
+        "genre": "Estrategia",
         "email": "rrosseyj@example.com",
         "release_date": "5/12/2021",
         "platform": [
@@ -343,7 +343,7 @@
         "id": 21,
         "game_name": "Duobam",
         "developer": "Folling",
-        "genre": "action",
+        "genre": "Acción",
         "email": "gfollingk@wp.com",
         "release_date": "3/21/2021",
         "platform": [
@@ -361,7 +361,7 @@
         "id": 22,
         "game_name": "Rank",
         "developer": "Joburn",
-        "genre": "action",
+        "genre": "Acción",
         "email": "cjoburnl@slideshare.net",
         "release_date": "8/2/2021",
         "platform": [
@@ -379,7 +379,7 @@
         "id": 23,
         "game_name": "Keylex",
         "developer": "Liddy",
-        "genre": "strategy",
+        "genre": "Estrategia",
         "email": "jliddym@auda.org.au",
         "release_date": "6/21/2021",
         "platform": [
@@ -397,7 +397,7 @@
         "id": 24,
         "game_name": "It",
         "developer": "Roskelley",
-        "genre": "adventure",
+        "genre": "Aventura",
         "email": "froskelleyn@eventbrite.com",
         "release_date": "2/4/2021",
         "platform": [
@@ -415,7 +415,7 @@
         "id": 25,
         "game_name": "Keylex",
         "developer": "Dahlborg",
-        "genre": "strategy",
+        "genre": "Estrategia",
         "email": "mdahlborgo@so-net.ne.jp",
         "release_date": "7/26/2021",
         "platform": [
@@ -433,7 +433,7 @@
         "id": 32,
         "game_name": "Undertale",
         "developer": "Tobyfox",
-        "genre": "adventure",
+        "genre": "Aventura",
         "email": "alla@hotmail.com",
         "release_date": "1998-05-12",
         "platform": [
@@ -454,7 +454,7 @@
         "id": 33,
         "game_name": "Overtale",
         "developer": "Toby Cat",
-        "genre": "action",
+        "genre": "Acción",
         "email": "Overtale@email.com",
         "release_date": "2021-10-31",
         "platform": [],
@@ -473,7 +473,7 @@
         "id": 34,
         "game_name": "Slay the Spire",
         "developer": "Gio",
-        "genre": "strategy",
+        "genre": "Estrategia",
         "email": "gioscalmati@hotmail.com",
         "release_date": "11-09-2001",
         "platform": [

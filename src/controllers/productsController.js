@@ -4,6 +4,9 @@ const fs = require("fs");
 //Requiere la base de datos
 const db = require("../../database/models")
 
+//Creo un objeto de referencia para las categorías
+//TODO
+
 let jsonProducts = fs.readFileSync(path.resolve(__dirname, '../data/products.json'), 'utf-8');
 let products = JSON.parse(jsonProducts);
 
@@ -22,14 +25,16 @@ const newId = function () {
 
 productsController = {
     categories: function (req, res) {
-        /*Creo un array por cada género*/
-        let arcade = products.filter((game) => game.genre == "arcade")
-        let action = products.filter((game) => game.genre == "action")
-        let sports = products.filter((game) => game.genre == "sports")
-        let strategy = products.filter((game) => game.genre == "strategy")
-        let adventure = products.filter((game) => game.genre == "adventure")
+        /*
+        Creo un array por cada género
+        let arcade ;
+        let Acción = products.filter((game) => game.genre == "Acción")
+        let Deportes = products.filter((game) => game.genre == "Deportes")
+        let Estrategia = products.filter((game) => game.genre == "Estrategia")
+        let Aventura = products.filter((game) => game.genre == "Aventura")
 
-        res.render("products/categories", { arcade, action, sports, strategy, adventure });
+        res.render("products/categories", { Arcade, Acción, Deportes, Estrategia, Aventura });
+        */
     },
 
     categorygames: function (req, res) {
@@ -39,19 +44,19 @@ productsController = {
 
         let title = ""
         switch (category) {
-            case "arcade":
+            case "Arcade":
                 title = "Arcade";
                 break;
-            case "action":
+            case "Acción":
                 title = "Acción"
                 break;
-            case "strategy":
+            case "Estrategia":
                 title = "Estrategia"
                 break;
-            case "adventure":
+            case "Aventura":
                 title = "Aventura"
                 break;
-            case "sports":
+            case "Deportes":
                 title = "Deportes"
                 break;
 
@@ -60,7 +65,7 @@ productsController = {
     },
     detail: function (req, res) {
         db.Products.findByPk(req.params.id, {
-            include: [{ association: "genres" }, { association: "images" }, { association: "platforms" }]
+            include: [{ association: "genre" }, { association: "images" }, { association: "platforms" }]
         })
             .then(function (product) {
                 res.render("products/productDetail", { product: product })
@@ -77,14 +82,19 @@ productsController = {
         res.redirect('/products/dashboard');
     },
 
+    
+    /*Este método no se ejecuta nunca
+
     list: function (req, res) {
         db.Products.findAll({
-            include: [{ association: "genres" }]
+            include: [{ association: "genre" }]
         })
             .then(function (products) {
                 res.render("products/categoryGames", { products: products })
             })
     },
+
+    */
 
     dashboard: function (req, res) {
 

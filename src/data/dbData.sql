@@ -14,7 +14,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `genres` WRITE;
 /*!40000 ALTER TABLE `genres` DISABLE KEYS */;
-INSERT INTO `genres` VALUES (1,'action'),(2,'arcade'),(3,'adventure'),(4,'sports'),(5,'strategy');
+INSERT INTO `genres` VALUES (1,'Acción'),(2,'Arcade'),(3,'Aventura'),(4,'Deportes'),(5,'Estrategia');
 /*!40000 ALTER TABLE `genres` ENABLE KEYS */;
 UNLOCK TABLES;
 
