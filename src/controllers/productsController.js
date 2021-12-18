@@ -32,46 +32,26 @@ productsController = {
 
             /* Creo un array de arrays donde el primer elemento es el nombre del género y los siguientes son los productos pertenecientes a ese género */
             let productsByGenre = [];
-            for (genre of genres){
+            for (genre of genres) {
                 let genreData = []
                 let products = await db.Products.findAll({ include: [{ association: "genre", where: { name: genre.name } }] });
                 genreData.push(genre.name);
-                for (product of products){
+                for (product of products) {
                     genreData.push(product);
                 }
                 productsByGenre.push(genreData);
             }
-            console.log(productsByGenre);
             res.render("products/categories", { productsByGenre });
         })()
     },
 
     categorygames: function (req, res) {
-        let category = req.params.category;
-
-        let categoryGames = products.filter((game) => game.genre == category)
-
-        let title = ""
-        switch (category) {
-            case "Arcade":
-                title = "Arcade";
-                break;
-            case "Acción":
-                title = "Acción"
-                break;
-            case "Estrategia":
-                title = "Estrategia"
-                break;
-            case "Aventura":
-                title = "Aventura"
-                break;
-            case "Deportes":
-                title = "Deportes"
-                break;
-
-        }
-        res.render("products/categoryGames", { categoryGames, category, title });
+        (async () => {
+            let categoryGames = await db.Products.findAll({ include: [{ association: "genre", where: { name: req.params.category } }] });
+            res.render("products/categoryGames", { categoryGames, category: req.params.category });
+        })()
     },
+
     detail: function (req, res) {
         db.Products.findByPk(req.params.id, {
             include: [{ association: "genre" }, { association: "images" }, { association: "platforms" }]
