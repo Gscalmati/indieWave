@@ -72,10 +72,15 @@ productsController = {
                     productPlatforms.push(platform.name);
                 }
 
-                /* Limito la búsqueda a 4 imágenes?? */
-                let productImages = await db.Products.findAll({where : { product_id : product.id}});
+                /* Limito la búsqueda a 5 imágenes por ahora */
+                let productImages = []
+                let images = await db.Images.findAll({limit: 5, where : { product_id : product.id}});
+                for (image of images) {
+                    productImages.push(image.image);
+                }
 
-                res.render("products/productDetail", { product, productPlatforms, productImages })
+                res.render("products/productDetail", { product, productPlatforms, productImages });
+
             } catch (error) {
                 console.log(error)
             }
