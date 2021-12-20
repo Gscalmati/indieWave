@@ -101,12 +101,17 @@ let usersController = {
 
     logout: (req, res) => {
         req.session.destroy();
-        //res.clearCookie("usuario")  Esto va a utilizarse cuando hagamos un Autologin una vez realizad la BD
+        res.clearCookie("email") //Esto va a utilizarse cuando hagamos un Autologin una vez realizad la BD
         res.redirect("/")
     },
 
     profile: (req, res) => {
         res.render("users/profile");
+    },
+
+    editProfile: (req, res) => {
+        res.render("users/edit")
+
     }
 }
 
