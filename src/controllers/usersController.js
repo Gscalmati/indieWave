@@ -60,11 +60,6 @@ let usersController = {
 
     login: (req, res) => {
 
-
-        /*if (req.cookies.usuario) {
-            return res.render("users/login", { usuario: req.cookies.usuario });
-        }*/
-
         res.render("users/login");
     },
 
@@ -110,8 +105,25 @@ let usersController = {
     },
 
     editProfile: (req, res) => {
-        res.render("users/edit")
 
+        (async function() {
+            try {
+                console.log(req.session.userLogged)
+
+                editUser = await db.Users.findByPk(req.session.userLogged.id);
+
+                return res.render("users/edit", { userLogged: editUser })
+
+            } catch (error) {
+                console.log(error);
+            }
+        })()
+
+    },
+
+    saveProfile: (req, res) => {
+        console.log(req.body.name)
+        res.send("Culo");
     }
 }
 
