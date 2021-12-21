@@ -39,4 +39,6 @@ router.get('/profile', authMiddleware, usersController.profile);
 
 router.get('/profile/edit', authMiddleware, usersController.editProfile);
 
+router.put('/profile/edit', authMiddleware, usersController.saveProfile);
+
 module.exports = router;

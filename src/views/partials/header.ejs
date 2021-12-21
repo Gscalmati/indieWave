@@ -8,7 +8,7 @@
         <nav>
             <ul>
                 <li><a href="/products">Categorías</a></li>
-                <% if (locals.userLogged && locals.userLogged.admin) { %>
+                <% if (locals.loggedSession && locals.userLogged && locals.userLogged.admin) { %>
                     <li><a href="/products/dashboard">Dashboard</a></li>
                     <% } else {%>
                         <li><a href="#">Ofertas</a></li>
