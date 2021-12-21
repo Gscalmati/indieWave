@@ -20,14 +20,14 @@
                                             <img src="<%= locals.userLogged.profile_pic %>" alt="Foto Perfil">
                                         </div>
                                         <span>
-                            <%= locals.userLogged.username %>
-                        </span>
+                                            <%= locals.userLogged.username %>
+                                        </span>
 
                                     </a>
                                     <!--Cambiar por imagen de perfil?-->
                                 </li>
                                 <li><a href="/users/logout">Log Out</a></li>
-                                <%  } else { %>
+                                <% } else { %>
                                     <li><a href="/users/register">Registrarse</a></li>
                                     <li><a href="/users/login">Ingresar</a></li>
                                     <li><a href="#">Ayuda</a></li>
@@ -37,12 +37,10 @@
         </nav>
         <div class="iconos">
 
-            <a href="#"><i class="fas fa-search"></i></a>
-            <% if (locals.loggedSession) { %>
-                <a href="/products/shoppingCart"><i class="fas fa-shopping-cart"></i></a>
-                <%  } %>
-
-
+                <input id="search-bar" type="text" placeholder="Barra de búsqueda"></input><i class="fas fa-search"></i>
+                <% if (locals.loggedSession) { %>
+                    <a href="/products/shoppingCart"><i class="fas fa-shopping-cart"></i></a>
+                    <% } %>
         </div>
     </div>
 </header>
