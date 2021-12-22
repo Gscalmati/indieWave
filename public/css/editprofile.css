@@ -1,0 +1,173 @@
+/*** EDIT PROFILE ***/
+
+#profile-edit-main {
+    display: flex;
+    flex-direction: column;
+}
+
+#profile-edit-main form {
+    margin: auto auto;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+
+/* PROFILE PIC */
+
+#profile-edit-main #profile-pic-wrapper {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#profile-edit-main #profile-pic-wrapper #image-wrapper {
+    width: 150px;
+    height: 150px;
+    background-color: black;
+}
+
+#profile-edit-main #profile-pic-wrapper #image-wrapper img {
+    width: 100%;
+    border: solid 3px var(--turquoise);
+    height: 100%;
+    box-sizing: border-box;
+    object-fit: contain;
+}
+
+
+/* INPUT */
+
+#profile-edit-main #profile-pic-wrapper input {
+    margin-top: 50px;
+}
+
+#profile-edit-main #general-wrapper #input-wrapper {
+    width: 100%;
+    text-align: center;
+}
+
+#profile-edit-main #general-wrapper #input-wrapper div {
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+#profile-edit-main #general-wrapper #input-wrapper input {
+    font-family: ubuntu;
+    height: 25px;
+    font-size: 12px;
+    margin-top: 20px;
+    width: 50%;
+    background-color: silver;
+    box-shadow: black 3px 4px;
+    outline: none;
+}
+
+
+/* BUTTON */
+
+#profile-edit-main #button-wrapper {
+    display: flex;
+    justify-content: center;
+    height: 30px;
+    margin-bottom: 15px;
+}
+
+#profile-edit-main .styled-buttons {
+    width: 30%;
+    height: 100%;
+    margin-top: 15px;
+}
+
+
+/** TABLET **/
+
+@media (min-width: 768px) and (max-width:1024px) {
+    #profile-edit-main #general-wrapper #input-wrapper div {
+        font-size: 16px;
+    }
+    #profile-edit-main .styled-buttons {
+        font-size: 18px;
+    }
+}
+
+
+/** DESKTOP **/
+
+@media (min-width:1025px) {
+    #profile-edit-main {
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        margin: auto auto;
+    }
+    #profile-edit-main form {
+        margin: auto auto;
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+    }
+    #profile-edit-main #general-wrapper {
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+        justify-content: space-around;
+    }
+    /* PROFILE PIC */
+    #profile-edit-main #profile-pic-wrapper {
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #profile-edit-main #profile-pic-wrapper #image-wrapper {
+        width: 300px;
+        height: 300px;
+        background-color: black;
+    }
+    #profile-edit-main #profile-pic-wrapper #image-wrapper img {
+        width: 100%;
+        border: solid 3px var(--turquoise);
+        height: 100%;
+        box-sizing: border-box;
+        object-fit: contain;
+    }
+    /* INPUT */
+    #profile-edit-main #profile-pic-wrapper input {
+        margin-top: 50px;
+    }
+    #profile-edit-main #general-wrapper #input-wrapper {
+        width: 50%;
+        text-align: center;
+    }
+    #profile-edit-main #general-wrapper #input-wrapper div {
+        font-size: 18px;
+        display: flex;
+        justify-content: space-between;
+    }
+    #profile-edit-main #general-wrapper #input-wrapper input {
+        font-family: ubuntu;
+        height: 30px;
+        font-size: 18px;
+        margin-top: 20px;
+        width: 50%;
+        background-color: silver;
+        box-shadow: black 3px 4px;
+        outline: none;
+    }
+    /* BUTTON */
+    #profile-edit-main #button-wrapper {
+        display: flex;
+        justify-content: center;
+        height: 50px
+    }
+    #profile-edit-main .styled-buttons {
+        width: 30%;
+        height: 100%;
+        margin-top: 30px;
+        font-size: 24px;
+    }
+}

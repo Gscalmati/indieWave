@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="/css/style.css">
-    <!-- <link rel="stylesheet" href="/css/galicia.css"> -->
+    <!-- <link rel="stylesheet" href="/css/editprofile.css"> -->
     <title>IndieWave</title>
 
     <link rel="icon" href="/img/favicon.ico" type="image/x-icon" />
@@ -18,47 +18,51 @@
     <%- include("../partials/header.ejs") %>
 
         <main>
-            <form id="create-form" action="/users/profile/edit?_method=PUT" method="POST">
-                <div class="flex-wrapper">
-                    <div id="profile-div">
-                        <div id="profilepic-profile">
-                            <img id="img-profilepic" src="<%= userLogged.profile_pic %>">
+            <div id="profile-edit-main">
+                <form action="/users/profile/edit?_method=PUT" method="POST">
+                    <div id="general-wrapper">
+                        <div id="profile-pic-wrapper">
+                            <div id="image-wrapper">
+                                <img src="<%= userLogged.profile_pic %>">
+                            </div>
+                            <input type="file" name="profilepic" id="profilepic" aria-label="nombre del juego" accept=".jpg, .jgpeg, .png">
                             <!-- if profilepic return profile else default-img -->
                         </div>
-                        <div id="wrapper">
-                            <div id="username-surname">
-                                <h2>
-                                    <input type="text" name="username" id="username" aria-label="nombre del juego" value="<%= userLogged.username%>">
-                                </h2>
+                        <div id="input-wrapper">
+                            <div>
+                                <label for="username">Nombre de usuario</label>
+                                <input type="text" name="username" id="username" aria-label="nombre del juego" value="<%= userLogged.username%>">
+                            </div>
 
-                                <h2 id="name">
-                                    <input type="text" name="name" id="name" aria-label="nombre del juego" value="<%= userLogged.name%>">
-                                </h2>
-                                <h2 id="lastname">
-                                    <input type="text" name="surname" id="surname" aria-label="nombre del juego" value="<%= userLogged.surname %>">
-
-                                </h2>
-
-                                <div id="email-profile">
-                                    <h3>
-                                        <input type="text" name="email" id="email" aria-label="nombre del juego" value="<%= userLogged.email %>">
-                                    </h3>
-                                </div>
-
-                                <div id="password">
-                                    <h3>
-                                        <input type="password" name="password" id="password" aria-label="nombre del juego" value="<%= userLogged.password %>">
-                                    </h3>
-                                </div>
+                            <div>
+                                <label for="name">Nombre</label>
+                                <input type="text" name="name" id="name" aria-label="nombre del juego" value="<%= userLogged.name%>">
+                            </div>
+                            <div>
+                                <label for="username">Apellido</label>
+                                <input type="text" name="surname" id="surname" aria-label="nombre del juego" value="<%= userLogged.surname %>">
 
                             </div>
 
+                            <div>
+                                <label for="email">Email</label>
+                                <input type="text" name="email" id="email" aria-label="nombre del juego" value="<%= userLogged.email %>">
+                            </div>
+
+                            <div>
+
+                                <label for="password">Contraseña</label>
+                                <input type="password" name="password" id="password" aria-label="nombre del juego" value="<%= userLogged.password %>">
+
+                            </div>
                         </div>
                     </div>
-                </div>
-                <button type="submit" id="send-btn">Editar</button>
-            </form>
+                    <div id="button-wrapper">
+                        <button class="styled-buttons" type="submit">Guardar</button>
+                    </div>
 
+                </form>
+            </div>
 
         </main>
 
