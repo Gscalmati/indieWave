@@ -172,12 +172,16 @@ header .iconos {
     justify-content: center;
 }
 
-header .iconos #search-bar{
+header .iconos #search-bar {
     font-size: 0.6em;
+    font-family: 'ubuntu';
 }
 
-header .iconos .fa-search{
-    margin: auto 5px;
+header .iconos #search-button {
+    background-color: black;
+    border: none;
+    color: var(--steelpink);
+    font-size: 0.6rem;
 }
 
 header a {
@@ -314,8 +318,12 @@ footer .imagen-logo {
         justify-content: center;
     }
 
-    header .iconos .fa-search {
-        margin: auto 10px;
+    header .iconos #search-bar {
+        font-size: 1em;
+    }
+
+    header .iconos #search-button {
+        font-size: 1em;
     }
 
     header .barra-principal {
@@ -401,10 +409,12 @@ footer .imagen-logo {
         width: 70%;
     }
 
-    header .iconos .fa-search {
-        padding-left: 10px;
-        width: 25%;
-        text-align: left;
+    header .iconos #search-button {
+        font-size: 1.5rem;
+    }
+
+    header .iconos a .fa-shopping-cart{
+        margin-left: 20px;
     }
 
     header .iconos a {
