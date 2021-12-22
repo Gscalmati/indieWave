@@ -30,8 +30,9 @@ const productsController = require("../controllers/productsController");
 const authMiddleware = require("../middlewares/authMiddleware");
 const authAdminMiddleware = require("../middlewares/authAdminMiddleware");
 
+/* Lista de productos por categoría */
 router.get("/", productsController.categories); //authAdMinddleware
-router.post("/", uploadProduct.fields([{ name: "logo" }, { name: "images" }]), productsController.store);
+
 
 /* CRUD */
 router.get("/dashboard", authAdminMiddleware, productsController.dashboard);
@@ -39,20 +40,26 @@ router.get("/dashboard", authAdminMiddleware, productsController.dashboard);
 /* Carrito */
 router.get("/shoppingCart", authMiddleware, productsController.cart);
 
-/* Editar producto */
+/* Vista editar producto */
 router.get("/edit/:id", productsController.edit);
 
-//router.post("/edit", productsController.edit); Esta ruta está alpedovich.
+router.post("/", uploadProduct.fields([{ name: "logo" }, { name: "images" }]), productsController.store);
 
 /*Actualizar producto */
 router.put("/edit/:id", uploadProduct.fields([{ name: "logo" }, { name: "images" }]), productsController.update);
-/* Crear Producto*/
+
+/* Vista crear Producto*/
 router.get("/create", productsController.create);
 
 /* Detalle de producto*/
 router.get("/:id", productsController.detail);
 
+/* Lista de productos de la categoría "category" */
 router.get("/categories/:category", productsController.categorygames);
+
+/* Vista de resultado de búsqueda de productos */
+router.get("/search", productsController.search);
+
 /*Borrar producto */
 router.delete('/dashboard/:id', productsController.delete);
 

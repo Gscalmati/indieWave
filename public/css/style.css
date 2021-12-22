@@ -170,12 +170,25 @@ header .iconos {
     justify-content: center;
 }
 
+<<<<<<< HEAD
 header .iconos #search-bar {
+=======
+header .iconos #search-form #search-bar {
+>>>>>>> e987d3913acc5d4a20a051951e76ce1710ffce34
     font-size: 0.6em;
+    font-family: 'ubuntu';
 }
 
+<<<<<<< HEAD
 header .iconos .fa-search {
     margin: auto 5px;
+=======
+header .iconos #search-form #search-button {
+    background-color: black;
+    border: none;
+    color: var(--steelpink);
+    font-size: 0.6rem;
+>>>>>>> e987d3913acc5d4a20a051951e76ce1710ffce34
 }
 
 header a {
@@ -314,8 +327,18 @@ footer .imagen-logo {
         display: flex;
         justify-content: center;
     }
+<<<<<<< HEAD
     header .iconos .fa-search {
         margin: auto 10px;
+=======
+
+    header .iconos #search-form #search-bar {
+        font-size: 1em;
+    }
+
+    header .iconos #search-form #search-button {
+        font-size: 1em;
+>>>>>>> e987d3913acc5d4a20a051951e76ce1710ffce34
     }
     header .barra-principal {
         max-height: 100%;
@@ -389,13 +412,29 @@ footer .imagen-logo {
         justify-content: flex-start;
         font-size: 1.5rem;
     }
+<<<<<<< HEAD
     header .iconos #search-bar {
+=======
+
+    header .iconos #search-form #search-bar {
+>>>>>>> e987d3913acc5d4a20a051951e76ce1710ffce34
         width: 70%;
+        font-size: 1rem;
     }
+<<<<<<< HEAD
     header .iconos .fa-search {
         padding-left: 10px;
         width: 25%;
         text-align: left;
+=======
+
+    header .iconos #search-form #search-button {
+        font-size: 1.5rem;
+    }
+
+    header .iconos a .fa-shopping-cart{
+        margin-left: 20px;
+>>>>>>> e987d3913acc5d4a20a051951e76ce1710ffce34
     }
     header .iconos a {
         width: 33%;
