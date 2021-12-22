@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon" />
+    <title>IndieWave</title>
+
+
+</head>
+
+<body>
+    <%- include("../partials/header.ejs") %>
+        <main>
+
+
+
+            <% if (notfound) { %>
+                <div id="subtitle">
+                    <h2>No hay resultados para tu búsqueda</h2>
+                </div>
+                <% } else { %>
+                    <div id="subtitle">
+                        <h2>Resultados de tu búsqueda:</h2>
+                    </div>
+                    <section id="category">
+                            <% for( let i=0; i < products.length; i++ ) { %>
+                            <article class="category-article">
+                                <div>
+                                    <a href="/products/<%= products[i].id %> ">
+                                        <img class="responsive-img" src="<%= products[i].logo %> "
+                                            alt="Foto producto Indie Game">
+                                    </a>
+                                </div>
+                                <div class="detalle">
+                                    <h3>
+                                        <a href="/products/<%= products[i].id %> ">
+                                            <%= products[i].name %>
+                                        </a>
+                                    </h3>
+                                    <p>
+                                        $<%= products[i].price %>
+                                    </p>
+                                </div>
+                            </article>
+                            <% } %>
+                        </section>
+                            <% } %>
+
+        </main>
+        <%- include("../partials/footer.ejs") %>
+</body>
+
+</html>

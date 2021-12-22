@@ -316,11 +316,15 @@ productsController = {
 
     search: function (req, res) {
         (async () => {
-            let query = req.query.query;
             try {
+            let query = req.query.query;
                 /* Busco productos cuyo nombre incluya la búsqueda del usuario*/
                 let products = await db.Products.findAll({ include: [{ association: "genre", order: [['name', 'ASC']], where: { name: { [Op.like]: `%${query}%` } } }] });
-                res.render("products/categoryGames", { categoryGames, category: req.params.category });
+                if (products.length > 0){
+                    res.render("products/searchResults", { products, notfound: false});
+                } else {
+                    res.render("products/searchResults", { notfound: true })
+                }
             } catch (error) {
                 console.log(error)
             }

@@ -51,14 +51,14 @@ router.put("/edit/:id", uploadProduct.fields([{ name: "logo" }, { name: "images"
 /* Vista crear Producto*/
 router.get("/create", productsController.create);
 
+/* Vista de resultado de búsqueda de productos */
+router.get("/search", productsController.search);
+
 /* Detalle de producto*/
 router.get("/:id", productsController.detail);
 
 /* Lista de productos de la categoría "category" */
 router.get("/categories/:category", productsController.categorygames);
-
-/* Vista de resultado de búsqueda de productos */
-router.get("/search", productsController.search);
 
 /*Borrar producto */
 router.delete('/dashboard/:id', productsController.delete);
