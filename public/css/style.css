@@ -172,12 +172,12 @@ header .iconos {
     justify-content: center;
 }
 
-header .iconos #search-bar {
+header .iconos #search-form #search-bar {
     font-size: 0.6em;
     font-family: 'ubuntu';
 }
 
-header .iconos #search-button {
+header .iconos #search-form #search-button {
     background-color: black;
     border: none;
     color: var(--steelpink);
@@ -318,11 +318,11 @@ footer .imagen-logo {
         justify-content: center;
     }
 
-    header .iconos #search-bar {
+    header .iconos #search-form #search-bar {
         font-size: 1em;
     }
 
-    header .iconos #search-button {
+    header .iconos #search-form #search-button {
         font-size: 1em;
     }
 
@@ -405,11 +405,12 @@ footer .imagen-logo {
         font-size: 1.5rem;
     }
 
-    header .iconos #search-bar {
+    header .iconos #search-form #search-bar {
         width: 70%;
+        font-size: 1rem;
     }
 
-    header .iconos #search-button {
+    header .iconos #search-form #search-button {
         font-size: 1.5rem;
     }
 

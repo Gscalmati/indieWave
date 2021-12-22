@@ -36,11 +36,13 @@
             </ul>
         </nav>
         <div class="iconos">
-
-                <input id="search-bar" type="text" placeholder="Barra de búsqueda"></input><button type="submit" id="search-button"><i class="fas fa-search"></i></button>
-                <% if (locals.loggedSession) { %>
-                    <a href="/products/shoppingCart"><i class="fas fa-shopping-cart"></i></a>
-                    <% } %>
+            <form id="search-form" method="GET" action="/products/search" >
+            <input id="search-bar" name="query" type="text" placeholder="Barra de búsqueda"></input><button type="submit"
+                id="search-button"><i class="fas fa-search"></i></button>
+            </form>
+            <% if (locals.loggedSession) { %>
+                <a href="/products/shoppingCart"><i class="fas fa-shopping-cart"></i></a>
+                <% } %>
         </div>
     </div>
 </header>
