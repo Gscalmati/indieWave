@@ -1,5 +1,6 @@
 const path = require("path");
 const fs = require("fs");
+const { Op } = require("sequelize");
 
 //Requiere la base de datos
 const db = require("../../database/models")
@@ -74,7 +75,7 @@ productsController = {
 
                 /* Limito la búsqueda a 5 imágenes por ahora */
                 let productImages = []
-                let images = await db.Images.findAll({limit: 5, where : { product_id : product.id}});
+                let images = await db.Images.findAll({ limit: 5, where: { product_id: product.id } });
                 for (image of images) {
                     productImages.push(image.image);
                 }
@@ -307,6 +308,19 @@ productsController = {
                 }
 
                 res.redirect('/products/dashboard');
+            } catch (error) {
+                console.log(error)
+            }
+        })()
+    },
+
+    search: function (req, res) {
+        (async () => {
+            let query = req.query.query;
+            try {
+                /* Busco productos cuyo nombre incluya la búsqueda del usuario*/
+                let products = await db.Products.findAll({ include: [{ association: "genre", order: [['name', 'ASC']], where: { name: { [Op.like]: `%${query}%` } } }] });
+                res.render("products/categoryGames", { categoryGames, category: req.params.category });
             } catch (error) {
                 console.log(error)
             }
