@@ -1,6 +1,6 @@
 const path = require("path");
 const fs = require("fs");
-const { Op } = require("sequelize");
+const sequelize = require("sequelize");
 
 //Requiere la base de datos
 const db = require("../../database/models")
@@ -317,11 +317,11 @@ productsController = {
     search: function (req, res) {
         (async () => {
             try {
-            let query = req.query.query;
+                let query = req.query.query;
                 /* Busco productos cuyo nombre incluya la búsqueda del usuario*/
-                let products = await db.Products.findAll({ include: [{ association: "genre", order: [['name', 'ASC']], where: { name: { [Op.like]: `%${query}%` } } }] });
-                if (products.length > 0){
-                    res.render("products/searchResults", { products, notfound: false});
+                let products = await db.Products.findAll({ include: [{ association: "genre"}], order: [['name', 'ASC']], where: { name : sequelize.where(sequelize.fn('LOWER', sequelize.col('Products.name')), 'LIKE', `%${query}%`) } } );
+                if (products.length > 0) {
+                    res.render("products/searchResults", { products, notfound: false });
                 } else {
                     res.render("products/searchResults", { notfound: true })
                 }
