@@ -321,11 +321,9 @@ footer .imagen-logo {
         display: flex;
         justify-content: center;
     }
-
     header .iconos #search-form #search-bar {
         font-size: 1em;
     }
-
     header .iconos #search-form #search-button {
         font-size: 1em;
     }
@@ -401,17 +399,14 @@ footer .imagen-logo {
         justify-content: flex-start;
         font-size: 1.5rem;
     }
-
     header .iconos #search-form #search-bar {
         width: 70%;
         font-size: 1rem;
     }
-
     header .iconos #search-form #search-button {
         font-size: 1.5rem;
     }
-
-    header .iconos a .fa-shopping-cart{
+    header .iconos a .fa-shopping-cart {
         margin-left: 20px;
     }
     header .iconos a {
@@ -2035,7 +2030,7 @@ main .flex-wrapper {
     }
     #profile-edit-main #general-wrapper {
         display: flex;
-        flex-direction: row;
+        flex-direction: row-reverse;
         height: 100%;
         justify-content: space-around;
     }

@@ -101,6 +101,7 @@ let usersController = {
     },
 
     profile: (req, res) => {
+
         res.render("users/profile");
     },
 
@@ -108,7 +109,6 @@ let usersController = {
 
         (async function() {
             try {
-                console.log(req.session.userLogged)
 
                 editUser = await db.Users.findByPk(req.session.userLogged.id);
 
@@ -122,8 +122,43 @@ let usersController = {
     },
 
     saveProfile: (req, res) => {
-        console.log(req.body.name)
-        res.send("Culo");
+
+        (async() => {
+            try {
+                let file;
+
+                if (req.file != undefined) {
+                    file = `/img/users/${req.file.filename}`
+                } else {
+                    file = await db.Users.findByPk(req.session.userLogged.id);
+                    file = file.profile_pic;
+
+                }
+
+
+                await db.Users.update({
+                    username: req.body.username,
+                    name: req.body.name,
+                    surname: req.body.surname,
+                    email: req.body.email,
+                    password: req.body.password,
+                    profile_pic: file
+                }, { where: { id: req.session.userLogged.id } })
+
+
+                let sessionId = req.session.userLogged.id;
+
+                req.session.userLogged = await db.Users.findByPk(sessionId, { raw: true });
+
+
+                // res.render("users/profile"); Usamos REDIRECT en cambio, porque necesitamos iniciar un nuevo request. Para actualiar LOCALS, mediante loggedUserMiddleware
+
+            } catch (error) {
+                console.log(error)
+            }
+            res.redirect("/users/profile")
+        })()
+
     }
 }
 

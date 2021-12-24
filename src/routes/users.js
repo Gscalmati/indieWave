@@ -7,6 +7,7 @@ const fs = require('fs');
 const multer = require("multer");
 const storageUsers = multer.diskStorage({
     destination: (req, file, cb) => {
+
         cb(null, path.resolve(__dirname, `../../public/img/users`));
     },
     filename: (req, file, cb) => {
@@ -15,6 +16,7 @@ const storageUsers = multer.diskStorage({
     }
 })
 const uploadUser = multer({ storage: storageUsers });
+
 
 const usersController = require("../controllers/usersController");
 
@@ -28,7 +30,7 @@ const authMiddleware = require('../middlewares/authMiddleware');
 router.get("/register", guestRoutesMiddleware, usersController.register);
 
 router.post("/register", loggedRoutesMiddleware, uploadUser.single("profile-pic"), userRegisterValidations, usersController.store);
-/* Galicia routes */
+/* Login routes */
 router.get("/login", guestRoutesMiddleware, usersController.login);
 router.post("/login", loggedRoutesMiddleware, usersController.logged);
 
@@ -39,6 +41,6 @@ router.get('/profile', authMiddleware, usersController.profile);
 
 router.get('/profile/edit', authMiddleware, usersController.editProfile);
 
-router.put('/profile/edit', authMiddleware, usersController.saveProfile);
+router.put('/profile/edit', authMiddleware, uploadUser.single("profile-pic"), usersController.saveProfile);
 
 module.exports = router;

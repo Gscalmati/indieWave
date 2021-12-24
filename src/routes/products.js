@@ -22,7 +22,7 @@ const storageProducts = multer.diskStorage({
         cb(null, newFilename)
     }
 })
-const uploadProduct = multer({storage: storageProducts });
+const uploadProduct = multer({ storage: storageProducts });
 
 const productsController = require("../controllers/productsController");
 
@@ -41,26 +41,26 @@ router.get("/dashboard", authAdminMiddleware, productsController.dashboard);
 router.get("/shoppingCart", authMiddleware, productsController.cart);
 
 /* Vista editar producto */
-router.get("/edit/:id", productsController.edit);
+router.get("/edit/:id", authAdminMiddleware, productsController.edit);
 
-router.post("/", uploadProduct.fields([{ name: "logo" }, { name: "images" }]), productsController.store);
+router.post("/", authAdminMiddleware, uploadProduct.fields([{ name: "logo" }, { name: "images" }]), productsController.store);
 
 /*Actualizar producto */
-router.put("/edit/:id", uploadProduct.fields([{ name: "logo" }, { name: "images" }]), productsController.update);
+router.put("/edit/:id", authAdminMiddleware, uploadProduct.fields([{ name: "logo" }, { name: "images" }]), productsController.update);
 
 /* Vista crear Producto*/
-router.get("/create", productsController.create);
+router.get("/create", authAdminMiddleware, productsController.create);
 
 /* Vista de resultado de búsqueda de productos */
-router.get("/search", productsController.search);
+router.get("/search", authMiddleware, productsController.search);
 
 /* Detalle de producto*/
-router.get("/:id", productsController.detail);
+router.get("/:id", authMiddleware, productsController.detail);
 
 /* Lista de productos de la categoría "category" */
-router.get("/categories/:category", productsController.categorygames);
+router.get("/categories/:category", authMiddleware, productsController.categorygames);
 
 /*Borrar producto */
-router.delete('/dashboard/:id', productsController.delete);
+router.delete('/dashboard/:id', authAdminMiddleware, productsController.delete);
 
 module.exports = router;
