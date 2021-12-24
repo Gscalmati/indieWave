@@ -1,14 +1,15 @@
 let db = require("../database/models");
 
 (async() => {
-    let products = await db.Products.findAll();
+    let products = await db.Products.findAll({ raw: true });
 
-    let genres = await db.Genres.findAll();
+    for (product of products) {
+        await db.Products_platforms.create({
+            product_id: product.id,
+            platform_id: 1
+        })
+    }
 
-    console.log("Productos");
-    console.log(products);
-    console.log("Generos");
-    console.log(genres);
 
 
 
