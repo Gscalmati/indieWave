@@ -41,11 +41,15 @@
                                             <% if (locals.errors && errors.password) { %>
                                                 <span class="error-msg"><i class="fas fa-exclamation-circle"></i> <%= errors.password.msg %> </span>
                                                 <% } %>
-                                                    <div id="checkbox-wrapper">
-                                                        <input type="checkbox" name="news" id="news">
-                                                        <label id="label-register" for="news">Me gustaría recibir novedades</label>
-                                                    </div>
-                                                    <button type="submit" id="submit-btn">Registrarme</button>
+                                                    <input type="password" name="repassword" id="repassword" aria-label="recontraseña" placeholder="Confirmar contraseña" required>
+                                                    <% if (locals.errors && errors.repassword) { %>
+                                                        <span class="error-msg"><i class="fas fa-exclamation-circle"></i> <%= errors.repassword.msg %> </span>
+                                                        <% } %>
+                                                            <div id="checkbox-wrapper">
+                                                                <input type="checkbox" name="news" id="news">
+                                                                <label id="label-register" for="news">Me gustaría recibir novedades</label>
+                                                            </div>
+                                                            <button type="submit" id="submit-btn">Registrarme</button>
                 </form>
             </div>
         </main>
