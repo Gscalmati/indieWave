@@ -982,11 +982,21 @@ main #extras-area #sale {
 
 /** MOBILE - TABLET **/
 
+#form-div #errors-ul {
+    margin: auto;
+    list-style: none;
+}
+
+#form-div #errors-ul li {
+    margin: 5px 0;
+}
+
 main #form-div {
     margin: 104.5px auto;
     height: 100vh;
     width: 100%;
     display: flex;
+    flex-direction: column;
 }
 
 #body-edit-create {

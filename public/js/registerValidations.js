@@ -52,7 +52,7 @@ window.onload = function() {
         if (errores.length > 0) {
             event.preventDefault()
             errores.forEach(elemento => {
-                erroresUL.innerHTML += "<li>" + elemento.msg + "</li>"
+                erroresUL.innerHTML += "<li>" + "<i class='fas fa-exclamation-circle'></i>" + elemento.msg + "</li>"
 
             })
         }
