@@ -10,9 +10,9 @@ const db = require("../../database/models")
 const { body } = require("express-validator");
 
 const validations = [
-    body("name").notEmpty().isLength({ min: 8 }).withMessage("Ingrese un nombre mayor a 2 caracteres")
+    body("name").notEmpty().isLength({ min: 2 }).withMessage("Ingrese un nombre mayor a 2 caracteres")
     .isAlpha('es-ES', { ignore: '\s' }).withMessage("Ingrese un nombre válido"),
-    body("surname").notEmpty().isLength({ min: 8 }).withMessage("Ingrese un apellido")
+    body("surname").notEmpty().isLength({ min: 2 }).withMessage("Ingrese un apellido mayor a 2 caracteres")
     .isAlpha('es-ES', { ignore: '\s' }).withMessage("Ingrese un apellido válido"),
     body("email").notEmpty().withMessage("Ingrese un email")
     .isEmail().withMessage("Ingrese un email con formato válido").bail()

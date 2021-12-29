@@ -10,6 +10,7 @@
     <title>IndieWave</title>
 
     <link rel="icon" href="/img/favicon.ico" type="image/x-icon" />
+    <script src="/js/registerValidations.js"></script>
 </head>
 
 <body>
@@ -17,31 +18,33 @@
     <%- include("../partials/header.ejs") %>
 
         <main>
+
             <div id="form-div">
+                <ul id=errors-ul class="error-msg"></ul>
                 <form id="register-form" method="post" enctype="multipart/form-data">
-                    <input type="text" name="name" id="name" aria-label="nombre" placeholder="Nombre" value="<%= locals.old && old.name %>" required>
-                    <input type="text" name="surname" id="surname" aria-label="apellido" value="<%= locals.old && old.surname %>" placeholder="Apellido" required>
+                    <input type="text" name="name" id="name" aria-label="nombre" placeholder="Nombre" value="<%= locals.old && old.name %>">
+                    <input type="text" name="surname" id="surname" aria-label="apellido" value="<%= locals.old && old.surname %>" placeholder="Apellido">
                     <% if ((locals.errors && errors.name) || (locals.errors && errors.surname)) { %>
                         <!-- Qué onda con este or ¿Cómo debería estar puesto? -->
                         <span class="error-msg"><i class="fas fa-exclamation-circle"></i> <%=(errors.name && errors.name.msg) || (errors.surname && errors.surname.msg)%></span>
                         <% } %>
                             <!--  -->
-                            <input type="email" name="email" id="email" aria-label="e-mail" placeholder="e-mail" value="<%= locals.old && old.email %>" required>
+                            <input type="email" name="email" id="email" aria-label="e-mail" placeholder="e-mail" value="<%= locals.old && old.email %>">
                             <% if (locals.errors && errors.email) { %>
                                 <span class="error-msg"><i class="fas fa-exclamation-circle"></i> <%= errors.email.msg %> </span>
                                 <% } %>
 
-                                    <input type="text" name="username" id="username" aria-label="nombre de usuario" placeholder="Nombre de usuario" value="<%= locals.old && old.username %>" required>
+                                    <input type="text" name="username" id="username" aria-label="nombre de usuario" placeholder="Nombre de usuario" value="<%= locals.old && old.username %>">
                                     <% if (locals.errors && errors.username) { %>
                                         <span class="error-msg"><i class="fas fa-exclamation-circle"></i> <%= errors.username.msg %> </span>
                                         <% } %>
                                             <label for="profile-pic" id="profile-pic">Cargar imagen de perfil</label>
                                             <input type="file" name="profile-pic" accept=".png, .jpeg, .jpg" id="profile-pic">
-                                            <input type="password" name="password" id="password" aria-label="contraseña" placeholder="Contraseña" value="<%= locals.old && old.password %>" required>
+                                            <input type="password" name="password" id="password" aria-label="contraseña" placeholder="Contraseña" value="<%= locals.old && old.password %>">
                                             <% if (locals.errors && errors.password) { %>
                                                 <span class="error-msg"><i class="fas fa-exclamation-circle"></i> <%= errors.password.msg %> </span>
                                                 <% } %>
-                                                    <input type="password" name="repassword" id="repassword" aria-label="recontraseña" placeholder="Confirmar contraseña" required>
+                                                    <input type="password" name="repassword" id="repassword" aria-label="recontraseña" placeholder="Confirmar contraseña">
                                                     <% if (locals.errors && errors.repassword) { %>
                                                         <span class="error-msg"><i class="fas fa-exclamation-circle"></i> <%= errors.repassword.msg %> </span>
                                                         <% } %>
