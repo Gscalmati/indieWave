@@ -112,3 +112,9 @@
 - Arreglamos *el impar* de macanas de Juani.
 - Gio tiene que armar un script para poblar products_genres.
 - Armamos script para fondo de galicia.
+
+## Miércoles 29/12/2021
+- Charla post-vacaciones de Juani.
+- Gio avanza front y back  validatins de registro.
+- **Gio etá felí**
+- Repartimos tareas de validaciones.
