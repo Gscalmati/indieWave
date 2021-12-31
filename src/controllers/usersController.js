@@ -13,7 +13,7 @@ const { Sequelize } = require("../../database/models");
 const { Op } = require("sequelize");
 
 /* Función para conseguir el nuevo ID */
-const newId = function() {
+const newId = function () {
     let idNum = 0;
     users.forEach(user => {
         if (user.id > idNum) {
@@ -28,7 +28,7 @@ let usersController = {
         res.render("users/register");
     },
 
-    store: function(req, res) {
+    store: function (req, res) {
         let errors = validationResult(req);
 
 
@@ -37,14 +37,14 @@ let usersController = {
             let file = req.file != undefined ? `/img/users/${req.file.filename}` : undefined;
 
             db.Users.create({
-                    username: req.body.username,
-                    name: req.body.name,
-                    surname: req.body.surname,
-                    email: req.body.email,
-                    profile_pic: file,
-                    password: bcryptjs.hashSync(req.body.password, 10),
-                    admin: false
-                })
+                username: req.body.username,
+                name: req.body.name,
+                surname: req.body.surname,
+                email: req.body.email,
+                profile_pic: file,
+                password: bcryptjs.hashSync(req.body.password, 10),
+                admin: false
+            })
                 .then(user => {
                     db.Shoppingcarts.create({
                         user_id: user.get("id")
@@ -65,28 +65,34 @@ let usersController = {
 
     logged: (req, res) => { /* Es importante modificar de NAME a USERNAME*/
         let userFound;
-        (async function() { // Creo un IIFE - Immediately Invoked Function Expression
+        (async function () { // Creo un IIFE - Immediately Invoked Function Expression
             try {
-                userFound = await db.Users.findOne({
-                    where: {
-                        [Op.or]: [{ username: req.body.username }, { email: req.body.username }]
-                    },
-                    raw: true
-                });
+                let errors = validationResult(req);
 
-                if (bcryptjs.compare(req.body.password, userFound.password)) {
-                    delete userFound.password
-                    req.session.userLogged = userFound;
+                if (errors.isEmpty()) {
+                    userFound = await db.Users.findOne({
+                        where: {
+                            [Op.or]: [{ username: req.body.username }, { email: req.body.username }]
+                        },
+                        raw: true
+                    });
 
-                    // Seteo de cookies
-                    if (req.body.remember != undefined) {
-                        res.cookie('email', userFound.email, { maxAge: 6000 * 100 * 10 })
+                    if (bcryptjs.compare(req.body.password, userFound.password)) {
+                        delete userFound.password
+                        req.session.userLogged = userFound;
+
+                        // Seteo de cookies
+                        if (req.body.remember != undefined) {
+                            res.cookie('email', userFound.email, { maxAge: 6000 * 100 * 10 })
+                        }
+
+
+                        return res.redirect("/");
+                    } else {
+                        res.render("users/login", { errors: {password: "Contraseña incorrecta"} });
                     }
-
-
-                    return res.redirect("/");
                 } else {
-                    res.render("users/login", { errors: "Usuario o contraseña incorrecta" });
+                    res.render("users/login", { errors: errors.mapped()});
                 }
             } catch (error) {
                 console.log(error);
@@ -107,7 +113,7 @@ let usersController = {
 
     editProfile: (req, res) => {
 
-        (async function() {
+        (async function () {
             try {
 
                 editUser = await db.Users.findByPk(req.session.userLogged.id);
@@ -123,7 +129,7 @@ let usersController = {
 
     saveProfile: (req, res) => {
 
-        (async() => {
+        (async () => {
             try {
                 let file;
 

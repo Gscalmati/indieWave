@@ -2,7 +2,7 @@ const db = require("../../database/models");
 const { body } = require("express-validator")
 
 const validations = [
-    body("username").notEmpty().withMessage("Ingrese un email o nombre de usuario")
+    body("username").notEmpty().withMessage("Ingrese un email o nombre de usuario").bail()
         .custom((value) => {
             return db.Users.findOne({
                 where: {
@@ -11,7 +11,7 @@ const validations = [
                 raw: true
             })
                 .then(function (result) {
-                    if (result) {
+                    if (!result) {
                         return Promise.reject("No encontramos un usuario con ese nombre/email");
                     }
                 })
