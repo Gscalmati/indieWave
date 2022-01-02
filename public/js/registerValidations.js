@@ -32,7 +32,7 @@ window.onload = function() {
         if (fieldUsername.value == "") {
             errores.push({ param: "username", msg: "El campo no puede estar vacío" })
         } else if (fieldUsername.value.length < 4) {
-            errores.push({ param: "username", msg: "El username debe tener al menos 4 caracteres" })
+            errores.push({ param: "username", msg: "El nombre de usuario debe tener al menos 4 caracteres" })
         }
 
         let fieldPassword = document.querySelector("input#password");
