@@ -33,8 +33,8 @@ router.get("/register", guestRoutesMiddleware, usersController.register);
 
 router.post("/register", loggedRoutesMiddleware, uploadUser.single("profile-pic"), userRegisterValidations, usersController.store);
 /* Login routes */
-router.get("/login", guestRoutesMiddleware, userLoginValidations, usersController.login);
-router.post("/login", loggedRoutesMiddleware, usersController.logged);
+router.get("/login", guestRoutesMiddleware, usersController.login);
+router.post("/login", loggedRoutesMiddleware, userLoginValidations, usersController.logged);
 
 
 router.get("/logout", usersController.logout);

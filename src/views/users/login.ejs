@@ -30,24 +30,21 @@
                             <% if (errors.username) { %>
                                 <div>
                                     <span class="error-msg"><i class="fas fa-exclamation-circle"></i>
-                                        <%= errors.username %>
+                                        <%= errors.username.msg %>
                                     </span>
                                 </div>
                                 <% } %>
                                     <% if (errors.password) { %>
                                         <div>
                                             <span class="error-msg"><i class="fas fa-exclamation-circle"></i>
-                                                <%= errors.username %>
+                                                <%= errors.password.msg %>
                                             </span>
                                         </div>
                                         <% } %>
                                             <% } %>
 
-                                                <input type="text" name="username" id="username"
-                                                    aria-label="nombre de usuario o e-mail"
-                                                    placeholder="Ingrese usuario o email">
-                                                <input type="password" name="password" id="password"
-                                                    aria-label="contraseña" placeholder="Contraseña">
+                                                <input type="text" name="username" id="username" aria-label="nombre de usuario o e-mail" placeholder="Ingrese usuario o email">
+                                                <input type="password" name="password" id="password" aria-label="contraseña" placeholder="Contraseña">
                                                 <div id="checkbox-wrapper">
                                                     <input type="checkbox" name="remember" id="remember">
                                                     <label id="label-login" for="remember">Recuérdame</label>

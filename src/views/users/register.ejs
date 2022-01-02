@@ -10,7 +10,7 @@
     <title>IndieWave</title>
 
     <link rel="icon" href="/img/favicon.ico" type="image/x-icon" />
-    <!-- <script src="/js/registerValidations.js"></script> -->
+    <script src="/js/registerValidations.js"></script>
 </head>
 
 <body>
@@ -20,43 +20,62 @@
         <main>
 
             <div id="form-div">
-                <ul id=errors-ul class="error-msg"></ul>
+                <!-- <ul id=errors-ul class="error-msg"></ul> -->
                 <form id="register-form" method="post" enctype="multipart/form-data">
                     <input type="text" name="name" id="name" aria-label="nombre" placeholder="Nombre" value="<%= locals.old && old.name %>">
                     <% if (locals.errors && errors.name) { %>
                         <!-- Qué onda con este or ¿Cómo debería estar puesto? -->
                         <span class="error-msg"><i class="fas fa-exclamation-circle"></i> <%=(errors.name && errors.name.msg)%></span>
-                        <% } %>
-                            <input type="text" name="surname" id="surname" aria-label="apellido" value="<%= locals.old && old.surname %>" placeholder="Apellido">
-                            <% if (locals.errors && errors.surname){ %>
-                                <!-- Qué onda con este or ¿Cómo debería estar puesto? -->
-                                <span class="error-msg"><i class="fas fa-exclamation-circle"></i> <%=(errors.surname && errors.surname.msg)%></span>
-                                <% } %>
-                                    <!--  -->
-                                    <input type="email" name="email" id="email" aria-label="e-mail" placeholder="e-mail" value="<%= locals.old && old.email %>">
-                                    <% if (locals.errors && errors.email) { %>
-                                        <span class="error-msg"><i class="fas fa-exclamation-circle"></i> <%= errors.email.msg %> </span>
+                        <% } else {%>
+                            <span class="error-msg" id="error-name"></span>
+                            <% } %>
+
+                                <input type="text" name="surname" id="surname" aria-label="apellido" value="<%= locals.old && old.surname %>" placeholder="Apellido">
+                                <% if (locals.errors && errors.surname){ %>
+                                    <!-- Qué onda con este or ¿Cómo debería estar puesto? -->
+                                    <span class="error-msg error-surname"><i class="fas fa-exclamation-circle"></i> <%=(errors.surname && errors.surname.msg)%></span>
+                                    <% } else {%>
+                                        <span class="error-msg" id="error-surname"></span>
                                         <% } %>
 
-                                            <input type="text" name="username" id="username" aria-label="nombre de usuario" placeholder="Nombre de usuario" value="<%= locals.old && old.username %>">
-                                            <% if (locals.errors && errors.username) { %>
-                                                <span class="error-msg"><i class="fas fa-exclamation-circle"></i> <%= errors.username.msg %> </span>
-                                                <% } %>
-                                                    <label for="profile-pic" id="profile-pic">Cargar imagen de perfil</label>
-                                                    <input type="file" name="profile-pic" accept=".png, .jpeg, .jpg" id="profile-pic">
-                                                    <input type="password" name="password" id="password" aria-label="contraseña" placeholder="Contraseña" value="<%= locals.old && old.password %>">
-                                                    <% if (locals.errors && errors.password) { %>
-                                                        <span class="error-msg"><i class="fas fa-exclamation-circle"></i> <%= errors.password.msg %> </span>
-                                                        <% } %>
-                                                            <input type="password" name="repassword" id="repassword" aria-label="recontraseña" placeholder="Confirmar contraseña">
-                                                            <% if (locals.errors && errors.repassword) { %>
-                                                                <span class="error-msg"><i class="fas fa-exclamation-circle"></i> <%= errors.repassword.msg %> </span>
+                                            <!--  -->
+                                            <input type="email" name="email" id="email" aria-label="e-mail" placeholder="e-mail" value="<%= locals.old && old.email %>">
+                                            <% if (locals.errors && errors.email) { %>
+                                                <span class="error-msg"><i class="fas fa-exclamation-circle"></i> <%= errors.email.msg %> </span>
+                                                <% } else {%>
+                                                    <span class="error-msg" id="error-email"></span>
+                                                    <% } %>
+
+                                                        <input type="text" name="username" id="username" aria-label="nombre de usuario" placeholder="Nombre de usuario" value="<%= locals.old && old.username %>">
+
+                                                        <% if (locals.errors && errors.username) { %>
+                                                            <span class="error-msg"><i class="fas fa-exclamation-circle"></i> <%= errors.username.msg %> </span>
+                                                            <% } else {%>
+                                                                <span class="error-msg" id="error-username"></span>
                                                                 <% } %>
-                                                                    <div id="checkbox-wrapper">
-                                                                        <input type="checkbox" name="news" id="news">
-                                                                        <label id="label-register" for="news">Me gustaría recibir novedades</label>
-                                                                    </div>
-                                                                    <button type="submit" id="submit-btn">Registrarme</button>
+                                                                    <label for="profile-pic" id="profile-pic">Cargar imagen de perfil</label>
+                                                                    <input type="file" name="profile-pic" accept=".png, .jpeg, .jpg" id="profile-pic">
+                                                                    <input type="password" name="password" id="password" aria-label="contraseña" placeholder="Contraseña" value="<%= locals.old && old.password %>">
+
+                                                                    <% if (locals.errors && errors.password) { %>
+                                                                        <span class="error-msg"><i class="fas fa-exclamation-circle"></i> <%= errors.password.msg %> </span>
+                                                                        <% } else {%>
+                                                                            <span class="error-msg" id="error-password"></span>
+                                                                            <% } %>
+                                                                                <input type="password" name="repassword" id="repassword" aria-label="recontraseña" placeholder="Confirmar contraseña">
+
+                                                                                <% if (locals.errors && errors.repassword) { %>
+                                                                                    <span class="error-msg"><i class="fas fa-exclamation-circle"></i> <%= errors.repassword.msg %> </span>
+
+                                                                                    <% } else {%>
+                                                                                        <span class="error-msg" id="error-repassword"></span>
+
+                                                                                        <% } %>
+                                                                                            <div id="checkbox-wrapper">
+                                                                                                <input type="checkbox" name="news" id="news">
+                                                                                                <label id="label-register" for="news">Me gustaría recibir novedades</label>
+                                                                                            </div>
+                                                                                            <button type="submit" id="submit-btn">Registrarme</button>
                 </form>
             </div>
         </main>
