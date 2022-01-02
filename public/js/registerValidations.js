@@ -52,7 +52,7 @@ window.onload = function() {
             event.preventDefault()
             errores.forEach(elemento => {
                 let error = document.querySelector("#error-" + elemento.param);
-                error.innerHTML += "<span>" + "<i class='fas fa-exclamation-circle'></i>" + elemento.msg + "</span>";
+                error.innerHTML = "<span>" + "<i class='fas fa-exclamation-circle'></i>" + elemento.msg + "</span>";
                 //erroresUL.innerHTML += "<li>" + "<i class='fas fa-exclamation-circle'></i>" + elemento.msg + "</li>"
             })
         }
