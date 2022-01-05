@@ -23,6 +23,7 @@ window.onload = function() {
 
         console.log(errores)
         let erroresUL = document.querySelector("#errors-ul")
+        erroresUL.innerHTML = "";
         if (errores.length > 0) {
             event.preventDefault()
             errores.forEach(elemento => {

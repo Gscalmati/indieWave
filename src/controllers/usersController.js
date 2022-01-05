@@ -13,6 +13,7 @@ const { Sequelize } = require("../../database/models");
 const { Op } = require("sequelize");
 
 /* Función para conseguir el nuevo ID */
+/*
 const newId = function() {
     let idNum = 0;
     users.forEach(user => {
@@ -22,6 +23,7 @@ const newId = function() {
     })
     return idNum + 1;
 }
+*/
 
 let usersController = {
     register: (req, res) => {
@@ -35,7 +37,6 @@ let usersController = {
         if (errors.isEmpty()) {
 
             let file = req.file != undefined ? `/img/users/${req.file.filename}` : undefined;
-
             db.Users.create({
                     username: req.body.username,
                     name: req.body.name,
@@ -64,12 +65,12 @@ let usersController = {
     },
 
     logged: (req, res) => { /* Es importante modificar de NAME a USERNAME*/
-        let userFound;
+
         (async function() { // Creo un IIFE - Immediately Invoked Function Expression
             try {
                 let errors = validationResult(req);
                 if (errors.isEmpty()) {
-                    userFound = await db.Users.findOne({
+                    let userFound = await db.Users.findOne({
                         where: {
                             [Op.or]: [{ username: req.body.username }, { email: req.body.username }]
                         },
@@ -77,7 +78,7 @@ let usersController = {
                     });
 
                     if (await bcryptjs.compare(req.body.password, userFound.password)) {
-
+                        console.log("Adentro");
                         delete userFound.password
                         req.session.userLogged = userFound;
 
@@ -89,6 +90,7 @@ let usersController = {
 
                         return res.redirect("/");
                     } else {
+                    
                         return res.render("users/login", { errors: { password: { msg: "Contraseña incorrecta" } } });
                     }
                 } else {
