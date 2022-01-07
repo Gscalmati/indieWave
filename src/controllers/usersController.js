@@ -30,7 +30,7 @@ let usersController = {
         res.render("users/register");
     },
 
-    store: function(req, res) {
+    store: function (req, res) {
         let errors = validationResult(req);
 
 
@@ -38,14 +38,14 @@ let usersController = {
 
             let file = req.file != undefined ? `/img/users/${req.file.filename}` : undefined;
             db.Users.create({
-                    username: req.body.username,
-                    name: req.body.name,
-                    surname: req.body.surname,
-                    email: req.body.email,
-                    profile_pic: file,
-                    password: bcryptjs.hashSync(req.body.password, 10),
-                    admin: false
-                })
+                username: req.body.username,
+                name: req.body.name,
+                surname: req.body.surname,
+                email: req.body.email,
+                profile_pic: file,
+                password: bcryptjs.hashSync(req.body.password, 10),
+                admin: false
+            })
                 .then(user => {
                     db.Shoppingcarts.create({
                         user_id: user.get("id")
@@ -66,7 +66,7 @@ let usersController = {
 
     logged: (req, res) => { /* Es importante modificar de NAME a USERNAME*/
 
-        (async function() { // Creo un IIFE - Immediately Invoked Function Expression
+        (async function () { // Creo un IIFE - Immediately Invoked Function Expression
             try {
                 let errors = validationResult(req);
                 if (errors.isEmpty()) {
@@ -90,7 +90,7 @@ let usersController = {
 
                         return res.redirect("/");
                     } else {
-                    
+
                         return res.render("users/login", { errors: { password: { msg: "Contraseña incorrecta" } } });
                     }
                 } else {
@@ -115,7 +115,7 @@ let usersController = {
 
     editProfile: (req, res) => {
 
-        (async function() {
+        (async function () {
             try {
 
                 editUser = await db.Users.findByPk(req.session.userLogged.id);
@@ -131,7 +131,7 @@ let usersController = {
 
     saveProfile: (req, res) => {
 
-        (async() => {
+        (async () => {
             try {
                 let file;
 
@@ -167,6 +167,36 @@ let usersController = {
             res.redirect("/users/profile")
         })()
 
+    },
+
+    changePassword: (req, res) => {
+        res.render("users/changePassword")
+    },
+
+    updatePassword: (req, res) => {
+        (async () => {
+            try {
+
+                let currentUser = await db.Users.findByPk(req.session.userLogged.id);
+
+                if (await bcryptjs.compare(req.body.oldPass, currentUser.password)) {
+                    
+                    await db.Users.update({
+                        password: await bcryptjs.hash(req.body.newPass, 10)
+                    }, { where: { id: currentUser.id } })
+
+                    console.log("Contraseña actualizada");
+                    return res.redirect("/users/profile")
+
+                } else {
+                    return res.redirect("/users/profile")
+                }
+
+
+            } catch (error) {
+                console.log(error)
+            }
+        })()
     }
 }
 

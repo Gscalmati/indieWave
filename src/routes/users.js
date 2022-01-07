@@ -43,6 +43,10 @@ router.get('/profile', authMiddleware, usersController.profile);
 
 router.get('/profile/edit', authMiddleware, usersController.editProfile);
 
-router.put('/profile/edit', authMiddleware, uploadUser.single("avatar"), usersController.saveProfile);
+router.get('/profile/changePassword', authMiddleware, usersController.changePassword);
+
+router.put('/profile/changePassword', authMiddleware, usersController.updatePassword);
+
+router.put('/profile/edit', authMiddleware, uploadUser.single("profile-pic"), usersController.saveProfile);
 
 module.exports = router;
