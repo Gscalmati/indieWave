@@ -176,22 +176,25 @@ let usersController = {
     updatePassword: (req, res) => {
         (async () => {
             try {
+                let errors = validationResult(req);
+                if (errors.isEmpty()) {
+                    let currentUser = await db.Users.findByPk(req.session.userLogged.id);
 
-                let currentUser = await db.Users.findByPk(req.session.userLogged.id);
+                    if (await bcryptjs.compare(req.body.oldPass, currentUser.password)) {
 
-                if (await bcryptjs.compare(req.body.oldPass, currentUser.password)) {
-                    
-                    await db.Users.update({
-                        password: await bcryptjs.hash(req.body.newPass, 10)
-                    }, { where: { id: currentUser.id } })
+                        await db.Users.update({
+                            password: await bcryptjs.hash(req.body.newPass, 10)
+                        }, { where: { id: currentUser.id } })
 
-                    console.log("Contraseña actualizada");
-                    return res.redirect("/users/profile")
+                        console.log("Contraseña actualizada");
+                        return res.redirect("/users/profile")
 
+                    } else {
+                        return res.render("users/changePassword", { errors: { oldPass: { msg: "La contraseña actual ingresada es incorrecta" } } });
+                    }
                 } else {
-                    return res.redirect("/users/profile")
+                    return res.render("users/changePassword", { errors: errors.mapped() });
                 }
-
 
             } catch (error) {
                 console.log(error)

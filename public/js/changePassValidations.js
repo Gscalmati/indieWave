@@ -15,8 +15,8 @@ window.onload = function () {
 
         if (fieldNewPass.value == "") {
             errores.push({ param: "newPass", msg: "FRONT Ingrese la contraseña nueva" })
-        } else if (fieldNewPass.value.length < 8) {
-            errores.push({ param: "newPass", msg: "FRONT La contraseña nueva debe tener al menos 8 caracteres" })
+        } else if (fieldNewPass.value.length < 8 || fieldNewPass.value.length > 12) {
+            errores.push({ param: "newPass", msg: "FRONT La nueva contraseña debe tener entre 8 y 12 caracteres" })
         }
 
         let fieldConfirmPass = document.querySelector("input#confirmPass");
