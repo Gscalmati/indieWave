@@ -53,8 +53,15 @@
                                                             <% } else {%>
                                                                 <span class="error-msg" id="error-username"></span>
                                                                 <% } %>
-                                                                    <label for="profile-pic" id="profile-pic">Cargar imagen de perfil</label>
-                                                                    <input type="file" name="profile-pic" accept=".png, .jpeg, .jpg" id="profile-pic">
+
+                                                                    <label for="avatar" id="avatar">Cargar imagen de perfil</label>
+                                                                    <input type="file" name="avatar" accept=".png, .jpeg, .jpg" id="avatar">
+                                                                    <% if (locals.errors && errors.avatar) { %>
+                                                                        <span class="error-msg"><i class="fas fa-exclamation-circle"></i> <%= errors.avatar.msg %> </span>
+                                                                        <% } else {%>
+                                                                            <span class="error-msg" id="error-avatar"></span>
+                                                                            <% } %>
+                                                                    
                                                                     <input type="password" name="password" id="password" aria-label="contraseña" placeholder="Contraseña" value="<%= locals.old && old.password %>">
 
                                                                     <% if (locals.errors && errors.password) { %>

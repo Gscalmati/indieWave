@@ -31,7 +31,7 @@ const authMiddleware = require('../middlewares/authMiddleware');
 
 router.get("/register", guestRoutesMiddleware, usersController.register);
 
-router.post("/register", loggedRoutesMiddleware, uploadUser.single("profile-pic"), userRegisterValidations, usersController.store);
+router.post("/register", loggedRoutesMiddleware, uploadUser.single("avatar"), userRegisterValidations, usersController.store);
 /* Login routes */
 router.get("/login", guestRoutesMiddleware, usersController.login);
 router.post("/login", loggedRoutesMiddleware, userLoginValidations, usersController.logged);
@@ -43,6 +43,6 @@ router.get('/profile', authMiddleware, usersController.profile);
 
 router.get('/profile/edit', authMiddleware, usersController.editProfile);
 
-router.put('/profile/edit', authMiddleware, uploadUser.single("profile-pic"), usersController.saveProfile);
+router.put('/profile/edit', authMiddleware, uploadUser.single("avatar"), usersController.saveProfile);
 
 module.exports = router;
