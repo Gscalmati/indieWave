@@ -21,7 +21,6 @@ window.onload = function() {
             errores.push({ param: "password", msg: "Ingrese la contraseña" })
         }
 
-        console.log(errores)
         let erroresUL = document.querySelector("#errors-ul")
         erroresUL.innerHTML = "";
         if (errores.length > 0) {
