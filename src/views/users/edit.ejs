@@ -25,35 +25,39 @@
                         <div id="input-wrapper">
                             <div>
                                 <label for="username">Nombre de usuario</label>
-                                <input type="text" name="username" id="username" aria-label="nombre del juego" value="<%= userLogged.username%>">
+                                <input type="text" name="username" id="username" aria-label="nombre del juego"
+                                    value="<%= userLogged.username%>">
                             </div>
 
                             <div>
                                 <label for="name">Nombre</label>
-                                <input type="text" name="name" id="name" aria-label="nombre del juego" value="<%= userLogged.name%>">
+                                <input type="text" name="name" id="name" aria-label="nombre del juego"
+                                    value="<%= userLogged.name%>">
                             </div>
                             <div>
                                 <label for="username">Apellido</label>
-                                <input type="text" name="surname" id="surname" aria-label="nombre del juego" value="<%= userLogged.surname %>">
+                                <input type="text" name="surname" id="surname" aria-label="nombre del juego"
+                                    value="<%= userLogged.surname %>">
 
                             </div>
 
                             <div>
                                 <label for="email">Email</label>
-                                <input type="text" name="email" id="email" aria-label="nombre del juego" value="<%= userLogged.email %>">
+                                <input type="text" name="email" id="email" aria-label="nombre del juego"
+                                    value="<%= userLogged.email %>">
                             </div>
 
                             <div id="changepass-btn">
-                                <form action="/users/profile/changePassword" method="get">
-                                    <button type="submit" id="changepass-btn">Cambiar Contraseña</button>
-                                </form>
+                                <button type="submit" id="button"><a href="/users/profile/changePassword"> Cambiar
+                                        Contraseña</a> </button>
                             </div>
                         </div>
                         <div id="profile-pic-wrapper">
                             <div id="image-wrapper">
                                 <img src="<%= userLogged.profile_pic %>">
                             </div>
-                            <input type="file" name="profile-pic" id="profile-pic" aria-label="nombre del juego" accept=".jpg, .jgpeg, .png">
+                            <input type="file" name="profile-pic" id="profile-pic" aria-label="nombre del juego"
+                                accept=".jpg, .jgpeg, .png">
                             <!-- if profilepic return profile else default-img -->
                         </div>
                     </div>

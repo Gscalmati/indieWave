@@ -170,14 +170,32 @@ let usersController = {
     },
 
     changePassword: (req, res) => {
+        res.render("users/changePassword")
+    },
+
+    updatePassword: (req, res) => {
         (async () => {
             try {
-                
-                let loggedUser = await db.Users.findByPk(req.session.userLogged.id);
+
+                let currentUser = await db.Users.findByPk(req.session.userLogged.id);
+
+                if (await bcryptjs.compare(req.body.oldPass, currentUser.password)) {
+                    
+                    await db.Users.update({
+                        password: await bcryptjs.hash(req.body.newPass, 10)
+                    }, { where: { id: currentUser.id } })
+
+                    console.log("Contraseña actualizada");
+                    return res.redirect("/users/profile")
+
+                } else {
+                    return res.redirect("/users/profile")
+                }
+
+
             } catch (error) {
                 console.log(error)
             }
-            res.render("/users/changePassword", { oldPassword: loggedUser.password })
         })()
     }
 }
