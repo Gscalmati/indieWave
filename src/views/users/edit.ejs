@@ -43,11 +43,10 @@
                                 <input type="text" name="email" id="email" aria-label="nombre del juego" value="<%= userLogged.email %>">
                             </div>
 
-                            <div>
-
-                                <label for="password">Contraseña</label>
-                                <input type="password" name="password" id="password" aria-label="nombre del juego" value="<%= userLogged.password %>">
-
+                            <div id="changepass-btn">
+                                <form action="/users/profile/changePassword" method="get">
+                                    <button type="submit" id="changepass-btn">Cambiar Contraseña</button>
+                                </form>
                             </div>
                         </div>
                         <div id="profile-pic-wrapper">
