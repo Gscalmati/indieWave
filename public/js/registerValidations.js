@@ -1,8 +1,9 @@
 window.onload = function() {
-
+    console.log("Adentro de script")
     let formulario = document.querySelector("#register-form");
 
     formulario.addEventListener("submit", function(event) {
+      
         let errores = [];
         console.log("Todo parado")
 
@@ -22,6 +23,11 @@ window.onload = function() {
 
         if (fieldEmail.value.length == "") {
             errores.push({ param: "email", msg: "Ingrese un email" })
+        } else {
+            let regex = "\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b";
+            if (!regex.match(fieldEmail.value)) {
+            errores.push({ param: "email", msg: "Ingrese un email válido" }
+            )}
         }
 
         let fieldUsername = document.querySelector("input#username");
@@ -49,15 +55,14 @@ window.onload = function() {
             errores.push({ param: "repassword", msg: "Ambas contraseñas deben coincidir" })
         }
 
-        let fieldPic = document.querySelector("input#avatar");
+        let fieldPic = document.querySelector("input#profilePic");
         let picData = fieldPic.value;
         
         if (picData){
             let picExtension = picData.substring(
                 picData.lastIndexOf('.') + 1).toLowerCase();
-            console.log(picExtension)
             if (picExtension != "jpg" && picExtension != "png" && picExtension != "jpeg"){
-                errores.push({ param: "avatar", msg: "La imagen debe ser de formato JPG/JPEG/PNG" })
+                errores.push({ param: "profilePic", msg: "La imagen debe ser de formato JPG/JPEG/PNG" })
             } else {
                 console.log("Cumple con los formatos")
 

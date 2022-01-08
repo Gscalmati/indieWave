@@ -21,17 +21,17 @@ const uploadUser = multer({ storage: storageUsers });
 const usersController = require("../controllers/usersController");
 
 /* Middleware */
-const loggedRoutesMiddleware = require("../middlewares/loggedRoutesMiddleware");
-const guestRoutesMiddleware = require('../middlewares/guestRoutesMiddleware');
-const userRegisterValidations = require('../middlewares/userRegisterValidations');
-const userLoginValidations = require('../middlewares/userLoginValidations');
-const authMiddleware = require('../middlewares/authMiddleware');
+const loggedRoutesMiddleware = require("../middlewares/authentication/loggedRoutesMiddleware");
+const guestRoutesMiddleware = require('../middlewares/authentication/guestRoutesMiddleware');
+const userRegisterValidations = require('../middlewares/validations/userRegisterValidations');
+const userLoginValidations = require('../middlewares/validations/userLoginValidations');
+const authMiddleware = require('../middlewares/authentication/authMiddleware');
 
 
 
 router.get("/register", guestRoutesMiddleware, usersController.register);
 
-router.post("/register", loggedRoutesMiddleware, uploadUser.single("avatar"), userRegisterValidations, usersController.store);
+router.post("/register", loggedRoutesMiddleware, uploadUser.single("profilePic"), userRegisterValidations, usersController.store);
 /* Login routes */
 router.get("/login", guestRoutesMiddleware, usersController.login);
 router.post("/login", loggedRoutesMiddleware, userLoginValidations, usersController.logged);

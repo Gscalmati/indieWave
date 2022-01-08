@@ -6,12 +6,13 @@ let jsonUsers = fs.readFileSync(path.resolve(__dirname, '../data/users.json'), '
 let users = JSON.parse(jsonUsers);
 */
 
-const db = require("../../database/models")
+const db = require("../../../database/models")
 const { body } = require("express-validator");
+const { connect } = require("../../routes/users");
 
 const validations = [
     body("name").notEmpty().withMessage("El campo no puede estar vacío")
-    .isLength({ min: 2 }).withMessage("Ingrese un nombre mayor a 2 caracteres")
+    .isLength({ min: 3 }).withMessage("Ingrese un nombre mayor a 2 caracteres")
     .isAlpha('es-ES', { ignore: '\s' }).withMessage("Ingrese un nombre válido"),
     body("surname").notEmpty().withMessage("El campo no puede estar vacío")
     .isLength({ min: 2 }).withMessage("Ingrese un apellido mayor a 2 caracteres")
@@ -48,11 +49,20 @@ const validations = [
             })
     }),
     body("password").notEmpty().withMessage("Ingrese contraseña")
-    .isLength({ min: 8, max: 12 }).withMessage("La contraseña debe tener entre 8 y 12 caracteres"),
+    .isLength({ min: 8 }).withMessage("La contraseña debe mínimo 8 caracteres"),
     body("repassword").notEmpty().withMessage("El campo no puede estar vacío")
     .custom((pass, { req }) => { //Validacion para confirmar constraseña, traigo al "req" con el deconstructor
         return (pass == req.body.password)
-    }).withMessage("Las contraseñas no coinciden")
+    }).withMessage("Las contraseñas no coinciden"),
+
+    body("profilePic")
+    .custom((image, { req }) => {
+        if(req.file.mimetype === "image/png" || req.file.mimetype === "image/jpeg" || req.file.mimetype === "image/jpg"){
+            return true
+        }
+    })
+    .withMessage("La imagen debe ser de formato JPG/JPEG/PNG")
+    //De todas formas, la imagen se sigue subiendo a la carpeta USERS
 ]
 
 /* Validaciones de JSON

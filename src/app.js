@@ -34,7 +34,7 @@ app.set("view engine", "ejs");
 app.set("views", path.resolve(__dirname, "views"))
 
 /* Middleware Global */
-const loggedUserMiddleware = require("./middlewares/loggedUserMiddleware");
+const loggedUserMiddleware = require("./middlewares/authentication/loggedUserMiddleware");
 app.use(loggedUserMiddleware);
 
 /* Configuracion rutas */

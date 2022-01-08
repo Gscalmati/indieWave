@@ -27,8 +27,8 @@ const uploadProduct = multer({ storage: storageProducts });
 const productsController = require("../controllers/productsController");
 
 /* Middleware */
-const authMiddleware = require("../middlewares/authMiddleware");
-const authAdminMiddleware = require("../middlewares/authAdminMiddleware");
+const authMiddleware = require("../middlewares/authentication/authMiddleware");
+const authAdminMiddleware = require("../middlewares/authentication/authAdminMiddleware");
 
 /* Lista de productos por categoría */
 router.get("/", productsController.categories); //authAdMinddleware
