@@ -1,15 +1,17 @@
 window.onload = function(){
-    
+    console.log("Adentro")
     let form = document.querySelector("#profile-form")
 
     form.addEventListener("submit", function(event){
-
+        event.preventDefault()
         let errores = [];
         console.log("Todo parado")
 
         let fieldName = document.querySelector("input#name");
 
-        if (fieldName.value.length < 2) {
+        if (fieldName.value == ""){
+            errores.push({ param: "name", msg: "Ingrese un nombre mayor a 2 caracteres" })
+        } else if (fieldName.value.length < 2) {
             errores.push({ param: "name", msg: "Ingrese un nombre mayor a 2 caracteres" })
         }
 
@@ -25,8 +27,7 @@ window.onload = function(){
             errores.push({ param: "email", msg: "Ingrese un email" })
         } else {
             let regex = new RegExp("\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b");
-            console.log((regex.match(fieldEmail.value)))
-            if (regex.match(fieldEmail.value)) {
+            if (!regex.match(fieldEmail.value)) {
             errores.push({ param: "email", msg: "Ingrese un email válido" }
             )}
         }
@@ -42,11 +43,12 @@ window.onload = function(){
         let fieldPic = document.querySelector("input#profilePic");
         let picData = fieldPic.value;
         
-        if (picData){
+        if (picData != ""){
+            console.log("Se eligió una foto")
             let picExtension = picData.substring(
                 picData.lastIndexOf('.') + 1).toLowerCase();
             if (picExtension != "jpg" && picExtension != "png" && picExtension != "jpeg"){
-                errores.push({ param: "profilePic", msg: "La imagen debe ser de formato JPG/JPEG/PNG" })
+                errores.push({ param: "profilePic", msg: "La imagen debe ser de formato JPG/JPEG/PNG o ninguna" })
             } else {
                 console.log("Cumple con los formatos")
 

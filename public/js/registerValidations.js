@@ -57,7 +57,7 @@ window.onload = function() {
 
         let fieldPic = document.querySelector("input#profilePic");
         let picData = fieldPic.value;
-        console.log(picData)
+     
         if (picData != ""){
             console.log("Se eligió una foto")
             let picExtension = picData.substring(
