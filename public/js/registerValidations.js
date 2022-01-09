@@ -57,12 +57,13 @@ window.onload = function() {
 
         let fieldPic = document.querySelector("input#profilePic");
         let picData = fieldPic.value;
-        
-        if (picData){
+        console.log(picData)
+        if (picData != ""){
+            console.log("Se eligió una foto")
             let picExtension = picData.substring(
                 picData.lastIndexOf('.') + 1).toLowerCase();
             if (picExtension != "jpg" && picExtension != "png" && picExtension != "jpeg"){
-                errores.push({ param: "profilePic", msg: "La imagen debe ser de formato JPG/JPEG/PNG" })
+                errores.push({ param: "profilePic", msg: "La imagen debe ser de formato JPG/JPEG/PNG o ninguna" })
             } else {
                 console.log("Cumple con los formatos")
 
