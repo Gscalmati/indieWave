@@ -2179,7 +2179,7 @@ main .flex-wrapper {
     #profile-edit-main #general-wrapper {
         display: flex;
         flex-direction: row-reverse;
-        height: 100%;
+        /*height: 100%;*/
         justify-content: space-around;
     }
 
@@ -2219,6 +2219,7 @@ main .flex-wrapper {
         font-size: 18px;
         display: flex;
         justify-content: space-between;
+        margin-bottom: 10px;
     }
 
     #profile-edit-main #general-wrapper #input-wrapper input {

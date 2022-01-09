@@ -7,10 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="/css/style.css">
-    <!-- <link rel="stylesheet" href="/css/editprofile.css"> -->
+    
+    
     <title>IndieWave</title>
 
     <link rel="icon" href="/img/favicon.ico" type="image/x-icon" />
+    <script src="/js/profileValidations.js"></script>
 </head>
 
 <body>
@@ -19,33 +21,62 @@
 
         <main>
             <div id="profile-edit-main">
-                <form action="/users/profile/edit?_method=PUT" method="POST" enctype="multipart/form-data">
+                <form id="profile-form" action="/users/profile/edit?_method=PUT" method="POST" enctype="multipart/form-data">
                     <div id="general-wrapper">
 
                         <div id="input-wrapper">
                             <div>
                                 <label for="username">Nombre de usuario</label>
                                 <input type="text" name="username" id="username" aria-label="nombre del juego"
-                                    value="<%= userLogged.username%>">
+                                    value="<%= userLogged.username%>">  
                             </div>
+                            <% if (locals.errors && errors.username) { %>
+                                <span class="error-msg"><i
+                                        class="fas fa-exclamation-circle"></i>
+                                    <%= errors.username.msg %>
+                                </span>
+                                <% } else {%>
+                                    <span class="error-msg" id="error-username"></span>
+                                    <% } %>
 
                             <div>
                                 <label for="name">Nombre</label>
                                 <input type="text" name="name" id="name" aria-label="nombre del juego"
                                     value="<%= userLogged.name%>">
-                            </div>
+                                </div>
+                                    <% if (locals.errors && errors.name) { %>
+                                        <span class="error-msg"><i class="fas fa-exclamation-circle"></i>
+                                            <%=(errors.name && errors.name.msg)%>
+                                        </span>
+                                        <% } else {%>
+                                            <span class="error-msg" id="error-name"></span>
+                                            <% } %>
                             <div>
                                 <label for="username">Apellido</label>
                                 <input type="text" name="surname" id="surname" aria-label="nombre del juego"
                                     value="<%= userLogged.surname %>">
+                                </div>
+                                    <% if (locals.errors && errors.surname){ %>
+                                        <span class="error-msg error-surname"><i class="fas fa-exclamation-circle"></i>
+                                            <%=(errors.surname && errors.surname.msg)%>
+                                        </span>
+                                        <% } else {%>
+                                            <span class="error-msg" id="error-surname"></span>
+                                            <% } %>
 
-                            </div>
 
                             <div>
                                 <label for="email">Email</label>
                                 <input type="text" name="email" id="email" aria-label="nombre del juego"
                                     value="<%= userLogged.email %>">
-                            </div>
+                                </div>
+                                    <% if (locals.errors && errors.email) { %>
+                                        <span class="error-msg"><i class="fas fa-exclamation-circle"></i>
+                                            <%= errors.email.msg %>
+                                        </span>
+                                        <% } else {%>
+                                            <span class="error-msg" id="error-email"></span>
+                                            <% } %>
 
                             <div id="changepass-btn">
                                 <button type="submit" id="button"><a href="/users/profile/changePassword"> Cambiar
@@ -56,10 +87,18 @@
                             <div id="image-wrapper">
                                 <img src="<%= userLogged.profile_pic %>">
                             </div>
-                            <input type="file" name="profile-pic" id="profile-pic" aria-label="nombre del juego"
-                                accept=".jpg, .jgpeg, .png">
+                            <input type="file" name="profilePic" id="profilePic" aria-label="nombre del juego">
                             <!-- if profilepic return profile else default-img -->
+                            <% if (locals.errors && errors.profilePic) { %>
+                                <span class="error-msg"><i
+                                        class="fas fa-exclamation-circle"></i>
+                                    <%= errors.profilePic.msg %>
+                                </span>
+                                <% } else {%>
+                                    <span class="error-msg" id="error-profilePic"></span>
+                                    <% } %>
                         </div>
+                            
                     </div>
                     <div id="button-wrapper">
                         <button class="styled-buttons" type="submit">Guardar</button>

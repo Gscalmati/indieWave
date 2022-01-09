@@ -1,9 +1,9 @@
-window.onload = function() {
+window.onload = function(){
     
-    let formulario = document.querySelector("#register-form");
+    let form = document.querySelector("#profile-form")
 
-    formulario.addEventListener("submit", function(event) {
-      
+    form.addEventListener("submit", function(event){
+
         let errores = [];
         console.log("Todo parado")
 
@@ -25,7 +25,8 @@ window.onload = function() {
             errores.push({ param: "email", msg: "Ingrese un email" })
         } else {
             let regex = new RegExp("\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b");
-            if (!regex.match(fieldEmail.value)) {
+            console.log((regex.match(fieldEmail.value)))
+            if (regex.match(fieldEmail.value)) {
             errores.push({ param: "email", msg: "Ingrese un email válido" }
             )}
         }
@@ -36,23 +37,6 @@ window.onload = function() {
             errores.push({ param: "username", msg: "El campo no puede estar vacío" })
         } else if (fieldUsername.value.length < 4) {
             errores.push({ param: "username", msg: "El username debe tener al menos 4 caracteres" })
-        }
-
-       
-
-
-        let fieldPassword = document.querySelector("input#password");
-
-        if (fieldPassword.value.length < 8) {
-            errores.push({ param: "password", msg: "La contraseña debe tener al menos 8 caracteres" })
-        }
-
-        let fieldRepassword = document.querySelector("input#repassword");
-
-        if (fieldRepassword.value == "") {
-            errores.push({ param: "repassword", msg: "Confirme contraseña" })
-        } else if (fieldRepassword.value != fieldPassword.value) {
-            errores.push({ param: "repassword", msg: "Ambas contraseñas deben coincidir" })
         }
 
         let fieldPic = document.querySelector("input#profilePic");
@@ -78,11 +62,7 @@ window.onload = function() {
                 error.innerHTML = "<span>" + "<i class='fas fa-exclamation-circle'></i>" + elemento.msg + "</span>";
                 //erroresUL.innerHTML += "<li>" + "<i class='fas fa-exclamation-circle'></i>" + elemento.msg + "</li>"
             })
-        }
+        }    
 
     })
-
-
-
-
 }

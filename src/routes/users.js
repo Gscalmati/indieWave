@@ -21,12 +21,14 @@ const uploadUser = multer({ storage: storageUsers });
 const usersController = require("../controllers/usersController");
 
 /* Middleware */
+//Auth
 const loggedRoutesMiddleware = require("../middlewares/authentication/loggedRoutesMiddleware");
 const guestRoutesMiddleware = require('../middlewares/authentication/guestRoutesMiddleware');
-const userRegisterValidations = require('../middlewares/validations/userRegisterValidations');
-const userLoginValidations = require('../middlewares/validations/userLoginValidations');
 const authMiddleware = require('../middlewares/authentication/authMiddleware');
-
+//Validations
+const userLoginValidations = require('../middlewares/validations/userLoginValidations');
+const userRegisterValidations = require('../middlewares/validations/userRegisterValidations');
+const editProfileValidations = require("../middlewares/validations/editProfileValidations")
 
 
 router.get("/register", guestRoutesMiddleware, usersController.register);
@@ -38,15 +40,15 @@ router.post("/login", loggedRoutesMiddleware, userLoginValidations, usersControl
 
 
 router.get("/logout", usersController.logout);
-
+//Profile
 router.get('/profile', authMiddleware, usersController.profile);
 
 router.get('/profile/edit', authMiddleware, usersController.editProfile);
+router.put('/profile/edit', authMiddleware, uploadUser.single("profilePic"), editProfileValidations, usersController.saveProfile);
 
 router.get('/profile/changePassword', authMiddleware, usersController.changePassword);
 
 router.put('/profile/changePassword', authMiddleware, usersController.updatePassword);
 
-router.put('/profile/edit', authMiddleware, uploadUser.single("profile-pic"), usersController.saveProfile);
 
 module.exports = router;
