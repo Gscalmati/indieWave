@@ -9,7 +9,7 @@ window.onload = function() {
 
         let fieldName = document.querySelector("input#name");
 
-        if (fieldName.value.length < 2) {
+        if (fieldName.value.length < 2 ) {
             errores.push({ param: "name", msg: "Ingrese un nombre mayor a 2 caracteres" })
         }
 
