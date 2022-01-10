@@ -118,3 +118,10 @@
 - Gio avanza front y back  validatins de registro.
 - **Gio etá felí**
 - Repartimos tareas de validaciones.
+
+## Domingo 9/1/2022
+
+- Facu no está, está cazando alfajores en Havanna de MDQ
+- Juani avanzó, pero esta perdido.
+- Hablamos con Juani sobre las validaciones de Front, arreglamos las referencias a los input y los span
+- Gio comenta que el 19 se va de viaje, por ende va a terminar sus tareas del sprint 7 para el miércoles próximo, e intentar comenzar con el sprint 8

@@ -134,6 +134,9 @@ let usersController = {
 
         (async () => {
             try {
+                let errors = validationResult(req);
+
+                if (errors.isEmpty()) {
                 let file;
 
                 if (req.file != undefined) {
@@ -161,11 +164,14 @@ let usersController = {
 
 
                 // res.render("users/profile"); Usamos REDIRECT en cambio, porque necesitamos iniciar un nuevo request. Para actualiar LOCALS, mediante loggedUserMiddleware
-
+                res.redirect("/users/profile")
+            } else {
+                return res.render("users/edit", { errors: errors.mapped() });
+            }
             } catch (error) {
                 console.log(error)
             }
-            res.redirect("/users/profile")
+            
         })()
 
     },

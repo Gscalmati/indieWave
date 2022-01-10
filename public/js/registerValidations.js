@@ -24,10 +24,15 @@ window.onload = function() {
         if (fieldEmail.value.length == "") {
             errores.push({ param: "email", msg: "Ingrese un email" })
         } else {
-            let regex = new RegExp("\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b");
-            if (!regex.match(fieldEmail.value)) {
-            errores.push({ param: "email", msg: "Ingrese un email válido" }
-            )}
+            let regex = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+            if (!regex.test(fieldEmail.value)) {
+                console.log("No es valido")
+                errores.push({ param: "email", msg: "Ingrese un email válido" }
+            )} /*else {
+                console.log("Es valido")
+                errores.push({ param: "email", msg: "" })
+                //ESTO ES PARA BORRAR EL CAMPO...HAY QUE REVISAR LOS CASOS CON EL CHANGE DEL FORM
+            }*/
         }
 
         let fieldUsername = document.querySelector("input#username");
