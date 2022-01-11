@@ -3,7 +3,7 @@ const fs = require("fs");
 const sequelize = require("sequelize");
 
 //Requiere la base de datos
-const db = require("../../database/models")
+const db = require("../database/models")
 
 //Creo un objeto de referencia para las categorías
 //TODO

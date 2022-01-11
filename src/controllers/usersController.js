@@ -8,8 +8,8 @@ let jsonUsers = fs.readFileSync(path.resolve(__dirname, '../data/users.json'), '
 let users = JSON.parse(jsonUsers); //Convertimos el json a array
 
 // Traer la DB
-let db = require("../../database/models");
-const { Sequelize } = require("../../database/models");
+let db = require("../database/models");
+const { Sequelize } = require("../database/models");
 const { Op } = require("sequelize");
 
 /* Función para conseguir el nuevo ID */

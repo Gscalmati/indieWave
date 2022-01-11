@@ -7,6 +7,7 @@ const fs = require('fs');
 const multer = require("multer");
 const storageProducts = multer.diskStorage({
     destination: (req, file, cb) => {
+        //if (file.extname == "jpg") ... si no, "enviar NEXT"
         if (!fs.existsSync(path.resolve(__dirname, `../../public/img/products/${req.body.game_name}-imgs`))) {
             fs.mkdirSync(path.resolve(__dirname, `../../public/img/products/${req.body.game_name}-imgs`));
         }

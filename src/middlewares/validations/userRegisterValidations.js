@@ -6,7 +6,7 @@ let jsonUsers = fs.readFileSync(path.resolve(__dirname, '../data/users.json'), '
 let users = JSON.parse(jsonUsers);
 */
 
-const db = require("../../../database/models")
+const db = require("../../database/models")
 const { body } = require("express-validator");
 
 
@@ -17,6 +17,7 @@ const validations = [
     body("surname").notEmpty().withMessage("El campo no puede estar vacío")
     .isLength({ min: 2 }).withMessage("Ingrese un apellido mayor a 2 caracteres")
     .isAlpha('es-ES', { ignore: '\s' }).withMessage("Ingrese un apellido válido"),
+
     body("email").notEmpty().withMessage("El campo no puede estar vacío")
     .isEmail().withMessage("Ingrese un email con formato válido").bail()
     .custom((value) => {
@@ -57,11 +58,14 @@ const validations = [
 
     body("profilePic")
     .custom((image, { req }) => {
+        //Si es vacio, return TRUE, sino pregunar formato
         if(req.file.mimetype === "image/png" || req.file.mimetype === "image/jpeg" || req.file.mimetype === "image/jpg"){
             return true
+
         }
     })
     .withMessage("La imagen debe ser de formato JPG/JPEG/PNG")
+    //fs.unlink
     //De todas formas, la imagen se sigue subiendo a la carpeta USERS
 ]
 

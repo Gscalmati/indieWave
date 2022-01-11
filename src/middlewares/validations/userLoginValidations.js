@@ -1,4 +1,4 @@
-const db = require("../../../database/models");
+const db = require("../../database/models");
 const { body } = require("express-validator");
 const { Op } = require("sequelize");
 
