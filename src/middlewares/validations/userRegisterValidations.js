@@ -58,13 +58,16 @@ const validations = [
 
     body("profilePic")
     .custom((image, { req }) => {
-        //Si es vacio, return TRUE, sino pregunar formato
-        if(req.file.mimetype === "image/png" || req.file.mimetype === "image/jpeg" || req.file.mimetype === "image/jpg"){
+        if (!req.file){
+            console.log("No hay ninguna imagen")
             return true
-
+        } else if(req.file.mimetype === "image/png" || req.file.mimetype === "image/jpeg" || req.file.mimetype === "image/jpg"){
+                console.log("La imagen tiene buen formato")
+                return true
         }
+        return false
     })
-    .withMessage("La imagen debe ser de formato JPG/JPEG/PNG")
+    .withMessage("La imagen debe ser de formato JPG/JPEG/PNG o ninguna")
     //fs.unlink
     //De todas formas, la imagen se sigue subiendo a la carpeta USERS
 ]

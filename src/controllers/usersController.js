@@ -55,7 +55,16 @@ let usersController = {
 
             res.redirect("/users/login");
         } else {
-            
+
+            console.log(req.file)
+            if (req.file){
+            fs.unlink(req.file.path, (err => {
+                if (err) console.log(err);
+                else {
+                  console.log("Deleted file")
+                }
+            }))
+        }
             res.render('users/register', { errors: errors.mapped(), old: req.body })
         }
     },
