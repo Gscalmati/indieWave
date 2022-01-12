@@ -56,7 +56,6 @@ let usersController = {
             res.redirect("/users/login");
         } else {
 
-            console.log(req.file)
             if (req.file){
             fs.unlink(req.file.path, (err => {
                 if (err) console.log(err);
@@ -175,6 +174,15 @@ let usersController = {
                 // res.render("users/profile"); Usamos REDIRECT en cambio, porque necesitamos iniciar un nuevo request. Para actualiar LOCALS, mediante loggedUserMiddleware
                 res.redirect("/users/profile")
             } else {
+                
+                if (req.file){
+                    fs.unlink(req.file.path, (err => {
+                        if (err) console.log(err);
+                        else {
+                          console.log("Deleted file")
+                        }
+                    }))
+                }
                 return res.render("users/edit", { errors: errors.mapped() });
             }
             } catch (error) {
