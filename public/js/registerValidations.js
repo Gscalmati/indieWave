@@ -3,7 +3,7 @@ window.onload = function() {
     let formulario = document.querySelector("#register-form");
 
     formulario.addEventListener("submit", function(event) {
-      
+         
         let errores = [];
         console.log("Todo parado")
 
