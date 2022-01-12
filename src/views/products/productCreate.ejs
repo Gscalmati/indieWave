@@ -11,7 +11,7 @@
 
     <link rel="icon" href="/img/favicon.ico" type="image/x-icon" />
 
-    <script src="/js/productValidations.js"></script>
+    <script src="/js/createProductValidations.js"></script>
 </head>
 
 <body id="body-edit-create">
@@ -34,9 +34,9 @@
                 
                 <input type="text" name="developer" id="developer" aria-label="desarrollador" placeholder="Desarrollador" >
                 <% if (locals.errors && errors.developer) { %>
-                    <span style="color:orange" id="error-developer"><i class="fas fa-exclamation-circle"></i></span>
+                    <span class="error-msg"  id="error-developer"><i class="fas fa-exclamation-circle"></i></span>
                 <% } else {%>
-                    <span style="color:orange" id="error-developer"></span>
+                    <span class="error-msg"  id="error-developer"></span>
                 <% } %>
 
 
@@ -54,18 +54,18 @@
 
                 <input type="email" name="email" id="email" aria-label="email" placeholder="Email de contacto" >
                 <% if (locals.errors && errors.email) { %>
-                    <span style="color:orange" id="error-email"><i class="fas fa-exclamation-circle"></i></span>
+                    <span class="error-msg"  id="error-email"><i class="fas fa-exclamation-circle"></i></span>
                 <% } else {%>
-                    <span style="color:orange" id="error-email"></span>
+                    <span class="error-msg"  id="error-email"></span>
                 <% } %>
 
 
                 <label for="release_date">Fecha de lanzamiento</label>
                 <input type="date" name="release_date" id="release_date" aria-label="fecha de lanzamiento" placeholder="Fecha de lanzamiento" >
                 <% if (locals.errors && errors.release_date) { %>
-                    <span style="color:orange" id="error-release_date"><i class="fas fa-exclamation-circle"></i></span>
+                    <span class="error-msg"  id="error-release_date"><i class="fas fa-exclamation-circle"></i></span>
                 <% } else {%>
-                    <span style="color:orange" id="error-release_date"></span>
+                    <span class="error-msg"  id="error-release_date"></span>
                 <% } %>
 
 
@@ -82,39 +82,50 @@
                 
                 <input type="number" name="price" id="price" aria-label="price" placeholder="Precio" >
                 <% if (locals.errors && errors.price) { %>
-                    <span style="color:orange" id="error-price"><i class="fas fa-exclamation-circle"></i></span>
+                    <span class="error-msg"  id="error-price"><i class="fas fa-exclamation-circle"></i></span>
                 <% } else {%>
-                    <span style="color:orange" id="error-price"></span>
+                    <span class="error-msg"  id="error-price"></span>
                 <% } %>
 
 
-                <label for="logo" id="logo" >Cargar Logo</label>
+                <label for="logo" >Cargar Logo</label>
                 <input type="file" name="logo" accept=".png, .jpeg, .jpg" id="logo" aria-label="logo" alt="logo">
+                <% if (locals.errors && errors.logo) { %>
+                    <span class="error-msg"  id="error-logo"><i class="fas fa-exclamation-circle"></i></span>
+                <% } else {%>
+                    <span class="error-msg"  id="error-logo"></span>
+                <% } %>
 
-                <label for="images" id="images" >Cargar Imágenes</label>
+
+                <label for="images"  >Cargar Imágenes</label>
                 <input type="file" name="images" accept=".png, .jpeg, .jpg" id="images" aria-label="imágenes" alt="Imágenes" multiple>
+                <% if (locals.errors && errors.images) { %>
+                    <span class="error-msg"  id="error-images"><i class="fas fa-exclamation-circle"></i></span>
+                <% } else {%>
+                    <span class="error-msg"  id="error-images"></span>
+                <% } %>
 
                 <textarea rows="7" name="min_requirements" id="min_requirements" aria-label="requisitos minimos" placeholder="Requisitos mínimos" ></textarea>
                 <% if (locals.errors && errors.min_requirements) { %>
-                    <span style="color:orange" id="error-min_requirements"><i class="fas fa-exclamation-circle"></i></span>
+                    <span class="error-msg"  id="error-min_requirements"><i class="fas fa-exclamation-circle"></i></span>
                 <% } else {%>
-                    <span style="color:orange" id="error-min_requirements"></span>
+                    <span class="error-msg"  id="error-min_requirements"></span>
                 <% } %>
 
 
                 <textarea rows="7" name="rec_requirements" id="rec_requirements" aria-label="requisitos recomendados" placeholder="Requisitos recomendados" ></textarea>
                 <% if (locals.errors && errors.rec_requirements) { %>
-                    <span style="color:orange" id="error-rec_requirements"><i class="fas fa-exclamation-circle"></i></span>
+                    <span class="error-msg"  id="error-rec_requirements"><i class="fas fa-exclamation-circle"></i></span>
                 <% } else {%>
-                    <span style="color:orange" id="error-rec_requirements"></span>
+                    <span class="error-msg"  id="error-rec_requirements"></span>
                 <% } %>
 
 
                 <textarea rows="9" name="description" id="description" maxlength="500" aria-label="descripcion" placeholder="Descripción . . ." ></textarea>
                 <% if (locals.errors && errors.description) { %>
-                    <span style="color:orange" id="error-description"><i class="fas fa-exclamation-circle"></i></span>
+                    <span class="error-msg"  id="error-description"><i class="fas fa-exclamation-circle"></i></span>
                 <% } else {%>
-                    <span style="color:orange" id="error-description"></span>
+                    <span class="error-msg"  id="error-description"></span>
                 <% } %>
 
 
