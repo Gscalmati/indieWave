@@ -28,8 +28,12 @@ const uploadProduct = multer({ storage: storageProducts });
 const productsController = require("../controllers/productsController");
 
 /* Middleware */
+//Auth
 const authMiddleware = require("../middlewares/authentication/authMiddleware");
 const authAdminMiddleware = require("../middlewares/authentication/authAdminMiddleware");
+//Validations
+const productCreateValidation = require("../middlewares/validations/productCreateValidation");
+const productEditValidation = require("../middlewares/validations/productCreateValidation");
 
 /* Lista de productos por categoría */
 router.get("/", productsController.categories); //authAdMinddleware
@@ -44,13 +48,13 @@ router.get("/shoppingCart", authMiddleware, productsController.cart);
 /* Vista editar producto */
 router.get("/edit/:id", authAdminMiddleware, productsController.edit);
 
-router.post("/", authAdminMiddleware, uploadProduct.fields([{ name: "logo" }, { name: "images" }]), productsController.store);
+router.post("/", authAdminMiddleware, productEditValidation, uploadProduct.fields([{ name: "logo" }, { name: "images" }]), productsController.store);
 
 /*Actualizar producto */
 router.put("/edit/:id", authAdminMiddleware, uploadProduct.fields([{ name: "logo" }, { name: "images" }]), productsController.update);
 
 /* Vista crear Producto*/
-router.get("/create", authAdminMiddleware, productsController.create);
+router.get("/create", authAdminMiddleware, productCreateValidation, productsController.create);
 
 /* Vista de resultado de búsqueda de productos */
 router.get("/search", authMiddleware, productsController.search);
