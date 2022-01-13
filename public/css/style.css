@@ -2251,3 +2251,15 @@ main .flex-wrapper {
         margin-top: 50px;
     }
 }
+
+ /*** CHANGE PASSWORD FORM ***/
+
+/** DESKTOP **/
+
+@media (min-width:1025px) {
+
+ #change-pass-main #errors-ul  {
+    margin: 0px auto ;
+}
+
+}
