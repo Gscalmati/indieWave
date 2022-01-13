@@ -10,7 +10,7 @@ window.onload = function() {
         /*Validaciones nombre*/
         let inputName = document.querySelector("#name");
 
-        console.log(inputName);
+        
         if (inputName.value == "") {
             errors.push({ param: "name", msg: " El nombre no puede estar vacío" })
         }else if(inputName.value.length < 5){

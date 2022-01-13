@@ -11,7 +11,7 @@
 
     <link rel="icon" href="/img/favicon.ico" type="image/x-icon" />
 
-    <script src="/js/createProductValidations.js"></script>
+    <script src="/js/createProductValidations.js"></script> 
 </head>
 
 <body id="body-edit-create">
@@ -34,7 +34,9 @@
                 
                 <input type="text" name="developer" id="developer" aria-label="desarrollador" placeholder="Desarrollador" value="<%= locals.old && old.developer %>">
                 <% if (locals.errors && errors.developer) { %>
-                    <span class="error-msg"  id="error-developer"><i class="fas fa-exclamation-circle"></i></span>
+                    <span class="error-msg"  id="error-developer"><i class="fas fa-exclamation-circle"></i>
+                        <%=(errors.developer && errors.developer.msg)%>
+                    </span>
                 <% } else {%>
                     <span class="error-msg"  id="error-developer"></span>
                 <% } %>
@@ -54,7 +56,9 @@
 
                 <input type="email" name="email" id="email" aria-label="email" placeholder="Email de contacto" value="<%= locals.old && old.email %>">
                 <% if (locals.errors && errors.email) { %>
-                    <span class="error-msg"  id="error-email"><i class="fas fa-exclamation-circle"></i></span>
+                    <span class="error-msg"  id="error-email"><i class="fas fa-exclamation-circle"></i>
+                        <%=(errors.email && errors.email.msg)%>
+                    </span>
                 <% } else {%>
                     <span class="error-msg"  id="error-email"></span>
                 <% } %>
@@ -63,7 +67,9 @@
                 <label for="release_date">Fecha de lanzamiento</label>
                 <input type="date" name="release_date" id="release_date" aria-label="fecha de lanzamiento" placeholder="Fecha de lanzamiento" value="<%= locals.old && old.release_date %>">
                 <% if (locals.errors && errors.release_date) { %>
-                    <span class="error-msg"  id="error-release_date"><i class="fas fa-exclamation-circle"></i></span>
+                    <span class="error-msg"  id="error-release_date"><i class="fas fa-exclamation-circle"></i>
+                        <%=(errors.release_date && errors.release_date.msg)%>
+                    </span>
                 <% } else {%>
                     <span class="error-msg"  id="error-release_date"></span>
                 <% } %>
@@ -82,7 +88,9 @@
                 
                 <input type="number" name="price" id="price" aria-label="price" placeholder="Precio" value="<%= locals.old && old.price %>">
                 <% if (locals.errors && errors.price) { %>
-                    <span class="error-msg"  id="error-price"><i class="fas fa-exclamation-circle"></i></span>
+                    <span class="error-msg"  id="error-price"><i class="fas fa-exclamation-circle"></i>
+                        <%=(errors.price && errors.price.msg)%>
+                    </span>
                 <% } else {%>
                     <span class="error-msg"  id="error-price"></span>
                 <% } %>
@@ -91,7 +99,9 @@
                 <label for="logo" >Cargar Logo</label>
                 <input type="file" name="logo" accept=".png, .jpeg, .jpg" id="logo" aria-label="logo" alt="logo" >
                 <% if (locals.errors && errors.logo) { %>
-                    <span class="error-msg"  id="error-logo"><i class="fas fa-exclamation-circle"></i></span>
+                    <span class="error-msg"  id="error-logo"><i class="fas fa-exclamation-circle"></i>
+                        <%=(errors.logo && errors.logo.msg)%>
+                    </span>
                 <% } else {%>
                     <span class="error-msg"  id="error-logo"></span>
                 <% } %>
@@ -100,14 +110,18 @@
                 <label for="images"  >Cargar Imágenes</label>
                 <input type="file" name="images" accept=".png, .jpeg, .jpg" id="images" aria-label="imágenes" alt="Imágenes" multiple>
                 <% if (locals.errors && errors.images) { %>
-                    <span class="error-msg"  id="error-images"><i class="fas fa-exclamation-circle"></i></span>
+                    <span class="error-msg"  id="error-images"><i class="fas fa-exclamation-circle"></i>
+                        <%=(errors.images && errors.images.msg)%>
+                    </span>
                 <% } else {%>
                     <span class="error-msg"  id="error-images"></span>
                 <% } %>
 
                 <textarea rows="7" name="min_requirements" id="min_requirements" aria-label="requisitos minimos" placeholder="Requisitos mínimos" value="<%= locals.old && old.min_requirements %>" ></textarea>
                 <% if (locals.errors && errors.min_requirements) { %>
-                    <span class="error-msg"  id="error-min_requirements"><i class="fas fa-exclamation-circle"></i></span>
+                    <span class="error-msg"  id="error-min_requirements"><i class="fas fa-exclamation-circle"></i>
+                        <%=(errors.min_requirements && errors.min_requirements.msg)%>
+                    </span>
                 <% } else {%>
                     <span class="error-msg"  id="error-min_requirements"></span>
                 <% } %>
@@ -115,7 +129,9 @@
 
                 <textarea rows="7" name="rec_requirements" id="rec_requirements" aria-label="requisitos recomendados" placeholder="Requisitos recomendados" value="<%= locals.old && old.rec_requirements %>"></textarea>
                 <% if (locals.errors && errors.rec_requirements) { %>
-                    <span class="error-msg"  id="error-rec_requirements"><i class="fas fa-exclamation-circle"></i></span>
+                    <span class="error-msg"  id="error-rec_requirements"><i class="fas fa-exclamation-circle"></i>
+                        <%=(errors.rec_requirements && errors.rec_requirements.msg)%>
+                    </span>
                 <% } else {%>
                     <span class="error-msg"  id="error-rec_requirements"></span>
                 <% } %>
@@ -123,7 +139,9 @@
 
                 <textarea rows="9" name="description" id="description" maxlength="500" aria-label="descripcion" placeholder="Descripción . . ." value="<%= locals.old && old.description %>"></textarea>
                 <% if (locals.errors && errors.description) { %>
-                    <span class="error-msg"  id="error-description"><i class="fas fa-exclamation-circle"></i></span>
+                    <span class="error-msg"  id="error-description"><i class="fas fa-exclamation-circle"></i>
+                        <%=(errors.description && errors.description.msg)%>
+                    </span>
                 <% } else {%>
                     <span class="error-msg"  id="error-description"></span>
                 <% } %>

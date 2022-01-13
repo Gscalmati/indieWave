@@ -3,8 +3,20 @@ const { body } = require("express-validator");
 
 const validations =[
     /*Validación nombre */
-    body("name").notEmpty().withMessage(" El nombre no puede estar vacío")
+    body("game_name").notEmpty().withMessage(" El nombre no puede estar vacío")
     .isLength({ min: 5 }).withMessage(" Ingrese un nombre mayor a 5 caracteres")
+    .custom((value) => {
+        return db.Products.findOne({
+                where: {
+                    name: value
+                }
+            })
+            .then(function(result) {
+                if (result) {
+                    return Promise.reject("Ya existe un producto con ese nombre");
+                }
+            })
+    })
     .isAlpha('en-US','es-ES', { ignore: '\s' }).withMessage(" Ingrese un nombre válido"),
     
     /*Validación desarrollador*/
@@ -15,23 +27,23 @@ const validations =[
     body("email").notEmpty().withMessage(" El campo no puede estar vacío")
     .isEmail().withMessage(" Ingrese un email con formato válido").bail()
     .custom((value) => {
-        return db.Users.findOne({
+        return db.Products.findOne({
                 where: {
                     email: value
                 },
             })
             .then(result => {
                 if (result) {
-                    return Promise.reject(" Ya existe un usuario asociado a este email");
+                    return Promise.reject(" Ya existe un producto asociado a este email");
                 }
-                console.log("funciona email");
             })
 
     }),
 
     /*Validación fecha */
-    body("release_date").notEmpty().withMessage(" El nombre no puede estar vacío")
-    .isISO8601({ strict: false, strictSeparator: false }).withMessage(" La fecha de lanzamiento debe de ser en formato dd/mm/yyyy"),
+    body("release_date").notEmpty().withMessage(" Ingrese fecha de lanzamiento")
+    //.isISO8601({ strict: false, strictSeparator: false }).withMessage(" La fecha de lanzamiento debe de ser en formato dd/mm/yyyy"),
+    .isDate().withMessage(" La fecha de lanzamiento debe de ser en formato dd/mm/yyyy"),
 
     /*Validación precio */
     body("price").notEmpty().withMessage("El precio no puede estar vacío")

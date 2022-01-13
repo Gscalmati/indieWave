@@ -46,15 +46,16 @@ router.get("/dashboard", authAdminMiddleware, productsController.dashboard);
 router.get("/shoppingCart", authMiddleware, productsController.cart);
 
 /* Vista editar producto */
-router.get("/edit/:id", authAdminMiddleware, productsController.edit);
-
-router.post("/", authAdminMiddleware, productEditValidation, uploadProduct.fields([{ name: "logo" }, { name: "images" }]), productsController.store);
+router.get("/edit/:id", authAdminMiddleware,  productsController.edit);
 
 /*Actualizar producto */
-router.put("/edit/:id", authAdminMiddleware, uploadProduct.fields([{ name: "logo" }, { name: "images" }]), productsController.update);
+router.put("/edit/:id", authAdminMiddleware, uploadProduct.fields([{ name: "logo" }, { name: "images" }]), productEditValidation, productsController.update);
 
 /* Vista crear Producto*/
-router.get("/create", authAdminMiddleware, productCreateValidation, productsController.create);
+router.get("/create", authAdminMiddleware, productsController.create);
+
+/* Guardar producto */
+router.post("/", authAdminMiddleware, uploadProduct.fields([{ name: "logo" }, { name: "images" }]), productCreateValidation, productsController.store);
 
 /* Vista de resultado de búsqueda de productos */
 router.get("/search", authMiddleware, productsController.search);
