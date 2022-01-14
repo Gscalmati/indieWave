@@ -12,7 +12,7 @@
     <title>IndieWave</title>
 
     <link rel="icon" href="/img/favicon.ico" type="image/x-icon" />
-    <!-- <script src="/js/profileValidations.js"></script> -->
+    <script src="/js/profileValidations.js"></script>
 </head>
 
 <body>
@@ -21,7 +21,8 @@
 
         <main>
             <div id="profile-edit-main">
-                <form id="profile-form" action="/users/profile/edit?_method=PUT" method="POST" enctype="multipart/form-data">
+                <!-- Quitado de la linea inferior porque rompia la disposicion "id="profile-form""" -->
+                <form action="/users/profile/edit?_method=PUT" method="POST" enctype="multipart/form-data">
                     <div id="general-wrapper">
 
                         <div id="input-wrapper">
@@ -78,10 +79,10 @@
                                             <span class="error-msg" id="error-email"></span>
                                             <% } %>
 
-                            <div id="changepass-btn">
+                            <section id="changepass-btn">
                                 <button type="submit" id="button"><a href="/users/profile/changePassword"> Cambiar
                                         Contraseña</a> </button>
-                            </div>
+                                </section>
                         </div>
                         <div id="profile-pic-wrapper">
                             <div id="image-wrapper">

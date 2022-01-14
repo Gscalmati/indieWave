@@ -2069,12 +2069,18 @@ main .flex-wrapper {
     flex-direction: column;
 }
 
+#profile-edit-main #general-wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
 #profile-edit-main form {
     margin: auto auto;
     display: flex;
     width: 100%;
     flex-direction: column;
 }
+
 
 /* PROFILE PIC */
 
@@ -2116,6 +2122,7 @@ main .flex-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
+    margin-top: 20px;
 }
 
 #profile-edit-main #general-wrapper #input-wrapper input {
@@ -2134,7 +2141,7 @@ main .flex-wrapper {
 
 #profile-edit-main #button-wrapper {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     height: 30px;
     margin-bottom: 15px;
 }
@@ -2143,6 +2150,14 @@ main .flex-wrapper {
     width: 30%;
     height: 100%;
     margin-top: 15px;
+}
+
+#profile-edit-main #changepass-btn {
+    font-size: 12px;
+    display: flex;
+    justify-content: flex-start;
+    margin: 30px;
+   
 }
 
 
@@ -2155,6 +2170,11 @@ main .flex-wrapper {
 
     #profile-edit-main .styled-buttons {
         font-size: 18px;
+    }
+
+    /* BUTTON */
+    #profile-edit-main #changepass-btn {
+        font-size: 16px
     }
 }
 
@@ -2247,8 +2267,13 @@ main .flex-wrapper {
         font-size: 24px;
     }
 
-    #changepass-btn {
-        margin-top: 50px;
+    #profile-edit-main #changepass-btn {
+
+        display: flex;
+        justify-content: flex-end;
+        margin: 40px;
+        font-size: 20px;
+       
     }
 }
 
