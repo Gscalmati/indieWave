@@ -125,3 +125,10 @@
 - Juani avanzó, pero esta perdido.
 - Hablamos con Juani sobre las validaciones de Front, arreglamos las referencias a los input y los span
 - Gio comenta que el 19 se va de viaje, por ende va a terminar sus tareas del sprint 7 para el miércoles próximo, e intentar comenzar con el sprint 8
+
+## Miércoles 12/1/2022
+
+- Vimos con Juani las validaciones del back end del registro de productos
+- Necesitamos solucionar el tema de la "carpeta" a borrar de Multer, cuando hay un error en las validaciones, seguramente #UriQuestion
+- Hay que verificar lo avanzado por Facu para concretar la entrega del sprint
+- Hay que corregir en base a la devolución de Uri

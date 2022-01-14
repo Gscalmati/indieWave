@@ -3,7 +3,8 @@ const fs = require("fs");
 const sequelize = require("sequelize");
 
 //Requiere la base de datos
-const db = require("../database/models")
+const db = require("../database/models");
+const { validationResult } = require("express-validator");
 
 //Creo un objeto de referencia para las categorías
 //TODO
@@ -162,7 +163,10 @@ productsController = {
     },
 
     store: function (req, res) {
+        let errors = validationResult(req);
+        if(errors.isEmpty()){
 
+        
         let imagesArray = [];
 
         if (req.files["images"]) {
@@ -233,8 +237,25 @@ productsController = {
 
         })()
 
-
+    
         res.redirect("/products/dashboard");
+        }else{
+            if (req.files){
+                if(req.files.logo != undefined){
+                    req.files.logo.forEach(image => {
+                        fs.unlink(image.path, (err => {
+                            if (err) console.log(err);
+                                else {
+                                      console.log("Deleted logo")
+                                }
+                        }))
+                    })
+                }
+            }
+            // URIQUESTIONS Se crea carpeta igual, buscar forma de borrar carpeta
+            console.log(req.files);
+            res.render('products/productCreate', { errors: errors.mapped(), old: req.body })
+        }
     },
 
     editArt: function (req, res) {
