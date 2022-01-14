@@ -108,49 +108,25 @@
             </div>
             <section id="featured">
                 
-                <!-- <div class="featured-div"> -->
-                <article class="product-article">
+                <% for( let i=0; i < productsFeatured.length; i++ ) { %>
+                    <article class="product-article">
 
-                    <div>
-                        <img class="responsive-img" src="https://via.placeholder.com/1000x1000"
-                            alt="Foto producto Indie Game">
-                    </div>
-                    <div class="detail-prod">
-                        <h3>Dead cells</h3>
-                        <p>$9.99</p>
-                    </div>
+                        <!-- <div class="featured-div"> -->
+                        <div>
+                            <!--%= products[i].logo %>> -->
+                            <a href="/products/<%= productsFeatured[i].id %> ">
+                                <img class="responsive-img" src="https://via.placeholder.com/1000x1000" alt="Foto producto Indie Game">
+                            </a>
+                            
+                        </div>
+                        <div class="detail-prod">
+                            <h3><%= productsFeatured[i].name %></h3>
+                            <p><%= productsFeatured[i].price %></p>
+                        </div>
 
-                </article>
-                <article class="product-article">
-                    <div>
-                        <img class="responsive-img" src="https://via.placeholder.com/1000x1000"
-                            alt="Foto producto Indie Game">
-                    </div>
-                    <div class="detail-prod">
-                        <h3>Hollow Knight</h3>
-                        <p>$5</p>
-                    </div>
-                </article>
-                <article class="product-article">
-                    <div>
-                        <img class="responsive-img" src="https://via.placeholder.com/1000x1000"
-                            alt="Foto producto Indie Game">
-                    </div>
-                    <div class="detail-prod">
-                        <h3>Furi</h3>
-                        <p>$12.50</p>
-                    </div>
-                </article>
-                <article class="product-article">
-                    <div>
-                        <img class="responsive-img" src="https://via.placeholder.com/1000x1000"
-                            alt="Foto producto Indie Game">
-                    </div>
-                    <div class="detail-prod">
-                        <h3>Stardew Valley</h3>
-                        <p>$3.99</p>
-                    </div>
-                </article>
+                    </article>
+                
+                <% } %>
                 <!-- </div> -->
             </section>
             <!-- Formulario de categorias -->
@@ -178,60 +154,21 @@
             <section id="category">
 
                 <!-- <i class="fas fa-chevron-left"></i> -->
-                <article class="category-article">
-                    <div>
-                        <img class="responsive-img" src="https://via.placeholder.com/1000x1000"
-                            alt="Foto producto Indie Game">
-                    </div>
-                    <div class="detalle">
-                        <h3>Nombre del producto</h3>
-                        <p>$1.000</p>
-                    </div>
-                </article>
-                <article class="category-article">
-                    <div>
-                        <img class="responsive-img" src="https://via.placeholder.com/1000x1000"
-                            alt="Foto producto Indie Game">
-                    </div>
-                    <div class="detalle">
-                        <h3>Nombre del producto</h3>
-                        <p>$1.000</p>
-                    </div>
-
-                </article>
-                <article class="category-article">
-                    <div>
-                        <img class="responsive-img" src="https://via.placeholder.com/1000x1000"
-                            alt="Foto producto Indie Game">
-                    </div>
-                    <div class="detalle">
-                        <h3>Nombre del producto</h3>
-                        <p>$1.000</p>
-                    </div>
-
-                </article>
-                <article class="category-article">
-                    <div>
-                        <img class="responsive-img" src="https://via.placeholder.com/1000x1000"
-                            alt="Foto producto Indie Game">
-                    </div>
-                    <div class="detalle">
-                        <h3>Nombre del producto</h3>
-                        <p>$1.000</p>
-                    </div>
-
-                </article>
-                <article class="category-article">
-                    <div>
-                        <img class="responsive-img" src="https://via.placeholder.com/1000x1000"
-                            alt="Foto producto Indie Game">
-                    </div>
-                    <div class="detalle">
-                        <h3>Nombre del producto</h3>
-                        <p>$1.000</p>
-                    </div>
-
-                </article>
+                <% for( let j=0; j < productsFeatured.length; j++ ) { %>
+                    <article class="category-article">
+                        <div>
+                            <a href="/products/<%= productsFeatured[j].id %> ">
+                                <!-- %= products[j].logo %> -->
+                                <img class="responsive-img" src="https://via.placeholder.com/1000x1000" alt="Foto producto Indie Game">
+                            </a>
+                            
+                        </div>
+                        <div class="detalle">
+                            <h3><%= productsFeatured[j].name %></h3>
+                            <p><%= productsFeatured[j].price %></p>
+                        </div>
+                    </article>
+                <% } %>
                 <!-- <i class="fas fa-chevron-right"></i> -->
 
             </section>
