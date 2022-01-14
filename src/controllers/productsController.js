@@ -49,6 +49,7 @@ productsController = {
                 console.log(error)
             }
         })()
+        
     },
 
     categorygames: function (req, res) {
