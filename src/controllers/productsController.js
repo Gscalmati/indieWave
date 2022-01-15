@@ -143,12 +143,10 @@ productsController = {
     cart: function (req, res) {
         (async () => {
             try {
-                let compras = await db.Shopping_products.findAll({
-                    where : {
-                        shopping_cart_id : 1 
-                    }, raw:true
-                })
+                //Solo traer compras con el ID de la session
+                let compras = await db.Shopping_products.findAll({raw:true})
                 console.log(compras)
+                console.log(req.session.userLogged)
             }
             catch (error){
                 console.log(error)
@@ -169,9 +167,9 @@ productsController = {
         (async () => {
 
         try {
-
+            //Agregar al carrito con el ID de la session
             await db.Shopping_products.create({
-                shopping_cart_id: 1,
+                shopping_cart_id: 2,
                 product_id: req.body.cartValue
             })
             return res.redirect("/products/shoppingCart")
