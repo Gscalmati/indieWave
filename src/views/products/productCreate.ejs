@@ -11,7 +11,7 @@
 
     <link rel="icon" href="/img/favicon.ico" type="image/x-icon" />
 
-    <script src="/js/createProductValidations.js"></script> 
+    <!-- <script src="/js/createProductValidations.js"></script>  -->
 </head>
 
 <body id="body-edit-create">
@@ -76,6 +76,11 @@
 
 
                 <span id="subtitle">Plataforma</span>
+                <% if (locals.errors && errors.checkbox) { %>
+                    <span class="error-msg"  id="error-release_date"><i class="fas fa-exclamation-circle"></i>
+                        <%=(errors.checkbox && errors.checkbox.msg)%>
+                    </span>
+                <% } %>
                 <div id="checkbox-wrapper">
                     <label for="windows">Windows</label>
                     <input type="checkbox" name="windows" id="windows">
@@ -84,6 +89,7 @@
                     <label for="linux">Linux</label>
                     <input type="checkbox" name="linux" id="linux">
                 </div>
+                
 
                 
                 <input type="number" name="price" id="price" aria-label="price" placeholder="Precio" value="<%= locals.old && old.price %>">

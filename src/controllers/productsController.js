@@ -5,6 +5,7 @@ const sequelize = require("sequelize");
 //Requiere la base de datos
 const db = require("../database/models");
 const { validationResult } = require("express-validator");
+const { log } = require("console");
 
 //Creo un objeto de referencia para las categorías
 //TODO
@@ -247,6 +248,7 @@ productsController = {
     
         res.redirect("/products/dashboard");
         }else{
+            console.log(errors)
             if (req.files){
                 if(req.files.logo != undefined){
                     req.files.logo.forEach(image => {
@@ -260,7 +262,10 @@ productsController = {
                 }
             }
             // URIQUESTIONS Se crea carpeta igual, buscar forma de borrar carpeta
-            console.log(req.files);
+            if ((req.body.windows == undefined) && (req.body.macos == undefined) && (req.body.linux == undefined)){
+                errors.errors.push({param: "checkbox", msg: "Ingrese al menos una plataforma"});
+                console.log("No se seleccionó nada")
+            }
             res.render('products/productCreate', { errors: errors.mapped(), old: req.body })
         }
     },

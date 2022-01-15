@@ -36,7 +36,7 @@ let mainController = {
 
 
          let gameFresh = await db.Products.findAll({ limit: 5 , raw:true});
-         console.log(gameFresh)
+        
 
 
         return res.render("main/home", {productsFeatured : gameFeatured, productsFresh: gameFresh});
