@@ -141,11 +141,26 @@ productsController = {
     },
 
     cart: function (req, res) {
+        (async () => {
+            try {
+                let compras = await db.Shopping_products.findAll({
+                    where : {
+                        shopping_cart_id : 1 
+                    }, raw:true
+                })
+                console.log(compras)
+            }
+            catch (error){
+                console.log(error)
+            }
+        })()
+
+        /*VERSION FRONT
         if(sessionStorage != undefined){
             console.log(sessionStorage)
         } else {
             console.log("No hay carrito")
-        }
+        }*/
         
         res.render("products/shoppingCart");
     },
@@ -154,10 +169,18 @@ productsController = {
         (async () => {
 
         try {
-            // Intente cambiar el nombre del NAME en el HTML y se rompe
+
+            await db.Shopping_products.create({
+                shopping_cart_id: 1,
+                product_id: req.body.cartValue
+            })
+            return res.redirect("/products/shoppingCart")
+
+            /*// Intente cambiar el nombre del NAME en el HTML y se rompe
             console.log(req.body.cartValue)
-            let productFound = await db.Products.findByPk(req.body.cartValue);
-            return res.render("products/shoppingCart", {productFound : productFound})
+            let productFound = await db.Products.findByPk(req.body.cartValue, {raw:true});
+            console.log(productFound)
+            return res.render("products/shoppingCart", {productFound : productFound})*/
         }
         catch (error){
             console.log(error)
