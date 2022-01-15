@@ -154,18 +154,18 @@
             <section id="category">
 
                 <!-- <i class="fas fa-chevron-left"></i> -->
-                <% for( let j=0; j < productsFeatured.length; j++ ) { %>
+                <% for( let j=0; j < productsFresh.length; j++ ) { %>
                     <article class="category-article">
                         <div>
-                            <a href="/products/<%= productsFeatured[j].id %> ">
+                            <a href="/products/<%= productsFresh[j].id %> ">
                                 <!-- %= products[j].logo %> -->
                                 <img class="responsive-img" src="https://via.placeholder.com/1000x1000" alt="Foto producto Indie Game">
                             </a>
                             
                         </div>
                         <div class="detalle">
-                            <h3><%= productsFeatured[j].name %></h3>
-                            <p><%= productsFeatured[j].price %></p>
+                            <h3><%= productsFresh[j].name %></h3>
+                            <p><%= productsFresh[j].price %></p>
                         </div>
                     </article>
                 <% } %>

@@ -91,8 +91,15 @@ productsController = {
     },
 
     delete: function (req, res) {
-
+        // Destruyo las relaciones en las plataformas tambien
         try {
+            db.Products_platforms.destroy({
+                where: {
+                    product_id : req.params.id
+                }
+            })
+
+
             db.Products.destroy({
                 where: {
                     id: req.params.id
