@@ -62,7 +62,6 @@ const validations = [
             console.log("No hay ninguna imagen")
             return true
         } else if(req.file.mimetype === "image/png" || req.file.mimetype === "image/jpeg" || req.file.mimetype === "image/jpg"){
-                console.log("La imagen tiene buen formato")
                 return true
         }
         return false

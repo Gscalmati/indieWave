@@ -14,8 +14,7 @@ const validations = [
     body("email").notEmpty().withMessage("El campo no puede estar vacío")
     .isEmail().withMessage("Ingrese un email con formato válido").bail()
     .custom((value, {req}) => {
-        console.log(value)
-        console.log(req.session.userLogged)
+        
         if(value != req.session.userLogged.email){
         return db.Users.findOne({
                 where: {
@@ -29,7 +28,7 @@ const validations = [
                 //No poner CATCH porque sobreescribe el "reject" y evita que se cree un error para la vista.
             })
         } else {
-            console.log("Es el mismo email")
+           
             return true
         }
 
@@ -50,16 +49,10 @@ const validations = [
                 //No poner CATCH porque sobreescribe el "reject" y evita que se cree un error para la vista.
             })
         } else {
-            console.log("Es el mismo usuario");
+          
             return true
         }
     }),
-    body("password").notEmpty().withMessage("Ingrese contraseña")
-    .isLength({ min: 8 }).withMessage("La contraseña debe mínimo 8 caracteres"),
-    body("repassword").notEmpty().withMessage("El campo no puede estar vacío")
-    .custom((pass, { req }) => { //Validacion para confirmar constraseña, traigo al "req" con el deconstructor
-        return (pass == req.body.password)
-    }).withMessage("Las contraseñas no coinciden"),
 
     body("profilePic")
     .custom((image, { req }) => {

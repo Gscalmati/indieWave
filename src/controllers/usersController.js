@@ -11,6 +11,7 @@ let users = JSON.parse(jsonUsers); //Convertimos el json a array
 let db = require("../database/models");
 const { Sequelize } = require("../database/models");
 const { Op } = require("sequelize");
+const { log } = require("console");
 
 /* Función para conseguir el nuevo ID */
 /*
@@ -55,8 +56,9 @@ let usersController = {
 
             res.redirect("/users/login");
         } else {
-
+            
             if (req.file){
+                console.log(req.file.path)
             fs.unlink(req.file.path, (err => {
                 if (err) console.log(err);
                 else {
@@ -142,12 +144,21 @@ let usersController = {
 
         (async () => {
             try {
+                
                 let errors = validationResult(req);
 
                 if (errors.isEmpty()) {
-                let file;
+                    let file;
+                    if (req.file != undefined) {
+                        // RUTA CORRECTA path.join(__dirname + "/../../public" + req.session.userLogged.profile_pic)
+                        //Con esto funciona, porque sí fs.unlink(__dirname + req.session.userLogged.profile_pic, (err => {
+                    fs.unlink(__dirname + req.session.userLogged.profile_pic, (err => {
+                        if (err) console.log(err);
+                        else {
+                          console.log("Deleted file")
+                        }
+                    }));
 
-                if (req.file != undefined) {
                     file = `/img/users/${req.file.filename}`
                 } else {
                     file = await db.Users.findByPk(req.session.userLogged.id);
