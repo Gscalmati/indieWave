@@ -141,7 +141,28 @@ productsController = {
     },
 
     cart: function (req, res) {
+        if(sessionStorage != undefined){
+            console.log(sessionStorage)
+        } else {
+            console.log("No hay carrito")
+        }
+        
         res.render("products/shoppingCart");
+    },
+
+    addToCart: function (req,res){
+        (async () => {
+
+        try {
+            // Intente cambiar el nombre del NAME en el HTML y se rompe
+            console.log(req.body.cartValue)
+            let productFound = await db.Products.findByPk(req.body.cartValue);
+            return res.render("products/shoppingCart", {productFound : productFound})
+        }
+        catch (error){
+            console.log(error)
+        }
+    })()
     },
 
     edit: function (req, res) {

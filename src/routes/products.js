@@ -44,6 +44,7 @@ router.get("/dashboard", authAdminMiddleware, productsController.dashboard);
 
 /* Carrito */
 router.get("/shoppingCart", authMiddleware, productsController.cart);
+router.post("/shoppingCart", authMiddleware, productsController.addToCart);
 
 /* Vista editar producto */
 router.get("/edit/:id", authAdminMiddleware,  productsController.edit);

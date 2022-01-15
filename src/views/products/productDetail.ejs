@@ -10,6 +10,7 @@
     <!-- <link rel="stylesheet" href="/css/productDetail.css"> -->
     <title>IndieWave</title>
     <link rel="icon" href="/img/favicon.ico" type="image/x-icon" />
+
 </head>
 
 <body>
@@ -85,7 +86,9 @@
                     </div>
                     <div id="game-info-button-wrapper">
                                     <span id="price-tag">$<%= product.price %></span>
-                                    <button id="game-to-cart-btn">Añadir al Carro</button>
+                                    <form id="shopping-cart-form" method="POST" action="/products/shoppingCart">
+                                        <button type="submit" id="game-to-cart-btn" name="cartValue" value=<%= product.id %>>Añadir al Carro</button>
+                                    </form>
                                     <button id="game-to-wishlist-btn">Añadir a Lista de Deseados</button>
                         </div>
                 </aside>
