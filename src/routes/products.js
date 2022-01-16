@@ -46,6 +46,8 @@ router.get("/dashboard", authAdminMiddleware, productsController.dashboard);
 router.get("/shoppingCart", authMiddleware, productsController.cart);
 /* Agregar al carrito */
 router.post("/shoppingCart", authMiddleware, productsController.addToCart);
+/* Quitar articulo del carrito */
+router.get("/shoppingCart/delete/:id", authMiddleware, productsController.deleteFromCart);
 
 /* Vista editar producto */
 router.get("/edit/:id", authAdminMiddleware,  productsController.edit);

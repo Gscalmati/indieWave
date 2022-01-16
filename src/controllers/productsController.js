@@ -143,12 +143,11 @@ productsController = {
     cart: function (req, res) {
         (async () => {
             try {
-
+                //Traigo el carrito con los productos asociados del usuario loggeado
                 let comprasUser = await db.Shoppingcarts.findAll({
                     include : [{association: "products"}], 
                     where: { user_id: req.session.userLogged.id }, raw:true, nest:true
                 })
-                console.log(comprasUser)
                 res.render("products/shoppingCart", {comprasUser : comprasUser});
             }
             catch (error){
@@ -193,6 +192,33 @@ productsController = {
             console.log(error)
         }
     })()
+    },
+
+    deleteFromCart: function (req, res){
+        (async () =>{
+            try {
+                console.log("Entré")
+                //Encontrar el ID del carrito en base al usuario loggeado
+                let sessionCart = await db.Shoppingcarts.findOne({
+                    where : {
+                        user_id: req.session.userLogged.id
+                    }, raw:true
+                })
+                let idCart = sessionCart.id
+                
+                await db.Shopping_products.destroy({
+                    where :{ 
+                        shopping_cart_id: idCart,
+                        product_id: req.params.id
+                    }
+                })
+                console.log("Borrado?")
+                return res.redirect("/products/shoppingCart")
+            }
+            catch (error){
+                console.log(error)
+            }
+        })()
     },
 
     edit: function (req, res) {

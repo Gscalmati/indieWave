@@ -1435,6 +1435,13 @@ label {
     border-bottom: var(--steelpink) solid 1px;
 }
 
+.shopping-cart #empty-cart-msg {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
 .shopping-cart .upper-part {
     width: 90%;
     margin: auto;
@@ -1775,6 +1782,7 @@ label {
         margin: 1% 0;
         border-bottom: var(--steelpink) solid 1px;
     }
+
 
     .shopping-cart .upper-part {
         width: 90%;
