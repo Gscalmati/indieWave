@@ -143,10 +143,13 @@ productsController = {
     cart: function (req, res) {
         (async () => {
             try {
-                //Solo traer compras con el ID de la session
-                let compras = await db.Shopping_products.findAll({raw:true})
-                console.log(compras)
-                console.log(req.session.userLogged)
+
+                let comprasUser = await db.Shoppingcarts.findAll({
+                    include : [{association: "products"}], 
+                    where: { user_id: req.session.userLogged.id }, raw:true, nest:true
+                })
+                console.log(comprasUser)
+                res.render("products/shoppingCart", {comprasUser : comprasUser});
             }
             catch (error){
                 console.log(error)
@@ -159,17 +162,23 @@ productsController = {
         } else {
             console.log("No hay carrito")
         }*/
-        
-        res.render("products/shoppingCart");
     },
 
     addToCart: function (req,res){
         (async () => {
 
         try {
-            //Agregar al carrito con el ID de la session
+            //Encontrar el ID del carrito en base al usuario loggeado
+            let sessionCart = await db.Shoppingcarts.findOne({
+                where : {
+                    user_id: req.session.userLogged.id
+                }, raw:true
+            })
+            let idCart = sessionCart.id
+            
+            //Agregar al carrito con el ID del carrito
             await db.Shopping_products.create({
-                shopping_cart_id: 2,
+                shopping_cart_id: idCart,
                 product_id: req.body.cartValue
             })
             return res.redirect("/products/shoppingCart")
