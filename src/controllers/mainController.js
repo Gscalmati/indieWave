@@ -14,7 +14,7 @@ let mainController = {
         })
 
 
-        db.Products.findAll({ limit: 5 , raw:true})
+        db.Products.findAll({ limit: 5 , offset:10 , raw:true})
         .then(gameFresh =>{
             return res.render("main/home", {productsFresh: gameFresh});
         })
@@ -35,7 +35,7 @@ let mainController = {
         
 
 
-         let gameFresh = await db.Products.findAll({ limit: 5 , raw:true});
+         let gameFresh = await db.Products.findAll({ limit: 5 ,offset:10 , raw:true});
         
 
 
