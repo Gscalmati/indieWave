@@ -143,6 +143,7 @@ productsController = {
     cart: function (req, res) {
         (async () => {
             try {
+                
                 //Traigo el carrito con los productos asociados del usuario loggeado
                 let comprasUser = await db.Shoppingcarts.findAll({
                     include : [{association: "products"}], 
@@ -174,14 +175,32 @@ productsController = {
                 }, raw:true
             })
             let idCart = sessionCart.id
-            
-            //Agregar al carrito con el ID del carrito
-            await db.Shopping_products.create({
+            // Extraigo productos agregados por el usuario Loggeado
+            let repe = await db.Shopping_products.findAll({
                 shopping_cart_id: idCart,
-                product_id: req.body.cartValue
+                //product_id: req.body.cartValue,
+                raw: true
             })
-            return res.redirect("/products/shoppingCart")
-
+           
+            console.log(req.body.cartValue)
+            // Reviso si ya existe ese articulo en el carrito
+            let artRepeated = repe.find(elem => {
+                console.log(elem.product_id)
+                return (elem.product_id == req.body.cartValue)
+            })
+            console.log(artRepeated)
+            // Si existe, no hace el "create" y redirecciona al mismo articulo
+            if (artRepeated != undefined) {
+                console.log("El articulo ya existe")
+                return res.redirect("/products/shoppingCart")
+            } else {
+                //Agregar al carrito con el ID del carrito
+                await db.Shopping_products.create({
+                    shopping_cart_id: idCart,
+                    product_id: req.body.cartValue
+                })
+                return res.redirect("/products/shoppingCart")
+            }
             /*// Intente cambiar el nombre del NAME en el HTML y se rompe
             console.log(req.body.cartValue)
             let productFound = await db.Products.findByPk(req.body.cartValue, {raw:true});

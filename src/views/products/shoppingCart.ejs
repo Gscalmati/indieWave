@@ -22,9 +22,9 @@
         <main class="shopping-cart">
 
             <h2>Carrito de compras</h2>
-            <% if (comprasUser.length > 0) { %>
+            <% if ((locals.comprasUser) && ((comprasUser.length < 0) || (comprasUser[0].products.name == null))) { %>
                 <h3 id="empty-cart-msg">Tu carrito se encuentra vacío</h3>
-            <% }  else { %> 
+            <% }  else if(locals.comprasUser) { %> 
             <section class="upper-part">
                 <ul class="cart-bar">
                     <li id="barra-producto">Producto</li>
@@ -45,9 +45,8 @@
                     <div class="precio categoria-producto"><%= elemento.products.price %></div>
                 </article>
                 <% }) }%> 
-
             </section>
-
+            
             <section class="bottom-part">
                 <div class="cupones">
                     <form action="/shoppingCart" method="get">
