@@ -105,6 +105,12 @@ window.onload = function() {
             
         if (errors.length > 0) {
             e.preventDefault()
+
+             // Se vacian los errores de todos los "error-msg"
+             document.querySelectorAll(".error-msg").forEach(elem =>{
+                elem.innerHTML = ""
+            })
+            
             console.log(errors)
             errors.forEach(elemento => {
                 let error = document.querySelector("#error-" + elemento.param);

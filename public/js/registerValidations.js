@@ -78,7 +78,12 @@ window.onload = function() {
             //let erroresUL = document.querySelector("#errors-ul")
         if (errores.length > 0) {
             event.preventDefault()
-            console.log(errores)
+        
+             // Se vacian los errores de todos los "error-msg"
+             document.querySelectorAll(".error-msg").forEach(elem =>{
+                elem.innerHTML = ""
+            })
+
             errores.forEach(elemento => {
                 let error = document.querySelector("#error-" + elemento.param);
                 error.innerHTML = "<span>" + "<i class='fas fa-exclamation-circle'></i>" + elemento.msg + "</span>";
