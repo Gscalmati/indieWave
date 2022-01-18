@@ -28,7 +28,7 @@ window.onload = function() {
         let inputLogo = document.querySelector("#logo");
         let picLogo = inputLogo.value;
         
-        if (picLogo == ""){
+        if (picLogo != ""){
             
             let picLogoExtension = picLogo.substring(
                 picLogo.lastIndexOf('.') + 1).toLowerCase();
@@ -70,7 +70,7 @@ window.onload = function() {
         let inputImages = document.querySelector("#images");
         let picData = inputImages.value;
         
-        if (picData == ""){
+        if (picData != ""){
             
             let picExtension = picData.substring(
                 picData.lastIndexOf('.') + 1).toLowerCase();

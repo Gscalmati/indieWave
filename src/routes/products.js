@@ -33,7 +33,7 @@ const authMiddleware = require("../middlewares/authentication/authMiddleware");
 const authAdminMiddleware = require("../middlewares/authentication/authAdminMiddleware");
 //Validations
 const productCreateValidation = require("../middlewares/validations/productCreateValidation");
-const productEditValidation = require("../middlewares/validations/productCreateValidation");
+const productEditValidation = require("../middlewares/validations/productEditValidation");
 
 /* Lista de productos por categoría */
 router.get("/", productsController.categories); //authAdMinddleware

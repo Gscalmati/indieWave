@@ -28,7 +28,7 @@ window.onload = function() {
         let inputLogo = document.querySelector("#logo");
         let picLogo = inputLogo.value;
         
-        if (picLogo == ""){
+        if (picLogo != ""){
             
             let picLogoExtension = picLogo.substring(
                 picLogo.lastIndexOf('.') + 1).toLowerCase();
@@ -70,7 +70,7 @@ window.onload = function() {
         let inputImages = document.querySelector("#images");
         let picData = inputImages.value;
         
-        if (picData == ""){
+        if (picData != ""){
             
             let picExtension = picData.substring(
                 picData.lastIndexOf('.') + 1).toLowerCase();
@@ -105,6 +105,10 @@ window.onload = function() {
             
         if (errors.length > 0) {
             e.preventDefault()
+            // Se vacian los errores de todos los "error-msg"
+            document.querySelectorAll(".error-msg").forEach(elem =>{
+                elem.innerHTML = ""
+            })
             console.log(errors)
             errors.forEach(elemento => {
                 let error = document.querySelector("#error-" + elemento.param);
