@@ -135,4 +135,4 @@
 * Tomarse vacaciones
 
 ## Dejar de hacer
-
+* **Dejar "consolelog's" colgados**
