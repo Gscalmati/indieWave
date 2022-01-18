@@ -32,7 +32,7 @@
                     <li>Precio</li>
                     <li>Subtotal</li>
                 </ul>
-                <% comprasUser.forEach(elemento =>{ %>
+                <% comprasUser.forEach(elemento => { %>
                 <article class="producto">
                     <div class="categoria-producto">
                         <img class="thumbnail-producto responsive-img" src=<%= elemento.products.logo || "https://via.placeholder.com/100x100"%>>
@@ -65,7 +65,10 @@
 
                     <div class="total-wrapper">
                         <text class="valor-total">Total</text>
+                        
+                            <!-- IMPORTANTE FIJATE COMO MARCAR EL TOTAL DE PRECIO -->
                         <text class="precio-total">$$$</text>
+
                     </div>
 
                     <div id="botones">
@@ -93,7 +96,6 @@
                     <div class="titulo-juego">This War Of Mine</div>
                     <div class="descripcion-oferta">
                         <div class="descuento-juego">80% OFF</div>
-                        <i class="fas fa-cart-plus"></i>
                     </div>
                 </div>
             </article>

@@ -58,7 +58,7 @@ let usersController = {
         } else {
             
             if (req.file){
-                console.log(req.file.path)
+
             fs.unlink(req.file.path, (err => {
                 if (err) console.log(err);
                 else {
@@ -89,7 +89,7 @@ let usersController = {
                     });
 
                     if (await bcryptjs.compare(req.body.password, userFound.password)) {
-                        console.log("Adentro");
+                       
                         delete userFound.password
                         req.session.userLogged = userFound;
 
