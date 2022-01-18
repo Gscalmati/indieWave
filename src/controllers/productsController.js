@@ -91,17 +91,29 @@ productsController = {
         })()
     },
 
-    delete: function (req, res) {
+    delete: async function (req, res) {
         // Destruyo las relaciones en las plataformas tambien
         try {
-            db.Products_platforms.destroy({
+            await db.Products_platforms.destroy({
                 where: {
                     product_id : req.params.id
                 }
             })
 
 
-            db.Products.destroy({
+            await db.Shopping_products.destroy({
+                where: {
+                    product_id : req.params.id
+                }
+            })
+
+            await db.Images.destroy({
+                where: {
+                    product_id: req.params.id
+                }
+            })
+            
+            await db.Products.destroy({
                 where: {
                     id: req.params.id
                 }
@@ -268,6 +280,11 @@ productsController = {
 
     store: function (req, res) {
         let errors = validationResult(req);
+
+        if ((req.body.windows == undefined) && (req.body.macos == undefined) && (req.body.linux == undefined)){
+            errors.errors.push({param: "checkbox", msg: "Ingrese al menos una plataforma"});
+            console.log("No se seleccionó nada")
+        }
         if(errors.isEmpty()){
 
         
@@ -358,10 +375,7 @@ productsController = {
                 }
             }
             // URIQUESTIONS Se crea carpeta igual, buscar forma de borrar carpeta
-            if ((req.body.windows == undefined) && (req.body.macos == undefined) && (req.body.linux == undefined)){
-                errors.errors.push({param: "checkbox", msg: "Ingrese al menos una plataforma"});
-                console.log("No se seleccionó nada")
-            }
+            
             res.render('products/productCreate', { errors: errors.mapped(), old: req.body })
         }
     },
