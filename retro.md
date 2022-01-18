@@ -115,3 +115,24 @@
 ## Hacer menos
 
 ## Dejar de hacer
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# Retro Meeting - Sprint 6 + 7
+
+
+## Comenzar a hacer
+* **El Sprint 8**
+
+## Hacer más
+* Estar al día con Playground
+
+## Continuar haciendo
+* **Jugar Rocket League. Está la temporada nueva.**
+* Mirar el Trello
+
+## Hacer menos
+* Tomarse vacaciones
+
+## Dejar de hacer
+
