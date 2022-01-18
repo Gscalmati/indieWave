@@ -61,9 +61,6 @@ let usersController = {
 
             fs.unlink(req.file.path, (err => {
                 if (err) console.log(err);
-                else {
-                  console.log("Deleted file")
-                }
             }))
         }
             res.render('users/register', { errors: errors.mapped(), old: req.body })
@@ -150,13 +147,10 @@ let usersController = {
                 if (errors.isEmpty()) {
                     let file;
                     if (req.file != undefined) {
-                        // RUTA CORRECTA path.join(__dirname + "/../../public" + req.session.userLogged.profile_pic)
+                        // RUTA CORRECTA path.resolve(__dirname + "/../../public" + req.session.userLogged.profile_pic)
                         //Con esto funciona, porque sí fs.unlink(__dirname + req.session.userLogged.profile_pic, (err => {
-                    fs.unlink(__dirname + req.session.userLogged.profile_pic, (err => {
+                    fs.unlink(path.resolve(__dirname + "/../../public" + req.session.userLogged.profile_pic), (err => {
                         if (err) console.log(err);
-                        else {
-                          console.log("Deleted file")
-                        }
                     }));
 
                     file = `/img/users/${req.file.filename}`
@@ -189,9 +183,6 @@ let usersController = {
                 if (req.file){
                     fs.unlink(req.file.path, (err => {
                         if (err) console.log(err);
-                        else {
-                          console.log("Deleted file")
-                        }
                     }))
                 }
                 return res.render("users/edit", { errors: errors.mapped() });

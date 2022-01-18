@@ -25,20 +25,7 @@ const validations =[
 
     /*Validación email*/
     body("email").notEmpty().withMessage(" El campo no puede estar vacío")
-    .isEmail().withMessage(" Ingrese un email con formato válido").bail()
-    .custom((value) => {
-        return db.Products.findOne({
-                where: {
-                    email: value
-                },
-            })
-            .then(result => {
-                if (result) {
-                    return Promise.reject(" Ya existe un producto asociado a este email");
-                }
-            })
-
-    }),
+    .isEmail().withMessage(" Ingrese un email con formato válido").bail(),
 
     /*Validación fecha */
     body("release_date").notEmpty().withMessage(" Ingrese fecha de lanzamiento")

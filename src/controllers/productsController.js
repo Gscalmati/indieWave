@@ -367,9 +367,6 @@ productsController = {
                     req.files.logo.forEach(image => {
                         fs.unlink(image.path, (err => {
                             if (err) console.log(err);
-                                else {
-                                      console.log("Deleted logo")
-                                }
                         }))
                     })
                 }
@@ -380,10 +377,17 @@ productsController = {
         }
     },
 
-    editArt: function (req, res) {
-        res.send("Artículo editado")
-    },
-    update(req, res) {
+    update: async (req, res) => {
+        try {
+
+        let errors = validationResult(req);
+
+        if ((req.body.windows == undefined) && (req.body.macos == undefined) && (req.body.linux == undefined)){
+            errors.errors.push({param: "checkbox", msg: "Ingrese al menos una plataforma"});
+            console.log("No se seleccionó nada")
+        }
+
+        if(errors.isEmpty()){
 
         let imagesArray = [];
 
@@ -393,11 +397,7 @@ productsController = {
             })
         }
 
-
-        (async () => {
-
-            try {
-
+            
                 /*Busco el id del género al que pertenece el producto*/
 
                 let genre = await db.Genres.findOne({
@@ -452,10 +452,37 @@ productsController = {
                 }
 
                 res.redirect('/products/dashboard');
-            } catch (error) {
-                console.log(error)
+           
+
+    } else {
+
+         /* Busco el producto a editar */
+         let productToEdit = await db.Products.findByPk(req.params.id, {
+            include: [{ association: "genre" }, { association: "platforms" }]
+        });
+
+        /* Por comodidad, me guardo las plataformas del producto */
+        let productPlatforms = [];
+        for (platform of productToEdit.platforms) {
+            productPlatforms.push(platform.name);
+        }
+
+        if (req.files){
+            if(req.files.logo != undefined){
+                req.files.logo.forEach(image => {
+                    fs.unlink(image.path, (err => {
+                        if (err) console.log(err);
+                    }))
+                })
             }
-        })()
+        }
+        // URIQUESTIONS Se crea carpeta igual, buscar forma de borrar carpeta
+        
+        res.render('products/productEdit', { product: productToEdit, productPlatforms, errors: errors.mapped(), old: req.body })
+    }
+        } catch (error) {
+            console.log(error)
+    }
     },
 
     search: function (req, res) {
