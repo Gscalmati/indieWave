@@ -10,7 +10,7 @@ let mainController = {
         
 
 
-         let gameFresh = await db.Products.findAll({ limit: 5, offset:10 , raw:true});
+         let gameFresh = await db.Products.findAll({order:[['release_date','DESC']], limit: 5, raw:true});
         
 
 
