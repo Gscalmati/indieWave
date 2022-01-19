@@ -1524,7 +1524,7 @@ label {
 .shopping-cart .bottom-part {
     display: flex;
     margin: 2% auto;
-    justify-content: space-between;
+    justify-content: flex-end;
     width: 90%;
     flex-wrap: wrap;
 }
