@@ -62,13 +62,13 @@ router.get("/create", authAdminMiddleware, productsController.create);
 router.post("/", authAdminMiddleware, uploadProduct.fields([{ name: "logo" }, { name: "images" }]), productCreateValidation, productsController.store);
 
 /* Vista de resultado de búsqueda de productos */
-router.get("/search", authMiddleware, productsController.search);
+router.get("/search", productsController.search);
 
 /* Detalle de producto*/
-router.get("/:id", authMiddleware, productsController.detail);
+router.get("/:id", productsController.detail);
 
 /* Lista de productos de la categoría "category" */
-router.get("/categories/:category", authMiddleware, productsController.categorygames);
+router.get("/categories/:category", productsController.categorygames);
 
 /*Borrar producto */
 router.delete('/dashboard/:id', authAdminMiddleware, productsController.delete);
