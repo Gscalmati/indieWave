@@ -24,6 +24,7 @@
         <main>
             <!-- slider -->
             <!-- slide -->
+            
             <div class="sheetSlider sh-fade sh-auto">
                 <input id="s1" type="radio" name="slide1" checked="">
                 <input id="s2" type="radio" name="slide1">
@@ -31,15 +32,16 @@
                 <input id="s4" type="radio" name="slide1">
                 <input id="s5" type="radio" name="slide1">
                 <div class="sh__content">
-
                     <!-- Slider Item -->
                     <div class="sh__item">
-                        <img src="img/furi-producto.jpg" alt="imgText">
-                        <!-- Item Info -->
-                        <div class="sh__meta">
-                            <h4>Furi</h4>
-                            <span>Secondary text without link</span>
-                        </div>
+                        <a href="http://localhost:3000/products/1">
+                            <img src="img/furi-producto.jpg" alt="imgText">
+                            <!-- Item Info -->
+                            <div class="sh__meta">
+                                <h4>Furii</h4>
+                                <span>Lucha por tu libertad en este juego ultrafluido de lucha frenética con espadas y disparos con dos mandos.</span>
+                            </div>
+                        </a>
                     </div>
 
                     <!-- Slider Item -->
@@ -72,16 +74,6 @@
                         </div>
                     </div>
 
-                    <!-- Slider Item -->
-                    <div class="sh__item">
-                        <img src="https://via.placeholder.com/500x500" alt="imgText">
-                        <!-- Item Info -->
-                        <div class="sh__meta">
-                            <h4>Cup Head</h4>
-                            <span>Secondary text without link</span>
-                        </div>
-                    </div>
-
                 </div><!-- .sh__content -->
 
                 <!--botones -->
@@ -90,7 +82,7 @@
                     <label for="s2"></label>
                     <label for="s3"></label>
                     <label for="s4"></label>
-                    <label for="s5"></label>
+                    
                 </div><!-- .sh__btns -->
 
                 <!--flechas-->
@@ -99,7 +91,7 @@
                     <label for="s2"></label>
                     <label for="s3"></label>
                     <label for="s4"></label>
-                    <label for="s5"></label>
+                    
                 </div><!-- .sh__arrows -->
             </div>
             <!-- prodoductos destacados -->
@@ -113,9 +105,9 @@
 
                         <!-- <div class="featured-div"> -->
                         <div>
-                            <!--%= products[i].logo %>> -->
+                            <!--https://via.placeholder.com/1000x1000-->
                             <a href="/products/<%= productsFeatured[i].id %> ">
-                                <img class="responsive-img" src="https://via.placeholder.com/1000x1000" alt="Foto producto Indie Game">
+                                <img class="responsive-img" src="<%= productsFeatured[i].logo %>" alt="Foto producto Indie Game">
                             
                             
                         </div>
@@ -159,8 +151,8 @@
                     <article class="category-article">
                         <div>
                             <a href="/products/<%= productsFresh[j].id %> ">
-                                <!-- %= products[j].logo %> -->
-                                <img class="responsive-img" src="https://via.placeholder.com/1000x1000" alt="Foto producto Indie Game">
+                                <!--https://via.placeholder.com/1000x1000  -->
+                                <img class="responsive-img" src="<%= productsFresh[j].logo %>" alt="Foto producto Indie Game">
                            
                             
                         </div>
