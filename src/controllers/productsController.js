@@ -445,7 +445,7 @@ productsController = {
                 if (imagesArray.length != 0) {
                     for (image of imagesArray) {
                         await db.Images.create({
-                            product_id: newProduct.id,
+                            product_id: req.params.id,
                             image: image,
                         })
                     };

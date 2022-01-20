@@ -4,24 +4,12 @@ const { body } = require("express-validator");
 const validations =[
     /*Validación nombre */
     body("game_name").notEmpty().withMessage(" El nombre no puede estar vacío")
-    .isLength({ min: 5 }).withMessage(" Ingrese un nombre mayor a 5 caracteres")
-    .custom((value) => {
-        return db.Products.findOne({
-                where: {
-                    name: value
-                }
-            })
-            .then(function(result) {
-                if (result) {
-                    return Promise.reject("Ya existe un producto con ese nombre");
-                }
-            })
-    })
-    .isAlpha('en-US','es-ES', { ignore: '\s' }).withMessage(" Ingrese un nombre válido"),
+    .isLength({ min: 5 }).withMessage(" Ingrese un nombre mayor a 5 caracteres"),
+    
     
     /*Validación desarrollador*/
-    body("developer").notEmpty().withMessage(" El desarrollador no puede estar vacío")
-    .isAlpha('en-US','es-ES', { ignore: '\s' }).withMessage("Ingrese un nombre válido"),
+    body("developer").notEmpty().withMessage(" El desarrollador no puede estar vacío"),
+    
 
     /*Validación email*/
     body("email").notEmpty().withMessage(" El campo no puede estar vacío")
