@@ -34,21 +34,22 @@ const editProfileValidations = require("../middlewares/validations/editProfileVa
 router.get("/register", guestRoutesMiddleware, usersController.register);
 
 router.post("/register", loggedRoutesMiddleware, uploadUser.single("profilePic"), userRegisterValidations, usersController.store);
+
 /* Login routes */
 router.get("/login", guestRoutesMiddleware, usersController.login);
 router.post("/login", loggedRoutesMiddleware, userLoginValidations, usersController.logged);
-
-
 router.get("/logout", usersController.logout);
+
 //Profile
 router.get('/profile', authMiddleware, usersController.profile);
-
 router.get('/profile/edit', authMiddleware, usersController.editProfile);
 router.put('/profile/edit', authMiddleware, uploadUser.single("profilePic"), editProfileValidations, usersController.saveProfile);
-
 router.get('/profile/changePassword', authMiddleware, usersController.changePassword);
-
 router.put('/profile/changePassword', authMiddleware, usersController.updatePassword);
+
+//API
+router.get("/api/users")
+
 
 
 module.exports = router;
