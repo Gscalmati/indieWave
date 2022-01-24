@@ -54,10 +54,28 @@ let apiController = {
         catch (error) {
             console.log(error)
         }
+    },
+
+    
+    /*product APIs */
+    list: function (req, res) {
+        db.Products.findAll()
+        .then(products =>{
+            return res.json({
+                total: products.length,
+                data:products
+            })
+        })
+    },
+    show: function (req, res) {
+        db.Products.findByPk(req.params.id)
+        .then(product =>{
+            return res.json({
+                data:product
+            })
+        })
     }
 }
-
-
 
 module.exports = apiController;
 
