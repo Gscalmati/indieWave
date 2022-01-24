@@ -132,3 +132,9 @@
 - Necesitamos solucionar el tema de la "carpeta" a borrar de Multer, cuando hay un error en las validaciones, seguramente #UriQuestion
 - Hay que verificar lo avanzado por Facu para concretar la entrega del sprint
 - Hay que corregir en base a la devolución de Uri
+
+## Lunes 24/1/2022
+
+- Facu arma API de usuarios. Falta vista de perfil para admin.
+- Juani avanza con API de Productos.
+- **Rehacer carga de imágenes y exportar base de datos**
