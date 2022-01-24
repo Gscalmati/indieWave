@@ -58,22 +58,57 @@ let apiController = {
 
     
     /*product APIs */
-    list: function (req, res) {
-        db.Products.findAll()
-        .then(products =>{
-            return res.json({
-                total: products.length,
-                data:products
+    
+    list: async (req, res) => {
+        try {
+            let products = await db.Products.findAll( {attributes: ['id', 'name', 'description',] });
+            //let productDetail = await db.Products.findById(product.id);
+            let productsGenre = await db.Products.findAll( {include : ["genre"]});
+
+            res.json({
+                count: products.length,
+                data:products,
+                genres: productsGenre,
             })
-        })
+
+            // let genres = await db.Genres.findAll({include : [{association:  "products"}]});
+            // res.json({
+            //     countByGenre: genres.length,
+            //     generos: genres
+            // })
+
+            
+        }
+        catch (error) {
+           console.log(error)
+        }
     },
-    show: function (req, res) {
-        db.Products.findByPk(req.params.id)
-        .then(product =>{
-            return res.json({
-                data:product
+
+
+    show:  async (req, res) => {
+        try {
+            let product = await db.Products.findByPk(req.params.id);
+
+            /*un array de uno a muchos */
+            let productsGenre = await db.Products.findByPk(req.params.id, {include: [{ association: "genre" }]});
+            
+            // let productImage = await db.Products.findAll();
+            // productImage.forEach(product => {
+            //     let images = product.images.map(image =>{
+            //         return 'http://localhost:3000/public/img/products/' + images.url
+            //     })
+            // });
+            // product.images = images;
+
+            res.json({
+                data:product,
+                genre:productsGenre,
+                //images: img
             })
-        })
+        }
+        catch (error) {
+            console.log(error)
+        }
     }
 }
 
