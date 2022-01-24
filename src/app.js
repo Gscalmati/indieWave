@@ -41,7 +41,11 @@ app.use(loggedUserMiddleware);
 const routerMain = require(path.resolve(__dirname, "routes/main"));
 const routerUsers = require("./routes/users");
 const routerProducts = require("./routes/products");
+<<<<<<< HEAD
 const routerApi = require("./routes/apiP");
+=======
+const routerApi = require("./routes/api");
+>>>>>>> 9211401f6bf35b64206266618bcbaf1a9667b8c4
 
 app.use("/", routerMain);
 
@@ -51,6 +55,7 @@ app.use("/api", routerApi);
 
 app.use("/users", routerUsers);
 
+app.use("/api", routerApi);
 
 /*Configuración 404*/
 app.use((req, res, next) => {
