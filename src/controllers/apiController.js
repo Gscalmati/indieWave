@@ -15,7 +15,7 @@ let apiController = {
             console.log("lastPage:" + lastPage)
 
 
-            if (!(req.query.page == undefined || req.query.page == "" || isNaN(req.query.page))) {
+            if (!(req.query.page == undefined || req.query.page == "" || isNaN(req.query.page) || req.query.page < 0)) {
                 page = parseInt(req.query.page)
             } else {
                 res.redirect("/api/users?page=0")
