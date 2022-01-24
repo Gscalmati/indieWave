@@ -73,4 +73,7 @@ router.get("/categories/:category", productsController.categorygames);
 /*Borrar producto */
 router.delete('/dashboard/:id', authAdminMiddleware, productsController.delete);
 
+
+
+
 module.exports = router;

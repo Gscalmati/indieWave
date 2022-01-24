@@ -41,10 +41,13 @@ app.use(loggedUserMiddleware);
 const routerMain = require(path.resolve(__dirname, "routes/main"));
 const routerUsers = require("./routes/users");
 const routerProducts = require("./routes/products");
+const routerApi = require("./routes/apiP");
 
 app.use("/", routerMain);
 
 app.use("/products", routerProducts);
+
+app.use("/api", routerApi);
 
 app.use("/users", routerUsers);
 

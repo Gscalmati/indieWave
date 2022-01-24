@@ -501,7 +501,6 @@ productsController = {
             }
         })()
     }
-
 }
 
 module.exports = productsController;

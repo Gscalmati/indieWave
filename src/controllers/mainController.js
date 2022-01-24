@@ -14,10 +14,6 @@ let mainController = {
         
 
 
-         //let slider = await db.Products.findAll({ limit: 4 , raw:true});productsSlider : slider
-
-
-
         return res.render("main/home", {productsFeatured : gameFeatured, productsFresh: gameFresh });
         
     }
