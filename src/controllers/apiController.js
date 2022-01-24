@@ -61,21 +61,40 @@ let apiController = {
     
     list: async (req, res) => {
         try {
-            let products = await db.Products.findAll( {attributes: ['id', 'name', 'description',] });
-            //let productDetail = await db.Products.findById(product.id);
+            let products = await db.Products.findAll( {attributes: ['id', 'name', 'description','genre_id'] });
+            
             let productsGenre = await db.Products.findAll( {include : ["genre"]});
+            
+            let productsByGenre = {}
+            let genres = await db.Genres.findAll();
+            genres.forEach(genre => {
+                let count = 0;
+                products.forEach(element => {
+                    if(element.genre_id == genre.id ){
+                        count ++
+                    }   
+                });
+                productsByGenre[genre.name] = count
+             });
 
+
+            
+            products = await db.Products.findAll( {attributes: ['id', 'name', 'description'], raw : true });
+            products.forEach(product =>{
+                product["detail"] = `localhost:3000/products/${product.id}`
+            })
+            
+
+            
             res.json({
                 count: products.length,
                 data:products,
                 genres: productsGenre,
+                countByGenre:productsByGenre
             })
 
-            // let genres = await db.Genres.findAll({include : [{association:  "products"}]});
-            // res.json({
-            //     countByGenre: genres.length,
-            //     generos: genres
-            // })
+            
+            
 
             
         }
