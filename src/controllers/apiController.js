@@ -30,6 +30,11 @@ let apiController = {
                 order: [['id', 'ASC']],
                 limit: 10,
                 offset: page * 10,
+                raw: true
+            })
+
+            users.forEach(user => {
+                user.detail = `localhost:3000/users/profile/${user.id}`
             })
 
             console.log(req.query)
@@ -49,6 +54,7 @@ let apiController = {
     getUserById: async (req, res) => {
         try {
             let user = await db.Users.findByPk(req.params.id, options = { attributes: { exclude: ['password', 'admin'] } });
+            user.profile_pic = `localhost:3000${user.profile_pic}`
             res.json(user);
         }
         catch (error) {
