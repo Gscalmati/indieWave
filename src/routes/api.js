@@ -12,10 +12,10 @@ router.get("/users/:id", apiController.getUserById);
 
 /*API products */
 /*Lista de productos*/
-router.get("/products", apiController.list);
+router.get("/products", apiController.getProducts);
 
 /*Detalle del producto*/
-router.get("/products/:id", apiController.show);
+router.get("/products/:id", apiController.getProductById);
 
 
 module.exports = router;

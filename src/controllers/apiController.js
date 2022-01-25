@@ -59,11 +59,11 @@ let apiController = {
     
     /*product APIs */
     
-    list: async (req, res) => {
+    getProducts: async (req, res) => {
         try {
             let products = await db.Products.findAll( {attributes: ['id', 'name', 'description','genre_id'] });
             
-            let productsGenre = await db.Products.findAll( {include : ["genre"]});
+            let productsImages = await db.Images.findAll( {include : ["products"]});
             
             let productsByGenre = {}
             let genres = await db.Genres.findAll();
@@ -89,14 +89,9 @@ let apiController = {
             res.json({
                 count: products.length,
                 data:products,
-                genres: productsGenre,
+                images: productsImages,
                 countByGenre:productsByGenre
             })
-
-            
-            
-
-            
         }
         catch (error) {
            console.log(error)
@@ -104,7 +99,7 @@ let apiController = {
     },
 
 
-    show:  async (req, res) => {
+    getProductById:  async (req, res) => {
         try {
             let product = await db.Products.findByPk(req.params.id);
 
