@@ -56,13 +56,13 @@ let usersController = {
 
             res.redirect("/users/login");
         } else {
-            
-            if (req.file){
 
-            fs.unlink(req.file.path, (err => {
-                if (err) console.log(err);
-            }))
-        }
+            if (req.file) {
+
+                fs.unlink(req.file.path, (err => {
+                    if (err) console.log(err);
+                }))
+            }
             res.render('users/register', { errors: errors.mapped(), old: req.body })
         }
     },
@@ -86,7 +86,7 @@ let usersController = {
                     });
 
                     if (await bcryptjs.compare(req.body.password, userFound.password)) {
-                       
+
                         delete userFound.password
                         req.session.userLogged = userFound;
 
@@ -116,9 +116,25 @@ let usersController = {
         res.redirect("/")
     },
 
-    profile: (req, res) => {
+    profile: async (req, res) => {
+        try {
 
-        res.render("users/profile");
+            let loggedUser = await db.Users.findByPk(req.session.userLogged.id);
+            return res.render("users/profile", { user: loggedUser })
+
+        } catch (error) {
+            console.log(error);
+        }
+    },
+
+    profileById: async (req, res) => {
+        try {
+            let user = await db.Users.findByPk(req.params.id);
+            return res.render("users/profile", { user: user })
+
+        } catch (error) {
+            console.log(error);
+        }
     },
 
     editProfile: (req, res) => {
@@ -141,7 +157,7 @@ let usersController = {
 
         (async () => {
             try {
-                
+
                 let errors = validationResult(req);
 
                 if (errors.isEmpty()) {
@@ -149,48 +165,48 @@ let usersController = {
                     if (req.file != undefined) {
                         // RUTA CORRECTA path.resolve(__dirname + "/../../public" + req.session.userLogged.profile_pic)
                         //Con esto funciona, porque sí fs.unlink(__dirname + req.session.userLogged.profile_pic, (err => {
-                    fs.unlink(path.resolve(__dirname + "/../../public" + req.session.userLogged.profile_pic), (err => {
-                        if (err) console.log(err);
-                    }));
+                        fs.unlink(path.resolve(__dirname + "/../../public" + req.session.userLogged.profile_pic), (err => {
+                            if (err) console.log(err);
+                        }));
 
-                    file = `/img/users/${req.file.filename}`
+                        file = `/img/users/${req.file.filename}`
+                    } else {
+                        file = await db.Users.findByPk(req.session.userLogged.id);
+                        file = file.profile_pic;
+
+                    }
+
+
+                    await db.Users.update({
+                        username: req.body.username,
+                        name: req.body.name,
+                        surname: req.body.surname,
+                        email: req.body.email,
+                        password: req.body.password,
+                        profile_pic: file
+                    }, { where: { id: req.session.userLogged.id } })
+
+
+                    let sessionId = req.session.userLogged.id;
+
+                    req.session.userLogged = await db.Users.findByPk(sessionId, { raw: true });
+
+
+                    // res.render("users/profile"); Usamos REDIRECT en cambio, porque necesitamos iniciar un nuevo request. Para actualiar LOCALS, mediante loggedUserMiddleware
+                    res.redirect("/users/profile")
                 } else {
-                    file = await db.Users.findByPk(req.session.userLogged.id);
-                    file = file.profile_pic;
 
+                    if (req.file) {
+                        fs.unlink(req.file.path, (err => {
+                            if (err) console.log(err);
+                        }))
+                    }
+                    return res.render("users/edit", { errors: errors.mapped() });
                 }
-
-
-                await db.Users.update({
-                    username: req.body.username,
-                    name: req.body.name,
-                    surname: req.body.surname,
-                    email: req.body.email,
-                    password: req.body.password,
-                    profile_pic: file
-                }, { where: { id: req.session.userLogged.id } })
-
-
-                let sessionId = req.session.userLogged.id;
-
-                req.session.userLogged = await db.Users.findByPk(sessionId, { raw: true });
-
-
-                // res.render("users/profile"); Usamos REDIRECT en cambio, porque necesitamos iniciar un nuevo request. Para actualiar LOCALS, mediante loggedUserMiddleware
-                res.redirect("/users/profile")
-            } else {
-                
-                if (req.file){
-                    fs.unlink(req.file.path, (err => {
-                        if (err) console.log(err);
-                    }))
-                }
-                return res.render("users/edit", { errors: errors.mapped() });
-            }
             } catch (error) {
                 console.log(error)
             }
-            
+
         })()
 
     },

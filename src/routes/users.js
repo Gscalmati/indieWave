@@ -25,6 +25,7 @@ const usersController = require("../controllers/usersController");
 const loggedRoutesMiddleware = require("../middlewares/authentication/loggedRoutesMiddleware");
 const guestRoutesMiddleware = require('../middlewares/authentication/guestRoutesMiddleware');
 const authMiddleware = require('../middlewares/authentication/authMiddleware');
+const authAdminMiddleware = require("../middlewares/authentication/authAdminMiddleware");
 //Validations
 const userLoginValidations = require('../middlewares/validations/userLoginValidations');
 const userRegisterValidations = require('../middlewares/validations/userRegisterValidations');
@@ -46,6 +47,7 @@ router.get('/profile/edit', authMiddleware, usersController.editProfile);
 router.put('/profile/edit', authMiddleware, uploadUser.single("profilePic"), editProfileValidations, usersController.saveProfile);
 router.get('/profile/changePassword', authMiddleware, usersController.changePassword);
 router.put('/profile/changePassword', authMiddleware, usersController.updatePassword);
+router.get('/profile/:id', authAdminMiddleware, usersController.profileById);
 
 //API
 router.get("/api/users")
