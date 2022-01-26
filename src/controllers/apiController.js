@@ -11,10 +11,6 @@ let apiController = {
             let userCount = await db.Users.count();
             let lastPage = Math.floor(userCount / 10);
 
-            console.log("userCount : " + userCount)
-            console.log("lastPage:" + lastPage)
-
-
             if (!(req.query.page == undefined || req.query.page == "" || isNaN(req.query.page) || req.query.page < 0)) {
                 page = parseInt(req.query.page)
             } else {
@@ -36,9 +32,6 @@ let apiController = {
             users.forEach(user => {
                 user.detail = `localhost:3000/users/profile/${user.id}`
             })
-
-            console.log(req.query)
-            console.log("page:" + page)
 
             res.json({
                 prev: page > 0 ? `localhost:3000/api/users?page=${page - 1}` : null,
