@@ -140,7 +140,7 @@ let apiController = {
             /*URL del logo */
             /*Se imprime la URL en la api pero no encuentra la ruta*/
             console.log(product.logo);
-            let productUrl = `${product.logo}`
+            let productUrl = `localhost:3000/public${product.logo}`
             
             res.json({
                 data:productImages,
