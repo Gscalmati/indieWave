@@ -41,16 +41,22 @@ let apiController = {
             });
         }
         catch (error) {
+            res.json({
+                msg: "Algo salió mal. Intente nuevamente"
+            })
             console.log(error)
         }
     },
     getUserById: async (req, res) => {
         try {
-            let user = await db.Users.findByPk(req.params.id, options = { attributes: { exclude: ['password', 'admin'] } });
-            user.profile_pic = `localhost:3000${user.profile_pic}`
-            res.json(user);
+                let user = await db.Users.findByPk(req.params.id, options = { attributes: { exclude: ['password', 'admin'] } });
+                user.profile_pic = `localhost:3000${user.profile_pic}`
+                res.json(user);
         }
         catch (error) {
+            res.json({
+                msg: "Algo salió mal. Intente nuevamente"
+            })
             console.log(error)
         }
     },
