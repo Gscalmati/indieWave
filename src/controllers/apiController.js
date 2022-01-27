@@ -82,9 +82,6 @@ let apiController = {
 
             let products = await db.Products.findAll( {
                 attributes: ['id', 'name', 'description','genre_id'],
-                order: [['id', 'ASC']],
-                limit: 10, //no toma limit 10 --> Tenés que volver a hacer la query con limit, order y todo  en la linea 109 porque ahí redefinis "products". -FB
-                offset: page * 10,
                 raw: true });
             
             let productsImages = await db.Images.findAll( {
@@ -106,18 +103,28 @@ let apiController = {
 
 
             
-            products = await db.Products.findAll( {attributes: ['id', 'name', 'description'], raw : true });
-            products.forEach(product =>{
-                //Acá podrías meter una propiedad "images" a cada "product" que contenga el resultado de hacer una query a la db buscando las imágenes que tenga como id el id de "product". -FB
+            products = await db.Products.findAll( {
+                attributes: ['id', 'name', 'description'],
+                order: [['id', 'ASC']],
+                limit: 10, 
+                offset: page * 10,
+                raw: true 
+            });
+            for( product of products){
                 product["detail"] = `localhost:3000/products/${product.id}`
-            })
+                product["images"] = await db.Images.findAll({attributes: ["id","image"], where :{
+                    product_id : product.id    
+                }, raw:true})
+                for( image of product.images){
+                    image.image = `localhost:3000${image.image}` 
+                }
+            }
             
 
             res.json({
                 prev: page > 0 ? `localhost:3000/api/products?page=${page - 1}` : null,
                 count: productCount,
                 data:products,
-                images: productsImages, //Tenés que poner un array con las imágenes de cada producto en cada objeto dentro de "data". Acá estas buscando una lista de todas las imágenes de todos los productos. -FB
                 countByGenre:productsByGenre,
                 next: page != lastPage ? `localhost:3000/api/products?page=${page + 1}` : null
             })
@@ -138,9 +145,8 @@ let apiController = {
             let productImages = await db.Products.findByPk(req.params.id, {include: [{ association: "images" }]});
             
             /*URL del logo */
-            /*Se imprime la URL en la api pero no encuentra la ruta*/
-            console.log(product.logo);
-            let productUrl = `localhost:3000/public${product.logo}`
+              
+            let productUrl = `localhost:3000${product.logo}`
             
             res.json({
                 data:productImages,
