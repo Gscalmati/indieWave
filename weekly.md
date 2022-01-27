@@ -138,3 +138,10 @@
 - Facu arma API de usuarios. Falta vista de perfil para admin.
 - Juani avanza con API de Productos.
 - **Rehacer carga de imágenes y exportar base de datos**
+
+## Lunes 26/1/2022
+
+- Facu termina API de usuarios.
+- Facu arma proyecto y repo con el dashboard de ejemplo en React.
+- Gio vuelve de las vacaciones **(igual en dos día se va de nuevo. Un desastre)**
+- Juani arregla las imágenes de los productos que había sumado.
