@@ -115,6 +115,9 @@ let apiController = {
                 product["images"] = await db.Images.findAll({attributes: ["id","image"], where :{
                     product_id : product.id    
                 }, raw:true})
+                for( image of product.images){
+                    image.image = `localhost:3000${image.image}` 
+                }
             }
             
 
@@ -142,9 +145,8 @@ let apiController = {
             let productImages = await db.Products.findByPk(req.params.id, {include: [{ association: "images" }]});
             
             /*URL del logo */
-            /*Se imprime la URL en la api pero no encuentra la ruta*/
-            console.log(product.logo);
-            let productUrl = `localhost:3000/public${product.logo}`
+              
+            let productUrl = `localhost:3000${product.logo}`
             
             res.json({
                 data:productImages,
