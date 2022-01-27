@@ -191,4 +191,8 @@ CREATE TABLE `users_products(library)` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+<<<<<<< HEAD
 -- Dump completed on 2022-01-26 21:22:28
+=======
+-- Dump completed on 2022-01-26 22:06:33
+>>>>>>> 21182ad64fe6c845ab2fbede799d404815007dfa
