@@ -71,6 +71,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `shopping_products` WRITE;
 /*!40000 ALTER TABLE `shopping_products` DISABLE KEYS */;
+INSERT INTO `shopping_products` VALUES (2,1,2),(3,1,1),(4,1,25);
 /*!40000 ALTER TABLE `shopping_products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -80,7 +81,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `shoppingcart` WRITE;
 /*!40000 ALTER TABLE `shoppingcart` DISABLE KEYS */;
-INSERT INTO `shoppingcart` VALUES (1,22),(2,23),(3,24),(4,26),(5,27),(6,28),(7,29);
+INSERT INTO `shoppingcart` VALUES (1,21),(2,23),(3,24),(4,26),(5,27),(6,28),(7,29);
 /*!40000 ALTER TABLE `shoppingcart` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -112,4 +113,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-01-26 21:26:18
+-- Dump completed on 2022-01-26 22:32:02

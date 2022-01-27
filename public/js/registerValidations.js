@@ -5,7 +5,7 @@ window.onload = function() {
     formulario.addEventListener("submit", function(event) {
          
         let errores = [];
-        console.log("Todo parado")
+   
 
         let fieldName = document.querySelector("input#name");
 
@@ -26,7 +26,7 @@ window.onload = function() {
         } else {
             let regex = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
             if (!regex.test(fieldEmail.value)) {
-                console.log("No es valido")
+            
                 errores.push({ param: "email", msg: "Ingrese un email válido" }
             )} /*else {
                 console.log("Es valido")
@@ -64,15 +64,12 @@ window.onload = function() {
         let picData = fieldPic.value;
      
         if (picData != ""){
-            console.log("Se eligió una foto")
+      
             let picExtension = picData.substring(
                 picData.lastIndexOf('.') + 1).toLowerCase();
             if (picExtension != "jpg" && picExtension != "png" && picExtension != "jpeg"){
                 errores.push({ param: "profilePic", msg: "La imagen debe ser de formato JPG/JPEG/PNG o ninguna" })
-            } else {
-                console.log("Cumple con los formatos")
-
-            }
+            } 
         }
 
             //let erroresUL = document.querySelector("#errors-ul")

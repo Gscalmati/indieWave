@@ -22,6 +22,7 @@
         <main class="shopping-cart">
 
             <h2>Carrito de compras</h2>
+            
             <% if ((locals.comprasUser) && ((comprasUser.length < 0) || (comprasUser[0].products.name == null))) { %>
                 <h3 id="empty-cart-msg">Tu carrito se encuentra vacío</h3>
             <% }  else if(locals.comprasUser) { %> 

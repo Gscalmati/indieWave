@@ -109,7 +109,7 @@ window.onload = function() {
             document.querySelectorAll(".error-msg").forEach(elem =>{
                 elem.innerHTML = ""
             })
-            console.log(errors)
+      
             errors.forEach(elemento => {
                 let error = document.querySelector("#error-" + elemento.param);
                 error.innerHTML = "<span>" + "<i class='fas fa-exclamation-circle'></i>" + elemento.msg + "</span>";

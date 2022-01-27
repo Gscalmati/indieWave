@@ -228,7 +228,7 @@ let usersController = {
                             password: await bcryptjs.hash(req.body.newPass, 10)
                         }, { where: { id: currentUser.id } })
 
-                        console.log("Contraseña actualizada");
+       
                         return res.redirect("/users/profile")
 
                     } else {

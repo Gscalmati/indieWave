@@ -194,16 +194,16 @@ productsController = {
                 raw: true
             })
            
-            console.log(req.body.cartValue)
+         
             // Reviso si ya existe ese articulo en el carrito
             let artRepeated = repe.find(elem => {
-                console.log(elem.product_id)
+           
                 return (elem.product_id == req.body.cartValue)
             })
-            console.log(artRepeated)
+      
             // Si existe, no hace el "create" y redirecciona al mismo articulo
             if (artRepeated != undefined) {
-                console.log("El articulo ya existe")
+          
                 return res.redirect("/products/shoppingCart")
             } else {
                 //Agregar al carrito con el ID del carrito
@@ -228,7 +228,7 @@ productsController = {
     deleteFromCart: function (req, res){
         (async () =>{
             try {
-                console.log("Entré")
+      
                 //Encontrar el ID del carrito en base al usuario loggeado
                 let sessionCart = await db.Shoppingcarts.findOne({
                     where : {
@@ -243,7 +243,7 @@ productsController = {
                         product_id: req.params.id
                     }
                 })
-                console.log("Borrado?")
+     
                 return res.redirect("/products/shoppingCart")
             }
             catch (error){
@@ -283,7 +283,7 @@ productsController = {
 
         if ((req.body.windows == undefined) && (req.body.macos == undefined) && (req.body.linux == undefined)){
             errors.errors.push({param: "checkbox", msg: "Ingrese al menos una plataforma"});
-            console.log("No se seleccionó nada")
+     
         }
         if(errors.isEmpty()){
 
@@ -384,7 +384,7 @@ productsController = {
 
         if ((req.body.windows == undefined) && (req.body.macos == undefined) && (req.body.linux == undefined)){
             errors.errors.push({param: "checkbox", msg: "Ingrese al menos una plataforma"});
-            console.log("No se seleccionó nada")
+         
         }
 
         if(errors.isEmpty()){

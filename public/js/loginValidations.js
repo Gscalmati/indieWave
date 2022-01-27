@@ -7,7 +7,7 @@ window.onload = function() {
 
     formulario.addEventListener("submit", function(event) {
         let errores = [];
-        console.log("Todo parado")
+    
 
         let fieldUsername = document.querySelector("input#username");
 

@@ -59,7 +59,7 @@ const validations = [
     body("profilePic")
     .custom((image, { req }) => {
         if (!req.file){
-            console.log("No hay ninguna imagen")
+       
             return true
         } else if(req.file.mimetype === "image/png" || req.file.mimetype === "image/jpeg" || req.file.mimetype === "image/jpg"){
                 return true
