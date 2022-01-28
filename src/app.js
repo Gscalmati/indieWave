@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const cors = require ("cors");
 
 const path = require("path");
 
@@ -36,6 +37,9 @@ app.set("views", path.resolve(__dirname, "views"))
 /* Middleware Global */
 const loggedUserMiddleware = require("./middlewares/authentication/loggedUserMiddleware");
 app.use(loggedUserMiddleware);
+
+/* CORS */
+app.use(cors());
 
 /* Configuracion rutas */
 const routerMain = require(path.resolve(__dirname, "routes/main"));

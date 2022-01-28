@@ -18,7 +18,7 @@ let apiController = {
             }
 
             if (page > lastPage) {
-                res.redirect(`/api/users?page=${lastPage}`)
+                return res.redirect(`/api/users?page=${lastPage}`)
             }
 
             let users = await db.Users.findAll({
@@ -33,7 +33,7 @@ let apiController = {
                 user.detail = `localhost:3000/users/profile/${user.id}`
             })
 
-            res.json({
+            return res.json({
                 prev: page > 0 ? `localhost:3000/api/users?page=${page - 1}` : null,
                 count: userCount,
                 users: users,
@@ -41,10 +41,11 @@ let apiController = {
             });
         }
         catch (error) {
-            res.json({
+            console.log(error)
+            return res.json({
                 msg: "Algo salió mal. Intente nuevamente"
             })
-            console.log(error)
+            
         }
     },
     getUserById: async (req, res) => {
