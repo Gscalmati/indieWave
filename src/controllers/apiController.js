@@ -14,7 +14,7 @@ let apiController = {
             if (!(req.query.page == undefined || req.query.page == "" || isNaN(req.query.page) || req.query.page < 0)) {
                 page = parseInt(req.query.page)
             } else {
-                res.redirect("/api/users?page=0")
+                return res.redirect("/api/users?page=0")
             }
 
             if (page > lastPage) {
@@ -52,13 +52,13 @@ let apiController = {
         try {
                 let user = await db.Users.findByPk(req.params.id, options = { attributes: { exclude: ['password', 'admin'] } });
                 user.profile_pic = `localhost:3000${user.profile_pic}`
-                res.json(user);
+                return res.json(user);
         }
         catch (error) {
-            res.json({
+            console.log(error);
+            return res.json({
                 msg: "Algo salió mal. Intente nuevamente"
             })
-            console.log(error)
         }
     },
 
@@ -75,11 +75,13 @@ let apiController = {
             if (!(req.query.page == undefined || req.query.page == "" || isNaN(req.query.page) || req.query.page < 0)) {
                 page = parseInt(req.query.page)
             } else {
-                res.redirect("/api/products?page=0")
+                return res.redirect("/api/products?page=0")
             }
 
+            console.log(page)
+
             if (page > lastPage) {
-                res.redirect(`/api/products?page=${lastPage}`)
+                return res.redirect(`/api/products?page=${lastPage}`)
             }
 
             let products = await db.Products.findAll( {
@@ -123,7 +125,7 @@ let apiController = {
             }
             
 
-            res.json({
+            return res.json({
                 prev: page > 0 ? `localhost:3000/api/products?page=${page - 1}` : null,
                 count: productCount,
                 data:products,
@@ -132,7 +134,10 @@ let apiController = {
             })
         }
         catch (error) {
-           console.log(error)
+            console.log(error)
+            return res.json({
+                msg: "Algo salió mal. Intente nuevamente"
+            })
         }
     },
 
@@ -150,13 +155,16 @@ let apiController = {
               
             let productUrl = `localhost:3000${product.logo}`
             
-            res.json({
+            return res.json({
                 data:productImages,
                 url: productUrl
             })
         }
         catch (error) {
-            console.log(error)
+            console.log(error);
+            return res.json({
+                msg: "Algo salió mal. Intente nuevamente"
+            })
         }
     }
 }
