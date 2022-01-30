@@ -78,8 +78,6 @@ let apiController = {
                 return res.redirect("/api/products?page=0")
             }
 
-            console.log(page)
-
             if (page > lastPage) {
                 return res.redirect(`/api/products?page=${lastPage}`)
             }
