@@ -7,7 +7,7 @@ let apiController = {
 
     getUsers: async (req, res) => {
         try {
-
+            let page;
             let userCount = await db.Users.count();
             let lastPage = Math.floor(userCount / 10);
 
