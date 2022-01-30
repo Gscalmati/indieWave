@@ -67,6 +67,7 @@ let apiController = {
     
     getProducts: async (req, res) => {
         try {
+            let page;
             let productCount = await db.Products.count();
             let lastPage = Math.floor(productCount / 10);
 
