@@ -119,21 +119,21 @@
 - **Gio etá felí**
 - Repartimos tareas de validaciones.
 
-## Domingo 9/1/2022
+## Domingo 9/01/2022
 
 - Facu no está, está cazando alfajores en Havanna de MDQ
 - Juani avanzó, pero esta perdido.
 - Hablamos con Juani sobre las validaciones de Front, arreglamos las referencias a los input y los span
 - Gio comenta que el 19 se va de viaje, por ende va a terminar sus tareas del sprint 7 para el miércoles próximo, e intentar comenzar con el sprint 8
 
-## Miércoles 12/1/2022
+## Miércoles 12/01/2022
 
 - Vimos con Juani las validaciones del back end del registro de productos
 - Necesitamos solucionar el tema de la "carpeta" a borrar de Multer, cuando hay un error en las validaciones, seguramente #UriQuestion
 - Hay que verificar lo avanzado por Facu para concretar la entrega del sprint
 - Hay que corregir en base a la devolución de Uri
 
-## Lunes 24/1/2022
+## Lunes 24/01/2022
 
 - Facu arma API de usuarios. Falta vista de perfil para admin.
 - Juani avanza con API de Productos.
@@ -145,3 +145,7 @@
 - Facu arma proyecto y repo con el dashboard de ejemplo en React.
 - Gio vuelve de las vacaciones **(igual en dos día se va de nuevo. Un desastre)**
 - Juani arregla las imágenes de los productos que había sumado.
+
+## Lunes 31/01/2022
+- Facu añade dos paneles al dashboard React.
+- **Hay que sumar logo a todos los productos**
