@@ -1063,11 +1063,16 @@ main #extras-area #sale {
     #subtitle-featured-home, #subtitle-home{
         box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset; 
         /* box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset; */
+        animation: flash; /* referring directly to the animation's @keyframe declaration */
+        animation-duration: 2s; /* don't forget to set a duration! */
+
     }
     .section-featured, .section-category{
         /* box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px; */
         box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
     }
+
+    
 }
 
 
