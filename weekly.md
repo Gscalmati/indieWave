@@ -149,3 +149,11 @@
 ## Lunes 31/01/2022
 - Facu añade dos paneles al dashboard React.
 - **Hay que sumar logo a todos los productos**
+
+## Lunes 31/01/2022
+- Facu añade dos paneles al dashboard React.
+- **Hay que sumar logo a todos los productos**
+
+## Miércoles 02/02/2022
+- Juani se pone la 10 y añade estilos e imágenes a los productos.
+- Arreglamos la clase responsive-img para que las tarjetas de productos y la vista de detalle se vean correctamente.
