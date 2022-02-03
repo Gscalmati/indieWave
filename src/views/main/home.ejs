@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="/css/style.css">
     <link href="//cdn.jsdelivr.net/gh/zkreations/SheetSlider@2.2.0/dist/sheetslider.min.css" rel="stylesheet" />
     
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="icon" href="/img/favicon.ico" type="image/x-icon" />
     <title>IndieWave</title>
 
@@ -100,13 +101,13 @@
                 </div><!-- .sh__arrows -->
             </div>
             <!-- prodoductos destacados -->
-            <div id="subtitle-featured-home">
+            <div id="subtitle-featured-home" class="animate__fadeIn">
                 <h2>Destacados</h2>
             </div>
-            <section id="featured">
+            <section id="featured" class="section-featured ">
                 
                 <% for( let i=0; i < productsFeatured.length; i++ ) { %>
-                    <article class="product-article">
+                    <article class="product-article animate__flash">
 
                         <!-- <div class="featured-div"> -->
                         <div>
@@ -149,12 +150,12 @@
                 <h2>Juegos recientes</h2>
             </div>
             <!-- Productos destacados de cada categoria elegida -->
-            <section id="category">
+            <section id="category" class="section-category">
 
                 <!-- <i class="fas fa-chevron-left"></i> -->
                 <% for( let j=0; j < productsFresh.length; j++ ) { %>
                     <article class="category-article">
-                        <div>
+                        <div class="imagen">
                             <a href="/products/<%= productsFresh[j].id %> ">
                                 <!--https://via.placeholder.com/1000x1000  -->
                                 <img class="responsive-img" src="<%= productsFresh[j].logo %>" alt="Foto producto Indie Game">

@@ -11,7 +11,7 @@ router.get("/users/:id", apiController.getUserById);
 
 
 /*API products */
-/*Lista de productos*/
+/*Lista de productos de a 10 por página*/
 router.get("/products", apiController.getProducts);
 
 /*Detalle del producto*/

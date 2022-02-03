@@ -64,6 +64,7 @@ let apiController = {
 
     
     /*product APIs */
+
     
     getProducts: async (req, res) => {
         try {
