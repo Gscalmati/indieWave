@@ -530,7 +530,8 @@ main #game-area #carrousel #img-bar {
 }
 
 main #game-area #carrousel #img-bar .img-div {
-    width: 25%;
+    width: 20%;
+    height: 70px;
 }
 
 main #game-area #carrousel #img-bar #last-div {
@@ -649,7 +650,7 @@ main #extras-area #sale {
 
 @media (min-width: 768px) {
     main #game-area #game-info button {
-        width: 50%;
+        width: 100%;
     }
 
     main #game-area #game-info #game-desc {
@@ -691,6 +692,11 @@ main #extras-area #sale {
         width: 70%;
     }
 
+    main #game-area #carrousel #main-img {
+        height: 500px;
+        width: 100%;
+    }
+
     main #game-area #game-info {
         width: 30%;
         margin-left: 60px;
@@ -702,6 +708,7 @@ main #extras-area #sale {
     }
 
     main #game-area #game-info #game-logo {
+        height: 250px;
         width: 100%;
     }
 
@@ -739,7 +746,8 @@ main #extras-area #sale {
     }
 
     main #game-area #carrousel #img-bar .img-div {
-        width: 20%;
+        width: 200px;
+        height: 100px;
     }
 
     main #game-area #carrousel #img-bar #last-div {
