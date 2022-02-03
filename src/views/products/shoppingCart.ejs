@@ -42,8 +42,8 @@
                         <div class="titulo-producto "><a href="/products/<%= elemento.products.id %>"><%= elemento.products.name %></a></div>
                         <div id="eliminar"><a href="/products/shoppingCart/delete/<%=elemento.products.id %>">Eliminar</a></div>
                     </div>
-                    <div class="precio categoria-producto"><%= elemento.products.price %></div>
-                    <div class="precio categoria-producto"><%= elemento.products.price %></div>
+                    <div class="precio categoria-producto">$<%= elemento.products.price %></div>
+                    <div class="precio categoria-producto">$<%= elemento.products.price %></div>
                 </article>
                 <% }) }%> 
             </section>
@@ -58,7 +58,7 @@
                         <text class="valor-total">Total</text>
                         
                             <!-- IMPORTANTE FIJATE COMO MARCAR EL TOTAL DE PRECIO -->
-                        <text class="precio-total">$$$</text>
+                        <text class="precio-total">$<%= total %> </text>
 
                     </div>
 

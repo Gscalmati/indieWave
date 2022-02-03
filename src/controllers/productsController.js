@@ -161,7 +161,14 @@ productsController = {
                     include : [{association: "products"}], 
                     where: { user_id: req.session.userLogged.id }, raw:true, nest:true
                 })
-                res.render("products/shoppingCart", {comprasUser : comprasUser});
+
+                let total = 0
+
+                for (compra of comprasUser){
+                    console.log(compra)
+                    total += parseInt(compra.products.price);
+                }
+                res.render("products/shoppingCart", {comprasUser : comprasUser, total:total});
             }
             catch (error){
                 console.log(error)
