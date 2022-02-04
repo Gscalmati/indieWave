@@ -22,7 +22,7 @@
             <h2>Dashboard</br>
             </h2>
             <div id="add-button">
-                <button><a href="/products/create">Agregar</a></button>
+                <button class="base-btn"><a href="/products/create">Agregar</a></button>
             </div>
             <table id="dashboard">
                 <thead>
@@ -62,12 +62,12 @@
                             </td>
                             <td>
                                 <form method="GET" action="/products/edit/<%= producto.id %>">
-                                    <input type="submit" value="EDITAR">
+                                    <input class="base-btn" type="submit" value="EDITAR">
                                 </form>
                             </td>
                             <td>
                                 <form method="POST" action="/products/dashboard/<%= producto.id %>?_method=DELETE">
-                                    <input type="submit" value="BORRAR">
+                                    <input class="base-btn" type="submit" value="BORRAR">
                                 </form>
                             </td>
                         </tr>

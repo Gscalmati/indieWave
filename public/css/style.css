@@ -48,6 +48,13 @@
     height: 100%;
 }
 
+.base-btn{
+    font-weight: 600;
+    font-family: 'ubuntu';
+    background-color: var(--thistle);
+    color: var(--space-cadet);
+}
+
 html {
     padding: 0px;
     min-height: 100vh;
