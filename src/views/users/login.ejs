@@ -7,12 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="/css/style.css">
-    <!-- <link rel="stylesheet" href="/css/galicia.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <title>IndieWave</title>
 
     <link rel="icon" href="/img/favicon.ico" type="image/x-icon" />
     <script src="/js/loginValidations.js" defer></script>
     <script src="/js/loginBackground.js" defer></script>
+
+    <script defer src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <% if (locals.registerSuccess) { %>
+        <script defer src="/js/registerSuccessAlert.js"></script>
+    <% } %>
+
 </head>
 
 <body>

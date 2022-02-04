@@ -10,11 +10,10 @@
 
     <link rel="stylesheet" href="/css/style.css">
     <link href="//cdn.jsdelivr.net/gh/zkreations/SheetSlider@2.2.0/dist/sheetslider.min.css" rel="stylesheet" />
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="icon" href="/img/favicon.ico" type="image/x-icon" />
     <title>IndieWave</title>
-
 
 </head>
 <!-- body -->
@@ -30,7 +29,7 @@
                 <input id="s2" type="radio" name="slide1">
                 <input id="s3" type="radio" name="slide1">
                 <input id="s4" type="radio" name="slide1">
-                
+
                 <div class="sh__content">
                     <!-- Slider Item -->
                     <div class="sh__item">
@@ -39,7 +38,8 @@
                             <!-- Item Info -->
                             <div class="sh__meta">
                                 <h4>Furii</h4>
-                                <span>Lucha por tu libertad en este juego ultrafluido de lucha frenética con espadas</span>
+                                <span>Lucha por tu libertad en este juego ultrafluido de lucha frenética con
+                                    espadas</span>
                             </div>
                         </a>
                     </div>
@@ -67,7 +67,7 @@
                             </div>
                         </a>
                     </div>
-                    
+
                     <!-- Slider Item -->
                     <div class="sh__item">
                         <a href="http://localhost:3000/products/4">
@@ -88,7 +88,7 @@
                     <label for="s2"></label>
                     <label for="s3"></label>
                     <label for="s4"></label>
-                    
+
                 </div><!-- .sh__btns -->
 
                 <!--flechas-->
@@ -97,7 +97,7 @@
                     <label for="s2"></label>
                     <label for="s3"></label>
                     <label for="s4"></label>
-                    
+
                 </div><!-- .sh__arrows -->
             </div>
             <!-- prodoductos destacados -->
@@ -105,7 +105,7 @@
                 <h2>Destacados</h2>
             </div>
             <section id="featured" class="section-featured ">
-                
+
                 <% for( let i=0; i < productsFeatured.length; i++ ) { %>
                     <article class="product-article animate__flash">
 
@@ -113,20 +113,24 @@
                         <div>
                             <!--https://via.placeholder.com/1000x1000-->
                             <a href="/products/<%= productsFeatured[i].id %> ">
-                                <img class="responsive-img" src="<%= productsFeatured[i].logo %>" alt="Foto producto Indie Game">
-                            
-                            
+                                <img class="responsive-img" src="<%= productsFeatured[i].logo %>"
+                                    alt="Foto producto Indie Game">
+
+
                         </div>
                         <div class="detail-prod">
-                            <h3><%= productsFeatured[i].name %></h3>
-                            <p>$ <%= productsFeatured[i].price %></p>
+                            <h3>
+                                <%= productsFeatured[i].name %>
+                            </h3>
+                            <p>$ <%= productsFeatured[i].price %>
+                            </p>
                         </div>
-                    </a>
+                        </a>
 
                     </article>
-                
-                <% } %>
-                <!-- </div> -->
+
+                    <% } %>
+                        <!-- </div> -->
             </section>
             <!-- Formulario de categorias -->
             <!-- <div id="form">
@@ -158,18 +162,22 @@
                         <div class="imagen">
                             <a href="/products/<%= productsFresh[j].id %> ">
                                 <!--https://via.placeholder.com/1000x1000  -->
-                                <img class="responsive-img" src="<%= productsFresh[j].logo %>" alt="Foto producto Indie Game">
-                           
-                            
+                                <img class="responsive-img" src="<%= productsFresh[j].logo %>"
+                                    alt="Foto producto Indie Game">
+
+
                         </div>
                         <div class="detalle">
-                            <h3><%= productsFresh[j].name %></h3>
-                            <p>$ <%= productsFresh[j].price %></p>
+                            <h3>
+                                <%= productsFresh[j].name %>
+                            </h3>
+                            <p>$ <%= productsFresh[j].price %>
+                            </p>
                         </div>
-                    </a>
+                        </a>
                     </article>
-                <% } %>
-                <!-- <i class="fas fa-chevron-right"></i> -->
+                    <% } %>
+                        <!-- <i class="fas fa-chevron-right"></i> -->
 
             </section>
 

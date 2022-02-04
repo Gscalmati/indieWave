@@ -30,6 +30,19 @@
     }
 }
 
+body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) {
+    overflow-x: hidden !important;
+    overflow-y: scroll !important;
+}
+
+.swal2-title{
+    font-family: "ubuntu";
+}
+
+.swal2-html-container{
+    font-family: "ubuntu";
+}
+
 :root {
     --steelpink: #d30cb8;
     --turquoise: #6df1d8;

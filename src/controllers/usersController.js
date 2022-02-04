@@ -54,7 +54,7 @@ let usersController = {
 
                 })
 
-            res.redirect("/users/login");
+            res.render("users/login", { registerSuccess: true});
         } else {
 
             if (req.file) {
@@ -63,7 +63,7 @@ let usersController = {
                     if (err) console.log(err);
                 }))
             }
-            res.render('users/register', { errors: errors.mapped(), old: req.body })
+            res.render('users/register', { errors: errors.mapped(), old: req.body})
         }
     },
 
