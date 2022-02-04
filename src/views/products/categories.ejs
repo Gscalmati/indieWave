@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="/css/style.css">
-    
+
     <link rel="icon" href="/img/favicon.ico" type="image/x-icon" />
     <title>IndieWave</title>
 
@@ -17,38 +17,41 @@
 <body>
     <%- include("../partials/header.ejs") %>
         <main>
-            
-            <% for( let i = 0; i < productsByGenre.length; i++ ) { %>
-            
-            <div id="subtitle">
-                <a href="/products/categories/<%- productsByGenre[i][0] %> ">
-                    <h2><%- productsByGenre[i][0] %></h2>
-                </a>
-            </div>
 
-            <section id="category">
-                <% for( let j=1; j < 6; j++ ) { %>
-                    <article class="category-article">
-                        <div class="imagen">
-                            <a href="/products/<%= productsByGenre[i][j].id %> ">
+            <% for( let i = 0; i < productsByGenre.length; i++ ) { %>
+
+                <div id="subtitle">
+                    <a href="/products/categories/<%- productsByGenre[i][0] %> ">
+                        <h2>
+                            <%- productsByGenre[i][0] %>
+                        </h2>
+                    </a>
+                </div>
+
+                <section id="category">
+                    <% for( let j=1; j < 6; j++ ) { %>
+                        <article class="category-article">
+                            <div class="imagen">
+                                <a href="/products/<%= productsByGenre[i][j].id %> ">
                                 <img class="responsive-img" src="<%= productsByGenre[i][j].logo %> "
                                     alt="Foto producto Indie Game">
                             </a>
-                        </div>
-                        <div class="detalle">
-                            <h3>
-                                <a href="/products/<%= productsByGenre[i][j].id %> ">
-                                    <%= productsByGenre[i][j].name %>
-                                </a>
-                            </h3>
-                            <p>
-                                $<%= productsByGenre[i][j].price %>
-                            </p>
-                        </div>
-                    </article>
-                    <% } %>
-            </section>
-            <% } %>
+                            </div>
+                            <div class="detalle">
+                                <h3>
+                                    <a href="/products/<%= productsByGenre[i][j].id %> ">
+                                        <%= productsByGenre[i][j].name %>
+                                    </a>
+                                </h3>
+                                <p>
+                                    $
+                                    <%= productsByGenre[i][j].price %>
+                                </p>
+                            </div>
+                        </article>
+                        <% } %>
+                </section>
+                <% } %>
 
         </main>
         <%- include("../partials/footer.ejs") %>

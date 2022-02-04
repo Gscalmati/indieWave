@@ -10,8 +10,8 @@
 
     <link rel="stylesheet" href="/css/style.css">
     <link href="//cdn.jsdelivr.net/gh/zkreations/SheetSlider@2.2.0/dist/sheetslider.min.css" rel="stylesheet" />
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="icon" href="/img/favicon.ico" type="image/x-icon" />
     <title>IndieWave</title>
 
@@ -30,7 +30,7 @@
                 <input id="s2" type="radio" name="slide1">
                 <input id="s3" type="radio" name="slide1">
                 <input id="s4" type="radio" name="slide1">
-                
+
                 <div class="sh__content">
                     <!-- Slider Item -->
                     <div class="sh__item">
@@ -67,7 +67,7 @@
                             </div>
                         </a>
                     </div>
-                    
+
                     <!-- Slider Item -->
                     <div class="sh__item">
                         <a href="http://localhost:3000/products/4">
@@ -80,7 +80,8 @@
                         </a>
                     </div>
 
-                </div><!-- .sh__content -->
+                </div>
+                <!-- .sh__content -->
 
                 <!--botones -->
                 <div class="sh__btns">
@@ -88,8 +89,9 @@
                     <label for="s2"></label>
                     <label for="s3"></label>
                     <label for="s4"></label>
-                    
-                </div><!-- .sh__btns -->
+
+                </div>
+                <!-- .sh__btns -->
 
                 <!--flechas-->
                 <div class="sh__arrows">
@@ -97,17 +99,18 @@
                     <label for="s2"></label>
                     <label for="s3"></label>
                     <label for="s4"></label>
-                    
-                </div><!-- .sh__arrows -->
+
+                </div>
+                <!-- .sh__arrows -->
             </div>
             <!-- prodoductos destacados -->
-            <div id="subtitle-featured-home" class="animate__fadeIn">
+            <div id="subtitle-featured-home">
                 <h2>Destacados</h2>
             </div>
-            <section id="featured" class="section-featured ">
-                
+            <section id="featured" class="section-featured animate__fadeInLeft">
+
                 <% for( let i=0; i < productsFeatured.length; i++ ) { %>
-                    <article class="product-article animate__flash">
+                    <article class="product-article ">
 
                         <!-- <div class="featured-div"> -->
                         <div>
@@ -124,9 +127,9 @@
                     </a>
 
                     </article>
-                
-                <% } %>
-                <!-- </div> -->
+
+                    <% } %>
+                        <!-- </div> -->
             </section>
             <!-- Formulario de categorias -->
             <!-- <div id="form">
@@ -150,26 +153,30 @@
                 <h2>Juegos recientes</h2>
             </div>
             <!-- Productos destacados de cada categoria elegida -->
-            <section id="category" class="section-category">
+            <section id="category" class="section-category animate__fadeInLeft">
 
                 <!-- <i class="fas fa-chevron-left"></i> -->
                 <% for( let j=0; j < productsFresh.length; j++ ) { %>
-                    <article class="category-article">
+                    <article class="category-article ">
                         <div class="imagen">
                             <a href="/products/<%= productsFresh[j].id %> ">
                                 <!--https://via.placeholder.com/1000x1000  -->
                                 <img class="responsive-img" src="<%= productsFresh[j].logo %>" alt="Foto producto Indie Game">
-                           
-                            
+
+
                         </div>
                         <div class="detalle">
-                            <h3><%= productsFresh[j].name %></h3>
-                            <p>$ <%= productsFresh[j].price %></p>
+                            <h3>
+                                <%= productsFresh[j].name %>
+                            </h3>
+                            <p>$
+                                <%= productsFresh[j].price %>
+                            </p>
                         </div>
-                    </a>
+                        </a>
                     </article>
-                <% } %>
-                <!-- <i class="fas fa-chevron-right"></i> -->
+                    <% } %>
+                        <!-- <i class="fas fa-chevron-right"></i> -->
 
             </section>
 

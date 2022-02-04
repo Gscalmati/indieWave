@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="/css/style.css">
-    
+
     <link rel="icon" href="/img/favicon.ico" type="image/x-icon" />
     <title>IndieWave</title>
 
@@ -22,29 +22,29 @@
                     <%= category %>
                 </h2>
             </div>
-           
-                <section id="category">
-                    <% for( let i=0; i < categoryGames.length; i++ ) { %>
-                        <article class="category-article">
-                            <a href="/products/<%= categoryGames[i].id %> ">
-                                <div class="imagen">
-                                    <img class="responsive-img" src="<%= categoryGames[i].logo%>"
-                                        alt="Foto producto Indie Game">
-                                </div>
-                                <div class="detalle">
-                                    <h3>
-                                        <%= categoryGames[i].name%>
-                                    </h3>
-                                    <p>
-                                        $<%= categoryGames[i].price%>
-                                    </p>
-                                </div>
-                            </a>
-                        </article>
-                        <% } %>
 
-                </section>
-               
+            <section id="category">
+                <% for( let i=0; i < categoryGames.length; i++ ) { %>
+                    <article class="category-article">
+                        <a href="/products/<%= categoryGames[i].id %> ">
+                            <div class="imagen">
+                                <img class="responsive-img" src="<%= categoryGames[i].logo%>" alt="Foto producto Indie Game">
+                            </div>
+                            <div class="detalle">
+                                <h3>
+                                    <%= categoryGames[i].name%>
+                                </h3>
+                                <p>
+                                    $
+                                    <%= categoryGames[i].price%>
+                                </p>
+                            </div>
+                        </a>
+                    </article>
+                    <% } %>
+
+            </section>
+
 
         </main>
         <%- include("../partials/footer.ejs") %>
