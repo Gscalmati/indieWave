@@ -118,7 +118,7 @@ productsController = {
                     id: req.params.id
                 }
             })
-            res.redirect('products/dashboard?delete=true');
+            res.redirect('/products/dashboard?deleted=true');
         } catch (error) {
             console.log(error)
         }
@@ -143,10 +143,12 @@ productsController = {
         (async () => {
             try {
                 let productsDb = await db.Products.findAll({ include: [{ association: "genre" }] });
-                if (req.query.update) {
+                if (req.query.updated) {
                     res.render("products/dashboard", { products: productsDb, updatedProduct: true })
-                } else if (req.query.delete) {
-                    res.render("products/dashboard", { products: productsDb, deleteProduct: true })
+                } else if (req.query.deleted) {
+                    res.render("products/dashboard", { products: productsDb, deletedProduct: true })
+                } else if (req.query.created) {
+                    res.render("products/dashboard", { products: productsDb, createdProduct: true })
                 } else {
                     res.render("products/dashboard", { products: productsDb })
                 }
@@ -372,7 +374,7 @@ productsController = {
             })()
 
 
-            res.redirect("/products/dashboard");
+            res.redirect("/products/dashboard?created=true");
         } else {
             console.log(errors)
             if (req.files) {
@@ -463,7 +465,7 @@ productsController = {
                         })
                     };
                 }
-                res.redirect('/products/dashboard?update=true');
+                res.redirect('/products/dashboard?updated=true');
 
             } else {
 

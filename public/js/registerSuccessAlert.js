@@ -1,5 +1,4 @@
 Swal.fire({
-    icon: 'success',
     title: 'Welcome, Surfer!',
     showConfirmButton: false,
     background: "#b8aec8",

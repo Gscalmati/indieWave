@@ -1,11 +1,12 @@
 Swal.fire({
-    icon: 'info',
-    title: '',
+    icon: 'success',
+    text: 'Producto eliminado con éxito',
     showConfirmButton: false,
     background: "#b8aec8",
+    backdrop: false,
+    width: "20%",
     color: "#3c345c",
     iconColor: "#d30cb8",
-    text: 'Producto eliminado con éxito',
     showClass: {
         popup: 'animate__animated animate__zoomIn'
       },

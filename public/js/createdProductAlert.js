@@ -1,6 +1,6 @@
 Swal.fire({
   icon: 'success',
-  text: 'Producto editado con éxito',
+  text: 'Producto creado con éxito',
   showConfirmButton: false,
   background: "#b8aec8",
   backdrop: false,
