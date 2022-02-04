@@ -569,6 +569,12 @@ main #game-area #game-info #game-info-button-wrapper #price-tag {
     color: var(--medium-aquamarine);
 }
 
+main #game-area #game-info #game-logo {
+    margin: auto;
+    width: 100%;
+    height: 250px;
+}
+
 main #game-area #game-info button {
     width: 100%;
     height: 40px;
@@ -599,15 +605,16 @@ main #extras-area #req-dlc-wrapper h3 {
 
 main #extras-area #req-dlc-wrapper #requisites {
     display: flex;
+    flex-direction: column;
     margin-bottom: 20px;
 }
 
 main #extras-area #req-dlc-wrapper #requisites div {
-    width: 50%;
+    width: 100%;
 }
 
 main #extras-area #req-dlc-wrapper #requisites #minimum {
-    margin-right: 30px;
+    margin-bottom: 30px;
 }
 
 main #extras-area #req-dlc-wrapper #requisites h4 {
@@ -663,6 +670,18 @@ main #extras-area #sale {
         width: 50%;
     }
 
+    main #extras-area #req-dlc-wrapper #requisites{
+        flex-direction: row;
+    }
+
+    main #extras-area #req-dlc-wrapper #requisites div {
+        width: 100%;
+    }
+
+    main #extras-area #req-dlc-wrapper #requisites #minimum {
+        margin-right: 30px;
+    }
+
     main #title-area h2 {
         font-size: 30px;
     }
@@ -708,7 +727,6 @@ main #extras-area #sale {
     }
 
     main #game-area #game-info #game-logo {
-        height: 250px;
         width: 100%;
     }
 
