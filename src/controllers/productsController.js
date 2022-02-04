@@ -83,7 +83,11 @@ productsController = {
                     productImages.push(image.image);
                 }
 
-                res.render("products/productDetail", { product, productPlatforms, productImages });
+                if (req.query.repeated){
+                    res.render("products/productDetail", { product, productPlatforms, productImages, repeated: true });
+                } else {
+                    res.render("products/productDetail", { product, productPlatforms, productImages });
+                }
 
             } catch (error) {
                 console.log(error)
@@ -218,8 +222,7 @@ productsController = {
 
                 // Si existe, no hace el "create" y redirecciona al mismo articulo
                 if (artRepeated != undefined) {
-
-                    return res.redirect("/products/shoppingCart")
+                    return res.redirect(`/products/${req.body.cartValue}?repeated=true`)
                 } else {
                     //Agregar al carrito con el ID del carrito
                     await db.Shopping_products.create({
