@@ -50,7 +50,7 @@ productsController = {
                 console.log(error)
             }
         })()
-        
+
     },
 
     categorygames: function (req, res) {
@@ -96,14 +96,14 @@ productsController = {
         try {
             await db.Products_platforms.destroy({
                 where: {
-                    product_id : req.params.id
+                    product_id: req.params.id
                 }
             })
 
 
             await db.Shopping_products.destroy({
                 where: {
-                    product_id : req.params.id
+                    product_id: req.params.id
                 }
             })
 
@@ -112,13 +112,13 @@ productsController = {
                     product_id: req.params.id
                 }
             })
-            
+
             await db.Products.destroy({
                 where: {
                     id: req.params.id
                 }
             })
-            res.redirect('/products/dashboard');
+            res.redirect('products/dashboard?delete=true');
         } catch (error) {
             console.log(error)
         }
@@ -143,7 +143,13 @@ productsController = {
         (async () => {
             try {
                 let productsDb = await db.Products.findAll({ include: [{ association: "genre" }] });
-                res.render("products/dashboard", { products: productsDb })
+                if (req.query.update) {
+                    res.render("products/dashboard", { products: productsDb, updatedProduct: true })
+                } else if (req.query.delete) {
+                    res.render("products/dashboard", { products: productsDb, deleteProduct: true })
+                } else {
+                    res.render("products/dashboard", { products: productsDb })
+                }
             } catch (error) {
                 console.log(error)
             }
@@ -155,22 +161,22 @@ productsController = {
     cart: function (req, res) {
         (async () => {
             try {
-                
+
                 //Traigo el carrito con los productos asociados del usuario loggeado
                 let comprasUser = await db.Shoppingcarts.findAll({
-                    include : [{association: "products"}], 
-                    where: { user_id: req.session.userLogged.id }, raw:true, nest:true
+                    include: [{ association: "products" }],
+                    where: { user_id: req.session.userLogged.id }, raw: true, nest: true
                 })
 
                 let total = 0
 
-                for (compra of comprasUser){
+                for (compra of comprasUser) {
                     console.log(compra)
                     total += parseInt(compra.products.price);
                 }
-                res.render("products/shoppingCart", {comprasUser : comprasUser, total:total});
+                res.render("products/shoppingCart", { comprasUser: comprasUser, total: total });
             }
-            catch (error){
+            catch (error) {
                 console.log(error)
             }
         })()
@@ -183,77 +189,77 @@ productsController = {
         }*/
     },
 
-    addToCart: function (req,res){
+    addToCart: function (req, res) {
         (async () => {
 
-        try {
-            //Encontrar el ID del carrito en base al usuario loggeado
-            let sessionCart = await db.Shoppingcarts.findOne({
-                where : {
-                    user_id: req.session.userLogged.id
-                }, raw:true
-            })
-            let idCart = sessionCart.id
-            // Extraigo productos agregados por el usuario Loggeado
-            let repe = await db.Shopping_products.findAll({
-                shopping_cart_id: idCart,
-                //product_id: req.body.cartValue,
-                raw: true
-            })
-           
-         
-            // Reviso si ya existe ese articulo en el carrito
-            let artRepeated = repe.find(elem => {
-           
-                return (elem.product_id == req.body.cartValue)
-            })
-      
-            // Si existe, no hace el "create" y redirecciona al mismo articulo
-            if (artRepeated != undefined) {
-          
-                return res.redirect("/products/shoppingCart")
-            } else {
-                //Agregar al carrito con el ID del carrito
-                await db.Shopping_products.create({
-                    shopping_cart_id: idCart,
-                    product_id: req.body.cartValue
-                })
-                return res.redirect("/products/shoppingCart")
-            }
-            /*// Intente cambiar el nombre del NAME en el HTML y se rompe
-            console.log(req.body.cartValue)
-            let productFound = await db.Products.findByPk(req.body.cartValue, {raw:true});
-            console.log(productFound)
-            return res.render("products/shoppingCart", {productFound : productFound})*/
-        }
-        catch (error){
-            console.log(error)
-        }
-    })()
-    },
-
-    deleteFromCart: function (req, res){
-        (async () =>{
             try {
-      
                 //Encontrar el ID del carrito en base al usuario loggeado
                 let sessionCart = await db.Shoppingcarts.findOne({
-                    where : {
+                    where: {
                         user_id: req.session.userLogged.id
-                    }, raw:true
+                    }, raw: true
                 })
                 let idCart = sessionCart.id
-                
+                // Extraigo productos agregados por el usuario Loggeado
+                let repe = await db.Shopping_products.findAll({
+                    shopping_cart_id: idCart,
+                    //product_id: req.body.cartValue,
+                    raw: true
+                })
+
+
+                // Reviso si ya existe ese articulo en el carrito
+                let artRepeated = repe.find(elem => {
+
+                    return (elem.product_id == req.body.cartValue)
+                })
+
+                // Si existe, no hace el "create" y redirecciona al mismo articulo
+                if (artRepeated != undefined) {
+
+                    return res.redirect("/products/shoppingCart")
+                } else {
+                    //Agregar al carrito con el ID del carrito
+                    await db.Shopping_products.create({
+                        shopping_cart_id: idCart,
+                        product_id: req.body.cartValue
+                    })
+                    return res.redirect("/products/shoppingCart")
+                }
+                /*// Intente cambiar el nombre del NAME en el HTML y se rompe
+                console.log(req.body.cartValue)
+                let productFound = await db.Products.findByPk(req.body.cartValue, {raw:true});
+                console.log(productFound)
+                return res.render("products/shoppingCart", {productFound : productFound})*/
+            }
+            catch (error) {
+                console.log(error)
+            }
+        })()
+    },
+
+    deleteFromCart: function (req, res) {
+        (async () => {
+            try {
+
+                //Encontrar el ID del carrito en base al usuario loggeado
+                let sessionCart = await db.Shoppingcarts.findOne({
+                    where: {
+                        user_id: req.session.userLogged.id
+                    }, raw: true
+                })
+                let idCart = sessionCart.id
+
                 await db.Shopping_products.destroy({
-                    where :{ 
+                    where: {
                         shopping_cart_id: idCart,
                         product_id: req.params.id
                     }
                 })
-     
+
                 return res.redirect("/products/shoppingCart")
             }
-            catch (error){
+            catch (error) {
                 console.log(error)
             }
         })()
@@ -288,89 +294,89 @@ productsController = {
     store: function (req, res) {
         let errors = validationResult(req);
 
-        if ((req.body.windows == undefined) && (req.body.macos == undefined) && (req.body.linux == undefined)){
-            errors.errors.push({param: "checkbox", msg: "Ingrese al menos una plataforma"});
-     
+        if ((req.body.windows == undefined) && (req.body.macos == undefined) && (req.body.linux == undefined)) {
+            errors.errors.push({ param: "checkbox", msg: "Ingrese al menos una plataforma" });
+
         }
-        if(errors.isEmpty()){
-
-        
-        let imagesArray = [];
-
-        if (req.files["images"]) {
-            req.files["images"].forEach((image) => {
-                imagesArray.push(`/img/products/${req.body.game_name}-imgs/${image.filename}`)
-            })
-        }
+        if (errors.isEmpty()) {
 
 
-        //let date = req.body.release_date.split("-").reverse(); <---- ¿Qué corno hacía esto?
+            let imagesArray = [];
 
-        (async () => {
-            try {
-
-                /*Busco el id del género al que pertenece el producto*/
-
-                let genre = await db.Genres.findOne({
-                    where: { name: req.body.genre }
-                });
-
-                /*Creo una entrada en la tabla de productos*/
-
-                let newProduct = await db.Products.create({
-                    name: req.body.game_name,
-                    developer: req.body.developer,
-                    email: req.body.email,
-                    release_date: req.body.release_date,
-                    price: req.body.price,
-                    logo: req.files["logo"] != undefined ? `/img/products/${req.body.game_name}-imgs/${req.files["logo"][0].filename}` : undefined,
-                    min_requirements: req.body.min_requirements,
-                    rec_requirements: req.body.rec_requirements,
-                    description: req.body.description,
-                    genre_id: genre.id,
+            if (req.files["images"]) {
+                req.files["images"].forEach((image) => {
+                    imagesArray.push(`/img/products/${req.body.game_name}-imgs/${image.filename}`)
                 })
-
-                /*Creo una entrada en la tabla de imágenes por cada imagen*/
-                if (imagesArray.length != 0) {
-                    for (image of imagesArray) {
-                        await db.Images.create({
-                            product_id: newProduct.id,
-                            image: image,
-                        })
-                    };
-                }
-
-                /*Creo una entrada en la tabla product_platform por cada plataforma*/
-                if (req.body.linux) {
-                    await db.Products_platforms.create({
-                        product_id: newProduct.id,
-                        platform_id: 1,
-                    })
-                };
-                if (req.body.macos) {
-                    await db.Products_platforms.create({
-                        product_id: newProduct.id,
-                        platform_id: 2,
-                    })
-                };
-                if (req.body.windows) {
-                    await db.Products_platforms.create({
-                        product_id: newProduct.id,
-                        platform_id: 3,
-                    })
-                };
-            } catch (error) {
-                console.log(error)
             }
 
-        })()
 
-    
-        res.redirect("/products/dashboard");
-        }else{
+            //let date = req.body.release_date.split("-").reverse(); <---- ¿Qué corno hacía esto?
+
+            (async () => {
+                try {
+
+                    /*Busco el id del género al que pertenece el producto*/
+
+                    let genre = await db.Genres.findOne({
+                        where: { name: req.body.genre }
+                    });
+
+                    /*Creo una entrada en la tabla de productos*/
+
+                    let newProduct = await db.Products.create({
+                        name: req.body.game_name,
+                        developer: req.body.developer,
+                        email: req.body.email,
+                        release_date: req.body.release_date,
+                        price: req.body.price,
+                        logo: req.files["logo"] != undefined ? `/img/products/${req.body.game_name}-imgs/${req.files["logo"][0].filename}` : undefined,
+                        min_requirements: req.body.min_requirements,
+                        rec_requirements: req.body.rec_requirements,
+                        description: req.body.description,
+                        genre_id: genre.id,
+                    })
+
+                    /*Creo una entrada en la tabla de imágenes por cada imagen*/
+                    if (imagesArray.length != 0) {
+                        for (image of imagesArray) {
+                            await db.Images.create({
+                                product_id: newProduct.id,
+                                image: image,
+                            })
+                        };
+                    }
+
+                    /*Creo una entrada en la tabla product_platform por cada plataforma*/
+                    if (req.body.linux) {
+                        await db.Products_platforms.create({
+                            product_id: newProduct.id,
+                            platform_id: 1,
+                        })
+                    };
+                    if (req.body.macos) {
+                        await db.Products_platforms.create({
+                            product_id: newProduct.id,
+                            platform_id: 2,
+                        })
+                    };
+                    if (req.body.windows) {
+                        await db.Products_platforms.create({
+                            product_id: newProduct.id,
+                            platform_id: 3,
+                        })
+                    };
+                } catch (error) {
+                    console.log(error)
+                }
+
+            })()
+
+
+            res.redirect("/products/dashboard");
+        } else {
             console.log(errors)
-            if (req.files){
-                if(req.files.logo != undefined){
+            if (req.files) {
+                if (req.files.logo != undefined) {
                     req.files.logo.forEach(image => {
                         fs.unlink(image.path, (err => {
                             if (err) console.log(err);
@@ -379,7 +385,7 @@ productsController = {
                 }
             }
             // URIQUESTIONS Se crea carpeta igual, buscar forma de borrar carpeta
-            
+
             res.render('products/productCreate', { errors: errors.mapped(), old: req.body })
         }
     },
@@ -387,24 +393,24 @@ productsController = {
     update: async (req, res) => {
         try {
 
-        let errors = validationResult(req);
+            let errors = validationResult(req);
 
-        if ((req.body.windows == undefined) && (req.body.macos == undefined) && (req.body.linux == undefined)){
-            errors.errors.push({param: "checkbox", msg: "Ingrese al menos una plataforma"});
-         
-        }
+            if ((req.body.windows == undefined) && (req.body.macos == undefined) && (req.body.linux == undefined)) {
+                errors.errors.push({ param: "checkbox", msg: "Ingrese al menos una plataforma" });
 
-        if(errors.isEmpty()){
+            }
 
-        let imagesArray = [];
+            if (errors.isEmpty()) {
 
-        if (req.files["images"]) {
-            req.files["images"].forEach((image) => {
-                imagesArray.push(`/img/products/${req.body.game_name}-imgs/${image.filename}`)
-            })
-        }
+                let imagesArray = [];
 
-            
+                if (req.files["images"]) {
+                    req.files["images"].forEach((image) => {
+                        imagesArray.push(`/img/products/${req.body.game_name}-imgs/${image.filename}`)
+                    })
+                }
+
+
                 /*Busco el id del género al que pertenece el producto*/
 
                 let genre = await db.Genres.findOne({
@@ -457,39 +463,37 @@ productsController = {
                         })
                     };
                 }
+                res.redirect('/products/dashboard?update=true');
 
-                res.redirect('/products/dashboard');
-           
+            } else {
 
-    } else {
+                /* Busco el producto a editar */
+                let productToEdit = await db.Products.findByPk(req.params.id, {
+                    include: [{ association: "genre" }, { association: "platforms" }]
+                });
 
-         /* Busco el producto a editar */
-         let productToEdit = await db.Products.findByPk(req.params.id, {
-            include: [{ association: "genre" }, { association: "platforms" }]
-        });
+                /* Por comodidad, me guardo las plataformas del producto */
+                let productPlatforms = [];
+                for (platform of productToEdit.platforms) {
+                    productPlatforms.push(platform.name);
+                }
 
-        /* Por comodidad, me guardo las plataformas del producto */
-        let productPlatforms = [];
-        for (platform of productToEdit.platforms) {
-            productPlatforms.push(platform.name);
-        }
+                if (req.files) {
+                    if (req.files.logo != undefined) {
+                        req.files.logo.forEach(image => {
+                            fs.unlink(image.path, (err => {
+                                if (err) console.log(err);
+                            }))
+                        })
+                    }
+                }
+                // URIQUESTIONS Se crea carpeta igual, buscar forma de borrar carpeta
 
-        if (req.files){
-            if(req.files.logo != undefined){
-                req.files.logo.forEach(image => {
-                    fs.unlink(image.path, (err => {
-                        if (err) console.log(err);
-                    }))
-                })
+                res.render('products/productEdit', { product: productToEdit, productPlatforms, errors: errors.mapped(), old: req.body })
             }
-        }
-        // URIQUESTIONS Se crea carpeta igual, buscar forma de borrar carpeta
-        
-        res.render('products/productEdit', { product: productToEdit, productPlatforms, errors: errors.mapped(), old: req.body })
-    }
         } catch (error) {
             console.log(error)
-    }
+        }
     },
 
     search: function (req, res) {
@@ -497,7 +501,7 @@ productsController = {
             try {
                 let query = req.query.query;
                 /* Busco productos cuyo nombre incluya la búsqueda del usuario*/
-                let products = await db.Products.findAll({ include: [{ association: "genre"}], order: [['name', 'ASC']], where: { name : sequelize.where(sequelize.fn('LOWER', sequelize.col('Products.name')), 'LIKE', `%${query}%`) } } );
+                let products = await db.Products.findAll({ include: [{ association: "genre" }], order: [['name', 'ASC']], where: { name: sequelize.where(sequelize.fn('LOWER', sequelize.col('Products.name')), 'LIKE', `%${query}%`) } });
                 if (products.length > 0) {
                     res.render("products/searchResults", { products, notfound: false });
                 } else {

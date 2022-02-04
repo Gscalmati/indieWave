@@ -1,8 +1,5 @@
 window.onload = function() {
 
-
-
-
     let formulario = document.querySelector("#login-form");
 
     formulario.addEventListener("submit", function(event) {

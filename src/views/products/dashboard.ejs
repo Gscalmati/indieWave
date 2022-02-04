@@ -11,6 +11,14 @@
 
     <link rel="icon" href="/img/favicon.ico" type="image/x-icon" />
 
+    <script defer src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <% if (locals.updatedProduct) { %>
+    <script defer src="/js/updatedProductAlert.js"></script>
+    <% } %>
+    <% if (locals.deletedProduct) { %>
+        <script defer src="/js/deletedProductAlert.js"></script>
+    <% } %>
+
     <title>IW - Dashboard</title>
 </head>
 
