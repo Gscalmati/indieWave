@@ -16,7 +16,11 @@ let mainController = {
 
         return res.render("main/home", {productsFeatured : gameFeatured, productsFresh: gameFresh });
         
-    }
+    },
+    cordoba: async (req,res) => {   
+       return res.render("main/cordoba");
+       
+   }
 }
 
 

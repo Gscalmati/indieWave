@@ -5,4 +5,6 @@ const mainController = require("../controllers/mainController");
 
 
 router.get("/", mainController.home);
+router.get("/cordoba", mainController.cordoba);
+
 module.exports = router;
