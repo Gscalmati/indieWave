@@ -36,8 +36,9 @@
                 <% comprasUser.forEach(elemento => { %>
                 <article class="producto">
                     <div class="categoria-producto">
-                        <img class="thumbnail-producto responsive-img" src=<%= elemento.products.logo || "https://via.placeholder.com/100x100"%>>
+                        <img class="thumbnail-producto responsive-img" src= <%= elemento.products.logo || "https://via.placeholder.com/100x100"%>>
                     </div>
+                    
                     <div class="categoria-producto descripcion-producto">
                         <div class="titulo-producto "><a href="/products/<%= elemento.products.id %>"><%= elemento.products.name %></a></div>
                         <div id="eliminar"><a href="/products/shoppingCart/delete/<%=elemento.products.id %>">Eliminar</a></div>

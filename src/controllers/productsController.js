@@ -6,6 +6,7 @@ const sequelize = require("sequelize");
 const db = require("../database/models");
 const { validationResult } = require("express-validator");
 const { log } = require("console");
+const { config } = require("process");
 
 //Creo un objeto de referencia para las categorías
 //TODO
@@ -177,7 +178,7 @@ productsController = {
                 let total = 0
 
                 for (compra of comprasUser) {
-                    console.log(compra)
+                    
                     total += parseInt(compra.products.price);
                 }
                 res.render("products/shoppingCart", { comprasUser: comprasUser, total: total });
@@ -307,12 +308,13 @@ productsController = {
 
 
             let imagesArray = [];
-
+            
             if (req.files["images"]) {
                 req.files["images"].forEach((image) => {
-                    imagesArray.push(`/img/products/${req.body.game_name}-imgs/${image.filename}`)
+                    imagesArray.push(`/img/products/${req.body.game_name.replace(/\s/g, '')}-imgs/${image.filename}`)
                 })
             }
+            
 
 
             //let date = req.body.release_date.split("-").reverse(); <---- ¿Qué corno hacía esto?
@@ -334,7 +336,7 @@ productsController = {
                         email: req.body.email,
                         release_date: req.body.release_date,
                         price: req.body.price,
-                        logo: req.files["logo"] != undefined ? `/img/products/${req.body.game_name}-imgs/${req.files["logo"][0].filename}` : undefined,
+                        logo: req.files["logo"] != undefined ? `/img/products/${req.body.game_name.replace(/\s/g, '')}-imgs/${req.files["logo"][0].filename}` : undefined,
                         min_requirements: req.body.min_requirements,
                         rec_requirements: req.body.rec_requirements,
                         description: req.body.description,
