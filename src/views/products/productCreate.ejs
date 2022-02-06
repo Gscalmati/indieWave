@@ -22,7 +22,7 @@
             <h2 id="title">Crear Producto</h2>
             <form id="create-form" action="/products" method="post" enctype="multipart/form-data">
 
-                <input type="text" name="game_name" id="name" aria-label="nombre del juego" placeholder="Nombre del juego" value="<%= locals.old && old.name %>">
+                <input type="text" name="game_name" id="name" aria-label="nombre del juego" placeholder="Nombre del juego" value="<%= locals.old && old.game_name %>">
                 <% if (locals.errors && errors.name) { %>
                     <span class="error-msg"><i class="fas fa-exclamation-circle"></i>
                         <%=(errors.name && errors.name.msg)%>
@@ -123,7 +123,7 @@
                     <span class="error-msg"  id="error-images"></span>
                 <% } %>
 
-                <textarea rows="7" name="min_requirements" id="min_requirements" aria-label="requisitos minimos" placeholder="Requisitos mínimos" value="<%= locals.old && old.min_requirements %>" ></textarea>
+                <textarea rows="7" name="min_requirements" id="min_requirements" aria-label="requisitos minimos" placeholder="Requisitos mínimos" ><%= locals.old && old.min_requirements %></textarea>
                 <% if (locals.errors && errors.min_requirements) { %>
                     <span class="error-msg"  id="error-min_requirements"><i class="fas fa-exclamation-circle"></i>
                         <%=(errors.min_requirements && errors.min_requirements.msg)%>
@@ -133,7 +133,7 @@
                 <% } %>
 
 
-                <textarea rows="7" name="rec_requirements" id="rec_requirements" aria-label="requisitos recomendados" placeholder="Requisitos recomendados" value="<%= locals.old && old.rec_requirements %>"></textarea>
+                <textarea rows="7" name="rec_requirements" id="rec_requirements" aria-label="requisitos recomendados" placeholder="Requisitos recomendados" ><%= locals.old && old.rec_requirements %></textarea>
                 <% if (locals.errors && errors.rec_requirements) { %>
                     <span class="error-msg"  id="error-rec_requirements"><i class="fas fa-exclamation-circle"></i>
                         <%=(errors.rec_requirements && errors.rec_requirements.msg)%>
@@ -143,7 +143,7 @@
                 <% } %>
 
 
-                <textarea rows="9" name="description" id="description" maxlength="500" aria-label="descripcion" placeholder="Descripción . . ." value="<%= locals.old && old.description %>"></textarea>
+                <textarea rows="9" name="description" id="description" maxlength="500" aria-label="descripcion" placeholder="Descripción . . ." ><%= locals.old && old.description %></textarea>
                 <% if (locals.errors && errors.description) { %>
                     <span class="error-msg"  id="error-description"><i class="fas fa-exclamation-circle"></i>
                         <%=(errors.description && errors.description.msg)%>

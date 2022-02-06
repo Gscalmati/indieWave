@@ -21,7 +21,7 @@
             <h2 id="title">Editar Producto </h2>
             <form id="edit-form" action="/products/edit/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
 
-                <input type="text" name="game_name" id="name" aria-label="nombre del juego" value="<%= product.name%>">
+                <input type="text" name="game_name" id="name" aria-label="nombre del juego" value="<%= product.game_name%>">
                 <% if (locals.errors && errors.game_name) { %>
                     <span class="error-msg"><i class="fas fa-exclamation-circle"></i>
                         <%=(errors.game_name && errors.game_name.msg)%>
