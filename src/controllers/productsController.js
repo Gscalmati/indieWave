@@ -70,7 +70,6 @@ productsController = {
                 let product = await db.Products.findByPk(req.params.id, {
                     include: [{ association: "genre" }, { association: "platforms" }]
                 });
-
                 let productPlatforms = [];
                 for (platform of product.platforms) {
                     productPlatforms.push(platform.name);
@@ -389,6 +388,7 @@ productsController = {
                     })
                 }
             }
+            console.log(req.body)
             // URIQUESTIONS Se crea carpeta igual, buscar forma de borrar carpeta
 
             res.render('products/productCreate', { errors: errors.mapped(), old: req.body })
