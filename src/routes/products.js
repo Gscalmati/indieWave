@@ -7,18 +7,20 @@ const fs = require('fs');
 const multer = require("multer");
 const storageProducts = multer.diskStorage({
     destination: (req, file, cb) => {
+        const game_name = req.body.game_name.replace(/\s/g, '');
         //if (file.extname == "jpg") ... si no, "enviar NEXT"
-        if (!fs.existsSync(path.resolve(__dirname, `../../public/img/products/${req.body.game_name}-imgs`))) {
-            fs.mkdirSync(path.resolve(__dirname, `../../public/img/products/${req.body.game_name}-imgs`));
+        if (!fs.existsSync(path.resolve(__dirname, `../../public/img/products/${game_name}-imgs`))) {
+            fs.mkdirSync(path.resolve(__dirname, `../../public/img/products/${game_name}-imgs`));
         }
-        cb(null, path.resolve(__dirname, `../../public/img/products/${req.body.game_name}-imgs`));
+        cb(null, path.resolve(__dirname, `../../public/img/products/${game_name}-imgs`));
     },
     filename: (req, file, cb) => {
+        const game_name = req.body.game_name.replace(/\s/g, '');
         let newFilename
         if (file.fieldname === "logo") {
-            newFilename = "Logo" + req.body.game_name + Date.now() + path.extname(file.originalname)
+            newFilename = "Logo" + game_name + Date.now() + path.extname(file.originalname)
         } else {
-            newFilename = "Img" + req.body.game_name + Date.now() + path.extname(file.originalname)
+            newFilename = "Img" + game_name + Date.now() + path.extname(file.originalname)
         }
         cb(null, newFilename)
     }

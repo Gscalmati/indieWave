@@ -16,12 +16,12 @@ const validations =[
                     return Promise.reject("Ya existe un producto con ese nombre");
                 }
             })
-    })
-    .isAlpha('en-US','es-ES', { ignore: '\s' }).withMessage(" Ingrese un nombre válido"),
+    }),
+    
     
     /*Validación desarrollador*/
-    body("developer").notEmpty().withMessage(" El desarrollador no puede estar vacío")
-    .isAlpha('en-US','es-ES', { ignore: '\s' }).withMessage("Ingrese un nombre válido"),
+    body("developer").notEmpty().withMessage(" El desarrollador no puede estar vacío"),
+    
 
     /*Validación email*/
     body("email").notEmpty().withMessage(" El campo no puede estar vacío")
