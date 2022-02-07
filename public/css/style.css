@@ -819,7 +819,7 @@ main #extras-area #sale {
 #add-button {
     margin: 2% 0px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
 }
 
 #add-button a {
