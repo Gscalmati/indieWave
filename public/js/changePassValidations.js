@@ -8,23 +8,23 @@ window.onload = function () {
         let fieldOldPass = document.querySelector("input#oldPass");
 
         if (fieldOldPass.value == "") {
-            errores.push({ param: "oldPass", msg: "FRONT Ingrese la contraseña actual" })
+            errores.push({ param: "oldPass", msg: "Ingrese la contraseña actual" })
         }
 
         let fieldNewPass = document.querySelector("input#newPass");
 
         if (fieldNewPass.value == "") {
-            errores.push({ param: "newPass", msg: "FRONT Ingrese la contraseña nueva" })
+            errores.push({ param: "newPass", msg: "Ingrese la contraseña nueva" })
         } else if (fieldNewPass.value.length < 8 || fieldNewPass.value.length > 12) {
-            errores.push({ param: "newPass", msg: "FRONT La nueva contraseña debe tener entre 8 y 12 caracteres" })
+            errores.push({ param: "newPass", msg: "La nueva contraseña debe tener entre 8 y 12 caracteres" })
         }
 
         let fieldConfirmPass = document.querySelector("input#confirmPass");
 
         if (fieldConfirmPass.value == "") {
-            errores.push({ param: "confirmPass", msg: "FRONT Confirme la contraseña" })
+            errores.push({ param: "confirmPass", msg: "Confirme la contraseña" })
         } else if (fieldNewPass.value != fieldConfirmPass.value) {
-            errores.push({ param: "confirmPass", msg: "FRONT Las contraseñas deben coincidir" })
+            errores.push({ param: "confirmPass", msg: "Las contraseñas deben coincidir" })
         }
 
 
