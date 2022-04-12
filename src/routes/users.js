@@ -49,6 +49,9 @@ router.get('/profile/changePassword', authMiddleware, usersController.changePass
 router.put('/profile/changePassword', authMiddleware, usersController.updatePassword);
 router.get('/profile/:id', authAdminMiddleware, usersController.profileById);
 
+//Library
+router.get('/library', authAdminMiddleware, usersController.library);
+
 //API
 router.get("/api/users")
 

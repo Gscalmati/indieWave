@@ -242,6 +242,13 @@ let usersController = {
                 console.log(error)
             }
         })()
+    },
+
+    library: (req, res) =>{
+
+        //console.log(req.session.userLogged.dataValues)
+
+        res.render("users/userLibrary")
     }
 }
 
