@@ -1,23 +1,23 @@
 module.exports = {
     "development": {
-        "username": "root",
-        "password": null,
-        "database": "indiewave",
-        "host": "127.0.0.1",
+        "username": "u809776786_root",
+        "password": "Indiewave123.",
+        "database": "u809776786_indiewave",
+        "host": "gioscalmati.com.ar",
         "dialect": "mysql"
     },
     "test": {
-        "username": "root",
-        "password": null,
-        "database": "indiewave",
-        "host": "127.0.0.1",
+        "username": "u809776786_root",
+        "password": "Indiewave123.",
+        "database": "u809776786_indiewave",
+        "host": "gioscalmati.com.ar",
         "dialect": "mysql"
     },
     "production": {
-        "username": "root",
-        "password": null,
-        "database": "indiewave",
-        "host": "127.0.0.1",
+        "username": "u809776786_root",
+        "password": "Indiewave123.",
+        "database": "u809776786_indiewave",
+        "host": "gioscalmati.com.ar",
         "dialect": "mysql"
     }
 }
